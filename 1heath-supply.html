@@ -728,7 +728,7 @@ h2+h3.group{margin-top:.4rem}
     <li><b>Stock read from the seller's own system.</b> Most stockists run pharmacy accounting software. We read stock and price from it several times a day, and never promise what the seller does not show.</li>
     <li><b>Orders split into lines.</b> Each line moves through clear states: requested, confirmed, packed, dispatched, delivered, part-delivered, rejected, returned, credited. Every change is recorded with who and when.</li>
     <li><b>No duplicates.</b> Every order request carries a unique key, so a retry on a weak network never creates a second order.</li>
-    <li><b>The shelf count.</b> Stock rises with each delivery received and falls with each signed prescription dispensed. Earliest-expiry stock is used first.</li>
+    <li><b>The shelf count.</b> Stock is counted in single tablets, because many clinics sell cut strips. It rises with each delivery received and falls with each signed prescription dispensed. Earliest-expiry stock is used first.</li>
     <li><b>Daily reconciliation.</b> Orders, deliveries, invoices and payments are matched every night; any mismatch goes to a person.</li>
     <li><b>Tests for every state and edge case above.</b> A staging run with a real partner stockist before any clinic depends on it, plus monitoring, alerts and a manual fallback for every step.</li>
   </ul>
