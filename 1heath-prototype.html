@@ -59,7 +59,7 @@ button:active,[role=button]:active{transform:none}
 </div>
 <sc-if value="{{ opdPicker }}" hint-placeholder-val="{{ false }}">
 <div>
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;margin:2px 0 7px">{{ pickerLabel }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;margin:2px 0 7px">{{ pickerLabel }}</div>
 <div style="display:flex;flex-wrap:wrap;gap:5px">
 <sc-for list="{{ opdPicker }}" as="o" hint-placeholder-count="5">
 <button onClick="{{ o.onClick }}" style="{{ o.style }}">{{ o.label }}</button>
@@ -167,7 +167,7 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ appBar.count }}" hint-placeholder-val="{{ false }}">
 <div style="flex:none;display:flex;flex-direction:column;align-items:flex-end;padding-left:4px">
 <div style="font:700 28px/34px Inter;letter-spacing:-.02em;color:{{ appBar.countColor }};letter-spacing:-.03em;font-variant-numeric:tabular-nums">{{ appBar.count }}</div>
-<div style="font:600 11px/14px Inter;color:#8A93A3;letter-spacing:.02em;margin-top:2px">{{ appBar.countLabel }}</div>
+<div style="font:600 11px/14px Inter;color:#636C7C;letter-spacing:.02em;margin-top:2px">{{ appBar.countLabel }}</div>
 </div>
 </sc-if>
 </div>
@@ -244,7 +244,7 @@ button:active,[role=button]:active{transform:none}
 <div style="display:flex;flex-direction:column;gap:6px;padding:2px 0">
 <sc-for list="{{ b.rows }}" as="r" hint-placeholder-count="2">
 <div style="display:flex;align-items:baseline;gap:8px">
-<span style="flex:none;width:62px;font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3">{{ r.k }}</span>
+<span style="flex:none;width:62px;font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C">{{ r.k }}</span>
 <span style="font:400 15px/22px Inter;color:#5A6372">{{ r.v }}</span>
 </div>
 </sc-for>
@@ -401,7 +401,7 @@ button:active,[role=button]:active{transform:none}
 </div>
 </sc-for>
 </div>
-<div style="font:400 11px Inter;color:#8A93A3;margin-top:11px;font-variant-numeric:tabular-nums">{{ b.foot }}</div>
+<div style="font:400 11px Inter;color:#636C7C;margin-top:11px;font-variant-numeric:tabular-nums">{{ b.foot }}</div>
 </div>
 </sc-if>
 
@@ -411,8 +411,8 @@ button:active,[role=button]:active{transform:none}
 <sc-for list="{{ b.apps }}" as="a" hint-placeholder-count="4">
 <div style="{{ a.box }}">
 <div style="font:700 11px/14px Inter;letter-spacing:.04em;color:#0C1524">{{ a.name }}</div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:3px">{{ a.who }}</div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:6px;font-variant-numeric:tabular-nums">{{ a.count }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:3px">{{ a.who }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:6px;font-variant-numeric:tabular-nums">{{ a.count }}</div>
 </div>
 </sc-for>
 </div>
@@ -447,16 +447,16 @@ button:active,[role=button]:active{transform:none}
 <div style="border:1px solid #E7EAEF;background:#FFFFFF;padding:13px 12px">
 <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
 <span style="font:700 11px/14px Inter;letter-spacing:.08em;color:#0C1524">{{ b.app }}</span>
-<span style="font:400 11px Inter;color:#8A93A3;font-variant-numeric:tabular-nums">{{ b.count }}</span>
+<span style="font:400 11px Inter;color:#636C7C;font-variant-numeric:tabular-nums">{{ b.count }}</span>
 </div>
 <div style="display:flex;flex-direction:column;margin-top:10px">
 <sc-for list="{{ b.nodes }}" as="n" hint-placeholder-count="6">
 <div style="{{ n.row }}">
 <span style="{{ n.rail }}"></span>
 <span style="{{ n.chip }}">{{ n.label }}</span>
-<span style="font:400 11px Inter;color:#8A93A3;font-variant-numeric:tabular-nums">{{ n.route }}</span>
+<span style="font:400 11px Inter;color:#636C7C;font-variant-numeric:tabular-nums">{{ n.route }}</span>
 <sc-if value="{{ n.tag }}" hint-placeholder-val="{{ false }}">
-<span style="font:600 11px Inter;letter-spacing:.06em;color:#8A93A3">{{ n.tag }}</span>
+<span style="font:600 11px Inter;letter-spacing:.06em;color:#636C7C">{{ n.tag }}</span>
 </sc-if>
 </div>
 </sc-for>
@@ -469,16 +469,16 @@ button:active,[role=button]:active{transform:none}
 <sc-for list="{{ b.steps }}" as="st" hint-placeholder-count="5">
 <div>
 <div style="display:flex;gap:10px;border:1px solid #E7EAEF;background:#F1F2F4;padding:11px 12px">
-<span style="flex:none;font:700 11px Inter;color:#8A93A3;font-variant-numeric:tabular-nums;min-width:18px">{{ st.n }}</span>
+<span style="flex:none;font:700 11px Inter;color:#636C7C;font-variant-numeric:tabular-nums;min-width:18px">{{ st.n }}</span>
 <div style="flex:1;min-width:0">
 <div style="font:700 11px/14px Inter;color:#0C1524">{{ st.label }}</div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:2px">{{ st.where }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:2px">{{ st.where }}</div>
 <div style="border-left:2px solid #8A93A3;padding-left:8px;margin-top:8px;font:500 11px/14px Inter;color:#5A6372">{{ st.must }}</div>
 </div>
 </div>
 <div style="{{ st.arrow }}">
 <span style="width:1px;height:12px;background:#E7EAEF"></span>
-<span style="font:400 11px Inter;color:#8A93A3">&#9660;</span>
+<span style="font:400 11px Inter;color:#636C7C">&#9660;</span>
 </div>
 </div>
 </sc-for>
@@ -489,7 +489,7 @@ button:active,[role=button]:active{transform:none}
 <div style="border:1px solid #E7EAEF;background:#FFFFFF;padding:12px">
 <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
 <span style="font:500 11px/14px Inter;letter-spacing:.06em;color:#0C1524">{{ b.title }}</span>
-<span style="font:400 11px Inter;color:#8A93A3">{{ b.route }}</span>
+<span style="font:400 11px Inter;color:#636C7C">{{ b.route }}</span>
 </div>
 <div style="display:flex;flex-direction:column;gap:5px;margin-top:10px">
 <sc-for list="{{ b.rows }}" as="r" hint-placeholder-count="5">
@@ -497,7 +497,7 @@ button:active,[role=button]:active{transform:none}
 <sc-for list="{{ r.cols }}" as="c" hint-placeholder-count="1">
 <div style="{{ c.box }}">
 <div style="font:700 11px/14px Inter;letter-spacing:.05em;color:#5A6372">{{ c.label }}</div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:3px">{{ c.job }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:3px">{{ c.job }}</div>
 <sc-if value="{{ c.law }}" hint-placeholder-val="{{ false }}">
 <div style="display:inline-block;margin-top:6px;border:1px solid #E7EAEF;padding:2px 5px;font:600 11px Inter;letter-spacing:.04em;color:#5A6372">{{ c.law }}</div>
 </sc-if>
@@ -531,7 +531,7 @@ button:active,[role=button]:active{transform:none}
 <div style="background:#fff;border:1px solid #E3E7ED;border-radius:16px;padding:14px">
 <div style="display:flex;align-items:center;gap:10px">
 <span style="flex:1;min-width:0;font:700 13px Inter;color:#0C1524">{{ b.title }}</span>
-<span style="flex:none;font:400 11px Inter;color:#8A93A3;font-variant-numeric:tabular-nums">{{ b.count }}</span>
+<span style="flex:none;font:400 11px Inter;color:#636C7C;font-variant-numeric:tabular-nums">{{ b.count }}</span>
 </div>
 <div style="display:flex;gap:8px;margin-top:12px">
 <sc-for list="{{ b.items }}" as="p" hint-placeholder-count="3">
@@ -632,7 +632,7 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ b.batch }}" hint-placeholder-val="{{ false }}">
 <div style="{{ b.batchWrap }}">
 <div style="flex:1;min-width:0">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3">{{ b.batchKicker }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C">{{ b.batchKicker }}</div>
 <div style="{{ b.batchStyle }}">{{ b.batch }}</div>
 </div>
 <button onClick="{{ b.onBatch }}" style="flex:none;height:36px;padding:0 13px;border:1px solid #E3E7ED;border-radius:10px;background:#fff;color:#0B63CE;font:600 13px Inter;cursor:pointer">{{ b.batchAct }}</button>
@@ -659,7 +659,7 @@ button:active,[role=button]:active{transform:none}
 <button onPointerDown="{{ b.decDown }}" onPointerUp="{{ b.holdEnd }}" onPointerLeave="{{ b.holdEnd }}" onPointerCancel="{{ b.holdEnd }}" onBlur="{{ b.holdEnd }}" disabled="{{ b.decDis }}" aria-label="Less" style="{{ b.decStyle }}">−</button>
 <div style="flex:1">
 <div style="font:700 17px/24px Inter;color:#0C1524;font-variant-numeric:tabular-nums">{{ b.qtyText }}</div>
-<div style="font:400 11px Inter;color:#8A93A3;margin-top:3px;font-variant-numeric:tabular-nums">{{ b.qtySub }}</div>
+<div style="font:400 11px Inter;color:#636C7C;margin-top:3px;font-variant-numeric:tabular-nums">{{ b.qtySub }}</div>
 </div>
 <button onPointerDown="{{ b.incDown }}" onPointerUp="{{ b.holdEnd }}" onPointerLeave="{{ b.holdEnd }}" onPointerCancel="{{ b.holdEnd }}" onBlur="{{ b.holdEnd }}" disabled="{{ b.incDis }}" aria-label="More" style="{{ b.incStyle }}">+</button>
 <sc-if value="{{ b.quickLabel }}" hint-placeholder-val="{{ false }}">
@@ -675,7 +675,7 @@ button:active,[role=button]:active{transform:none}
 </div>
 </sc-if>
 <sc-if value="{{ b.foot }}" hint-placeholder-val="{{ false }}">
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:11px">{{ b.foot }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:11px">{{ b.foot }}</div>
 </sc-if>
 </div>
 </sc-if>
@@ -709,7 +709,7 @@ button:active,[role=button]:active{transform:none}
 <span style="font:700 15px Inter;color:#0C1524">{{ b.totalLabel }}</span>
 <span style="font:700 22px Inter;color:#0C1524;letter-spacing:-.01em;font-variant-numeric:tabular-nums">{{ b.total }}</span>
 </div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:11px">{{ b.foot }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:11px">{{ b.foot }}</div>
 </div>
 </sc-if>
 
@@ -717,11 +717,11 @@ button:active,[role=button]:active{transform:none}
 <div style="background:#fff;border:1px solid #E3E7ED;border-radius:16px;padding:2px 15px">
 <sc-for list="{{ b.items }}" as="r" hint-placeholder-count="3">
 <div style="{{ r.row }}">
-<span style="flex:none;width:26px;font:700 11px Inter;color:#8A93A3;font-variant-numeric:tabular-nums;padding-top:2px">{{ r.n }}</span>
+<span style="flex:none;width:26px;font:700 11px Inter;color:#636C7C;font-variant-numeric:tabular-nums;padding-top:2px">{{ r.n }}</span>
 <div style="flex:1;min-width:0">
 <div style="font:600 13px/18px Inter;color:#0C1524">{{ r.title }}</div>
 <div style="font:400 11px/14px Inter;color:#5A6372;margin-top:2px;font-variant-numeric:tabular-nums">{{ r.sub }}</div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:2px">{{ r.prov }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:2px">{{ r.prov }}</div>
 </div>
 <span style="flex:none;font:600 11px Inter;color:#5A6372;font-variant-numeric:tabular-nums;padding-top:2px">{{ r.meta }}</span>
 </div>
@@ -733,16 +733,16 @@ button:active,[role=button]:active{transform:none}
 <div style="background:#fff;border:1px solid #E3E7ED;border-radius:16px;padding:15px">
 <div style="display:flex;align-items:center;gap:10px">
 <span style="flex:1;min-width:0;font:700 15px Inter;color:#0C1524">{{ b.name }}</span>
-<span style="flex:none;font:400 11px Inter;color:#8A93A3;font-variant-numeric:tabular-nums">{{ b.at }}</span>
+<span style="flex:none;font:400 11px Inter;color:#636C7C;font-variant-numeric:tabular-nums">{{ b.at }}</span>
 </div>
 <div style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:11px 12px;background:#F6F7F9;border-radius:13px">
 <div style="flex:1;min-width:0">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3">PRESCRIBED</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C">PRESCRIBED</div>
 <div style="font:600 13px/18px Inter;color:#0C1524;margin-top:4px">{{ b.from }}</div>
 </div>
 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8A93A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M4 12h15M14 7l5 5-5 5"></path></svg>
 <div style="flex:1;min-width:0">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3">PROPOSED</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C">PROPOSED</div>
 <div style="font:600 13px/18px Inter;color:#0C1524;margin-top:4px">{{ b.to }}</div>
 </div>
 </div>
@@ -751,7 +751,7 @@ button:active,[role=button]:active{transform:none}
 <button onClick="{{ b.onDecline }}" style="flex:1;height:46px;border:1px solid #E3E7ED;border-radius:10px;background:#fff;color:#5A6372;font:600 13px Inter;cursor:pointer">Decline</button>
 <button onClick="{{ b.onApprove }}" style="flex:1.4;height:46px;border:0;border-radius:10px;background:#0C1524;color:#fff;font:700 13px Inter;cursor:pointer">Approve — sign amendment</button>
 </div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:11px">{{ b.foot }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:11px">{{ b.foot }}</div>
 </div>
 </sc-if>
 
@@ -774,9 +774,9 @@ button:active,[role=button]:active{transform:none}
 <div role="button" onClick="{{ e.onOpen }}" style="border:1px solid #E3E7ED;border-radius:10px;overflow:hidden;cursor:pointer;background:#fff">
 <div style="{{ e.head }}"><span style="{{ e.titleStyle }}">{{ e.title }}</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A93A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M9 6l6 6-6 6"></path></svg></div>
 <sc-for list="{{ e.rows }}" as="r" hint-placeholder-count="0">
-<div style="{{ r.row }}"><span style="flex:none;width:76px;font:500 11px/16px Inter;letter-spacing:.06em;color:#8A93A3;text-transform:uppercase;padding-top:1px">{{ r.l }}</span><span style="flex:1;font:400 13px/18px Inter;color:#0C1524;font-variant-numeric:tabular-nums">{{ r.v }}</span></div>
+<div style="{{ r.row }}"><span style="flex:none;width:76px;font:500 11px/16px Inter;letter-spacing:.06em;color:#636C7C;text-transform:uppercase;padding-top:1px">{{ r.l }}</span><span style="flex:1;font:400 13px/18px Inter;color:#0C1524;font-variant-numeric:tabular-nums">{{ r.v }}</span></div>
 </sc-for>
-<div style="padding:8px 12px;border-top:1px solid #E7EAEF;font:400 11px/14px Inter;color:#8A93A3">{{ e.src }}</div>
+<div style="padding:8px 12px;border-top:1px solid #E7EAEF;font:400 11px/14px Inter;color:#636C7C">{{ e.src }}</div>
 </div>
 </sc-for>
 </div>
@@ -789,7 +789,7 @@ button:active,[role=button]:active{transform:none}
 </sc-if>
 <sc-if value="{{ m.srcRows }}" hint-placeholder-val="{{ false }}">
 <div style="margin-top:10px;border-top:1px solid #E3E7ED;padding-top:4px">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;padding:6px 0 4px">BASED ON</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;padding:6px 0 4px">BASED ON</div>
 <sc-for list="{{ m.srcRows }}" as="vr" hint-placeholder-count="0">
 <div role="button" onClick="{{ vr.onClick }}" style="display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid #F1F2F4;cursor:pointer;min-height:44px">
 <div style="flex:1;min-width:0">
@@ -836,7 +836,7 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ r.local }}" hint-placeholder-val="{{ false }}"><span style="flex:none;padding:3px 8px;border-radius:10px;background:#EAF1FD;color:#0B63CE;font:500 11px/14px Inter">{{ r.local }}</span></sc-if>
 </div>
 <div style="font:400 13px/18px Inter;color:#5A6372;margin-top:2px">{{ r.mol }}</div>
-<div style="font:400 13px/18px Inter;color:#8A93A3;margin-top:1px">{{ r.co }} · {{ r.pack }}</div>
+<div style="font:400 13px/18px Inter;color:#636C7C;margin-top:1px">{{ r.co }} · {{ r.pack }}</div>
 <sc-if value="{{ r.mrp }}" hint-placeholder-val="{{ false }}">
 <div style="display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:6px;font:500 13px/18px Inter;color:#0C1524;font-variant-numeric:tabular-nums">
 <span>{{ r.mrp }}</span><span>{{ r.ptr }}</span><span style="color:#5A6372">{{ r.scheme }}</span>
@@ -868,8 +868,8 @@ button:active,[role=button]:active{transform:none}
 <div style="{{ c.wrap }}">
 <div style="display:flex;align-items:flex-start;gap:8px">
 <div style="flex:1;min-width:0;display:flex;align-items:center;gap:5px;font:600 11px/14px Inter;color:#5A6372;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.who }}<svg width="12" height="12" viewBox="0 0 24 24" fill="#0B63CE" style="flex:none"><path d="M12 2l2.4 2.1 3.2-.4 1 3.1 2.8 1.6-1.2 3 1.2 3-2.8 1.6-1 3.1-3.2-.4L12 22l-2.4-2.1-3.2.4-1-3.1-2.8-1.6 1.2-3-1.2-3 2.8-1.6 1-3.1 3.2.4z"></path><path d="M8.5 12.5l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-<span style="flex:none;font:400 11px Inter;color:#8A93A3">{{ c.ago }}</span>
-<button onClick="{{ c.onMore }}" aria-label="More" style="flex:none;width:28px;height:24px;margin:-4px -8px -4px 0;border:0;background:transparent;color:#8A93A3;font:700 13px Inter;cursor:pointer;letter-spacing:.1em">⋯</button>
+<span style="flex:none;font:400 11px Inter;color:#636C7C">{{ c.ago }}</span>
+<button onClick="{{ c.onMore }}" aria-label="More" style="flex:none;width:28px;height:24px;margin:-4px -8px -4px 0;border:0;background:transparent;color:#636C7C;font:700 13px Inter;cursor:pointer;letter-spacing:.1em">⋯</button>
 </div>
 <div style="font:400 13px/18px Inter;color:#0C1524;margin-top:6px">{{ c.text }}</div>
 <div style="display:flex;align-items:center;gap:14px;margin-top:8px">
@@ -882,8 +882,8 @@ button:active,[role=button]:active{transform:none}
 <div style="padding:10px 0">
 <div style="display:flex;align-items:flex-start;gap:8px">
 <div style="flex:1;min-width:0;display:flex;align-items:center;gap:5px;font:600 11px/14px Inter;color:#5A6372;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.who }}<svg width="12" height="12" viewBox="0 0 24 24" fill="#0B63CE" style="flex:none"><path d="M12 2l2.4 2.1 3.2-.4 1 3.1 2.8 1.6-1.2 3 1.2 3-2.8 1.6-1 3.1-3.2-.4L12 22l-2.4-2.1-3.2.4-1-3.1-2.8-1.6 1.2-3-1.2-3 2.8-1.6 1-3.1 3.2.4z"></path><path d="M8.5 12.5l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-<span style="flex:none;font:400 11px Inter;color:#8A93A3">{{ r.ago }}</span>
-<button onClick="{{ r.onMore }}" aria-label="More" style="flex:none;width:28px;height:24px;margin:-4px -8px -4px 0;border:0;background:transparent;color:#8A93A3;font:700 13px Inter;cursor:pointer;letter-spacing:.1em">⋯</button>
+<span style="flex:none;font:400 11px Inter;color:#636C7C">{{ r.ago }}</span>
+<button onClick="{{ r.onMore }}" aria-label="More" style="flex:none;width:28px;height:24px;margin:-4px -8px -4px 0;border:0;background:transparent;color:#636C7C;font:700 13px Inter;cursor:pointer;letter-spacing:.1em">⋯</button>
 </div>
 <div style="font:400 13px/18px Inter;color:#0C1524;margin-top:5px">{{ r.text }}</div>
 <button onClick="{{ r.onHelp }}" style="{{ r.helpStyle }}">Helpful · {{ r.help }}</button>
@@ -911,7 +911,7 @@ button:active,[role=button]:active{transform:none}
 </div>
 <sc-if value="{{ c.photo }}" hint-placeholder-val="{{ false }}"><div style="{{ c.thumb }}"></div></sc-if>
 </div>
-<div style="font:400 11px Inter;color:#8A93A3;margin-top:9px">{{ c.foot }}</div>
+<div style="font:400 11px Inter;color:#636C7C;margin-top:9px">{{ c.foot }}</div>
 </div>
 </sc-for>
 </div>
@@ -956,10 +956,10 @@ button:active,[role=button]:active{transform:none}
 <div style="display:flex;gap:10px;overflow-x:auto;margin:0 -16px;padding:0 16px 4px;scrollbar-width:none">
 <sc-for list="{{ b.items }}" as="c" hint-placeholder-count="3">
 <div role="button" onClick="{{ c.onClick }}" style="flex:none;width:200px;background:#fff;border:1px solid #E3E7ED;border-radius:16px;padding:12px;cursor:pointer">
-<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span style="padding:3px 7px;border-radius:10px;background:#EAF1FD;color:#0B63CE;font:500 11px/14px Inter;letter-spacing:.06em">{{ c.tagU }}</span><sc-if value="{{ c.sponsored }}" hint-placeholder-val="{{ false }}"><span style="font:500 11px Inter;color:#8A93A3">Sponsored</span></sc-if><sc-if value="{{ c.local }}" hint-placeholder-val="{{ false }}"><span style="padding:3px 7px;border-radius:10px;background:#F1F2F4;color:#5A6372;font:600 11px Inter">Telangana</span></sc-if></div>
+<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span style="padding:3px 7px;border-radius:10px;background:#EAF1FD;color:#0B63CE;font:500 11px/14px Inter;letter-spacing:.06em">{{ c.tagU }}</span><sc-if value="{{ c.sponsored }}" hint-placeholder-val="{{ false }}"><span style="font:500 11px Inter;color:#636C7C">Sponsored</span></sc-if><sc-if value="{{ c.local }}" hint-placeholder-val="{{ false }}"><span style="padding:3px 7px;border-radius:10px;background:#F1F2F4;color:#5A6372;font:600 11px Inter">Telangana</span></sc-if></div>
 <div style="font:700 13px/18px Inter;color:#0C1524;margin-top:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.brand }}</div>
 <div style="font:400 11px/14px Inter;color:#5A6372;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.mol }}</div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.co }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.co }}</div>
 <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px"><span style="font:700 15px Inter;color:#067647;font-variant-numeric:tabular-nums">{{ c.margin }}</span><span style="font:600 13px Inter;color:#0B63CE">View</span></div>
 </div>
 </sc-for>
@@ -974,12 +974,12 @@ button:active,[role=button]:active{transform:none}
 <div style="flex:1;min-width:0">
 <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span style="font:700 15px/22px Inter;color:#0C1524">{{ p.brand }}</span><sc-if value="{{ p.sched }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 6px;border-radius:5px;border:1px solid #E3E7ED;font:700 11px Inter;color:#5A6372">{{ p.sched }}</span></sc-if><sc-if value="{{ p.cold }}" hint-placeholder-val="{{ false }}"><span style="font:600 11px Inter;color:#0B63CE">❄</span></sc-if><sc-if value="{{ p.local }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 7px;border-radius:10px;background:#F1F2F4;color:#5A6372;font:600 11px Inter">Telangana</span></sc-if></div>
 <div style="font:400 13px/18px Inter;color:#5A6372;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.mol }}</div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.co }} · {{ p.pack }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.co }} · {{ p.pack }}</div>
 </div>
-<div style="flex:none;text-align:right"><div style="{{ p.marginStyle }}">{{ p.margin }}</div><div style="font:500 11px Inter;color:#8A93A3">margin</div></div>
+<div style="flex:none;text-align:right"><div style="{{ p.marginStyle }}">{{ p.margin }}</div><div style="font:500 11px Inter;color:#636C7C">margin</div></div>
 </div>
 <div style="display:flex;align-items:center;gap:10px;margin-top:10px;font:500 11px Inter;color:#5A6372;font-variant-numeric:tabular-nums">
-<span>PTR {{ p.ptr }}</span><span style="color:#8A93A3">MRP {{ p.mrp }}</span>
+<span>PTR {{ p.ptr }}</span><span style="color:#636C7C">MRP {{ p.mrp }}</span>
 <sc-if value="{{ p.scheme }}" hint-placeholder-val="{{ false }}"><span style="padding:3px 7px;border-radius:10px;background:#EAF1FD;color:#0B63CE;font:700 11px Inter">{{ p.scheme }}</span></sc-if>
 <span style="{{ p.etaStyle }}">{{ p.eta }}</span>
 <span style="{{ p.stepWrap }}"><button onClick="{{ p.onDec }}" style="{{ p.stepBtn }}">−</button><span style="min-width:22px;text-align:center;font:700 13px Inter;color:#0C1524">{{ p.qty }}</span><button onClick="{{ p.onInc }}" style="{{ p.stepBtn }}">+</button></span>
@@ -1105,7 +1105,7 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ r.nabl }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 7px;border-radius:10px;background:#E8F6EF;color:#067647;font:700 11px Inter">NABL</span></sc-if>
 <sc-if value="{{ r.home }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 7px;border-radius:10px;background:#F1F2F4;color:#5A6372;font:600 11px Inter">Home collection</span></sc-if>
 <sc-if value="{{ r.closed }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 7px;border-radius:10px;background:#FFF6E6;color:#B54708;font:600 11px Inter">Closed today</span></sc-if>
-<sc-if value="{{ r.upd }}" hint-placeholder-val="{{ false }}"><span style="font:500 11px Inter;color:#8A93A3">{{ r.upd }}</span></sc-if>
+<sc-if value="{{ r.upd }}" hint-placeholder-val="{{ false }}"><span style="font:500 11px Inter;color:#636C7C">{{ r.upd }}</span></sc-if>
 </div>
 </div>
 </sc-for>
@@ -1128,7 +1128,7 @@ button:active,[role=button]:active{transform:none}
 
 <sc-if value="{{ b.isReason }}" hint-placeholder-val="{{ false }}">
 <div style="background:#FFFFFF;border:1px solid #E3E7ED;border-radius:16px;padding:16px">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;text-transform:uppercase">{{ b.label }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;text-transform:uppercase">{{ b.label }}</div>
 <div style="font:400 15px/22px Inter;color:#0C1524;margin-top:8px">{{ b.title }}</div>
 <sc-if value="{{ b.facts }}" hint-placeholder-val="{{ false }}">
 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
@@ -1145,7 +1145,7 @@ button:active,[role=button]:active{transform:none}
 <sc-for list="{{ b.items }}" as="k" hint-placeholder-count="3">
 <span style="display:flex;align-items:center;gap:6px">
 <svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="{{ k.color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ k.path }}"></path></svg>
-<span style="font:400 11px/14px Inter;color:#8A93A3">{{ k.label }}</span>
+<span style="font:400 11px/14px Inter;color:#636C7C">{{ k.label }}</span>
 </span>
 </sc-for>
 </div>
@@ -1166,13 +1166,13 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ b.isAffixField }}" hint-placeholder-val="{{ false }}">
 <div>
 <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
-<span style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;text-transform:uppercase">{{ b.label }}<sc-if value="{{ b.star }}" hint-placeholder-val="{{ false }}"><span style="color:#B3261E;margin-left:2px">*</span></sc-if></span>
-<sc-if value="{{ b.hint }}" hint-placeholder-val="{{ false }}"><span style="font:400 13px/18px Inter;color:#8A93A3">{{ b.hint }}</span></sc-if>
+<span style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;text-transform:uppercase">{{ b.label }}<sc-if value="{{ b.star }}" hint-placeholder-val="{{ false }}"><span style="color:#B3261E;margin-left:2px">*</span></sc-if></span>
+<sc-if value="{{ b.hint }}" hint-placeholder-val="{{ false }}"><span style="font:400 13px/18px Inter;color:#636C7C">{{ b.hint }}</span></sc-if>
 </div>
 <div style="{{ b.boxStyle }}">
 <span style="flex:none;font:500 15px/22px Inter;color:#5A6372;font-variant-numeric:tabular-nums">{{ b.prefix }}</span>
 <input value="{{ b.value }}" onChange="{{ b.onInput }}" placeholder="{{ b.placeholder }}" inputMode="{{ b.mode }}" style="flex:1;min-width:0;border:0;outline:none;background:transparent;font:500 15px/22px Inter;color:#0C1524;font-variant-numeric:tabular-nums"></input>
-<sc-if value="{{ b.suffix }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:400 13px/18px Inter;color:#8A93A3">{{ b.suffix }}</span></sc-if>
+<sc-if value="{{ b.suffix }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:400 13px/18px Inter;color:#636C7C">{{ b.suffix }}</span></sc-if>
 </div>
 <sc-if value="{{ b.error }}" hint-placeholder-val="{{ false }}">
 <div style="font:400 13px/18px Inter;color:#B3261E;margin-top:6px">{{ b.error }}</div>
@@ -1184,7 +1184,7 @@ button:active,[role=button]:active{transform:none}
 <div style="display:flex;gap:12px">
 <sc-for list="{{ b.items }}" as="f" hint-placeholder-count="2">
 <div style="flex:1;min-width:0">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;text-transform:uppercase">{{ f.label }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;text-transform:uppercase">{{ f.label }}</div>
 <input value="{{ f.value }}" onChange="{{ f.onInput }}" placeholder="{{ f.placeholder }}" inputMode="{{ f.mode }}" style="width:100%;box-sizing:border-box;margin-top:6px;height:48px;padding:0 14px;border:1px solid #E3E7ED;border-radius:16px;background:#FFFFFF;outline:none;font:400 15px/22px Inter;color:#0C1524"></input>
 </div>
 </sc-for>
@@ -1194,7 +1194,7 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ b.isSelect }}" hint-placeholder-val="{{ false }}">
 <button onClick="{{ b.onOpen }}" style="display:flex;align-items:center;gap:12px;width:100%;min-height:52px;padding:10px 16px;border:1px solid #E3E7ED;border-radius:16px;background:#FFFFFF;cursor:pointer;text-align:left">
 <span style="flex:1;min-width:0">
-<span style="display:block;font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;text-transform:uppercase">{{ b.label }}</span>
+<span style="display:block;font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;text-transform:uppercase">{{ b.label }}</span>
 <span style="{{ b.valueStyle }}">{{ b.value }}</span>
 </span>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="#8A93A3" style="flex:none"><path d="M7 10l5 5 5-5z"></path></svg>
@@ -1239,11 +1239,11 @@ button:active,[role=button]:active{transform:none}
 <sc-for list="{{ b.secs }}" as="sec" hint-placeholder-count="6">
 <div>
 <div style="position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:8px;min-height:40px;padding:0 4px 0 4px;background:#F6F7F9">
-<span style="flex:1;font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;text-transform:uppercase">{{ sec.title }}</span>
+<span style="flex:1;font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;text-transform:uppercase">{{ sec.title }}</span>
 <sc-if value="{{ sec.onAdd }}" hint-placeholder-val="{{ false }}"><button onClick="{{ sec.onAdd }}" aria-label="{{ sec.addLabel }}" style="flex:none;height:40px;padding:0 6px;border:0;background:transparent;color:#0B63CE;font:600 14px/20px Inter;cursor:pointer;display:flex;align-items:center;gap:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B63CE" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Add</button></sc-if>
 </div>
 <div style="background:#FFFFFF;border:1px solid #E3E7ED;border-radius:16px;overflow:hidden">
-<sc-if value="{{ sec.empty }}" hint-placeholder-val="{{ false }}"><div style="padding:14px 16px;font:400 15px/22px Inter;color:#8A93A3">Nothing captured yet</div></sc-if>
+<sc-if value="{{ sec.empty }}" hint-placeholder-val="{{ false }}"><div style="padding:14px 16px;font:400 15px/22px Inter;color:#636C7C">Nothing captured yet</div></sc-if>
 <sc-for list="{{ sec.rows }}" as="r" hint-placeholder-count="2">
 <div style="{{ r.outer }}">
 <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding-right:20px;background:#FBEAE9;color:#B3261E;font:600 14px/20px Inter">Delete</div>
@@ -1251,7 +1251,7 @@ button:active,[role=button]:active{transform:none}
 <div style="flex:1;min-width:0">
 <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
 <span style="{{ r.titleStyle }}">{{ r.title }}</span>
-<sc-if value="{{ r.edited }}" hint-placeholder-val="{{ false }}"><span style="font:500 11px/14px Inter;color:#8A93A3">edited</span></sc-if>
+<sc-if value="{{ r.edited }}" hint-placeholder-val="{{ false }}"><span style="font:500 11px/14px Inter;color:#636C7C">edited</span></sc-if>
 </div>
 <sc-if value="{{ r.sub }}" hint-placeholder-val="{{ false }}"><div style="font:400 13px/18px Inter;color:#5A6372;margin-top:1px">{{ r.sub }}</div></sc-if>
 <sc-if value="{{ r.tags }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px"><sc-for list="{{ r.tags }}" as="tg" hint-placeholder-count="2"><span style="{{ tg.style }}">{{ tg.label }}</span></sc-for></div></sc-if>
@@ -1292,9 +1292,9 @@ button:active,[role=button]:active{transform:none}
 <div style="background:#FFFFFF;border:1px solid #E3E7ED;border-radius:16px;padding:16px;display:flex;gap:12px">
 <span style="flex:none;width:3px;align-self:stretch;border-radius:2px;background:#0B63CE"></span>
 <div style="flex:1;min-width:0">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3">{{ b.kicker }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C">{{ b.kicker }}</div>
 <div style="font:500 15px/22px Inter;color:#0C1524;margin-top:8px">{{ b.text }}</div>
-<div style="font:400 13px/18px Inter;color:#8A93A3;margin-top:8px">{{ b.src }}</div>
+<div style="font:400 13px/18px Inter;color:#636C7C;margin-top:8px">{{ b.src }}</div>
 </div>
 </div>
 </sc-if>
@@ -1311,7 +1311,7 @@ button:active,[role=button]:active{transform:none}
 <span style="{{ b.ava }}">{{ b.initials }}</span>
 <span style="flex:1;min-width:0">
 <span style="display:block;font:600 17px/24px Inter;color:#0C1524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ b.name }}</span>
-<span style="display:block;font:400 13px/18px Inter;color:#8A93A3">{{ b.sub }}</span>
+<span style="display:block;font:400 13px/18px Inter;color:#636C7C">{{ b.sub }}</span>
 </span>
 <sc-if value="{{ b.action }}" hint-placeholder-val="{{ false }}">
 <button onClick="{{ b.onAction }}" style="flex:none;height:36px;padding:0 14px;border:1px solid #E3E7ED;border-radius:10px;background:#FFFFFF;color:#0B63CE;font:600 13px/18px Inter;cursor:pointer">{{ b.action }}</button>
@@ -1322,7 +1322,7 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ b.isCaseId }}" hint-placeholder-val="{{ false }}">
 <div style="display:flex;align-items:center;gap:10px;padding:0 2px">
 <div style="flex:none;width:36px;height:36px;border-radius:16px;background:#EAF1FD;display:flex;align-items:center;justify-content:center;font:700 13px Inter;color:#0B63CE">{{ b.initials }}</div>
-<div style="flex:1;min-width:0"><div style="font:600 13px Inter;color:#0C1524;display:flex;align-items:center;gap:5px">{{ b.doc }} <svg width="13" height="13" viewBox="0 0 24 24" fill="#0B63CE"><path d="M12 2l2.4 2.1 3.2-.4.9 3.1 2.8 1.6-1.3 2.9 1.3 2.9-2.8 1.6-.9 3.1-3.2-.4L12 22l-2.4-2.1-3.2.4-.9-3.1-2.8-1.6 1.3-2.9-1.3-2.9 2.8-1.6.9-3.1 3.2.4z"></path><path d="M8.5 12.5l2.3 2.3 4.7-4.8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div style="font:400 11px Inter;color:#8A93A3">{{ b.sub }}</div></div>
+<div style="flex:1;min-width:0"><div style="font:600 13px Inter;color:#0C1524;display:flex;align-items:center;gap:5px">{{ b.doc }} <svg width="13" height="13" viewBox="0 0 24 24" fill="#0B63CE"><path d="M12 2l2.4 2.1 3.2-.4.9 3.1 2.8 1.6-1.3 2.9 1.3 2.9-2.8 1.6-.9 3.1-3.2-.4L12 22l-2.4-2.1-3.2.4-.9-3.1-2.8-1.6 1.3-2.9-1.3-2.9 2.8-1.6.9-3.1 3.2.4z"></path><path d="M8.5 12.5l2.3 2.3 4.7-4.8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div style="font:400 11px Inter;color:#636C7C">{{ b.sub }}</div></div>
 </div>
 </sc-if>
 
@@ -1344,8 +1344,8 @@ button:active,[role=button]:active{transform:none}
 <span style="font:500 13px/18px Inter;color:#5A6372">{{ b.ev }}</span>
 <sc-if value="{{ b.preprint }}" hint-placeholder-val="{{ false }}"><span style="padding:3px 8px;border-radius:10px;background:#FFF6E6;color:#B54708;font:600 11px Inter">Preprint</span></sc-if>
 </div>
-<div style="font:400 13px/18px Inter;color:#8A93A3;margin-top:6px">{{ b.src }}</div>
-<sc-if value="{{ b.authors }}" hint-placeholder-val="{{ false }}"><div style="font:400 13px/18px Inter;color:#8A93A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ b.authors }}</div></sc-if>
+<div style="font:400 13px/18px Inter;color:#636C7C;margin-top:6px">{{ b.src }}</div>
+<sc-if value="{{ b.authors }}" hint-placeholder-val="{{ false }}"><div style="font:400 13px/18px Inter;color:#636C7C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ b.authors }}</div></sc-if>
 </div>
 </sc-if>
 
@@ -1380,7 +1380,7 @@ button:active,[role=button]:active{transform:none}
 
 <sc-if value="{{ b.isTypeBlock }}" hint-placeholder-val="{{ false }}">
 <div style="background:#fff;border:1px solid #E3E7ED;border-radius:16px;padding:4px 15px">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;padding:12px 0 4px">{{ b.title }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;padding:12px 0 4px">{{ b.title }}</div>
 <sc-for list="{{ b.rows }}" as="r" hint-placeholder-count="4">
 <div style="{{ r.row }}">
 <span style="{{ r.accent }}"></span>
@@ -1424,11 +1424,11 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ r.h1 }}" hint-placeholder-val="{{ false }}"><span style="flex:none;padding:1px 5px;border-radius:4px;border:1px solid #E3E7ED;font:700 11px Inter;color:#5A6372">H1</span></sc-if>
 <sc-if value="{{ r.cold }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:600 11px Inter;color:#0B63CE">❄</span></sc-if></div>
 <div style="font:400 11px/14px Inter;color:#5A6372;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.mol }}</div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:3px;font-variant-numeric:tabular-nums">{{ r.sold }} · exp {{ r.exp }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:3px;font-variant-numeric:tabular-nums">{{ r.sold }} · exp {{ r.exp }}</div>
 </div>
 <div style="flex:none;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:4px">
 <div style="{{ r.qtyStyle }}">{{ r.qty }}</div>
-<div style="font:400 11px Inter;color:#8A93A3;font-variant-numeric:tabular-nums">{{ r.min }}</div>
+<div style="font:400 11px Inter;color:#636C7C;font-variant-numeric:tabular-nums">{{ r.min }}</div>
 <sc-if value="{{ r.st }}" hint-placeholder-val="{{ false }}"><span style="{{ r.stStyle }}">{{ r.st }}</span></sc-if>
 </div>
 </div>
@@ -1447,7 +1447,7 @@ button:active,[role=button]:active{transform:none}
 </div>
 </sc-for>
 </div>
-<div style="font:400 11px Inter;color:#8A93A3;margin-top:10px">{{ b.cap }}</div>
+<div style="font:400 11px Inter;color:#636C7C;margin-top:10px">{{ b.cap }}</div>
 </div>
 </sc-if>
 
@@ -1463,19 +1463,19 @@ button:active,[role=button]:active{transform:none}
 <div style="display:flex;flex-direction:column;gap:10px">
 <sc-for list="{{ b.items }}" as="p" hint-placeholder-count="3">
 <sc-if value="{{ p.divider }}" hint-placeholder-val="{{ false }}">
-<div style="display:flex;align-items:center;gap:10px;padding:4px 2px 0"><span style="font:600 11px Inter;letter-spacing:.06em;color:#8A93A3;white-space:nowrap">{{ p.divider }}</span><span style="flex:1;height:1px;background:#E3E7ED"></span></div>
+<div style="display:flex;align-items:center;gap:10px;padding:4px 2px 0"><span style="font:600 11px Inter;letter-spacing:.06em;color:#636C7C;white-space:nowrap">{{ p.divider }}</span><span style="flex:1;height:1px;background:#E3E7ED"></span></div>
 </sc-if>
 <sc-if value="{{ p.stat }}" hint-placeholder-val="{{ false }}">
 <div role="button" onClick="{{ p.onClick }}" style="background:#0C1524;border-radius:16px;padding:14px 16px;cursor:pointer;display:flex;align-items:center;gap:14px">
-<div style="flex:1;min-width:0"><div style="font:700 22px/28px Inter;color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums">{{ p.value }}</div><div style="font:400 13px/18px Inter;color:#8A93A3;margin-top:4px">{{ p.label }}</div></div>
-<div style="flex:none;font:600 11px Inter;color:#8A93A3;text-align:right;max-width:96px">{{ p.src }}</div>
+<div style="flex:1;min-width:0"><div style="font:700 22px/28px Inter;color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums">{{ p.value }}</div><div style="font:400 13px/18px Inter;color:#636C7C;margin-top:4px">{{ p.label }}</div></div>
+<div style="flex:none;font:600 11px Inter;color:#636C7C;text-align:right;max-width:96px">{{ p.src }}</div>
 </div>
 </sc-if>
 <sc-if value="{{ p.casePost }}" hint-placeholder-val="{{ false }}">
 <div role="button" onClick="{{ p.onClick }}" style="background:#fff;border:1px solid #E3E7ED;border-radius:16px;padding:13px 14px;cursor:pointer">
 <div style="display:flex;align-items:center;gap:8px">
 <span style="flex:none;padding:4px 8px;border-radius:10px;font:700 11px Inter;letter-spacing:.08em;color:#0B63CE;background:#EAF1FD">CASE</span>
-<span style="flex:1;min-width:0;font:600 13px Inter;color:#0C1524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.doc }} <svg width="12" height="12" viewBox="0 0 24 24" fill="#0B63CE" style="vertical-align:-1px"><path d="M12 2l2.4 2.1 3.2-.4.9 3.1 2.8 1.6-1.3 2.9 1.3 2.9-2.8 1.6-.9 3.1-3.2-.4L12 22l-2.4-2.1-3.2.4-.9-3.1-2.8-1.6 1.3-2.9-1.3-2.9 2.8-1.6.9-3.1 3.2.4z"></path><path d="M8.5 12.5l2.3 2.3 4.7-4.8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg> <span style="font:400 11px Inter;color:#8A93A3">· {{ p.sub }} · {{ p.ago }}</span></span>
+<span style="flex:1;min-width:0;font:600 13px Inter;color:#0C1524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.doc }} <svg width="12" height="12" viewBox="0 0 24 24" fill="#0B63CE" style="vertical-align:-1px"><path d="M12 2l2.4 2.1 3.2-.4.9 3.1 2.8 1.6-1.3 2.9 1.3 2.9-2.8 1.6-.9 3.1-3.2-.4L12 22l-2.4-2.1-3.2.4-.9-3.1-2.8-1.6 1.3-2.9-1.3-2.9 2.8-1.6.9-3.1 3.2.4z"></path><path d="M8.5 12.5l2.3 2.3 4.7-4.8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg> <span style="font:400 11px Inter;color:#636C7C">· {{ p.sub }} · {{ p.ago }}</span></span>
 <button onClick="{{ p.onSave }}" aria-label="Save" style="flex:none;width:32px;height:32px;margin:-6px -8px -6px 0;border:0;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="{{ p.bmFill }}" stroke="{{ p.bmStroke }}" stroke-width="1.9" stroke-linejoin="round"><path d="M6 4h12v17l-6-4-6 4z"></path></svg></button>
 </div>
 <div style="font:700 15px/22px Inter;color:#0C1524;letter-spacing:-.01em;margin-top:9px">{{ p.title }}</div>
@@ -1484,9 +1484,9 @@ button:active,[role=button]:active{transform:none}
 <div style="display:flex;gap:6px;overflow:hidden;margin-top:10px">
 <sc-for list="{{ p.tags }}" as="tg" hint-placeholder-count="3"><button onClick="{{ tg.onClick }}" style="flex:none;height:24px;padding:0 9px;border:0;border-radius:10px;background:#F1F2F4;color:#5A6372;font:500 11px Inter;cursor:pointer;white-space:nowrap">{{ tg.label }}</button></sc-for>
 </div>
-<div style="display:flex;align-items:center;gap:14px;margin-top:10px;font:500 11px Inter;color:#8A93A3">
+<div style="display:flex;align-items:center;gap:14px;margin-top:10px;font:500 11px Inter;color:#636C7C">
 <button onClick="{{ p.onUseful }}" style="display:flex;align-items:center;gap:5px;height:28px;margin:-4px 0;padding:0 4px;border:0;background:transparent;cursor:pointer;color:{{ p.usefulColor }};font:600 11px Inter"><svg width="14" height="14" viewBox="0 0 24 24" fill="{{ p.usefulFill }}" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v11H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h3zM7 10l4-7a2.5 2.5 0 0 1 2.5 2.5V9h5.2a2 2 0 0 1 2 2.3l-1.2 7.4a2 2 0 0 1-2 1.7H7"></path></svg>{{ p.useful }}</button>
-<button onClick="{{ p.onComments }}" style="display:flex;align-items:center;gap:5px;height:28px;margin:-4px 0;padding:0 4px;border:0;background:transparent;cursor:pointer;color:#8A93A3;font:600 11px Inter"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H8l-5 3 1.5-5A8 8 0 1 1 21 12z"></path></svg>{{ p.comments }}</button>
+<button onClick="{{ p.onComments }}" style="display:flex;align-items:center;gap:5px;height:28px;margin:-4px 0;padding:0 4px;border:0;background:transparent;cursor:pointer;color:#636C7C;font:600 11px Inter"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H8l-5 3 1.5-5A8 8 0 1 1 21 12z"></path></svg>{{ p.comments }}</button>
 <sc-if value="{{ p.trend }}" hint-placeholder-val="{{ false }}"><span style="font:700 11px Inter;color:#067647">↗</span></sc-if>
 </div>
 </div>
@@ -1496,7 +1496,7 @@ button:active,[role=button]:active{transform:none}
 <div role="button" onClick="{{ p.onClick }}" style="{{ p.card }}">
 <div style="display:flex;align-items:center;gap:8px">
 <span style="{{ p.typeStyle }}">{{ p.type }}</span>
-<span style="flex:1;font:400 11px Inter;color:#8A93A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right">{{ p.meta }}</span>
+<span style="flex:1;font:400 11px Inter;color:#636C7C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right">{{ p.meta }}</span>
 <button onClick="{{ p.onSave }}" aria-label="Save" style="flex:none;width:32px;height:32px;margin:-6px -8px -6px 0;border:0;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="{{ p.bmFill }}" stroke="{{ p.bmStroke }}" stroke-width="1.9" stroke-linejoin="round"><path d="M6 4h12v17l-6-4-6 4z"></path></svg></button>
 </div>
 <div style="position:relative;margin-top:8px">
@@ -1508,7 +1508,7 @@ button:active,[role=button]:active{transform:none}
 </div>
 <sc-if value="{{ p.take }}" hint-placeholder-val="{{ false }}"><div style="font:400 13px/18px Inter;color:#5A6372;margin-top:6px">{{ p.take }}</div></sc-if>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:9px">
-<span style="font:400 11px/14px Inter;color:#8A93A3">{{ p.ev }}</span>
+<span style="font:400 11px/14px Inter;color:#636C7C">{{ p.ev }}</span>
 <sc-if value="{{ p.preprint }}" hint-placeholder-val="{{ false }}"><span style="flex:none;padding:3px 8px;border-radius:10px;background:#FFF6E6;color:#B54708;font:600 11px Inter">Preprint</span></sc-if>
 <sc-if value="{{ p.inTag }}" hint-placeholder-val="{{ false }}"><span style="flex:none;padding:3px 8px;border-radius:10px;background:#F1F2F4;color:#5A6372;font:600 11px Inter">{{ p.inTag }}</span></sc-if>
 </div>
@@ -1545,12 +1545,12 @@ button:active,[role=button]:active{transform:none}
 <div style="{{ b.heroWrap }}">
 <div style="display:flex;align-items:flex-start;gap:14px">
 <div style="flex:1;min-width:0">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3">{{ b.kicker }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C">{{ b.kicker }}</div>
 <div style="font:700 22px/28px Inter;color:#0C1524;letter-spacing:-.02em;margin-top:7px">{{ b.name }}</div>
 <div style="font:400 13px/18px Inter;color:#5A6372;margin-top:4px">{{ b.sub }}</div>
 </div>
 <div style="flex:none;text-align:right">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3">TOKEN</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C">TOKEN</div>
 <div style="font:700 28px/34px Inter;letter-spacing:-.02em;color:#0C1524;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:5px">{{ b.token }}</div>
 </div>
 </div>
@@ -1583,10 +1583,10 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ q.token }}" hint-placeholder-val="{{ false }}"><span style="{{ q.tokStyle }}">{{ q.token }}</span></sc-if>
 </span>
 <span style="flex:1;min-width:0">
-<span style="display:block;font:600 15px/22px Inter;color:#0C1524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ q.name }} <span style="font:400 13px Inter;color:#8A93A3">{{ q.as }}</span></span>
+<span style="display:block;font:600 15px/22px Inter;color:#0C1524;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ q.name }} <span style="font:400 13px Inter;color:#636C7C">{{ q.as }}</span></span>
 <span style="display:block;font:400 13px/18px Inter;color:#5A6372;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ q.sub }}</span>
 <sc-if value="{{ q.prov }}" hint-placeholder-val="{{ false }}">
-<span style="display:block;font:400 11px/14px Inter;color:#8A93A3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums">{{ q.prov }}</span>
+<span style="display:block;font:400 11px/14px Inter;color:#636C7C;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums">{{ q.prov }}</span>
 </sc-if>
 <sc-if value="{{ q.why }}" hint-placeholder-val="{{ false }}">
 <span style="display:block;font:600 11px/14px Inter;color:#B3261E;margin-top:2px">{{ q.why }}</span>
@@ -1650,13 +1650,13 @@ button:active,[role=button]:active{transform:none}
 <span style="{{ b.marker }}"></span>
 <div style="flex:1;min-width:0">
 <sc-if value="{{ b.conflictOld }}" hint-placeholder-val="{{ false }}">
-<div style="font:500 13px/18px Inter;color:#8A93A3;text-decoration:line-through">{{ b.conflictOld }}</div>
+<div style="font:500 13px/18px Inter;color:#636C7C;text-decoration:line-through">{{ b.conflictOld }}</div>
 </sc-if>
 <div style="display:flex;align-items:baseline;gap:7px;flex-wrap:wrap">
 <span style="{{ b.mainStyle }}">{{ b.main }}</span>
 <span style="{{ b.provStyle }}">{{ b.prov }}</span>
 </div>
-<sc-if value="{{ b.sub }}" hint-placeholder-val="{{ false }}"><div style="font:400 13px/18px Inter;color:#8A93A3;margin-top:1px">{{ b.sub }}</div></sc-if>
+<sc-if value="{{ b.sub }}" hint-placeholder-val="{{ false }}"><div style="font:400 13px/18px Inter;color:#636C7C;margin-top:1px">{{ b.sub }}</div></sc-if>
 <sc-if value="{{ b.hasActions }}" hint-placeholder-val="{{ false }}">
 <div style="display:flex;gap:8px;margin-top:7px">
 <sc-for list="{{ b.actions }}" as="a" hint-placeholder-count="2"><button onClick="{{ a.onClick }}" style="{{ a.style }}">{{ a.label }}</button></sc-for>
@@ -1664,7 +1664,7 @@ button:active,[role=button]:active{transform:none}
 </sc-if>
 </div>
 <sc-if value="{{ b.onRemove }}" hint-placeholder-val="{{ false }}">
-<button onClick="{{ b.onRemove }}" style="flex:none;width:34px;height:34px;border-radius:8px;border:0;background:transparent;color:#8A93A3;font:600 15px Inter;cursor:pointer">×</button>
+<button onClick="{{ b.onRemove }}" style="flex:none;width:34px;height:34px;border-radius:8px;border:0;background:transparent;color:#636C7C;font:600 15px Inter;cursor:pointer">×</button>
 </sc-if>
 </div>
 </sc-if>
@@ -1747,7 +1747,7 @@ button:active,[role=button]:active{transform:none}
 <div style="display:flex;gap:8px">
 <span style="{{ st.rule }}"></span>
 <div>
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3">{{ st.label }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C">{{ st.label }}</div>
 <div style="font:700 17px/24px Inter;color:#0C1524;letter-spacing:-.01em;font-variant-numeric:tabular-nums;margin-top:4px">{{ st.value }}</div>
 </div>
 </div>
@@ -1797,7 +1797,7 @@ button:active,[role=button]:active{transform:none}
 </div>
 <div onPointerDown="{{ b.onScrub }}" onPointerMove="{{ b.onScrubMove }}" onPointerUp="{{ b.onScrubEnd }}" onPointerLeave="{{ b.onScrubEnd }}" style="{{ b.padStyle }}"></div>
 </div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:12px">{{ b.foot }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:12px">{{ b.foot }}</div>
 </div>
 </sc-if>
 
@@ -1855,7 +1855,7 @@ button:active,[role=button]:active{transform:none}
 </div>
 </div>
 <sc-if value="{{ b.removedNote }}" hint-placeholder-val="{{ false }}">
-<div style="margin-top:6px;font:600 11px Inter;color:#8A93A3">{{ b.removedNote }}</div>
+<div style="margin-top:6px;font:600 11px Inter;color:#636C7C">{{ b.removedNote }}</div>
 </sc-if>
 </sc-if>
 
@@ -1883,10 +1883,10 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ x.h1 }}" hint-placeholder-val="{{ false }}"><span style="{{ x.h1Style }}">{{ x.h1 }}</span></sc-if>
 </div>
 <sc-if value="{{ x.quote }}" hint-placeholder-val="{{ false }}">
-<div style="font:400 13px/18px Inter;color:#8A93A3;margin-top:10px;font-style:italic">“{{ x.quote }}”</div>
+<div style="font:400 13px/18px Inter;color:#636C7C;margin-top:10px;font-style:italic">“{{ x.quote }}”</div>
 </sc-if>
 <sc-if value="{{ x.quoteHidden }}" hint-placeholder-val="{{ false }}">
-<button onClick="{{ x.onShowQuote }}" style="border:0;background:transparent;padding:0;margin-top:8px;font:600 11px Inter;color:#8A93A3;cursor:pointer">What was said ▾</button>
+<button onClick="{{ x.onShowQuote }}" style="border:0;background:transparent;padding:0;margin-top:8px;font:600 11px Inter;color:#636C7C;cursor:pointer">What was said ▾</button>
 </sc-if>
 <sc-if value="{{ x.warnTitle }}" hint-placeholder-val="{{ false }}">
 <div style="margin-top:11px;padding:11px 12px;background:{{ x.warnBg }};border-radius:10px">
@@ -1902,7 +1902,7 @@ button:active,[role=button]:active{transform:none}
 </div>
 </sc-if>
 <sc-if value="{{ x.refillNote }}" hint-placeholder-val="{{ false }}">
-<div style="margin-top:9px;font:400 11px/14px Inter;color:#8A93A3">{{ x.refillNote }}</div>
+<div style="margin-top:9px;font:400 11px/14px Inter;color:#636C7C">{{ x.refillNote }}</div>
 </sc-if>
 </div>
 </sc-for>
@@ -1918,7 +1918,7 @@ button:active,[role=button]:active{transform:none}
 <div style="font:700 15px Inter;color:#0C1524">{{ c.label }}</div>
 <div style="font:500 13px Inter;color:#5A6372;margin-top:2px">{{ c.detail }}</div>
 </div>
-<button onClick="{{ c.onRemove }}" style="flex:none;width:32px;height:32px;border-radius:16px;border:1px solid #E3E7ED;background:#fff;color:#8A93A3;font:700 15px Inter;cursor:pointer">×</button>
+<button onClick="{{ c.onRemove }}" style="flex:none;width:32px;height:32px;border-radius:16px;border:1px solid #E3E7ED;background:#fff;color:#636C7C;font:700 15px Inter;cursor:pointer">×</button>
 </div>
 
 </div>
@@ -1960,7 +1960,7 @@ button:active,[role=button]:active{transform:none}
 <button onClick="{{ c.onDrop }}" style="{{ c.dropStyle }}">Drop</button>
 </div>
 </sc-if>
-<div style="font:400 12px/16px Inter;color:#8A93A3;margin-top:8px">{{ c.stateNote }}</div>
+<div style="font:400 12px/16px Inter;color:#636C7C;margin-top:8px">{{ c.stateNote }}</div>
 </div>
 </sc-for>
 </div>
@@ -1985,9 +1985,9 @@ button:active,[role=button]:active{transform:none}
 <span style="flex:1;font:500 11px/14px Inter;letter-spacing:.06em;color:#5A6372">{{ b.head }}</span>
 <sc-if value="{{ b.hasRows }}" hint-placeholder-val="{{ false }}">
 <span style="display:flex;gap:8px;padding-right:14px">
-<span style="width:36px;text-align:center;font:600 11px/14px Inter;letter-spacing:.08em;color:#8A93A3">AM</span>
-<span style="width:36px;text-align:center;font:600 11px/14px Inter;letter-spacing:.08em;color:#8A93A3">NOON</span>
-<span style="width:36px;text-align:center;font:600 11px/14px Inter;letter-spacing:.08em;color:#8A93A3">NIGHT</span>
+<span style="width:36px;text-align:center;font:600 11px/14px Inter;letter-spacing:.08em;color:#636C7C">AM</span>
+<span style="width:36px;text-align:center;font:600 11px/14px Inter;letter-spacing:.08em;color:#636C7C">NOON</span>
+<span style="width:36px;text-align:center;font:600 11px/14px Inter;letter-spacing:.08em;color:#636C7C">NIGHT</span>
 </span>
 </sc-if>
 </div>
@@ -2031,7 +2031,7 @@ button:active,[role=button]:active{transform:none}
 <span style="font:600 13px Inter;color:#5A6372">{{ m.name }}</span>
 </div>
 <div style="font:700 22px/28px Inter;color:{{ m.ink }};letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:5px">{{ m.value }}</div>
-<div style="font:500 11px/14px Inter;color:#8A93A3;margin-top:3px;font-variant-numeric:tabular-nums">{{ m.goalText }}</div>
+<div style="font:500 11px/14px Inter;color:#636C7C;margin-top:3px;font-variant-numeric:tabular-nums">{{ m.goalText }}</div>
 </div>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E7EAEF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="{{ m.chevStyle }}"><path d="M9 6l6 6-6 6"></path></svg>
 </div>
@@ -2049,7 +2049,7 @@ button:active,[role=button]:active{transform:none}
 <span style="display:block;font:600 15px/22px Inter;color:#0C1524">{{ m.name }}</span>
 <span style="display:flex;align-items:baseline;gap:6px;margin-top:4px">
 <span style="font:700 22px/28px Inter;color:#0C1524;letter-spacing:-.01em;font-variant-numeric:tabular-nums">{{ m.value }}</span>
-<span style="font:400 11px Inter;color:#8A93A3">{{ m.unit }}</span>
+<span style="font:400 11px Inter;color:#636C7C">{{ m.unit }}</span>
 </span>
 <span style="{{ m.chipStyle }}">{{ m.chip }}</span>
 </span>
@@ -2080,7 +2080,7 @@ button:active,[role=button]:active{transform:none}
 <button onClick="{{ b.onShow }}" style="flex:1.4;min-height:44px;padding:0 12px;border:1px solid #E3E7ED;border-radius:10px;background:#fff;color:#0B63CE;font:600 13px Inter;cursor:pointer">Show at next visit</button>
 <button onClick="{{ b.onDismiss }}" style="flex:1;min-height:44px;border:0;border-radius:10px;background:#F1F2F4;color:#5A6372;font:600 13px Inter;cursor:pointer">Dismiss</button>
 </div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:10px">{{ b.foot }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:10px">{{ b.foot }}</div>
 </div>
 </div>
 </sc-if>
@@ -2098,7 +2098,7 @@ button:active,[role=button]:active{transform:none}
 </sc-for>
 </div>
 <button onClick="{{ b.onShare }}" style="width:100%;min-height:48px;margin-top:13px;border:0;border-radius:10px;background:#0C1524;color:#fff;font:700 13px Inter;cursor:pointer">{{ b.shareLabel }}</button>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:11px">{{ b.foot }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:11px">{{ b.foot }}</div>
 </div>
 </sc-if>
 
@@ -2128,7 +2128,7 @@ button:active,[role=button]:active{transform:none}
 <div style="display:flex;gap:8px">
 <span style="{{ st.rule }}"></span>
 <div>
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3">{{ st.label }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C">{{ st.label }}</div>
 <div style="font:700 17px/24px Inter;color:#0C1524;letter-spacing:-.01em;font-variant-numeric:tabular-nums;margin-top:4px">{{ st.value }}</div>
 </div>
 </div>
@@ -2154,7 +2154,7 @@ button:active,[role=button]:active{transform:none}
 <span style="{{ bar.labStyle }}">{{ bar.label }}</span>
 </sc-for>
 </div>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:12px">{{ b.foot }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:12px">{{ b.foot }}</div>
 </div>
 </sc-if>
 
@@ -2199,14 +2199,14 @@ button:active,[role=button]:active{transform:none}
 </sc-if>
 
 <sc-if value="{{ b.isInfoline }}" hint-placeholder-val="{{ false }}">
-<div style="font:400 13px/18px Inter;color:#8A93A3;padding:0 2px">{{ b.text }}</div>
+<div style="font:400 13px/18px Inter;color:#636C7C;padding:0 2px">{{ b.text }}</div>
 </sc-if>
 
 <sc-if value="{{ b.isCalendar }}" hint-placeholder-val="{{ false }}">
 <div style="background:#fff;border:1px solid #E3E7ED;border-radius:16px;padding:16px">
 <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:8px">
 <sc-for list="{{ b.dow }}" as="dw" hint-placeholder-count="7">
-<div style="text-align:center;font:600 11px Inter;color:#8A93A3">{{ dw }}</div>
+<div style="text-align:center;font:600 11px Inter;color:#636C7C">{{ dw }}</div>
 </sc-for>
 </div>
 <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px">
@@ -2292,7 +2292,7 @@ button:active,[role=button]:active{transform:none}
 <div style="background:#fff;border:1px solid #E3E7ED;border-radius:16px;padding:11px 14px">
 <div style="font:600 11px Inter;color:#5A6372">{{ b.label }}<sc-if value="{{ b.star }}" hint-placeholder-val="{{ false }}"><span style="color:#B3261E;margin-left:2px">*</span></sc-if></div>
 <input value="{{ b.value }}" onChange="{{ b.onChange }}" onKeyDown="{{ b.onKeyDown }}" placeholder="{{ b.placeholder }}" inputmode="{{ b.mode }}" style="width:100%;border:0;outline:0;background:transparent;padding:5px 0 0;font:600 15px Inter;color:#0C1524">
-<sc-if value="{{ b.hint }}" hint-placeholder-val="{{ false }}"><div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:3px">{{ b.hint }}</div></sc-if>
+<sc-if value="{{ b.hint }}" hint-placeholder-val="{{ false }}"><div style="font:400 11px/14px Inter;color:#636C7C;margin-top:3px">{{ b.hint }}</div></sc-if>
 </div>
 </sc-if>
 
@@ -2314,7 +2314,7 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ b.isVitalsRow }}" hint-placeholder-val="{{ false }}">
 <div style="display:flex;align-items:baseline;justify-content:space-between;padding:4px 0 2px">
 <sc-for list="{{ b.items }}" as="v" hint-placeholder-count="4">
-<span style="{{ v.wrapStyle }}"><span style="font:500 11px Inter;color:#8A93A3">{{ v.label }}</span> <span style="font:700 13px Inter;color:#0C1524;font-variant-numeric:tabular-nums">{{ v.value }}</span></span>
+<span style="{{ v.wrapStyle }}"><span style="font:500 11px Inter;color:#636C7C">{{ v.label }}</span> <span style="font:700 13px Inter;color:#0C1524;font-variant-numeric:tabular-nums">{{ v.value }}</span></span>
 </sc-for>
 <sc-if value="{{ b.prov }}" hint-placeholder-val="{{ false }}"><span style="flex:none;align-self:center;font:600 11px Inter;color:#0B63CE;background:#EAF1FD;padding:3px 7px;border-radius:10px;margin-left:6px;white-space:nowrap">{{ b.prov }}</span></sc-if>
 </div>
@@ -2352,7 +2352,7 @@ button:active,[role=button]:active{transform:none}
 <div style="display:flex;align-items:center;gap:7px">
 <span style="{{ s.dot }}"></span>
 <span style="{{ s.whoStyle }}">{{ s.who }}</span>
-<span style="font:500 11px Inter;color:#8A93A3;font-variant-numeric:tabular-nums">{{ s.time }}</span>
+<span style="font:500 11px Inter;color:#636C7C;font-variant-numeric:tabular-nums">{{ s.time }}</span>
 </div>
 <div style="{{ s.textStyle }}">{{ s.text }}</div>
 <sc-if value="{{ s.second }}" hint-placeholder-val="{{ false }}">
@@ -2390,7 +2390,7 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ f.status }}" hint-placeholder-val="{{ false }}">
 <div style="{{ f.statusStyle }}">{{ f.status }}</div>
 </sc-if>
-<div style="font:400 11px/14px Inter;color:#8A93A3;margin-top:8px">{{ f.prov }}</div>
+<div style="font:400 11px/14px Inter;color:#636C7C;margin-top:8px">{{ f.prov }}</div>
 </div>
 <button onClick="{{ f.onWhy }}" style="flex:none;height:32px;padding:0 12px;border:1px solid #E3E7ED;background:#fff;border-radius:16px;font:600 13px Inter;color:#0B63CE;cursor:pointer">Source</button>
 </div>
@@ -2430,10 +2430,10 @@ button:active,[role=button]:active{transform:none}
 </div>
 </sc-for>
 <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:26px;padding-top:14px;border-top:1px solid #E3E7ED">
-<div style="font:400 11px Inter;color:#8A93A3">{{ b.followup }}</div>
+<div style="font:400 11px Inter;color:#636C7C">{{ b.followup }}</div>
 <div style="text-align:center">
 <div style="font:400 13px Inter;color:#0C1524;font-family:cursive">{{ b.sig }}</div>
-<div style="font:500 11px Inter;color:#8A93A3;margin-top:2px;border-top:1px solid #E7EAEF;padding-top:3px">{{ b.regNo }}</div>
+<div style="font:500 11px Inter;color:#636C7C;margin-top:2px;border-top:1px solid #E7EAEF;padding-top:3px">{{ b.regNo }}</div>
 </div>
 </div>
 </div>
@@ -2516,7 +2516,7 @@ button:active,[role=button]:active{transform:none}
 <div style="font:400 15px/22px Inter;color:#5A6372;margin-top:9px;white-space:pre-line">{{ b.body }}</div>
 <sc-if value="{{ b.huge }}" hint-placeholder-val="{{ false }}">
 <div style="margin-top:20px;padding:20px 34px;background:#0C1524;border-radius:16px">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;text-align:center">TOKEN</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;text-align:center">TOKEN</div>
 <div style="font:700 28px/34px Inter;letter-spacing:-.02em;color:#fff;letter-spacing:-.03em;margin-top:10px;font-variant-numeric:tabular-nums">{{ b.huge }}</div>
 </div>
 </sc-if>
@@ -2647,26 +2647,26 @@ button:active,[role=button]:active{transform:none}
 <div class="scr" style="flex:1;min-height:0;overflow-y:auto;margin-top:12px">
 <sc-if value="{{ rvPane.ev }}" hint-placeholder-val="{{ false }}">
 <div style="padding:12px 14px;border-radius:12px;background:#F1F2F4">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;text-transform:uppercase">{{ rvPane.ev.who }} · {{ rvPane.ev.at }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;text-transform:uppercase">{{ rvPane.ev.who }} · {{ rvPane.ev.at }}</div>
 <div style="font:400 15px/22px Inter;color:#0C1524;margin-top:4px">“{{ rvPane.ev.q }}”</div>
 </div>
 </sc-if>
-<sc-if value="{{ rvPane.noEv }}" hint-placeholder-val="{{ false }}"><div style="font:400 13px/18px Inter;color:#8A93A3">{{ rvPane.noEv }}</div></sc-if>
+<sc-if value="{{ rvPane.noEv }}" hint-placeholder-val="{{ false }}"><div style="font:400 13px/18px Inter;color:#636C7C">{{ rvPane.noEv }}</div></sc-if>
 <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
 <sc-for list="{{ rvPane.controls }}" as="c" hint-placeholder-count="4">
-<sc-if value="{{ c.isLabel }}" hint-placeholder-val="{{ false }}"><div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;text-transform:uppercase;margin-top:6px">{{ c.label }}</div></sc-if>
+<sc-if value="{{ c.isLabel }}" hint-placeholder-val="{{ false }}"><div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;text-transform:uppercase;margin-top:6px">{{ c.label }}</div></sc-if>
 <sc-if value="{{ c.isField }}" hint-placeholder-val="{{ false }}"><div>
 <div style="{{ c.box }}"><input value="{{ c.value }}" onChange="{{ c.onInput }}" placeholder="{{ c.placeholder }}" inputMode="{{ c.mode }}" style="flex:1;min-width:0;border:0;outline:none;background:transparent;font:400 16px/24px Inter;color:#0C1524"></input>
-<sc-if value="{{ c.unit }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:500 15px/22px Inter;color:#8A93A3">{{ c.unit }}</span></sc-if></div>
+<sc-if value="{{ c.unit }}" hint-placeholder-val="{{ false }}"><span style="flex:none;font:500 15px/22px Inter;color:#636C7C">{{ c.unit }}</span></sc-if></div>
 <sc-if value="{{ c.error }}" hint-placeholder-val="{{ false }}"><div style="font:500 13px/18px Inter;color:#B54708;margin-top:6px">{{ c.error }}</div></sc-if>
 </div></sc-if>
 <sc-if value="{{ c.isArea }}" hint-placeholder-val="{{ false }}"><textarea value="{{ c.value }}" onChange="{{ c.onInput }}" placeholder="{{ c.placeholder }}" rows="7" style="width:100%;box-sizing:border-box;min-height:168px;padding:12px 14px;border:1.5px solid #C9CED6;border-radius:12px;background:#FFFFFF;font:400 16px/24px Inter;color:#0C1524;resize:vertical;outline:none"></textarea></sc-if>
 <sc-if value="{{ c.isPair }}" hint-placeholder-val="{{ false }}"><div>
 <div style="display:flex;align-items:center;gap:10px">
 <div style="{{ c.boxA }}"><input value="{{ c.a }}" onChange="{{ c.onA }}" inputMode="numeric" placeholder="Systolic" style="flex:1;min-width:0;border:0;outline:none;background:transparent;font:600 17px/24px Inter;color:#0C1524;font-variant-numeric:tabular-nums"></input></div>
-<span style="flex:none;font:500 20px/1 Inter;color:#8A93A3">/</span>
+<span style="flex:none;font:500 20px/1 Inter;color:#636C7C">/</span>
 <div style="{{ c.boxB }}"><input value="{{ c.b }}" onChange="{{ c.onB }}" inputMode="numeric" placeholder="Diastolic" style="flex:1;min-width:0;border:0;outline:none;background:transparent;font:600 17px/24px Inter;color:#0C1524;font-variant-numeric:tabular-nums"></input></div>
-<span style="flex:none;font:500 15px/22px Inter;color:#8A93A3">{{ c.unit }}</span>
+<span style="flex:none;font:500 15px/22px Inter;color:#636C7C">{{ c.unit }}</span>
 </div>
 <sc-if value="{{ c.error }}" hint-placeholder-val="{{ false }}"><div style="font:500 13px/18px Inter;color:#B54708;margin-top:6px">{{ c.error }}</div></sc-if>
 </div></sc-if>
@@ -2702,7 +2702,7 @@ button:active,[role=button]:active{transform:none}
 <div class="scr" style="flex:1;min-height:0;overflow-y:auto;padding:0 8px 88px">
 <sc-for list="{{ drawer.groups }}" as="g" hint-placeholder-count="2">
 <sc-if value="{{ g.label }}" hint-placeholder-val="{{ false }}">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;text-transform:uppercase;padding:16px 12px 6px">{{ g.label }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;text-transform:uppercase;padding:16px 12px 6px">{{ g.label }}</div>
 </sc-if>
 <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
 <button onClick="{{ it.onClick }}" style="{{ it.style }}">
@@ -2718,7 +2718,7 @@ button:active,[role=button]:active{transform:none}
 </sc-if>
 
 <sc-if value="{{ sheet }}" hint-placeholder-val="{{ false }}">
-<div onClick="{{ closeSheet }}" style="position:absolute;inset:0;background:rgba(12,21,36,.48);display:flex;align-items:flex-end;animation:fade .25s ease-out">
+<div onClick="{{ closeSheet }}" style="position:absolute;inset:0;z-index:5;background:rgba(12,21,36,.48);display:flex;align-items:flex-end;animation:fade .25s ease-out">
 <div onClick="{{ stopProp }}" class="scr" style="width:100%;max-height:92%;overflow-y:auto;background:#fff;border-radius:26px 26px 32px 32px;padding:10px 20px 26px;animation:rise .25s ease-out">
 <div style="width:36px;height:4px;border-radius:2px;background:#E3E7ED;margin:0 auto 16px"></div>
 <div style="display:flex;align-items:center;gap:12px">
@@ -2757,15 +2757,15 @@ button:active,[role=button]:active{transform:none}
 
 <sc-if value="{{ sheet.hasCycleForm }}" hint-placeholder-val="{{ false }}">
 <button onClick="{{ sheet.onLogToday }}" style="width:100%;margin-top:10px;height:44px;border:1.5px dashed #E3E7ED;border-radius:10px;background:#fff;color:#0B63CE;font:700 13px Inter;cursor:pointer">Log period as starting today</button>
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;margin:16px 0 8px">REGULARITY</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;margin:16px 0 8px">REGULARITY</div>
 <div style="display:flex;gap:8px;flex-wrap:wrap">
 <sc-for list="{{ sheet.regChips }}" as="c" hint-placeholder-count="3"><button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
 </div>
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;margin:16px 0 8px">FLOW</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;margin:16px 0 8px">FLOW</div>
 <div style="display:flex;gap:8px;flex-wrap:wrap">
 <sc-for list="{{ sheet.flowChips }}" as="c" hint-placeholder-count="3"><button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
 </div>
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;margin:16px 0 8px">CONTRACEPTION</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;margin:16px 0 8px">CONTRACEPTION</div>
 <div style="display:flex;gap:8px;flex-wrap:wrap">
 <sc-for list="{{ sheet.contraChips }}" as="c" hint-placeholder-count="5"><button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
 </div>
@@ -2780,7 +2780,7 @@ button:active,[role=button]:active{transform:none}
 <sc-if value="{{ sheet.isRsFilter }}" hint-placeholder-val="{{ false }}">
 <div style="max-height:62vh;overflow-y:auto;margin:6px -4px 0;padding:0 4px">
 <sc-for list="{{ sheet.sections }}" as="sx" hint-placeholder-count="3">
-<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3;margin:16px 0 9px">{{ sx.label }}</div>
+<div style="font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C;margin:16px 0 9px">{{ sx.label }}</div>
 <div style="display:flex;gap:8px;flex-wrap:wrap">
 <sc-for list="{{ sx.chips }}" as="c" hint-placeholder-count="4"><button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
 </div>
@@ -2790,8 +2790,8 @@ button:active,[role=button]:active{transform:none}
 </sc-for>
 <sc-if value="{{ sheet.custom }}" hint-placeholder-val="{{ false }}">
 <div style="display:flex;gap:14px;margin-top:12px">
-<div style="flex:1;display:flex;align-items:center;gap:8px"><span style="font:600 11px Inter;color:#8A93A3;width:36px">From</span><button onClick="{{ sheet.fromDec }}" style="width:40px;height:40px;border:1px solid #E3E7ED;border-radius:10px;background:#fff;font:500 17px Inter;cursor:pointer">−</button><span style="flex:1;text-align:center;font:700 15px Inter;font-variant-numeric:tabular-nums;color:#0C1524">{{ sheet.from }}</span><button onClick="{{ sheet.fromInc }}" style="width:40px;height:40px;border:1px solid #E3E7ED;border-radius:10px;background:#fff;font:500 17px Inter;cursor:pointer">+</button></div>
-<div style="flex:1;display:flex;align-items:center;gap:8px"><span style="font:600 11px Inter;color:#8A93A3;width:20px">To</span><button onClick="{{ sheet.toDec }}" style="width:40px;height:40px;border:1px solid #E3E7ED;border-radius:10px;background:#fff;font:500 17px Inter;cursor:pointer">−</button><span style="flex:1;text-align:center;font:700 15px Inter;font-variant-numeric:tabular-nums;color:#0C1524">{{ sheet.to }}</span><button onClick="{{ sheet.toInc }}" style="width:40px;height:40px;border:1px solid #E3E7ED;border-radius:10px;background:#fff;font:500 17px Inter;cursor:pointer">+</button></div>
+<div style="flex:1;display:flex;align-items:center;gap:8px"><span style="font:600 11px Inter;color:#636C7C;width:36px">From</span><button onClick="{{ sheet.fromDec }}" style="width:40px;height:40px;border:1px solid #E3E7ED;border-radius:10px;background:#fff;font:500 17px Inter;cursor:pointer">−</button><span style="flex:1;text-align:center;font:700 15px Inter;font-variant-numeric:tabular-nums;color:#0C1524">{{ sheet.from }}</span><button onClick="{{ sheet.fromInc }}" style="width:40px;height:40px;border:1px solid #E3E7ED;border-radius:10px;background:#fff;font:500 17px Inter;cursor:pointer">+</button></div>
+<div style="flex:1;display:flex;align-items:center;gap:8px"><span style="font:600 11px Inter;color:#636C7C;width:20px">To</span><button onClick="{{ sheet.toDec }}" style="width:40px;height:40px;border:1px solid #E3E7ED;border-radius:10px;background:#fff;font:500 17px Inter;cursor:pointer">−</button><span style="flex:1;text-align:center;font:700 15px Inter;font-variant-numeric:tabular-nums;color:#0C1524">{{ sheet.to }}</span><button onClick="{{ sheet.toInc }}" style="width:40px;height:40px;border:1px solid #E3E7ED;border-radius:10px;background:#fff;font:500 17px Inter;cursor:pointer">+</button></div>
 </div>
 </sc-if>
 </div>
@@ -2888,7 +2888,7 @@ button:active,[role=button]:active{transform:none}
 </div>
 </sc-for>
 <sc-if value="{{ sheet.noMatch }}" hint-placeholder-val="{{ false }}">
-<div style="padding:16px 4px;font:400 13px/18px Inter;color:#8A93A3;text-align:center">No hospital matches “{{ sheet.query }}”. Check the spelling or ask the hospital for its invite code.</div>
+<div style="padding:16px 4px;font:400 13px/18px Inter;color:#636C7C;text-align:center">No hospital matches “{{ sheet.query }}”. Check the spelling or ask the hospital for its invite code.</div>
 </sc-if>
 </div>
 </sc-if>
@@ -2991,7 +2991,7 @@ const I={
  tabCompliance:'M12 3l8 3v6c0 4.4-3.4 7.9-8 9-4.6-1.1-8-4.6-8-9V6l8-3zM8.8 12.2l2.2 2.2 4.2-4.4'};
 
 let WS=[
- {id:'rao',name:'Demo Clinic, Vanasthalipuram',short:'Demo Clinic',role:'General Physician',own:1,hours:'Mon–Sat · 6–9 pm',opens:18,closes:21,days:[1,2,3,4,5,6],session:'Evening OPD · 18:00–21:00',queue:'6 waiting',qTone:'warn',pending:'3 unsigned',
+ {id:'rao',name:'Demo Clinic, Vanasthalipuram',short:'Demo Clinic',role:'General Physician',own:1,hours:'Mon–Sat · 10 am–1 pm, 6–9 pm',opens:10,closes:21,days:[1,2,3,4,5,6],session:'Morning OPD · 10:00–13:00 · evening 18:00–21:00',queue:'6 waiting',qTone:'warn',pending:'3 unsigned',
   lab:'Demo Clinic Lab is collecting samples until 18:00',bookable:1},
  {id:'yashoda',name:'Yashoda Hospital, Guntur',short:'Yashoda Hospital',role:'Consultant',hours:'Mon–Fri · 9 am–2 pm',opens:9,closes:14,days:[1,2,3,4,5],session:'Day OPD · 09:00–14:00',queue:'hospital-managed',qTone:'plain',
   lab:'Yashoda central lab runs 24 hours · radiology until 21:00',bookable:0},
@@ -3226,7 +3226,7 @@ const PHOTOS=[
   cap:'Parting narrower than May.',by:'Dr. Priya Rao',live:1,tight:1},
  {id:'h3',pt:'ravi',site:'Scalp \u00b7 crown',finding:'Hair thinning',date:'14 Aug 2026',short:'Today',dayN:94,today:1,
   cap:'Denser than July at the front of the crown.',by:'Dr. Priya Rao',live:1,tight:1},
- {id:'doc1',site:'Document',finding:'Prescription she brought',date:'14 Aug 2026',short:'Today',dayN:0,today:1,
+ {id:'doc1',site:'Document',finding:'Prescription she brought',date:'1 Sep 2026',short:'Today',dayN:0,today:1,
   cap:'Prescription from City Diabetes Centre, 12 July. Photographed because she had no copy.',by:'Dr. Priya Rao',live:1,doc:1},
  {id:'s1',pt:'lakshmi',site:'Groin',finding:'Fungal infection',date:'2 Jun 2026',short:'2 Jun',dayN:0,sens:1,
   cap:'Photographed with consent. Marked sensitive, so it stays covered in every list.',by:'Dr. Priya Rao',live:1,tight:1}];
@@ -3242,7 +3242,7 @@ const PEOPLE={
   allergy:{name:'Sulfa',detail:'Rash and facial swelling',by:'Dr. Priya Rao',on:'19 Mar 2024'},
   conds:['Type 2 diabetes since 2018','Fever, 3 days'],
   meds:['Glycomet 500 · 1-0-1 · AF','Dolo 650 · 1-1-1 · AF · 3 days'],
-  vitals:{bp:'130/80',pr:'92 bpm',t:'101.2 °F',spo2:'98%',wt:'64 kg'},
+  vitals:{bp:'130/80',pr:'92 bpm',t:'101.2 °F',spo2:'98%',wt:'65 kg'},
   visits:[
    {d:'1 Sep',y:2026,t:'Fever, 3 days',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
     cond:'Fever',line:'Dengue to be ruled out · NS1 sent',rx:'Dolo 650 started'},
@@ -4208,7 +4208,7 @@ class Component extends DCLogic{
    :{title:'Allergy conflict',body:ln.conflict,acts:live?1:0,color:'#B3261E',icon:I.alert,
      onRemove:()=>this.rvRemove(ln.id),onKeep:()=>this.setState(p=>({rvKept:{...(p.rvKept||{}),[ln.id]:1}})),
      style:'display:flex;gap:10px;padding:12px 16px;border-top:1px solid #F3C9C4;background:#FBEAE9',titleStyle:'font:700 14px/20px Inter;color:#B3261E'}):null;
-  return{title,sub,value,titleStyle:ln.k==='cotext'?'font:400 15px/24px Inter;color:#0C1524;white-space:pre-line;overflow-wrap:anywhere':ln.k==='vits'?'font:600 15px/22px Inter;color:#0C1524;font-variant-numeric:tabular-nums':`font:600 15px/22px Inter;color:${ln.stopped?'#8A93A3':'#0C1524'};text-decoration:${ln.stopped?'line-through':'none'};overflow-wrap:anywhere`,tags:tags.length?tags:null,edited:ln.edited&&live?1:0,pencil:live?1:0,conflict,role:live?'button':'',
+  return{title,sub,value,titleStyle:ln.k==='cotext'?'font:400 15px/24px Inter;color:#0C1524;white-space:pre-line;overflow-wrap:anywhere':ln.k==='vits'?'font:600 15px/22px Inter;color:#0C1524;font-variant-numeric:tabular-nums':`font:600 15px/22px Inter;color:${ln.stopped?'#636C7C':'#0C1524'};text-decoration:${ln.stopped?'line-through':'none'};overflow-wrap:anywhere`,tags:tags.length?tags:null,edited:ln.edited&&live?1:0,pencil:live?1:0,conflict,role:live?'button':'',
    outer:`position:relative;overflow:hidden;border-top:${n?'1px solid #E7EAEF':'0'}`,
    inner:`position:relative;display:flex;align-items:center;gap:12px;min-height:48px;padding:10px 12px 10px 16px;background:${isPrev?'#FFF6E6':'#FFFFFF'};transform:translateX(${dx}px);transition:${dx?'none':'transform .2s ease'};cursor:${live?'pointer':'default'};touch-action:pan-y`,
    valueStyle:`flex:none;max-width:42%;font:600 15px/22px Inter;color:${vtone};font-variant-numeric:tabular-nums;text-align:right`,
@@ -4244,7 +4244,7 @@ class Component extends DCLogic{
   let title='';
   if(d.k==='cotext'){title='complaints';lab('Chief complaints');
    C.push({isArea:1,value:d.text||'',placeholder:'One complaint per line, e.g. Fever · 3 days',onInput:e=>setD({text:e&&e.target?e.target.value:''})});
-   C.push({isNote:1,text:'Type freely. One line per complaint reads best; duration after a dot.',style:'font:400 13px/18px Inter;color:#8A93A3'});}
+   C.push({isNote:1,text:'Type freely. One line per complaint reads best; duration after a dot.',style:'font:400 13px/18px Inter;color:#636C7C'});}
   else if(d.k==='co'){title='complaint';lab('Complaint');field({value:d.label,ph:'e.g. Fever',on:v=>setD({label:v})});
    chips(sug(['Fever','Headache','Body ache','Cough','Cold','Vomiting','Loose stools','Abdominal pain','Giddiness','Burning micturition'],d.label),'',v=>setD({label:v}));
    lab('Duration');stepper(d.dur||1,'day','days',1,90,v=>setD({dur:v}));need=!String(d.label).trim();}
@@ -4287,15 +4287,15 @@ class Component extends DCLogic{
     const rowSt=on=>`display:flex;align-items:center;gap:10px;width:100%;min-height:56px;padding:8px 14px;border:0;border-bottom:1px solid #E7EAEF;background:${on?'#EAF1FD':'#FFFFFF'};cursor:pointer;text-align:left`;
     C.push(hits.length?{isResults:1,items:hits.map(([b,g,f,st])=>({title:b,sub:g+' · '+st.join(', '),on:d.brand===b,style:rowSt(d.brand===b),
      onClick:()=>{setD({brand:b,mol:g+' '+st[st.length-1],form:f,dose:f==='topical'?'':'1',route:f==='topical'?'Topical':''});setQ('');}}))}
-     :{isNote:1,text:'No brand matches · try the generic name',style:'font:400 13px/18px Inter;color:#8A93A3'});}
+     :{isNote:1,text:'No brand matches · try the generic name',style:'font:400 13px/18px Inter;color:#636C7C'});}
    const D=RV_DRUGS.find(x=>x[0]===d.brand);
    if(D&&D[3].length>1){lab('Strength');const cur=D[3].find(x=>(d.mol||'').endsWith(x));chips(D[3],cur,v=>setD({mol:D[1]+' '+v}));}
    if(d.form!=='topical'){lab('Dose');chips(d.form==='syrup'?['2.5 ml','5 ml','7.5 ml','10 ml']:['½','1','2'],d.dose,v=>setD({dose:v}));
     const pt=RV_PT[this.state.rvMode]||RV_PT.normal;if(d.form==='syrup')C.push({isNote:1,text:'Weight '+pt.wt+' · recorded at check-in',style:'font:500 13px/18px Inter;color:#5A6372'});}
    if(d.form==='topical'){lab('Route');chips(['Topical','Oral','Inhaled','Injection'],d.route||'Topical',v=>setD({route:v}));}
-   lab('When');const cellSt=on=>`min-height:64px;padding:8px 4px;border-radius:12px;border:1.5px solid ${on?'#0B63CE':'#E3E7ED'};background:${on?'#EAF1FD':'#FFFFFF'};color:${on?'#0B63CE':'#8A93A3'};cursor:pointer`;
+   lab('When');const cellSt=on=>`min-height:64px;padding:8px 4px;border-radius:12px;border:1.5px solid ${on?'#0B63CE':'#E3E7ED'};background:${on?'#EAF1FD':'#FFFFFF'};color:${on?'#0B63CE':'#636C7C'};cursor:pointer`;
    C.push({isCells:1,items:['Morning','Afternoon','Evening','Night'].map((nm,i)=>({label:nm,value:String((d.f||[])[i]||0),style:cellSt((d.f||[])[i]),
-    labStyle:`display:block;font:500 11px/14px Inter;letter-spacing:.02em;color:${(d.f||[])[i]?'#0B63CE':'#8A93A3'}`,onClick:()=>{const f=[...(d.f||[0,0,0,0])];f[i]=f[i]?0:1;setD({f});}}))});
+    labStyle:`display:block;font:500 11px/14px Inter;letter-spacing:.02em;color:${(d.f||[])[i]?'#0B63CE':'#636C7C'}`,onClick:()=>{const f=[...(d.f||[0,0,0,0])];f[i]=f[i]?0:1;setD({f});}}))});
    C.push({isNote:1,text:'Reads as '+rvFreq(d),style:'font:500 13px/18px Inter;color:#5A6372'});
    lab('Food');chips(['AF','BF','HS','Empty stomach'],d.food,v=>setD({food:d.food===v?'':v}));
    lab('Duration');stepper(d.days||1,'day','days',1,90,v=>setD({days:v}));
@@ -4356,7 +4356,7 @@ class Component extends DCLogic{
   const D={
    hba1c:{name:'HbA1c',unit:'%',band:[6.0,7.0],bandLabel:'TARGET \u2264 7.0',fmt:v=>v.toFixed(1),
     pts:[[2022.10,6.8],[2022.60,7.6],[2023.20,7.4],[2024.05,8.0],[2024.70,6.9],[2025.30,7.4],[2026.28,7.4],[2026.53,8.2]],
-    ev:[[2024.03,'Metformin 500 BD started'],[2026.39,'Metformin increased to 1000 BD']],
+    ev:[[2024.03,'Metformin 500 BD started'],[2026.53,'Metformin increased to 1000 BD']],
     last:'8.2',delta:'up 0.8',dir:'up',tone:'warn',when:'12 Jul 2026 · was 7.4 on 9 Apr'},
    bp:{name:'Blood pressure',unit:'mmHg',band:[78,140],bandLabel:'SYSTOLIC TARGET \u2264 140',int:1,fmt:v=>String(Math.round(v)),
     pts:[[2025.60,148],[2025.85,142],[2026.05,138],[2026.28,136],[2026.53,138],[2026.63,130]],
@@ -4514,7 +4514,7 @@ class Component extends DCLogic{
      reads:[['12 Jul','8.2'],['9 Apr','7.4'],['19 Apr 25','7.4'],['12 Sep 24','6.9'],['19 Jan 24','8.0'],['14 Mar 23','7.4'],['8 Aug 22','7.6'],['5 Feb 22','6.8']],
      pts:[[2022.10,6.8],[2022.60,7.6],[2023.20,7.4],[2024.05,8.0],[2024.70,6.9],[2025.30,7.4],[2026.27,7.4],[2026.53,8.2]],
      dates:['5 Feb 22','8 Aug 22','14 Mar 23','19 Jan 24','12 Sep 24','19 Apr 25','9 Apr','12 Jul'],
-     ev:[[2026.38,'Metformin raised to 1000']],
+     ev:[[2026.53,'Metformin raised to 1000']],
      band:[4.0,7.0],bandLabel:'DOCTOR’S TARGET ≤ 7.0%'},
     {k:'bp',name:'Blood pressure',short:'BP',last:'130/80',unit:'mmHg',when:'14 Aug · at the clinic',who:'clinic',
      reads:[['14 Aug','130/80'],['12 Jul','138/86'],['9 Apr','136/88'],['17 Jan','138/86'],['8 Nov 25','142/90'],['6 Aug 25','148/94']],
@@ -4632,7 +4632,7 @@ class Component extends DCLogic{
    ...(()=>{const tod=s.homeTime||'morning';if(yash)return[];
     if(tod==='evening')return[this.sec('DAY SUMMARY'),
      {t:'statrow',compact:1,items:[{value:'22',label:'patients'},{value:'\u20b9 6,400',label:'collected'},{value:'2',label:'to sign'}],onClick:()=>this.go('d9',true)},
-     {t:'ctarow',label:'Sign now',onClick:()=>this.go('d9',true)}];
+     {t:'ctarow',label:'Review and sign',onClick:()=>this.go('d9',true)}];
     if(tod==='empty')return[this.sec('BOOKED TODAY \u00b7 '+OPD_STATES.calm.booked.length),
      this.rows(OPD_STATES.calm.booked.slice(0,3).map(x=>({icon:I.calendar,iconTone:'plain',title:x.name+' \u00b7 '+x.as,sub:x.reason+' \u00b7 '+x.at,chevron:1,onClick:()=>this.setState({opdSeg:'booked',route:'d1',stack:[]})}))),
      {t:'ctarow',label:'Add walk-in',onClick:()=>this.setState(p=>({regFound:null,reg:{...p.reg,phone:'',name:'',age:'',sex:'',step:0,newOnNum:false,rel:''},route:'r2',stack:[...p.stack,'home']}))}];
@@ -4641,7 +4641,7 @@ class Component extends DCLogic{
     ?{t:'next',variant:'appt',token:String(BOOKED_TOKEN),name:'Anitha Reddy',sub:'34 F · New patient · booked online',wait:BOOKED_AT,waitLabel:'expected',
       badge:'Booked · Paid ₹300',badgeTone:'ok',cta:'Open patient',onStart:G('d2b',true),onContext:G('d2b',true)}
     :{t:'next',token:'12',name:'Lakshmi Devi',sub:'52 F · Follow-up · fever · walk-in',wait:'12 min',waitLabel:'waiting',
-      badge:'Sulfa allergy on file',badgeTone:'warn',cta:'Start consultation',
+      badge:'Sulfa allergy on file',badgeTone:'red',cta:'Start consultation',
       onStart:()=>{this.setState({declined:false,step:0,resolved:{}});this.go('d2',true);},onContext:()=>{this.setState({declined:false});this.go('d2',true);}})];})(),
    ...(()=>{
     const tod=s.homeTime||'morning',isEve=tod==='evening',isEmpty=tod==='empty';
@@ -5164,7 +5164,7 @@ class Component extends DCLogic{
    {t:'toggles',items:[
     {k:'prepay',label:'Require prepayment',sub:'₹300 consultation fee collected at booking. Refunded in full if you cancel.'}]},
    this.note('Turning listing off hides your profile immediately. Patients who already hold a token keep it, and are told if you cancel.'),
-   this.sec('TOKEN DISPLAY · RAO CLINIC'),
+   this.sec('TOKEN DISPLAY · DEMO CLINIC'),
    this.chips([{label:'Per-doctor series (12, K-4…)',on:s.tokenMode==='perdoc',onClick:()=>this.setState({tokenMode:'perdoc'})},
     {label:'Shared hall sequence (1,2,3…)',on:s.tokenMode==='shared',onClick:()=>this.setState({tokenMode:'shared'})}]),
    this.note('Per-doctor series avoids gaps when one doctor runs behind. A shared sequence is easier for the waiting hall to call out loud.')]};
@@ -5423,9 +5423,14 @@ class Component extends DCLogic{
      if(!last.on||signed)return null;
      const carry=()=>{const L=this.rvLinesNow(),add=last.rx.filter(x=>miss.includes(x.brand)).map((x,i)=>({...x,k:'rx',id:'cf'+Date.now()+i,sos:false,cond:'',cont:1,edited:1}));
       this.setState({rvLines:{...L,rx:[...L.rx,...add]},snack:{text:add.length+(add.length===1?' medicine':' medicines')+' carried forward'}});};
+     // Ruling 109: the first tap shows exactly what will be added; the second adds it.
+     const review=()=>{const add=last.rx.filter(x=>miss.includes(x.brand));
+      this.setState({sheet:{title:'Add '+(add.length>1?add.length+' medicines':'this medicine')+' from '+last.on+'?',sub:'As on the last prescription. You can edit each line after.',
+       body:add.map(x=>x.brand+' · '+x.mol+' · '+rvFreq(x)+(x.food?' · '+x.food:'')+' · '+x.days+' days').join('\n'),
+       close:'Cancel',confirmLabel:add.length>1?'Add '+add.length:'Add it',onConfirm:()=>{this.setState({sheet:null});carry();}}});};
      const also=[cont.length?'Continued: '+cont.join(', '):'',stop.length?'Stopped: '+stop.join(', '):''].filter(Boolean).join(' · ');
      return miss.length
-      ?this.banner('warn','Not in this note: '+miss.join(', '),'On the last prescription, '+last.on+(also?' · '+also:''),[{label:miss.length>1?'Add all '+miss.length:'Add it',kind:'primary',onClick:carry}])
+      ?this.banner('warn','Not in this note: '+miss.join(', '),'On the last prescription, '+last.on+(also?' · '+also:''),[{label:miss.length>1?'Add all '+miss.length:'Add it',kind:'primary',onClick:review}])
       :(also?this.kv([{l:'Since last visit · '+last.on,sub:also}]):null);})(),
     {t:'rvnote',secs:this.rvView(signed),tab:s.device==='tab'},
     signed?this.rows([
@@ -5563,7 +5568,8 @@ class Component extends DCLogic{
          date:'Today',cap:'',by:'Dr. Priya Rao',live:1,today:1,dayN:12}))}
       :null,
      {t:'sec',label:'DIAGNOSIS',tight:1},
-     ...(d.dx.length?d.dx:[{label:'Acute viral illness',detail:'Working impression'},{label:'Dengue fever',detail:'To be ruled out'}]).map((x,i)=>({t:'denserow',first:i===0,label:x.label,sub:x.detail})),
+     ...d.dx.map((x,i)=>({t:'denserow',first:i===0,label:x.label,sub:x.detail})),
+     empty(d.dx,'your working and rule-out diagnoses appear as you say them'),
      {t:'sec',label:'Rx',tight:1},
      d.rx.filter(x=>!(s.cxRxOut||{})[x.id]).length?{t:'rx',items:d.rx.filter(x=>!(s.cxRxOut||{})[x.id]).map(x=>{
       const conflict=x.state==='conflict'&&!s.cxSeptran;
@@ -5614,7 +5620,7 @@ class Component extends DCLogic{
         sub:'HbA1c 8.2% on 12 Jul 2026 · Metformin 1000 · patient-stated, to verify',
         onClick:this.openCond('dm')};}))),
      this.sec('CURRENT MEDICINES'),
-     this.kv([{l:'Metformin 1000',r:'1-0-1',sub:'Metformin hydrochloride 1000mg · doctor-recorded · Dr. Mehta, May 2026'},
+     this.kv([{l:'Metformin 1000',r:'1-0-1',sub:'Metformin hydrochloride 1000mg · doctor-recorded · Dr. Mehta, 12 Jul 2026'},
       {l:'Thyronorm 50 mcg',r:'1-0-0',sub:'Levothyroxine sodium 50mcg · BF · doctor-recorded'}].concat(
       active.filter(c=>c.sec==='meds'&&(s.cxHx||{})['hx'+d.cand.indexOf(c)]==='confirmed').map(c=>({l:c.label,
        r:c.label.indexOf('Telma')===0?'1-0-0':'',
@@ -5647,8 +5653,8 @@ class Component extends DCLogic{
      badgeStyle:'display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:#B3261E;color:#fff;font:700 11px Inter',
      onClick:()=>this.setState({cxSeg:k}),
      rule:`display:block;align-self:stretch;height:2px;border-radius:1px;background:${seg===k?C.blue:'transparent'}`,
-     style:`flex:1;min-width:48px;padding:0 6px;border:0;background:transparent;color:${seg===k?C.blue:C.faint};font:${seg===k?600:400} 15px Inter;letter-spacing:-.01em;cursor:pointer;display:flex;justify-content:center`})),
-    bar:{title:'Lakshmi Devi',sub:'52 F · 65 Kg',rec:1,actions:[{icon:I.camera,onClick:()=>{
+     style:`flex:1;min-width:48px;padding:0 6px;border:0;background:transparent;color:${seg===k?C.blue:'#636C7C'};font:${seg===k?600:400} 15px Inter;letter-spacing:-.01em;cursor:pointer;display:flex;justify-content:center`})),
+    bar:{title:'Lakshmi Devi',sub:'52 F · 65 kg',rec:1,actions:[{icon:I.camera,onClick:()=>{
        if(s.photoDeclined)this.setState({sheet:{title:'Photos are off for Lakshmi Devi.',
         close:'Cancel',confirmLabel:'Ask again',
         onConfirm:()=>this.setState({sheet:null,photoDeclined:false})}});
@@ -5747,14 +5753,14 @@ class Component extends DCLogic{
     d.co.length?{l:d.co.slice(0,3).map(x=>x.label).join(' \u00b7 '),
      why:'This episode belongs to today. Her permanent record gains nothing from an illness that will have resolved by next month.'}:null,
     said('dolo')?{l:'Dolo 650 \u00b7 3 days',
-     why:'A three-day course ends by itself. It shows in her medicines until 17 Aug, then leaves without anyone deleting it.'}:null].filter(Boolean);
+     why:'A three-day course ends by itself. It shows in her medicines until 4 Sep, then leaves without anyone deleting it.'}:null].filter(Boolean);
    const kept=PERM.filter(x=>s.cxKeep[x.k]!==false);
    if(s.cxSigned){const nAll=facts.length,nKept=kept.length+hxChanged.length;
     const catList=[...new Set(hxChanged.map(x=>'her '+x.dest.toLowerCase()).concat(kept.map(x=>x.now.replace(/^.*goes to /,'')
      .replace('Added to her weight trend','her weight trend')
      .replace(/^Rash with.*$/,'her allergies'))))];
     return{blocks:[
-    {t:'hero',tone:'ok',icon:I.check,title:'Signed and filed',body:'Lakshmi Devi · 52 F\nDr. Priya Rao · 14 Aug, 10:52 AM'},
+    {t:'hero',tone:'ok',icon:I.check,title:'Signed and filed',body:'Lakshmi Devi · 52 F\nDr. Priya Rao · 1 Sep, 10:52 AM'},
     this.sec('WHAT WAS FILED'),
     this.kv([
      {l:'Visit note',r:'Signed',sub:'Whole and unedited · no longer changeable, only amendable'},
@@ -5778,15 +5784,19 @@ class Component extends DCLogic{
     captured?null:this.banner('warn','Nothing captured yet',
      'This visit has no complaints, vitals, diagnosis or prescription on it. Run the consultation, or write a manual note if the patient asked not to be recorded.',
      [{label:'Back to the consultation',kind:'primary',onClick:()=>this.go('cx')}]),
+    (captured&&!unresolvedRx&&s.cxrState==='signfail')?this.banner('warn','Couldn\u2019t file the signed note','Your note is kept on this phone. Nothing was lost.',
+     [{label:'Try again',kind:'primary',onClick:()=>this.setState({cxrState:'live',snack:{text:'Slide to sign again'}})}]):null,
+    (captured&&!unresolvedRx&&s.cxrState==='offline')?this.banner('warn','No internet','Signing needs a connection. Your note is kept on this phone until you are back online.',
+     [{label:'Try again',kind:'primary',onClick:()=>this.setState({cxrState:'live',snack:{text:'Back online'}})}]):null,
     this.sec('PRESCRIPTION'),
-    {t:'rxprint',clinic:'RAO CLINIC',clinicAddr:'Vanasthalipuram Main Road, Guntur, Andhra Pradesh',
+    {t:'rxprint',clinic:'DEMO CLINIC',clinicAddr:'Vanasthalipuram Main Road, Hyderabad, Telangana',
      doctor:'Dr. Priya Rao',doctorQual:'MBBS, MD (General Medicine) · Reg. No. MCI 54219',
-     patient:'Lakshmi Devi · 52 F',date:'14 Aug 2026',
+     patient:'Lakshmi Devi · 52 F',date:'1 Sep 2026',
      sections:[{title:'C/O',body:line(d.co)},{title:'O/E',body:(d.oe.find(x=>x.vitals)?('BP '+d.oe.find(x=>x.vitals).bp+'  Pulse '+d.oe.find(x=>x.vitals).pulse+'  Temp '+d.oe.find(x=>x.vitals).temp+'  SpO₂ '+d.oe.find(x=>x.vitals).spo2+'\n'):'')+line(d.oe.filter(x=>!x.vitals))},
       {title:'DIAGNOSIS',body:line(d.dx)},{title:'Rx',body:rxLine||'-'},
       {title:'INVESTIGATIONS',body:line(d.inv)},{title:'ADVICE',body:line(d.adv)}],
      followup:'Return immediately if: bleeding gums/nose, severe pain, black stools, cannot keep water down.',
-     sig:'Dr. Priya Rao',regNo:'Electronically signed by Dr. Priya Rao, Reg. No. MCI 54219, 14 Aug 2026, 10:48 AM'},
+     sig:'Dr. Priya Rao',regNo:'Electronically signed by Dr. Priya Rao, Reg. No. MCI 54219, 1 Sep 2026, 10:52 AM'},
      this.sec('PHOTOS'),
     {t:'photos',title:'',count:PHOTOS.filter(x=>x.today).length,items:PHOTOS.filter(x=>x.today)},
 
@@ -5810,8 +5820,8 @@ class Component extends DCLogic{
      d.co.length?{l:'This episode',r:String(d.co.length),sub:d.co.map(x=>x.label).join(' \u00b7 ')+' \u00b7 stays with today\u2019s visit'}:null,
      PHOTOS.filter(x=>x.today).length?{l:'Photos',r:String(PHOTOS.filter(x=>x.today).length),sub:'Sealed into this visit when you sign'}:null].filter(Boolean)),
 ],
-    cta:(!captured||unresolvedRx)
-     ?{label:!captured?'Nothing captured yet \u00b7 run the consultation first':'Resolve conflict to sign',dim:1,onClick:()=>{}}
+    cta:(!captured||unresolvedRx||s.cxrState==='offline')
+     ?{label:!captured?'Nothing captured yet \u00b7 run the consultation first':unresolvedRx?'Resolve conflict to sign':'Sign when back online',dim:1,onClick:()=>{}}
      // Slide to sign (founder 2026-10-02): "Confirm it\u2019s you" once per session, again after
      // 30 min idle, 10 min in the background, a Schedule H1/X drug, or a new phone.
      :{swipe:1,label:'Slide to sign',onClick:()=>this.signSlide()}};}
@@ -5838,8 +5848,8 @@ class Component extends DCLogic{
    this.note('Shown for women of reproductive age and for anyone whose prescription could be affected. She is 52 and postmenopausal, so this is context, not a blocker.'),
    this.sec('LAST VISIT'),
    this.rows([{icon:I.doc,iconTone:'plain',title:'12 Jul 2026 · Diabetes review',
-    sub:'Dr. Anil Mehta · City Diabetes Centre · metformin continued',
-    badge:'Outcome: controlled, no review needed',badgeTone:'ok'}]),
+    sub:'Dr. Anil Mehta · City Diabetes Centre · metformin raised to 1000',
+    badge:'HbA1c 8.2%, above target',badgeTone:'warn'}]),
    this.sec('CURRENT MEDICINES'),
    this.kv([{l:'Metformin 500',r:'1-0-1',sub:'Doctor-verified · 21 May 2026'}]),
    this.note('Nothing here is a confirmed fact until the doctor verifies it during the consultation - see History in Consult.')],
@@ -5847,13 +5857,13 @@ class Component extends DCLogic{
 
   case 'cxsettings':return{bar:{back:1,title:'Letterhead & Rx settings'},blocks:[
    this.sec('LIVE PREVIEW'),
-   {t:'rxprint',clinic:'RAO CLINIC',clinicAddr:'Vanasthalipuram Main Road, Guntur, Andhra Pradesh · 9AM–1PM, 5PM–8PM',
+   {t:'rxprint',clinic:'DEMO CLINIC',clinicAddr:'Vanasthalipuram Main Road, Hyderabad, Telangana · 10AM–1PM, 6PM–9PM',
     doctor:'Dr. Priya Rao',doctorQual:'MBBS, MD (General Medicine) · Reg. No. MCI 54219',
     patient:'Patient name · age/sex',date:'DD Mon YYYY',
     sections:[{title:'C/O',body:'-'},{title:'Rx',body:'-'}],followup:'Footer: clinic phone, emergency contact',
     sig:'Dr. Priya Rao',regNo:'Signature & Reg. No. MCI 54219'},
    this.sec('LETTERHEAD'),
-   this.kv([{l:'Clinic name',r:'Demo Clinic'},{l:'Logo',r:'Uploaded'},{l:'Address',r:'Vanasthalipuram Main Road, Guntur'},{l:'Registration No.',r:'MCI 54219'},{l:'Timings shown on print',r:'9AM–1PM, 5PM–8PM'}]),
+   this.kv([{l:'Clinic name',r:'Demo Clinic'},{l:'Logo',r:'Uploaded'},{l:'Address',r:'Vanasthalipuram Main Road, Hyderabad'},{l:'Registration No.',r:'MCI 54219'},{l:'Timings shown on print',r:'10AM–1PM, 6PM–9PM'}]),
    this.sec('NOTE STYLE'),
    this.chips([{label:'Concise',on:1},{label:'Detailed'}]),
    this.sec('DEFAULT FOLLOW-UP INTERVAL'),
@@ -5888,16 +5898,16 @@ class Component extends DCLogic{
    const removeBtn=(id,label)=>()=>this.setState(p=>({histRemoved:{...p.histRemoved,[id]:1},histUndo:{id,label}}));
    const undoBtn=()=>this.setState(p=>{const h={...p.histRemoved};if(p.histUndo)delete h[p.histUndo.id];return{histRemoved:h,histUndo:null};});
 
-   const MEDS=[{id:'m1',label:'Metformin 1000',sub:'1-0-1 · raised from 500 · May 2026 · Dr. Mehta',prov:'doctor-recorded',relevant:1},
+   const MEDS=[{id:'m1',label:'Metformin 1000',sub:'1-0-1 · raised from 500 · 12 Jul 2026 · Dr. Mehta',prov:'doctor-recorded',relevant:1},
     {id:'m2',label:'Thyronorm 50 mcg',sub:'1-0-0 · BF · levothyroxine sodium 50mcg',prov:'doctor-recorded',relevant:1},
      {id:'m5',label:'Telma 40',sub:'1-0-0 · daily, unclear since when · self/pharmacy',prov:'patient-stated',relevant:1,isNew:1},
     {id:'m3',label:'Ashwagandha churna',sub:'Twice daily · outside doctor · alternative medicine',prov:'patient-stated',relevant:1},
     {id:'m4',label:'“White tablet for BP”',sub:'Patient cannot name it - brought no strip',prov:'patient-stated',relevant:1,unidentified:1}];
-   const CHRONIC=[{id:'c1',label:'Diabetes mellitus',sub:'8 years · HbA1c 8.2 (12 Jul 2026)',prov:'patient-stated',relevant:1,isNew:1},
+   const CHRONIC=[{id:'c1',label:'Diabetes mellitus',sub:'8 years · HbA1c 8.2 (12 Jul 2026, City Diabetes Centre)',prov:'doctor-recorded',relevant:1},
     {id:'c2',label:'Hypertension',sub:'6 years · BP 130/80 today',prov:'doctor-recorded',relevant:1},
     {id:'c3',label:'Hypothyroidism',sub:'3 years · TSH 3.1 (12 Jul 2026), in range',prov:'doctor-recorded',relevant:1}];
    const PAST=[{id:'p1',label:'Appendicectomy',sub:'2016 · Guntur GGH',prov:'from 11 Nov 2025 visit',relevant:0},
-    {id:'p2',label:'Dengue',sub:'2019 · treated as outpatient',prov:'from 2 Jun 2026 visit',relevant:0},
+    {id:'p2',label:'Dengue',sub:'2019 · admitted 4 days, Guntur GGH',prov:'from 2 Jun 2026 visit',relevant:0},
     {id:'p3',label:'Typhoid',sub:'2014',prov:'from 19 Mar 2024 visit',relevant:0}];
    const VISITS=[{id:'v1',date:'12 Jul 2026',c:'Diabetes review',dx:'T2DM - HbA1c 8.2, above target',outcome:'Review in Oct'},
     {id:'v2',date:'2 Jun 2026',c:'Fever',dx:'Viral - resolved',outcome:'Resolved'},
@@ -5910,7 +5920,7 @@ class Component extends DCLogic{
 
    const body=[
     {t:'sec',label:'ALLERGIES'},
-    {t:'histrow',first:1,danger:1,main:'SULFA - rash',prov:'patient-stated',isNew:1,onRemove:null},
+    {t:'histrow',first:1,danger:1,main:'SULFA - rash and facial swelling',prov:'doctor-recorded',onRemove:null},
     this.note('“No allergies recorded” is not the same as “no allergies”. If nothing is on file, it means nobody has asked - ask, and record the answer.\n\nAllergies are never removable with a single tap. Correcting one requires a reason, handled in Review & Sign.'),
 
     {t:'sec',label:'CHRONIC CONDITIONS'},
@@ -5961,7 +5971,7 @@ class Component extends DCLogic{
    if(rf==='first')return{bar:{title:'History - Anitha Reddy 34F',sub:'First visit'},
     segctrl:[['relevant','Relevant today'],['all','All'],['first','First visit']].map(([k,label])=>({label,onClick:()=>this.setState({histFilter:k}),
      rule:`display:block;height:2px;border-radius:1px;background:${rf===k?C.blue:'transparent'}`,
-     style:`flex:none;min-width:48px;padding:0 6px;border:0;background:transparent;color:${rf===k?C.blue:C.faint};font:${rf===k?600:400} 15px Inter;letter-spacing:-.01em;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px`})),
+     style:`flex:none;min-width:48px;padding:0 6px;border:0;background:transparent;color:${rf===k?C.blue:'#636C7C'};font:${rf===k?600:400} 15px Inter;letter-spacing:-.01em;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px`})),
     blocks:[
      {t:'hero',tone:'blue',icon:I.doc,title:'First visit',body:'Nothing has been recorded for Anitha before today.'},
      this.note('This is the most common state in a new clinic, and it is not an error. Everything captured in this consultation becomes the first entry in her record.'),
@@ -5977,7 +5987,7 @@ class Component extends DCLogic{
    return{bar:{title:'History - Lakshmi Devi 52F',sub:'10 years · 9 visits'},
     segctrl:[['relevant','Relevant today'],['all','All'],['first','First visit']].map(([k,label])=>({label,onClick:()=>this.setState({histFilter:k}),
      rule:`display:block;height:2px;border-radius:1px;background:${rf===k?C.blue:'transparent'}`,
-     style:`flex:none;min-width:48px;padding:0 6px;border:0;background:transparent;color:${rf===k?C.blue:C.faint};font:${rf===k?600:400} 15px Inter;letter-spacing:-.01em;cursor:pointer;display:flex;justify-content:center`,badge:''})),
+     style:`flex:none;min-width:48px;padding:0 6px;border:0;background:transparent;color:${rf===k?C.blue:'#636C7C'};font:${rf===k?600:400} 15px Inter;letter-spacing:-.01em;cursor:pointer;display:flex;justify-content:center`,badge:''})),
     blocks:[newCount?{t:'note',body:newCount+' new this visit - captured automatically, not pending confirmation',
       noteStyle:'font:600 13px/18px Inter;color:#067647;padding:2px 2px 0'}:null,...body].filter(Boolean)};}
 
@@ -6029,6 +6039,19 @@ class Component extends DCLogic{
    this.note('Colour law: green = new/changed only, never a status or a fill. Red is reserved for clinical danger (allergy, blocking alert, return-immediately box). Muted red = retraction. Amber = verify this. Colour is never used alone - always paired with an icon and a word.')]};}
 
   case 'cxsheet':return{bar:{back:1,title:'Component sheet',sub:'States, motion & haptics · reference only'},blocks:[
+   // Ruling 89 (11 Nov 2026): one message system, three levels. What happened in plain words, one action, icon plus text.
+   this.sec('MESSAGE - RECOVERABLE (amber, top of the screen, until resolved)'),
+   this.banner('warn','The microphone stopped','Tap Resume to keep recording.',
+    [{label:'Resume',kind:'primary',onClick:()=>{}}]),
+   this.note('One action per message. It stays until the problem is gone; TalkBack reads it when it appears. Automatic retries say so: “Part of the recording did not go through. Trying again…” - never a code such as HTTP 502.'),
+   this.sec('MESSAGE - INFORMATION (neutral, short)'),
+   this.banner('plain','AI draft not used','The AI draft could not be made for this visit, so this note comes from the rules alone. Check each medicine before you sign.'),
+   this.note('On the note itself when it is about the note. A passing confirmation is a short line at the bottom that disappears, e.g. “Prescription sent to the clinic printer”.'),
+   this.sec('MESSAGE - FIELD PROBLEM (under the field, Add walk-in)'),
+   {t:'field',label:'Age',value:'',placeholder:'Years',mode:'numeric',onChange:()=>{}},
+   this.note('⚠ Enter age in years, from 1 to 120.','warn'),
+   this.sec('MESSAGE - SAFETY BLOCK (on the line, red, as built)'),
+   this.note('Stays on the line it blocks, as in RX - ALLERGY CONFLICT below. Only the founder changes a safety rule; this sheet only shows how a message looks and reads.'),
    this.sec('RX - VERIFIED'),
    {t:'rx',items:[{brand:'DOLO 650',generic:'PARACETAMOL 650MG',dose:'1-1-1',food:'AFTER FOOD',duration:'× 3 DAYS',
     verifyLabel:'Verified',verifyStyle:'flex:none;padding:5px 10px;border-radius:8px;font:700 11px Inter;color:#067647;background:#E8F6EF',
@@ -6184,16 +6207,16 @@ class Component extends DCLogic{
    this.note('Unchanged: every tappable darkens to brightness .96 and scales to .98 over 120ms, and disabled surfaces never animate. Keyboard and switch access: one focus ring - 2px accent, 2px offset - on every focusable, everywhere; live on this page. With the map above, this sheet is the single behaviour spec - every component inherits pressed + its haptic + its motion from here, not from scattered notes.')]};
 
   case 'd4s':return{blocks:[
-   {t:'hero',tone:'ok',icon:I.check,title:'Signed and filed',body:'Lakshmi Devi · 52 F\nDr. Priya Rao · 14 Aug, 10:48 AM\n'+w.short},
+   {t:'hero',tone:'ok',icon:I.check,title:'Signed and filed',body:'Lakshmi Devi · 52 F\nDr. Priya Rao · 1 Sep, 10:52 AM\n'+w.short},
    // D42: delivery waits 2 min after signing; Undo in that window and nothing is sent.
-   this.banner('plain','Sends to Lakshmi at 10:50','Undo before then and nothing leaves the clinic. After that, a change is a new signed version.',
+   this.banner('plain','Sends to Lakshmi at 10:54','Undo before then and nothing leaves the clinic. After that, a change is a new signed version.',
     [{label:'Undo',kind:'secondary',onClick:()=>this.setState({route:'cxreview',stack:[],snack:{text:'Not sent \u00b7 the note is open again'}})}]),
    this.sec('WHAT HAPPENED NEXT'),
    this.rows([
     {icon:I.phone,iconTone:'ok',title:'Sent to Lakshmi’s phone',sub:'In plain words'},
     {icon:I.flask,iconTone:'ok',title:'CBC and NS1 ordered',sub:w.short+' lab · collection at counter 2'},
     {icon:I.pill,iconTone:'warn',title:'Dolo 650 dispensed · Septran removed',sub:'Pharmacy notified of the allergy decision'},
-    {icon:I.clock,iconTone:'plain',title:'Review booked',sub:'Tomorrow, 15 Aug · reminder scheduled'}]),
+    {icon:I.clock,iconTone:'plain',title:'Review booked',sub:'4 Sep, in 3 days · reminder scheduled'}]),
    this.rows([{icon:I.patients,iconTone:'plain',title:'Share case',sub:'De-identified \u00b7 verified doctors only',chevron:1,
     onClick:()=>this.setState({cmNew:{from:1,title:'Fever day 4, diabetic, sulfa allergy \u2014 dengue workup?',pt:'40s',sex:'F',
      hist:'Fever 4 days, worse at night, headache, loose motions\nType 2 diabetes 8 years on metformin\nSulfa allergy \u2014 rash and facial swelling',
@@ -6448,10 +6471,10 @@ class Component extends DCLogic{
      acts:[{label:'Review and sign',kind:'primary',onClick:()=>this.setState({sheet:{title:'Another patient\u2019s draft',body:'The consult room and review screen run end to end for Lakshmi Devi in this artifact. This draft belongs to a different patient, so it opens read-only elsewhere.',close:'OK'}})}]}])]};
 
   case 'dman':return{bar:{back:1,title:'Manual note',sub:'Ramesh Kumar · 68 M · not being recorded'},blocks:[
-   this.banner('plain','Nothing is being recorded','This note is typed by you. The record will say so - no transcript, no drafted facts, no source links. Sulfa allergy and every other safety check still runs when you sign, exactly as on a recorded visit.'),
+   this.banner('plain','Nothing is being recorded','This note is typed by you. The record will say so - no transcript, no drafted facts, no source links. The allergy check and every other safety check still run when you sign, exactly as on a recorded visit.'),
    this.kv([
     {l:'Complaint',sub:'Diabetes review. No acute complaints.'},
-    {l:'Examination',sub:'BP 132/84 · weight 74 kg · feet examined, no ulcers'},
+    {l:'Examination',sub:'BP 132/84 · weight 72 kg · feet examined, no ulcers'},
     {l:'Assessment',sub:'Type 2 diabetes - inadequate control'},
     {l:'Plan',sub:'Metformin 1000 continued · HbA1c in 2 weeks · dietician referral'}]),
    this.note('Tap any section to edit. The keyboard opens with the section heading pinned above it.')],
@@ -6830,7 +6853,7 @@ class Component extends DCLogic{
      target:'≤ 7.0%',targetSub:'Dr. Mehta · 12 Jul 2026',
      countN:4,countWord:'in target',range:'ALL',
      warn:['Contradicted today','Patient said she is not diabetic. Resolve in Review & sign.'],
-     rx:[{icon:I.pill,iconTone:'blue',title:'Metformin 1000',sub:'1-0-1 · metformin hydrochloride 1000mg · raised from 500 in May 2026, Dr. Mehta'},
+     rx:[{icon:I.pill,iconTone:'blue',title:'Metformin 1000',sub:'1-0-1 · metformin hydrochloride 1000mg · raised from 500 on 12 Jul 2026, Dr. Mehta'},
       {icon:I.check,iconTone:'ok',title:'Refills',sub:'4 of the last 5 months collected · pharmacy sync · 9 Aug'}],
      reads:[{d:'12 Jul 2026',v:'8.2%',src:'City Diabetes Centre · 8 weeks after the dose change, so it mostly reflects the old dose',out:1},
       {d:'9 Apr 2026',v:'7.4%',src:'City Diabetes Centre',out:1},
@@ -7233,7 +7256,7 @@ class Component extends DCLogic{
    const mrpTotal=ids.reduce((n,id)=>{const x=P(id);const recv=x.scheme?Math.round(cart[id]*(x.scheme.buy+x.scheme.free)/x.scheme.buy):cart[id];return n+recv*pdEx(x);},0);
    const earned=mrpTotal-total,nSup=Object.keys(bySup).length,cold=ids.some(id=>P(id).cold);
    return{bar:{back:1,title:'Checkout',sub:nSup+(nSup>1?' suppliers \u00b7 separate deliveries':' supplier')},blocks:[
-    this.kv([{l:'Deliver to',r:'Demo Clinic',sub:'Vanasthalipuram Main Road, Guntur 522001',onClick:()=>this.setState({snack:{text:'Address is set in Profile'}})}]),
+    this.kv([{l:'Deliver to',r:'Demo Clinic',sub:'Vanasthalipuram Main Road, Hyderabad 500070',onClick:()=>this.setState({snack:{text:'Address is set in Profile'}})}]),
     cold?this.banner('plain','\u2744 Cold-chain items in this order','Insulated box, temperature strip on arrival'):null,
     ...Object.keys(bySup).map(k=>this.kv([{l:PD_SUP[k].name,r:PD_SUP[k].credit?PD_SUP[k].credit+'-day credit':'Pay on delivery',sub:bySup[k].length+' items \u00b7 \u20b9 '+bySup[k].reduce((n,x)=>n+x.q*pdEff(x),0).toFixed(2)+' \u00b7 GST invoice from supplier on delivery'}])),
     this.sec('SUMMARY'),
@@ -8011,7 +8034,7 @@ class Component extends DCLogic{
   case 'p4':{
    const MEDS=medsFor(PROF.id),own=MEDS.filter(m=>m.prov==='self');
    const HIST={lakshmi:{
-     changed:[{title:'Metformin · 500 to 1000',sub:'Raised 21 May 2026 by Dr. Anil Mehta',badge:'Reason: HbA1c above target',badgeTone:'plain'}],
+     changed:[{title:'Metformin · 500 to 1000',sub:'Raised 12 Jul 2026 by Dr. Anil Mehta',badge:'Reason: HbA1c above target',badgeTone:'plain'}],
      stopped:[{title:'Amlodipine 5',sub:'Stopped 12 Jul 2026 by Dr. Anil Mehta',badge:'Reason: ankle swelling',badgeTone:'plain'},
       {title:'Septran DS',sub:'Not given 14 Aug 2026 by Dr. Priya Rao',badge:'Reason: your sulfa allergy',badgeTone:'warn'}]},
     ramesh:{changed:[{title:'Metformin · 500 to 1000',sub:'Raised 21 May 2026 by Dr. Priya Rao',badge:'Reason: HbA1c above target',badgeTone:'plain'}],stopped:[]},
@@ -8781,7 +8804,7 @@ class Component extends DCLogic{
   const PROF=PROFILES[s.pProf||'lakshmi'];
   const tone=t=>t==='ok'?{bg:C.greenT,fg:C.green}:t==='warn'?{bg:C.warnT,fg:C.warn}:t==='red'?{bg:C.redT,fg:C.red}:t==='muted'?{bg:'#F6ECEC',fg:'#8A4B4B'}:t==='blue'?{bg:C.blueT,fg:C.blue}:{bg:'#F1F2F4',fg:C.mut};
   const actBtn=k=>k==='primary'?`flex:1;height:44px;border:0;border-radius:10px;background:${C.blue};color:#fff;font:600 13px Inter;cursor:pointer`
-   :k==='off'?`flex:1;height:44px;border:1px dashed ${C.line2};border-radius:10px;background:#F6F7F9;color:#8A93A3;font:600 13px Inter;cursor:not-allowed`
+   :k==='off'?`flex:1;height:44px;border:1px dashed ${C.line2};border-radius:10px;background:#F6F7F9;color:#636C7C;font:600 13px Inter;cursor:not-allowed`
    :`flex:1;height:44px;border:1px solid ${C.line2};border-radius:10px;background:#fff;color:${C.ink2};font:600 13px Inter;cursor:pointer`;
   // Four data layers, four chip shapes. A lower layer can never dress as a higher one:
   // filled = clinic-signed, outlined = a device or a hand, tinted = an observation, dashed = for the doctor.
@@ -8829,7 +8852,7 @@ class Component extends DCLogic{
      bigNum:waiting?q.waitMin+' min':q.atTime,bigLabel:waiting?'waiting':'expected',
      bigWrap:'flex:none;text-align:right;min-width:52px',
      bigStyle:`font:700 15px Inter;letter-spacing:-.01em;font-variant-numeric:tabular-nums;color:${waiting?(q.waitMin>=15?C.warn:C.ink2):C.blue}`,
-     bigLabelStyle:`font:500 11px Inter;color:${waiting&&q.waitMin>=15?C.warn:'#8A93A3'};margin-top:1px`,
+     bigLabelStyle:`font:500 11px Inter;color:${waiting&&q.waitMin>=15?C.warn:'#636C7C'};margin-top:1px`,
      hasReassign:!!q.onReassign,onReassign:q.onReassign||(()=>{}),
      style:`display:flex;align-items:center;gap:13px;padding:15px 16px;border-top:${n?'1px solid '+C.line:'0'}`};})}
    else if(b.t==='condrow'){o.isCondRow=1;o.label=b.label;o.on=b.on;o.detail=b.detail;o.placeholder=b.placeholder;o.onToggle=b.onToggle;
@@ -8837,12 +8860,12 @@ class Component extends DCLogic{
     o.trackStyle=`flex:none;width:48px;height:28px;border-radius:16px;background:${b.on?'#0C1524':'#E7EAEF'};display:flex;align-items:center;justify-content:${b.on?'flex-end':'flex-start'};padding:3px`;
     o.knobStyle='width:22px;height:22px;border-radius:10px;background:#fff;display:block;box-shadow:0 1px 3px rgba(12,21,36,.28)'}
    else if(b.t==='picklist'){o.isPicklist=1;o.label=b.label;o.value=b.value;o.onOpen=b.onOpen;
-    o.valueStyle=`font:600 15px Inter;color:${b.placeholder?'#8A93A3':'#0C1524'};margin-top:2px`}
+    o.valueStyle=`font:600 15px Inter;color:${b.placeholder?'#636C7C':'#0C1524'};margin-top:2px`}
    else if(b.t==='note'){o.isNote=1;o.body=b.body;
-    o.noteStyle=b.noteStyle||`font:400 ${12.5*ts}px/1.65 Inter;color:${b.tone==='warn'?C.warn:C.faint};padding:0 4px`;o.wrap=b.tightGap?'margin-top:4px':'margin-top:13px'}
+    o.noteStyle=b.noteStyle||`font:400 ${12.5*ts}px/1.65 Inter;color:${b.tone==='warn'?C.warn:'#636C7C'};padding:0 4px`;o.wrap=b.tightGap?'margin-top:4px':'margin-top:13px'}
    else if(b.t==='chips'){o.isChips=1;o.items=b.items.map(c=>({label:c.label,
      onClick:c.off?()=>this.setState({snack:{text:c.why||'Not available yet'}}):(c.onClick||(()=>{})),
-    style:`height:38px;padding:0 15px;border-radius:19px;border:1px solid ${c.off?'#E7EAEF':(c.on?C.ink:C.line)};background:${c.on?C.ink:'#fff'};color:${c.off?'#8A93A3':(c.on?'#fff':C.mut)};font:600 ${13*ts}px Inter;cursor:${c.off?'not-allowed':'pointer'};white-space:nowrap`}))}
+    style:`height:38px;padding:0 15px;border-radius:19px;border:1px solid ${c.off?'#E7EAEF':(c.on?C.ink:C.line)};background:${c.on?C.ink:'#fff'};color:${c.off?'#636C7C':(c.on?'#fff':C.mut)};font:600 ${13*ts}px Inter;cursor:${c.off?'not-allowed':'pointer'};white-space:nowrap`}))}
    else if(b.t==='banner'){const c=tone(b.tone);o.isBanner=1;o.title=b.title;o.titleTail=b.titleTail||'';o.body=b.body;o.foot=b.foot;o.fg=c.fg;
     o.icon=b.tone==='ok'?I.check:b.tone==='warn'?I.alert:b.tone==='red'?I.alert:I.info;
     o.boxStyle=`background:${c.bg};border-radius:16px;padding:14px 15px`;
@@ -8857,8 +8880,8 @@ class Component extends DCLogic{
    else if(b.t==='slots'){o.isSlots=1;o.items=b.items.map(sl=>{const sel=s.slot===sl.num,gone=sl.taken;
     return{num:sl.num,time:gone?'taken':sl.time,onClick:()=>{if(!gone)this.setState({slot:sl.num});},
      style:`display:flex;flex-direction:column;align-items:center;gap:3px;height:64px;justify-content:center;border-radius:16px;border:1.5px solid ${gone?'#E7EAEF':(sel?C.blue:C.line)};background:${gone?'#F1F2F4':(sel?C.blueT:'#fff')};cursor:${gone?'not-allowed':'pointer'}`,
-     numStyle:`font:700 17px Inter;color:${gone?'#8A93A3':(sel?C.blue:C.ink)};letter-spacing:-.02em;font-variant-numeric:tabular-nums`,
-     timeStyle:`font:500 11px Inter;color:${gone?'#8A93A3':(sel?C.blue:C.faint)};font-variant-numeric:tabular-nums`};})}
+     numStyle:`font:700 17px Inter;color:${gone?'#636C7C':(sel?C.blue:C.ink)};letter-spacing:-.02em;font-variant-numeric:tabular-nums`,
+     timeStyle:`font:500 11px Inter;color:${gone?'#636C7C':(sel?C.blue:'#636C7C')};font-variant-numeric:tabular-nums`};})}
    else if(b.t==='next'){const bt=tone(b.badgeTone);o.isNext=1;o.token=b.token;o.name=b.name;o.sub=b.sub;o.wait=b.wait;
     o.waitLabel=b.waitLabel;o.badge=b.badge;o.badgeFg=bt.fg;o.cta=b.cta;
     o.badgeIcon=b.badgeTone==='ok'?I.check:I.alert;
@@ -8875,7 +8898,7 @@ class Component extends DCLogic{
      chevron:i.onClick?(i.chevron===0?0:1):0,
      iconColor:it.fg,iconWrap:`flex:none;width:38px;height:38px;border-radius:10px;background:${it.bg};display:flex;align-items:center;justify-content:center`,
      tokenStyle:`flex:none;width:38px;height:38px;border-radius:10px;background:#F1F2F4;display:flex;align-items:center;justify-content:center;font:700 15px Inter;color:${C.ink2};font-variant-numeric:tabular-nums`,
-     metaStyle:`font:600 11px Inter;color:${i.metaTone==='warn'?C.warn:C.faint};white-space:nowrap;font-variant-numeric:tabular-nums`,
+     metaStyle:`font:600 11px Inter;color:${i.metaTone==='warn'?C.warn:'#636C7C'};white-space:nowrap;font-variant-numeric:tabular-nums`,
      badgeStyle:bd?bd.style:'display:none',badgeDot:bd?bd.dot:'',
      actWrap:(i.acts&&i.acts.length)?'display:flex;gap:9px;margin-top:12px':'display:none',
      acts:(i.acts||[]).map(a=>{const off=!a.onClick&&!a.tel;
@@ -8899,7 +8922,7 @@ class Component extends DCLogic{
    else if(b.t==='stepper'){o.isStepper=1;o.label=b.label;o.subLabel=b.sub||b.unit||'';o.value=b.value;
     o.decDown=this.holdStart(b.onDec);o.incDown=this.holdStart(b.onInc);o.holdEnd=this.holdEnd;
     o.decDis=b.value<=b.min;o.incDis=b.value>=b.max;
-    const bs=dis=>`flex:none;width:48px;height:48px;border-radius:15px;border:1px solid ${dis?'#E7EAEF':C.line2};background:#fff;color:${dis?'#8A93A3':C.ink};display:flex;align-items:center;justify-content:center;cursor:${dis?'not-allowed':'pointer'}`;
+    const bs=dis=>`flex:none;width:48px;height:48px;border-radius:15px;border:1px solid ${dis?'#E7EAEF':C.line2};background:#fff;color:${dis?'#636C7C':C.ink};display:flex;align-items:center;justify-content:center;cursor:${dis?'not-allowed':'pointer'}`;
     o.decStyle=bs(b.value<=b.min);o.incStyle=bs(b.value>=b.max)}
    else if(b.t==='kv'){o.isKv=1;
     const PROV={doctor:['M6 4v4.5a4 4 0 0 0 8 0V4M5 4h3M13 4h3M10.5 12.8v2.7a4.5 4.5 0 0 0 9 0v-1.9M19.5 9.2a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4z',C.blue],
@@ -9065,7 +9088,7 @@ class Component extends DCLogic{
     o.qtyText=b.qtyText||'';o.qtySub=b.qtySub||'';o.quickLabel=b.quickLabel||'';
     o.decDown=this.holdStart(b.onDec||(()=>{}));o.incDown=this.holdStart(b.onInc||(()=>{}));
     o.holdEnd=this.holdEnd;o.decDis=!!b.decDis;o.incDis=!!b.incDis;o.onQuick=b.onQuick||(()=>{});
-    const sb=dis=>`flex:none;width:48px;height:48px;border-radius:13px;border:1px solid ${dis?'#E7EAEF':C.line2};background:#fff;color:${dis?'#8A93A3':C.ink};font:500 22px Inter;cursor:${dis?'not-allowed':'pointer'}`;
+    const sb=dis=>`flex:none;width:48px;height:48px;border-radius:13px;border:1px solid ${dis?'#E7EAEF':C.line2};background:#fff;color:${dis?'#636C7C':C.ink};font:500 22px Inter;cursor:${dis?'not-allowed':'pointer'}`;
     o.decStyle=sb(b.decDis);o.incStyle=sb(b.incDis);
     o.acts=b.acts?b.acts.map(a=>({label:a.label,onClick:a.onClick,
      style:`flex:${a.kind==='primary'?1.5:1};min-height:46px;padding:0 12px;border:${a.kind==='primary'?'0':'1px solid '+C.line2};border-radius:10px;background:${a.kind==='primary'?C.ink:'#fff'};color:${a.kind==='primary'?'#fff':C.ink2};font:${a.kind==='primary'?700:600} 13px Inter;cursor:pointer`})):null;
@@ -9073,13 +9096,13 @@ class Component extends DCLogic{
    else if(b.t==='batches'){o.isBatches=1;
     o.items=b.items.map((r,n)=>({batch:r.batch,sub:r.sub,qty:r.qty,tag:r.tag||'',
      row:`display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-top:${n?'1px solid #F1F2F4':'0'};opacity:${r.locked?.7:1}`,
-     qtyStyle:`font:700 13px Inter;color:${r.locked?C.faint:C.ink};font-variant-numeric:tabular-nums`,
+     qtyStyle:`font:700 13px Inter;color:${r.locked?'#636C7C':C.ink};font-variant-numeric:tabular-nums`,
      tagStyle:r.tag?`display:inline-block;margin-top:5px;padding:3px 8px;border-radius:10px;font:700 11px Inter;letter-spacing:.05em;color:${tone(r.tone).fg};background:${tone(r.tone).bg}`:'display:none'}))}
    else if(b.t==='gst'){o.isGst=1;o.total=b.total;o.totalLabel=b.totalLabel||'Total payable';o.foot=b.foot||'';
     o.rows=b.rows.map((r,n)=>({l:r.l,r:r.r,
      row:`display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:${r.head?'0 0 7px':'5px 0'};margin-top:${r.head&&n?'13px':'0'};border-top:${r.head&&n?'1px solid #F1F2F4':'0'};padding-top:${r.head&&n?'13px':''}`,
-     lStyle:r.head?'font:500 11px/14px Inter;letter-spacing:.06em;color:#8A93A3':`font:400 13px Inter;color:${C.mut}`,
-     rStyle:r.head?'font:700 11px Inter;letter-spacing:.05em;color:#8A93A3;font-variant-numeric:tabular-nums':`font:600 13px Inter;color:${C.ink};font-variant-numeric:tabular-nums`}))}
+     lStyle:r.head?'font:500 11px/14px Inter;letter-spacing:.06em;color:#636C7C':`font:400 13px Inter;color:${C.mut}`,
+     rStyle:r.head?'font:700 11px Inter;letter-spacing:.05em;color:#636C7C;font-variant-numeric:tabular-nums':`font:600 13px Inter;color:${C.ink};font-variant-numeric:tabular-nums`}))}
    else if(b.t==='reg'){o.isReg=1;
     o.items=b.items.map((r,n)=>({n:r.n,title:r.title,sub:r.sub,prov:r.prov,meta:r.meta||'',
      row:`display:flex;gap:10px;align-items:flex-start;padding:13px 0;border-top:${n?'1px solid #F1F2F4':'0'}`}))}
@@ -9098,7 +9121,7 @@ class Component extends DCLogic{
      bubble:me?`max-width:86%;padding:11px 14px;border-radius:16px 16px 4px 16px;background:${C.ink};color:#fff`
       :`max-width:92%;padding:13px 14px;border-radius:16px 16px 16px 4px;background:#fff;border:1px solid ${C.line}`,
      textStyle:`font:400 13px/18px Inter;color:${me?'#fff':C.ink};white-space:pre-line`,
-     meta:`font:400 11px Inter;color:#8A93A3;margin-top:4px;padding:0 4px`};});}
+     meta:`font:400 11px Inter;color:#636C7C;margin-top:4px;padding:0 4px`};});}
    else if(b.t==='comments'){o.isComments=1;
     const hs=on=>`height:32px;padding:0 4px;border:0;background:transparent;color:${on?C.blue:'#5A6372'};font:${on?700:600} 12.5px Inter;cursor:pointer;font-variant-numeric:tabular-nums`;
     const map=(c,n)=>({who:c.who,ago:c.ago,text:c.text,help:String(c.help),onHelp:c.onHelp,onReply:c.onReply||null,onMore:c.onMore,helpStyle:hs(c.on),
@@ -9118,7 +9141,7 @@ class Component extends DCLogic{
       flags:(r.flags&&r.flags.length)?r.flags.map(f=>({label:f.label,
        style:`padding:4px 9px;border-radius:10px;font:500 11px/14px Inter;color:${tone(f.tone).fg};background:${tone(f.tone).bg}`})):null}));}
    else if(b.t==='pillbtn'){o.isPillBtn=1;o.label=b.label;o.icon=b.icon;o.onClick=b.onClick;
-    o.labelStyle=`flex:1;font:500 15px Inter;color:${b.muted?'#8A93A3':C.ink};white-space:nowrap;overflow:hidden;text-overflow:ellipsis`;}
+    o.labelStyle=`flex:1;font:500 15px Inter;color:${b.muted?'#636C7C':C.ink};white-space:nowrap;overflow:hidden;text-overflow:ellipsis`;}
    else if(b.t==='ctrlrow'){o.isCtrlRow=1;o.filtersLabel=b.filtersLabel;o.onFilters=b.onFilters;o.spLabel=b.spLabel;o.spOpen=!!b.spOpen;o.onSp=b.onSp;
     o.sortLabel=b.sortLabel;o.sortOpen=!!b.sortOpen;o.onSort=b.onSort;
     o.sortOpts=(b.sortOpts||[]).map(x=>({label:x.label,onClick:x.onClick,
@@ -9130,8 +9153,8 @@ class Component extends DCLogic{
    else if(b.t==='launchcards'){o.isLaunchCards=1;o.items=b.items.map(c=>({...c,tagU:c.tag.toUpperCase()}));}
    else if(b.t==='prodcards'){o.isProdCards=1;o.items=b.items.map(p=>({...p,showAdd:!p.qty&&!p.out,
     card:`background:#fff;border:1px solid #E3E7ED;border-radius:16px;padding:13px 14px;cursor:pointer;opacity:${p.out?.6:1}`,
-    marginStyle:`font:700 22px/28px Inter;color:${p.out?'#8A93A3':C.green};font-variant-numeric:tabular-nums;letter-spacing:-.01em`,
-    etaStyle:`flex:1;min-width:0;font:500 11px Inter;color:${p.out?C.warn:'#8A93A3'};white-space:nowrap;overflow:hidden;text-overflow:ellipsis`,
+    marginStyle:`font:700 22px/28px Inter;color:${p.out?'#636C7C':C.green};font-variant-numeric:tabular-nums;letter-spacing:-.01em`,
+    etaStyle:`flex:1;min-width:0;font:500 11px Inter;color:${p.out?C.warn:'#636C7C'};white-space:nowrap;overflow:hidden;text-overflow:ellipsis`,
     stepWrap:p.qty?'display:inline-flex;align-items:center;gap:2px;border:1px solid #E3E7ED;border-radius:10px;overflow:hidden;margin-left:auto':'display:none',
     stepBtn:'width:30px;height:30px;border:0;background:#fff;font:500 15px Inter;cursor:pointer',
     onDec:e=>{if(e&&e.stopPropagation)e.stopPropagation();p.onDec();},onInc:e=>{if(e&&e.stopPropagation)e.stopPropagation();p.onInc();}}));}
@@ -9150,20 +9173,20 @@ class Component extends DCLogic{
     o.cells=b.rows.flatMap(([l,vals])=>[{v:l,style:'font:600 11px Inter;color:#5A6372'}].concat(vals.map(v=>({v,style:'font:600 13px Inter;color:#0C1524;text-align:right;font-variant-numeric:tabular-nums'}))));}
    else if(b.t==='labrows'){o.isLabRows=1;o.items=b.items.map((r,n)=>({...r,row:`padding:12px 0;border-top:${n?'1px solid #F1F2F4':'0'};cursor:pointer`,
     starFill:r.star?'#B54708':'none',starStroke:r.star?'#B54708':'#E7EAEF',onStar:e=>{if(e&&e.stopPropagation)e.stopPropagation();r.onStar();}}));}
-   else if(b.t==='steps'){o.isSteps=1;o.items=b.items.map(x=>({label:x.label,bar:`height:4px;border-radius:2px;background:${x.on?C.blue:'#E3E7ED'}`,lab:`font:${x.on?700:500} 11px Inter;color:${x.on?C.ink:'#8A93A3'}`}));}
+   else if(b.t==='steps'){o.isSteps=1;o.items=b.items.map(x=>({label:x.label,bar:`height:4px;border-radius:2px;background:${x.on?C.blue:'#E3E7ED'}`,lab:`font:${x.on?700:500} 11px Inter;color:${x.on?C.ink:'#636C7C'}`}));}
    else if(b.t==='segrow'){o.isSegRow=1;o.items=b.items.map(x=>({label:x.label,onClick:x.onClick,style:`flex:1;height:32px;border:0;border-radius:10px;background:${x.on?'#fff':'transparent'};color:${x.on?C.ink:'#5A6372'};font:${x.on?700:600} 13px Inter;cursor:pointer;box-shadow:${x.on?'0 1px 3px rgba(12,21,36,.14)':'none'}`}));}
    else if(b.t==='idstrip'){o.isIdStrip=1;o.name=b.name;o.sub=b.sub;o.action=b.action||'';o.onAction=b.onAction;o.declined=!!b.declined;
     o.initials=(w=>w.length>1?(w[0][0]+w[w.length-1][0]):(w[0]||'').slice(0,2))(String(b.name||'').split(' ').filter(Boolean)).toUpperCase();
-    o.ava=`flex:none;width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;font:600 17px/24px Inter;color:${b.declined?'#8A93A3':C.blue};background:${b.declined?'#F1F2F4':C.blueT}`;}
+    o.ava=`flex:none;width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;font:600 17px/24px Inter;color:${b.declined?'#636C7C':C.blue};background:${b.declined?'#F1F2F4':C.blueT}`;}
    else if(b.t==='meterkey'){o.isMeterKey=1;
     o.items=b.items.map(k=>{const ready=k.kind==='check',two=ready||(k.on||1)>=2;
-     return{label:k.label,path:two?'M1.75 12.5l4.25 4.25L16.75 6.5M11.25 16.25l.5.5L22.25 6.5':'M4.5 12.5l4.25 4.25L19.5 6.5',color:ready?C.blue:two?C.green:C.faint};});}
+     return{label:k.label,path:two?'M1.75 12.5l4.25 4.25L16.75 6.5M11.25 16.25l.5.5L22.25 6.5':'M4.5 12.5l4.25 4.25L19.5 6.5',color:ready?C.blue:two?C.green:'#636C7C'};});}
    else if(b.t==='dayrow'){o.isDayRow=1;
     o.items=b.items.map(d=>({dow:d.today?'Today':d.dow,num:d.num,mon:d.mon,onClick:d.onClick,
      style:`flex:none;width:60px;height:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:1px solid ${d.on?C.ink:C.line};border-radius:16px;background:${d.on?C.ink:'#fff'};cursor:pointer`,
-     dowStyle:`font:500 11px/14px Inter;letter-spacing:.06em;text-transform:uppercase;color:${d.on?'rgba(255,255,255,.72)':d.sun?C.warn:'#8A93A3'}`,
+     dowStyle:`font:500 11px/14px Inter;letter-spacing:.06em;text-transform:uppercase;color:${d.on?'rgba(255,255,255,.72)':d.sun?C.warn:'#636C7C'}`,
      numStyle:`font:700 22px/28px Inter;letter-spacing:-.01em;font-variant-numeric:tabular-nums;color:${d.on?'#fff':C.ink}`,
-     monStyle:`font:400 11px/14px Inter;color:${d.on?'rgba(255,255,255,.72)':'#8A93A3'}`}));}
+     monStyle:`font:400 11px/14px Inter;color:${d.on?'rgba(255,255,255,.72)':'#636C7C'}`}));}
    else if(b.t==='affix'){o.isAffixField=1;o.star=/\s\*$/.test(b.label||'');o.label=String(b.label||'').replace(/\s\*$/,'');o.prefix=b.prefix||'';o.suffix=b.suffix||'';
     o.value=b.value||'';o.placeholder=b.placeholder||'';o.mode=b.mode||'numeric';o.hint=b.hint||'';o.error=b.error||'';
     o.boxStyle=`display:flex;align-items:center;gap:8px;margin-top:6px;height:48px;padding:0 14px;border:1px solid ${b.error?C.red:C.line};border-radius:16px;background:#FFFFFF`;
@@ -9171,7 +9194,7 @@ class Component extends DCLogic{
    else if(b.t==='fieldrow'){o.isFieldRow=1;o.items=b.items.map(f=>({label:f.label,value:f.value||'',
     placeholder:f.placeholder||'',mode:f.mode||'text',onInput:e=>f.onChange(e&&e.target?e.target.value:'')}));}
    else if(b.t==='select'){o.isSelect=1;o.label=b.label;o.value=b.value||b.placeholder||'Choose';o.onOpen=b.onOpen;
-    o.valueStyle=`display:block;font:400 15px/22px Inter;color:${b.value?C.ink:'#8A93A3'};margin-top:2px`;}
+    o.valueStyle=`display:block;font:400 15px/22px Inter;color:${b.value?C.ink:'#636C7C'};margin-top:2px`;}
    else if(b.t==='seg'){o.isSeg=1;o.items=b.items.map(c=>({label:c.label,onClick:c.onClick,
     style:`flex:1;min-width:0;height:34px;border:0;border-radius:12px;background:${c.on?C.ink:'transparent'};color:${c.on?'#fff':C.ink2};font:600 13px/18px Inter;cursor:pointer`}));}
    else if(b.t==='spacer'){o.isSpacer=1;}
@@ -9205,7 +9228,7 @@ class Component extends DCLogic{
     o.rows=b.rows.map((r,n)=>({l:r.l,r:r.r,chip:r.kind==='chip'?r.r:'',
      row:`display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-top:${n?'1px solid #F1F2F4':'0'}`,
      accent:r.kind==='emph'?`flex:none;width:3px;align-self:stretch;border-radius:2px;background:${b.alert?C.warn:C.blue}`:'display:none',
-     lStyle:`font:600 11px/14px Inter;color:${r.kind==='muted'?'#8A93A3':'#5A6372'}`,
+     lStyle:`font:600 11px/14px Inter;color:${r.kind==='muted'?'#636C7C':'#5A6372'}`,
      vStyle:r.kind==='chip'?'display:none':`font:${r.kind==='emph'?600:400} ${r.kind==='emph'?14.5:13.5}px/1.45 Inter;color:${r.kind==='muted'?'#5A6372':'#0C1524'};margin-top:2px`}));}
    else if(b.t==='inline'){o.isInline=1;o.label=b.label;o.text=b.text;}
    else if(b.t==='tagrow'){o.isTagRow=1;o.items=b.items;}
@@ -9219,7 +9242,7 @@ class Component extends DCLogic{
     o.items=b.items.map((x,i)=>({label:x[0],val:String(x[1]).replace(/\.0$/,'')+(mx<=100&&Number.isInteger(x[1])?'%':''),
      bar:`height:100%;width:${Math.max(3,Math.round(x[1]/mx*100))}%;border-radius:10px;background:${i===0?C.blue:'#E7EAEF'}`}));}
    else if(b.t==='apprchips'){o.isApprChips=1;
-    o.items=b.items.map(c=>({label:c.label,style:`padding:${c.big?'8px 13px':'6px 10px'};border-radius:10px;font:${c.big?700:600} ${c.big?13:12}px Inter;color:${c.off?'#8A93A3':tone(c.tone).fg};background:${c.off?'#F1F2F4':tone(c.tone).bg};text-decoration:none`}));}
+    o.items=b.items.map(c=>({label:c.label,style:`padding:${c.big?'8px 13px':'6px 10px'};border-radius:10px;font:${c.big?700:600} ${c.big?13:12}px Inter;color:${c.off?'#636C7C':tone(c.tone).fg};background:${c.off?'#F1F2F4':tone(c.tone).bg};text-decoration:none`}));}
    else if(b.t==='findings'){o.isFindings=1;
     const TT={Drug:['#EAF1FD','#0B63CE'],Diagnostic:['#E8F6EF','#067647'],Device:['#EAF1FD','#0B63CE'],Guideline:['#F1F2F4','#5A6372'],Alert:['#FFF6E6','#B54708'],Results:['#F1F2F4','#5A6372']};
     const TL={Drug:'DRUG',Diagnostic:'DIAGNOSTIC',Device:'DEVICE',Guideline:'GUIDELINE',Alert:'ALERT',Results:'RESULTS'};
@@ -9253,8 +9276,8 @@ class Component extends DCLogic{
      initials:(w=>w.length>1?(w[0][0]+w[w.length-1][0]):(w[0]||'').slice(0,2))(String(q.name||'').split(' ').filter(Boolean)).toUpperCase(),
      noPhoto:!q.photo&&!q.declined,
      avaWrap:'position:relative;flex:none;width:40px;height:40px;margin-right:2px',
-     ava:`width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;font:600 15px/22px Inter;color:${q.declined?'#8A93A3':C.blue};background:${q.declined?'#F1F2F4':C.blueT}`,
-     tokStyle:`position:absolute;left:-2px;bottom:-2px;min-width:20px;height:18px;padding:0 5px;border-radius:9px;background:${C.ink};color:#fff;font:600 11px/18px Inter;text-align:center;font-variant-numeric:tabular-nums;border:2px solid #fff;box-sizing:content-box`,
+     ava:`width:40px;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;font:600 15px/22px Inter;color:${q.declined?'#636C7C':C.blue};background:${q.declined?'#F1F2F4':C.blueT}`,
+     tokStyle:`position:absolute;left:50%;transform:translateX(-50%);bottom:-16px;min-width:20px;height:18px;padding:0 5px;border-radius:9px;background:${C.ink};color:#fff;font:600 11px/18px Inter;text-align:center;font-variant-numeric:tabular-nums;border:2px solid #fff;box-sizing:content-box`,
      wait:q.wait||'',actLabel:q.actLabel||'',onClick:q.onClick||(()=>{}),
      onAct:q.onAct?(e=>{e.stopPropagation();q.onAct();}):null,actPrimary:!!q.next,
      chips:(q.chips&&q.chips.length)?q.chips.map(c=>({label:c.label,style:`padding:3px 8px;border-radius:10px;font:600 11px Inter;color:${tone(c.tone).fg};background:${tone(c.tone).bg}`})):null,
@@ -9262,8 +9285,8 @@ class Component extends DCLogic{
       const ready=r.here&&n===st.length;
       return ready?{path:'M1.75 12.5l4.25 4.25L16.75 6.5M11.25 16.25l.5.5L22.25 6.5',color:C.blue,label:'Ready'}
        :n>=2?{path:'M1.75 12.5l4.25 4.25L16.75 6.5M11.25 16.25l.5.5L22.25 6.5',color:C.green,label:'Vitals taken'}
-       :{path:'M4.5 12.5l4.25 4.25L19.5 6.5',color:r.late?C.warn:C.faint,label:r.late?'Registered · waiting long':'Registered'};})():null,
-     waitStyle:`font:600 13px Inter;font-variant-numeric:tabular-nums;color:${q.waitTone==='warn'?'#B54708':q.waitTone==='mut'?'#8A93A3':'#5A6372'};white-space:nowrap`,
+       :{path:'M4.5 12.5l4.25 4.25L19.5 6.5',color:r.late?C.warn:'#636C7C',label:r.late?'Registered · waiting long':'Registered'};})():null,
+     waitStyle:`font:600 13px Inter;font-variant-numeric:tabular-nums;color:${q.waitTone==='warn'?'#B54708':q.waitTone==='mut'?'#636C7C':'#5A6372'};white-space:nowrap`,
      chevStyle:q.chev?'flex:none':'display:none',
      actStyle:q.next
       ?`height:40px;padding:0 16px;border:0;border-radius:10px;background:${C.ink};color:#fff;font:700 13px Inter;cursor:pointer`
@@ -9344,13 +9367,13 @@ class Component extends DCLogic{
      :`position:absolute;left:${X0}px;width:${XE-X0}px;top:${Y(b.band[1])}px;height:${Math.max(Y(b.band[0])-Y(b.band[1]),3)}px;background:#EAF1FD;border-radius:5px`;
 
     o.yLabels=axisTicks.map(v=>({text:b.int?String(Math.round(v)):v.toFixed(1),
-      style:`position:absolute;left:0;top:${Y(v)-7}px;width:32px;text-align:right;font:400 11px Inter;color:#8A93A3;font-variant-numeric:tabular-nums`}));
+      style:`position:absolute;left:0;top:${Y(v)-7}px;width:32px;text-align:right;font:400 11px Inter;color:#636C7C;font-variant-numeric:tabular-nums`}));
     const MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     const fx=t=>MO[Math.min(11,Math.floor((t%1)*12))]+" '"+String(Math.floor(t)).slice(2);
     const dl=b.dates&&b.dates.length===b.pts.length?b.dates:null;
     const axLab=(t,i)=>dl?dl[i===0?0:i===2?dl.length-1:Math.floor((dl.length-1)/2)]:fx(t);
     o.xLabels=[t0,(t0+t1)/2,t1].map((t,i)=>({text:axLab(t,i),
-      style:`position:absolute;left:${X(t)}px;top:${Y1+22}px;transform:translateX(${i===0?'-4px':i===2?'-100%':'-50%'});font:400 11px Inter;color:#8A93A3;white-space:nowrap;font-variant-numeric:tabular-nums`}));
+      style:`position:absolute;left:${X(t)}px;top:${Y1+22}px;transform:translateX(${i===0?'-4px':i===2?'-100%':'-50%'});font:400 11px Inter;color:#636C7C;white-space:nowrap;font-variant-numeric:tabular-nums`}));
     o.foot=two?'Systolic above, diastolic below.':''}
    else if(b.t==='trendrow'){o.isTrendRow=1;o.param=b.param;o.trendText=b.trendText;o.points=b.points;o.strokeColor=b.strokeColor;o.topBorder=b.topBorder;
     o.onClick=b.onClick||null;o.chevron=b.onClick?1:0;o.rowStyle=`display:flex;align-items:center;gap:10px;padding:7px 0;border-top:${b.topBorder}${b.onClick?';cursor:pointer':''}`}
@@ -9415,11 +9438,11 @@ class Component extends DCLogic{
     o.bandStyle=`position:absolute;left:0;right:0;bottom:${px(b.band[0])}px;height:${px(b.band[1])-px(b.band[0])}px;background:#EAF1FD;border-top:1px solid #D6E4FA;border-bottom:1px solid #D6E4FA`;
     o.bars=b.items.map(x=>{const long=x.days>b.band[1],run=!!x.running;
      return{val:run?'day '+x.days:String(x.days),label:x.label,
-      valStyle:`font:${run?600:700} 11.5px Inter;color:${run?'#8A93A3':long?'#B54708':'#0C1524'};font-variant-numeric:tabular-nums`,
+      valStyle:`font:${run?600:700} 11.5px Inter;color:${run?'#636C7C':long?'#B54708':'#0C1524'};font-variant-numeric:tabular-nums`,
       barStyle:`width:100%;height:${px(x.days)}px;border-radius:10px 7px 3px 3px;`
        +(run?'background:repeating-linear-gradient(135deg,#F1F2F4 0 4px,#fff 4px 8px);border:1px dashed #E7EAEF'
          :`background:${long?'#B54708':C.blue}`),
-      labStyle:`flex:1;text-align:center;font:500 11px Inter;color:#8A93A3;white-space:nowrap`};})}
+      labStyle:`flex:1;text-align:center;font:500 11px Inter;color:#636C7C;white-space:nowrap`};})}
    else if(b.t==='cycle'){o.isCycle=1;o.kicker=b.kicker;o.kickerColor=b.kickerColor;o.boxStyle=b.boxStyle;o.onEdit=b.onEdit;
     o.line=b.line}
    else if(b.t==='hardstop'){o.isHardstop=1;Object.assign(o,b);
@@ -9442,7 +9465,7 @@ class Component extends DCLogic{
      return{who:x.who,time:x.t,text:showOr?x.or:x.en,second:(s.mode==='both'&&x.or&&x.en)?x.en:'',flag:x.flag,
       dot:`width:6px;height:6px;border-radius:50%;background:${dr?C.blue:C.ink};flex:none`,
       whoStyle:`font:700 11px Inter;color:${dr?C.blue:C.ink};letter-spacing:.02em`,
-      textStyle:`font:400 ${14*ts}px/1.55 Inter;color:${x.unclear||x.uncertain?C.faint:C.ink2};margin-top:4px;padding-left:15px`,
+      textStyle:`font:400 ${14*ts}px/1.55 Inter;color:${x.unclear||x.uncertain?'#636C7C':C.ink2};margin-top:4px;padding-left:15px`,
       wrap:`padding:12px 0;border-top:${i?'1px solid '+C.line:'0'}`};}).reverse()}
    else if(b.t==='facts'){o.isFacts=1;
     o.groups=b.groups.map(g=>({title:g.title,items:g.items.map(x=>{
@@ -9585,7 +9608,7 @@ class Component extends DCLogic{
      return CAT.filter(x=>!q||x.name.toLowerCase().includes(q)||x.sub.toLowerCase().includes(q)).map(x=>{
       const linked=x.sub==='Already linked',requested=s.sheet.requested&&s.sheet.requested[x.name];
       return{name:x.name,sub:x.sub,btnLabel:linked?'Linked':(requested?'Requested':'Request to join'),
-       btnStyle:`flex:none;height:36px;padding:0 14px;border-radius:10px;border:1px solid ${linked||requested?'#E3E7ED':C.blue};background:${linked||requested?'#F6F7F9':C.blue};color:${linked||requested?'#8A93A3':'#fff'};font:700 13px Inter;cursor:${linked||requested?'default':'pointer'}`,
+       btnStyle:`flex:none;height:36px;padding:0 14px;border-radius:10px;border:1px solid ${linked||requested?'#E3E7ED':C.blue};background:${linked||requested?'#F6F7F9':C.blue};color:${linked||requested?'#636C7C':'#fff'};font:700 13px Inter;cursor:${linked||requested?'default':'pointer'}`,
        onClick:linked||requested?(()=>{}):(()=>this.setState(p=>({sheet:{...p.sheet,requested:{...p.sheet.requested,[x.name]:1}}})))};});})(),
     noMatch:!(s.sheet.query===''||true),
     onQuery:e=>{const v=e&&e.target?e.target.value:'';this.setState(p=>({sheet:{...p.sheet,query:v}}));}}
@@ -9636,7 +9659,7 @@ class Component extends DCLogic{
    navCapsule:tab?`flex:none;align-self:center;display:flex;align-items:center;gap:4px;height:72px;margin-bottom:26px;padding:0 10px;border-radius:24px;background:#FFFFFF;box-shadow:0 8px 24px rgba(12,21,36,.10)`:`flex:none;display:flex;align-items:flex-start;height:${ios?86:80}px;padding:8px 4px ${ios?22:16}px;background:#FFFFFF;border-top:1px solid #E7EAEF`,
    dps:[[393,'iPhone'],[412,'Android'],[834,'Tablet']].map(([k,label])=>({label,onClick:()=>this.setState({dpW:k,device:k===412?'android':k===834?'tab':'ios'}),
     style:`flex:1;height:30px;border:0;border-radius:8px;background:${(s.dpW||393)===k?'#fff':'transparent'};color:${(s.dpW||393)===k?C.ink:'#5A6372'};font:700 11px Inter;cursor:pointer;box-shadow:${(s.dpW||393)===k?'0 1px 3px rgba(12,21,36,.14)':'none'}`})),
-   pickerLabel:(s.role==='doctor'&&s.route==='cxreview')?'REVIEW STATE':(s.role==='doctor'&&s.route==='pharm'&&s.pdSearch)?'SEARCH STATE'
+   pickerLabel:(s.role==='doctor'&&s.route==='cxreview')?'REVIEW STATE':(s.role==='doctor'&&s.route==='cxr'&&!s.cxSigned)?'SIGN STATE':(s.role==='doctor'&&s.route==='pharm'&&s.pdSearch)?'SEARCH STATE'
     :(s.role==='desk'&&s.route==='r2')?'FINGERPRINT READER'
     :(s.role==='doctor'&&s.route==='space'&&(s.spaceTab||'clinic')==='clinic')?'WHO IS LOOKING'
     :(s.role==='doctor'&&s.route==='home')?'HOME STATE':(s.role==='doctor'&&(s.route==='research'||s.route==='rs2'))?'RESEARCH STATE':(s.role==='doctor'&&(s.route==='d2'||s.route==='d5'))?'WHO IS SEEING HER'
@@ -9649,6 +9672,11 @@ class Component extends DCLogic{
       onClick:()=>this.setState(p=>({rvMode:k,rvSigned:k==='signed',rvEdit:null,rvSign:false,rvKept:{},rvCoText:null,rvCoEdited:0,
        rvLines:k==='stress'?RV_STRESS():k==='child'?RV_CHILD():(['stress','child'].includes(p.rvMode)?RV_SEED():p.rvLines)})),
       style:`height:30px;padding:0 11px;border-radius:10px;border:1px solid ${(s.rvMode||'normal')===k?'#0C1524':'#E3E7ED'};background:${(s.rvMode||'normal')===k?'#0C1524':'#fff'};color:${(s.rvMode||'normal')===k?'#fff':'#5A6372'};font:600 13px/18px Inter;cursor:pointer`}))
+   :(s.role==='doctor'&&s.route==='cxr'&&!s.cxSigned)
+    ?[['live','Live'],['signfail','Sign failed'],['offline','No internet']].map(([k,label])=>({label,
+      // A sign failure or lost connection happens on a finished note: the state fills the consult and settles the Septran conflict.
+      onClick:()=>this.setState(p=>k==='live'?{cxrState:k}:{cxrState:k,cxStep:CSTEPS.length,cxSeptran:p.cxSeptran||'removed'}),
+      style:`height:30px;padding:0 11px;border-radius:10px;border:1px solid ${(s.cxrState||'live')===k?C.ink:C.line};background:${(s.cxrState||'live')===k?C.ink:'#fff'};color:${(s.cxrState||'live')===k?'#fff':C.ink2};font:600 13px/18px Inter;cursor:pointer`}))
    :(s.role==='doctor'&&s.route==='pharm'&&s.pdSearch)
     ?[['live','Live'],['loading','Loading'],['offline','Offline'],['error','Error']].map(([k,label])=>({label,
       onClick:()=>this.setState({pdSearchState:k}),
@@ -9756,7 +9784,7 @@ class Component extends DCLogic{
      onClick:()=>this.go(route,false),
      btnStyle:(s.device==='tab')?'flex:none;width:96px;display:flex;flex-direction:column;align-items:center;gap:2px;background:transparent;border:0;padding:0;height:56px;cursor:pointer':'flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;background:transparent;border:0;padding:0;height:56px;cursor:pointer',
      pillStyle:`position:relative;display:flex;align-items:center;justify-content:center;width:56px;height:32px;border-radius:16px;background:${on?C.blueT:'transparent'}`,
-     labelStyle:`font:${on?600:500} 12px/14px Inter;color:${on?C.blue:C.faint};letter-spacing:0`};}),
+     labelStyle:`font:${on?600:500} 12px/14px Inter;color:${on?C.blue:'#636C7C'};letter-spacing:0`};}),
 
    snackBar:s.snack?{text:s.snack.text,onDown:this.pauseSnack,onUp:this.resumeSnack,
     undoLabel:s.snack.undo?'UNDO':'DISMISS',
@@ -9773,21 +9801,21 @@ class Component extends DCLogic{
      micColor:v==='listening'?'#FFFFFF':'#0B63CE',
      onPending:()=>this.setState({rvSign:true,rvEdit:null}),
      hint:(n&&v!=='listening'&&!s.rvSigning)?'':v==='listening'?'Listening… release to preview':s.rvSigning?'Signing…':s.rvMode==='saving'?'Saving…':off?'Offline · kept on this phone':'Hold to correct by voice',
-     hintStyle:`flex:1;min-width:0;font:400 13px/18px Inter;color:${v==='listening'?'#0B63CE':'#8A93A3'}`,
+     hintStyle:`flex:1;min-width:0;font:400 13px/18px Inter;color:${v==='listening'?'#0B63CE':'#636C7C'}`,
      pending:n?n+' to confirm':'',
-     signLabel:s.rvSigning?'Signing…':'Sign',
-     onSign:()=>{if(!this.state.rvSigning)this.rvDoSign();},
+     signLabel:'Done',
+     onSign:()=>{if(this.rvPending().length)return this.setState({rvSign:true,rvEdit:null});this.go('cxr',true);},
      signStyle:`flex:none;height:52px;min-width:104px;padding:0 22px;border:0;border-radius:16px;background:#0B63CE;color:#FFFFFF;font:600 16px/24px Inter;cursor:pointer;opacity:${s.rvSigning?.7:1}`};})():null,
    rvPane:(s.route==='cxreview'&&!(s.rvSigned||s.rvMode==='signed'))?(()=>{const tabl=s.device==='tab',E=s.rvEdit;
     const stop=e=>{if(e&&e.stopPropagation)e.stopPropagation();},close=()=>this.setState({rvEdit:null,rvSign:false});
-    const doneSt=on=>`height:48px;min-width:112px;padding:0 20px;border:0;border-radius:14px;background:${on?'#0B63CE':'#E3E7ED'};color:${on?'#FFFFFF':'#8A93A3'};font:600 15px/22px Inter;cursor:${on?'pointer':'default'}`;
+    const doneSt=on=>`height:48px;min-width:112px;padding:0 20px;border:0;border-radius:14px;background:${on?'#0B63CE':'#E3E7ED'};color:${on?'#FFFFFF':'#636C7C'};font:600 15px/22px Inter;cursor:${on?'pointer':'default'}`;
     const shell=o=>({ev:null,noEv:'',controls:[],foot:0,onDelete:null,...o,stop,grabber:!tabl,onScrim:tabl?(()=>{}):close,onClose:(tabl&&!E&&!s.rvSign)?null:close,
      scrim:tabl?'position:absolute;top:96px;bottom:96px;right:0;width:46%;z-index:3;display:flex':'position:absolute;inset:0;z-index:4;background:rgba(12,21,36,.4);display:flex;align-items:flex-end;animation:fade .2s ease-out',
      panel:tabl?'flex:1;display:flex;flex-direction:column;background:#FFFFFF;border-left:1px solid #E3E7ED;padding:16px':'width:100%;max-height:86%;display:flex;flex-direction:column;background:#FFFFFF;border-radius:24px 24px 0 0;padding:10px 16px 16px;box-shadow:0 8px 24px rgba(12,21,36,.10);animation:rise .25s ease-out'});
     if(s.rvSign){const P=this.rvPending();
-     return shell({title:P.length?P.length+' to confirm':'Ready to sign',noEv:P.length?'Confirm each line, or close this and tap it to fix it.':'Everything is confirmed.',
+     return shell({title:P.length?P.length+' to confirm':'Ready to sign',noEv:P.length?'Confirm each line, or close this and tap it to fix it.':'Everything is confirmed. Sign on Review with the slide.',
       controls:P.map(p=>({isSignItem:1,title:p.title,sub:p.sub,act:p.act,onAct:p.onAct})),foot:1,
-      doneLabel:P.length?'Sign':'Sign now',onDone:()=>{if(!this.rvPending().length)this.rvDoSign();},doneStyle:doneSt(!P.length)});}
+      doneLabel:'Done',onDone:()=>{if(!this.rvPending().length){this.setState({rvSign:false});this.go('cxr',true);}},doneStyle:doneSt(!P.length)});}
     if(!E)return tabl?shell({title:'Evidence and editor',noEv:'Tap a line to see what was said and edit it.'}):null;
     const R=this.rvControls(E);
     return shell({title:R.title,ev:E.line.ev?{who:E.line.ev[0],q:E.line.ev[1],at:E.line.ev[2]}:null,
@@ -9802,14 +9830,14 @@ class Component extends DCLogic{
     return{title:'1Heath AI',onNew:()=>this.setState({aiChat:'',aiQ:'',aiTopic:'all',drawerOpen:false}),
      groups:[pinned.length?{label:'Pinned',items:pinned.map(c=>row(c,c.id===s.aiChat))}:null,
       {label:recents.length?'Recents':'',items:recents.length?recents.map(c=>row(c,c.id===s.aiChat))
-       :[{label:'No chats yet',icon:'',color:'#8A93A3',onClick:()=>this.setState({drawerOpen:false}),
-          labStyle:'flex:1;font:400 15px/22px Inter;color:#8A93A3;text-align:left',
+       :[{label:'No chats yet',icon:'',color:'#636C7C',onClick:()=>this.setState({drawerOpen:false}),
+          labStyle:'flex:1;font:400 15px/22px Inter;color:#636C7C;text-align:left',
           style:'display:flex;align-items:center;gap:12px;width:100%;height:48px;padding:0 12px;border:0;background:transparent'}]}].filter(Boolean)};})():null,
    composer:sc.composer?{value:sc.composer.value,placeholder:sc.composer.placeholder,
     onInput:e=>sc.composer.onChange(e&&e.target?e.target.value:''),
     onKey:e=>{if(e&&e.key==='Enter'&&sc.composer.can)sc.composer.onSend();},
     onSend:()=>{if(sc.composer.can)sc.composer.onSend();},
-    sendStyle:`flex:none;width:36px;height:36px;border-radius:18px;border:0;display:flex;align-items:center;justify-content:center;background:${sc.composer.can?C.ink:'#E3E7ED'};color:${sc.composer.can?'#fff':'#8A93A3'};cursor:${sc.composer.can?'pointer':'default'};transition:background .12s ease`}:null,
+    sendStyle:`flex:none;width:36px;height:36px;border-radius:18px;border:0;display:flex;align-items:center;justify-content:center;background:${sc.composer.can?C.ink:'#E3E7ED'};color:${sc.composer.can?'#fff':'#636C7C'};cursor:${sc.composer.can?'pointer':'default'};transition:background .12s ease`}:null,
    cta:sc.cta?{label:sc.cta.label,mic:sc.cta.mic,onClick:sc.cta.onClick||(()=>{}),hint:sc.cta.hint||sc.cta.status||'',play:sc.cta.play,
     swipe:!!sc.cta.swipe,notSwipe:!sc.cta.swipe,swipeX:s.swipeX||0,
     knobStyle:`position:absolute;left:${4+(s.swipeX||0)}px;top:4px;width:44px;height:44px;border-radius:22px;background:${C.blue};display:flex;align-items:center;justify-content:center;transition:${s.swipeDrag?'none':'left 160ms ease-out'};touch-action:none;cursor:grab`,
@@ -9822,7 +9850,7 @@ class Component extends DCLogic{
     icons:(sc.cta.icons||[]).length?sc.cta.icons.map(ic=>({icon:ic.icon,label:ic.label,count:ic.count||'',onClick:ic.onClick,fill:ic.on?C.blue:'none',
      style:`flex:none;height:52px;min-width:52px;padding:0 ${ic.count?'12px':'0'};display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid ${ic.on?C.blue:'#E3E7ED'};background:#fff;border-radius:16px;color:${ic.on?C.blue:C.ink};cursor:pointer`})):null,
     playIcon:sc.route==='cx'?(s.cxPlaying?I.pause:I.play):(s.playing?I.pause:I.play),
-    style:`flex:1;height:52px;border:${sc.cta.ghost?'1px solid '+C.line2:'0'};border-radius:16px;background:${sc.cta.dim?'#E7EAEF':(sc.cta.ghost?'#fff':C.blue)};color:${sc.cta.ghost?C.ink2:'#fff'};font:700 15px Inter;cursor:${sc.cta.dim?'not-allowed':'pointer'}`}:null,
+    style:`flex:1;height:52px;border:${sc.cta.ghost?'1px solid '+C.line2:'0'};border-radius:16px;background:${sc.cta.dim?'#E7EAEF':(sc.cta.ghost?'#fff':C.blue)};color:${sc.cta.ghost||sc.cta.dim?C.ink2:'#fff'};font:${sc.cta.dim?'600 14px/18px':'700 15px'} Inter;padding:0 16px;white-space:normal;cursor:${sc.cta.dim?'not-allowed':'pointer'}`}:null,
    togglePlay:()=>{if(s.route==='cx'){if(s.cxPlaying)this.cxStop();else this.cxPlay();return;}
     if(s.playing)this.stop();else{if(s.step>=STEPS.length)this.setState({step:0,resolved:{}});this.play();}},
 
