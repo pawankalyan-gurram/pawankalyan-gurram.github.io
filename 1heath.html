@@ -556,6 +556,10 @@ h2+h3.group{margin-top:.4rem}
 .skills dd{margin:0;font-size:var(--s-sm);color:var(--ink)}
 @media (max-width:640px){.skills>div{grid-template-columns:1fr;gap:.15rem}}
 .cv{border-top:0}.cv li:first-child{padding-top:.25rem}
+.cards.paths{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards.paths ol{margin:.5rem 0 0;padding-left:1.2rem}
+.cards.paths li{margin:.3rem 0}
+@media (max-width:860px){.cards.paths{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "1Heath", "applicationCategory": "MedicalApplication", "operatingSystem": "Android", "author": {"@type": "Person", "name": "Pawan Kalyan", "alternateName": "Pavan Kumar Gurram", "url": "https://pawankalyan.dev/", "image": "https://pawankalyan.dev/pawan-kalyan.jpg"}}</script>
 </head>
@@ -597,6 +601,34 @@ h2+h3.group{margin-top:.4rem}
     <div><dt>What we need</dt><dd>General physicians, paediatricians and gynaecologists willing to try it in their clinic; pharmacists; and a first investor who sees healthcare as a service. <a href="index.html#contact">Get in touch</a>.</dd></div>
   </dl>
   </section>
+
+<section id="paths" aria-labelledby="paths-h">
+  <h2 id="paths-h">Start Here: Pick Your Path</h2>
+  <p>Every page stands on its own. These orders read best for each kind of visitor.</p>
+  <div class="cards paths">
+    <div class="card"><span class="num">Investor · about 20 minutes</span><h3>Is This a Business?</h3><ol class="small">
+      <li><a href="1heath-problem.html">The problem</a></li>
+      <li><a href="1heath-solution.html">The solution</a></li>
+      <li><a href="1heath-go-to-market.html">How doctors adopt it</a></li>
+      <li><a href="1heath-supply.html">Medicine supply and inventory</a></li>
+      <li><a href="1heath-business.html">Revenue, worked step by step</a></li>
+      <li><a href="1heath-roadmap.html">Roadmap</a></li></ol></div>
+    <div class="card"><span class="num">Engineer · about 30 minutes</span><h3>How Is It Built?</h3><ol class="small">
+      <li><a href="1heath-design.html">Four apps, one record</a></li>
+      <li><a href="1heath-architecture.html">Architecture</a></li>
+      <li><a href="1heath-models-data.html">Models, data and tests</a></li>
+      <li><a href="1heath-security-privacy.html">Security and privacy</a></li>
+      <li><a href="1heath-supply.html#software">The ordering engine</a></li>
+      <li><a href="1heath-prototype.html">Clickable prototype</a></li></ol></div>
+    <div class="card"><span class="num">Doctor or clinic · about 10 minutes</span><h3>What Changes for Me?</h3><ol class="small">
+      <li><a href="#two-minutes">1Heath in two minutes</a></li>
+      <li><a href="1heath-solution.html">What the visit looks like</a></li>
+      <li><a href="1heath-medicine-systems.html">Ayurveda, homeopathy and allopathy</a></li>
+      <li><a href="1heath-supply.html#uses">Ordering medicines for your pharmacy</a></li>
+      <li><a href="1heath-prototype.html">Try the prototype</a></li></ol></div>
+  </div>
+  <p class="callout" style="margin-top:1rem"><b>Android demo app.</b> The demo app is nearly complete; a download link will appear here when it is ready. Until then, the <a href="1heath-prototype.html">clickable prototype</a> shows every screen.</p>
+</section>
 
 <section id="see" aria-labelledby="see-h">
   <h2 id="see-h">What the Doctor Sees</h2>
@@ -642,8 +674,9 @@ h2+h3.group{margin-top:.4rem}
     <a class="card" href="1heath-architecture.html"><span class="num">08 · Architecture</span><h3>High-Level and Low-Level Design</h3><p>Components, the path of one consultation, the data model, the verification rules and the stack.</p><span class="go">Read the design →</span></a>
     <a class="card" href="1heath-security-privacy.html"><span class="num">09 · Security and privacy</span><h3>How Patient Data Is Protected</h3><p>Who sees what, encryption, consent-based sharing, patient rights, threats and the laws that apply.</p><span class="go">Read more →</span></a>
     <a class="card" href="1heath-go-to-market.html"><span class="num">10 · Go to market</span><h3>Doctors First, Then Patients</h3><p>Who adopts first, where we meet them, the funnel in numbers, and what the pilot must prove.</p><span class="go">Read more →</span></a>
-    <a class="card" href="1heath-business.html"><span class="num">11 · Business model</span><h3>Revenue, Worked Step by Step</h3><p>Two cases at 1,000 doctors, unit economics, levers, a five-year path, and the firewall between money and medicine.</p><span class="go">See the numbers →</span></a>
-    <a class="card" href="1heath-roadmap.html"><span class="num">12 · Roadmap</span><h3>From Scribe to Health Research Company</h3><p>Prevention features to come, and research on consented data that is never sold.</p><span class="go">See the roadmap →</span></a>
+    <a class="card" href="1heath-supply.html"><span class="num">11 · Medicine supply</span><h3>How Clinics Will Order, with No Warehouse</h3><p>The supply chain, the law, the model stage by stage, what a warehouse would cost, ten use cases and the edge cases.</p></a>
+    <a class="card" href="1heath-business.html"><span class="num">12 · Business model</span><h3>Revenue, Worked Step by Step</h3><p>Two cases at 1,000 doctors, unit economics, levers, a five-year path, and the firewall between money and medicine.</p><span class="go">See the numbers →</span></a>
+    <a class="card" href="1heath-roadmap.html"><span class="num">13 · Roadmap</span><h3>From Scribe to Health Research Company</h3><p>Prevention features to come, and research on consented data that is never sold.</p><span class="go">See the roadmap →</span></a>
   </div>
 </section>
 
@@ -708,7 +741,7 @@ h2+h3.group{margin-top:.4rem}
 <section id="sources" aria-labelledby="sources-h"><h2 id="sources-h">Sources</h2><ol class="refs"><li id="ref-1"><span class="ref-body">Irving G, Neves AL, Dambha-Miller H, et al. International variations in primary care physician consultation time: a systematic review of 67 countries. BMJ Open, 2017. India figure as reported by Fierce Healthcare. <a class="ref-link" href="https://bmjopen.bmj.com/content/7/10/e017902">bmjopen.bmj.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-2"><span class="ref-body">Ministry of Statistics and Programme Implementation. Press note: Survey on Ayush, NSS 79th round (July 2022 to June 2023), 13 June 2024. <a class="ref-link" href="https://mospi.gov.in/sites/default/files/press_release/PressNote_Ayush_13062024N.pdf">mospi.gov.in<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-3"><span class="ref-body">National Health Authority. ABDM Insights public dashboard, figures last updated 5 November 2026, 8:33 PM. <a class="ref-link" href="https://dashboard.abdm.gov.in/abdm/">dashboard.abdm.gov.in<span aria-hidden="true"> ↗</span></a></span></li></ol></section>
 </div>
 </main>
-<footer class="pad"><div class="wide"><span>© 2026 Pawan Kalyan · Updated 8 November 2026</span><span>1Heath is in development and not approved for clinical use. Not affiliated with any public figure of the same name.</span></div></footer>
+<footer class="pad"><div class="wide"><span>© 2026 Pawan Kalyan · Updated 16 November 2026</span><span>1Heath is in development and not approved for clinical use. Not affiliated with any public figure of the same name.</span></div></footer>
 <script>
 (function(){var d=document.documentElement,b=document.getElementById('theme');
 function sync(){var dark=d.getAttribute('data-theme')==='dark';if(b){b.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');b.setAttribute('aria-pressed',dark?'true':'false')}}
