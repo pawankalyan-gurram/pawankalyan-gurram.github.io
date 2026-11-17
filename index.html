@@ -539,6 +539,14 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 @media (max-width:350px){.menu a{padding:.45rem .3rem;font-size:.875rem}.brand .mark{display:none}}
 .consult-head,.consult .signed{flex-wrap:wrap}
 .axis div:last-child{gap:.5rem;flex-wrap:wrap}
+
+/* why this problem: text with the speaking photo */
+.why{display:grid;grid-template-columns:minmax(0,1fr) 15rem;gap:2.5rem;align-items:start}
+.why .flow>p{max-width:none}
+.speaking{margin:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--rule)}
+.speaking img,.speaking picture{display:block;width:100%;height:auto}
+@media (max-width:760px){.why{grid-template-columns:minmax(0,1fr);gap:1.5rem}.speaking{max-width:20rem}}
+.intro .photo img{object-position:50% 40%}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Pawan Kalyan", "alternateName": "Pavan Kumar Gurram", "url": "https://pawankalyan.dev/", "image": "https://pawankalyan.dev/pawan-kalyan.jpg", "jobTitle": "ML/AI Engineer, Full-Stack Engineer, Founder of 1Heath", "sameAs": ["https://github.com/pawankalyan-gurram", "https://www.linkedin.com/in/pavankumar-gurram/", "https://www.instagram.com/pawan_kalyan.official/"]}</script>
 </head>
@@ -551,7 +559,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 <div class="intro">
   <div class="intro-text">
     <div class="who">
-      <div class="photo"><picture><source srcset="pawan-kalyan.webp?v=5" type="image/webp"><img src="pawan-kalyan.jpg?v=5" alt="Pawan Kalyan" width="460" height="575" decoding="async" fetchpriority="high"></picture></div>
+      <div class="photo"><picture><source srcset="pawan-kalyan.webp?v=6" type="image/webp"><img src="pawan-kalyan.jpg?v=6" alt="Pawan Kalyan" width="480" height="480" decoding="async" fetchpriority="high"></picture></div>
       <p><b>Pawan Kalyan</b>ML/AI Engineer, Full-Stack Engineer, Founder of 1Heath</p>
     </div>
     <h1>No Doctor in India Should Have to Treat a Patient Blind</h1>
@@ -585,9 +593,12 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 
 <section id="why" aria-labelledby="why-h">
   <h2 id="why-h">Why This Problem</h2>
-  <div class="flow">
+  <div class="why">
+    <div class="flow">
     <p>Years ago I was given a medicine that harmed me. I still do not know what it was, so no doctor can make sure it never happens again. My grandmother takes Ayurvedic medicines, and none of her doctors know.</p>
     <p>A primary-care visit in India lasts about two minutes, and about half of Indians use Ayurveda, homeopathy or home remedies. No doctor can take a full history in two minutes, and today no record carries it for them.</p>
+  </div>
+    <figure class="speaking"><picture><source srcset="pawan-kalyan-speaking.webp?v=1" type="image/webp"><img src="pawan-kalyan-speaking.jpg?v=1" alt="Pawan Kalyan speaking to an audience with a microphone" width="450" height="562" loading="lazy" decoding="async"></picture></figure>
   </div>
 </section>
 
