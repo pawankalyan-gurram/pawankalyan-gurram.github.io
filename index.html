@@ -570,6 +570,12 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 .intro{grid-template-columns:minmax(0,1fr) 24rem}
 @media (max-width:900px){.intro{grid-template-columns:minmax(0,1fr) 15rem}}
 @media (max-width:640px){.intro{grid-template-columns:minmax(0,1fr)}.portrait{order:0;max-width:100%}}
+
+.project.solo{grid-template-columns:minmax(0,1fr)}
+.proto-link{display:flex;align-items:center;justify-content:space-between;gap:1rem 1.5rem;flex-wrap:wrap;padding:1.2rem 1.3rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);margin-bottom:1.5rem}
+.proto-link>div{flex:1 1 18rem;min-width:0}
+.proto-link p{font-size:var(--s-sm);color:var(--muted);margin-top:.25rem}
+.project.solo{max-width:48rem}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Pawan Kalyan", "alternateName": "Pavan Kumar Gurram", "url": "https://pawankalyan.dev/", "image": "https://pawankalyan.dev/pawan-kalyan.jpg", "jobTitle": "ML/AI Engineer, Full-Stack Engineer, Founder of 1Heath", "sameAs": ["https://github.com/pawankalyan-gurram", "https://www.linkedin.com/in/pavankumar-gurram/", "https://www.instagram.com/pawan_kalyan.official/"]}</script>
 </head>
@@ -604,10 +610,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 <section id="projects" aria-labelledby="projects-h">
   <h2 id="projects-h">What I'm Building</h2>
 
-  <article class="project">
-    <div class="project-visual shot">
-      <a href="1heath.html#two-minutes"><picture><source srcset="screen-review.webp?v=3" type="image/webp"><img src="screen-review.jpg?v=3" width="393" height="706" alt="1Heath review screen before the doctor signs: a warning that two regular medicines, Glycomet 500 and Telma 40, are missing from today's note"></picture></a>
-    </div>
+  <article class="project solo">
     <div class="project-body">
       <p class="status"><span class="pill wip">In development</span><span class="muted small">Not yet used with real patients</span></p>
       <h3><a href="1heath.html">1Heath: The Visit Writes the History</a></h3>

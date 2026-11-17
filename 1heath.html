@@ -570,6 +570,12 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 .intro{grid-template-columns:minmax(0,1fr) 24rem}
 @media (max-width:900px){.intro{grid-template-columns:minmax(0,1fr) 15rem}}
 @media (max-width:640px){.intro{grid-template-columns:minmax(0,1fr)}.portrait{order:0;max-width:100%}}
+
+.project.solo{grid-template-columns:minmax(0,1fr)}
+.proto-link{display:flex;align-items:center;justify-content:space-between;gap:1rem 1.5rem;flex-wrap:wrap;padding:1.2rem 1.3rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);margin-bottom:1.5rem}
+.proto-link>div{flex:1 1 18rem;min-width:0}
+.proto-link p{font-size:var(--s-sm);color:var(--muted);margin-top:.25rem}
+.project.solo{max-width:48rem}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "1Heath", "applicationCategory": "MedicalApplication", "operatingSystem": "Android", "author": {"@type": "Person", "name": "Pawan Kalyan", "alternateName": "Pavan Kumar Gurram", "url": "https://pawankalyan.dev/", "image": "https://pawankalyan.dev/pawan-kalyan.jpg"}}</script>
 </head>
@@ -588,14 +594,10 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 
 <section id="two-minutes" aria-labelledby="two-minutes-h">
   <h2 id="two-minutes-h">1Heath in Two Minutes</h2>
-  <figure class="fig screens" style="margin-top:0">
-    <div class="screen-row">
-      <figure><picture><source srcset="screen-home.webp?v=3" type="image/webp"><img src="screen-home.jpg?v=3" width="393" height="706" loading="lazy" alt="Doctor app home screen: patients waiting, the next patient with a sulfa allergy warning, and items needing the doctor's attention"></picture><figcaption>The doctor's day</figcaption></figure>
-      <figure><picture><source srcset="screen-review.webp?v=3" type="image/webp"><img src="screen-review.jpg?v=3" width="393" height="706" loading="lazy" alt="Review screen before signing: a warning that two medicines from the last prescription, Glycomet 500 and Telma 40, are not in this note, above the complaints, findings and diagnosis"></picture><figcaption>Review before signing</figcaption></figure>
-      <figure><picture><source srcset="screen-patient.webp?v=3" type="image/webp"><img src="screen-patient.jpg?v=3" width="393" height="650" loading="lazy" alt="Patient app medicine list, including an Ayurvedic medicine alongside modern ones"></picture><figcaption>The patient's medicines</figcaption></figure>
-    </div>
-    <figcaption><b>Figure 1.</b> Screens from the clickable <a href="1heath-prototype.html">1Heath prototype</a>, with fictional patients. In the review screen, 1Heath notices that two regular medicines are missing from today's note. The prototype shows the design; the working Android app follows it.</figcaption>
-  </figure>
+  <div class="proto-link">
+    <div><b>See every screen in the clickable prototype</b><p>The Doctor, Desk, Pharmacy and Patient apps and the booking page, with fictional patients. It shows the planned design; the working Android app follows it.</p></div>
+    <a class="btn primary" href="1heath-prototype.html">Open the prototype</a>
+  </div>
   <dl class="pitch">
     <div><dt>The problem</dt><dd>An Indian primary-care visit lasts about two minutes<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a>, the history lives on paper slips the patient may not bring, and about half of Indians also use AYUSH or home remedies<a class="cite" href="#ref-2" aria-label="Source 2">[2]</a>, which rarely appear in any record. Medication errors from an incomplete history cause, by our estimate, about 6,400 hospital deaths a year in India (<a href="1heath-burden.html">how we estimated it</a>).</dd></div>
     <div><dt>What it does</dt><dd>The doctor talks to the patient as usual, in any Indian language or a mix with English. 1Heath writes the note and prescription, checks every line against what was said and against the patient's record (allergies, current medicines from every system), and the doctor slides to sign. The pharmacy and the patient get the signed prescription; the record follows the patient to the next clinic.</dd></div>
