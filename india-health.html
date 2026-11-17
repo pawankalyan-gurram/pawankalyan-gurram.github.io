@@ -13,10 +13,10 @@
 <meta property="og:title" content="India&#x27;s Health in Numbers · Pawan Kalyan">
 <meta property="og:description" content="What Indians fall ill and die from, how care is organised and paid for, and what this means for medical records. Every figure is sourced.">
 <meta property="og:url" content="https://pawankalyan.dev/india-health">
-<meta property="og:image" content="https://pawankalyan.dev/og-v2.png">
+<meta property="og:image" content="https://pawankalyan.dev/og-v3.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Pawan Kalyan speaking to an audience, beside the line: No doctor in India should have to treat a patient blind">
+<meta property="og:image:alt" content="Pawan Kalyan holding a microphone, beside the line: No doctor in India should have to treat a patient blind">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -125,7 +125,17 @@ section>h2+h3,section h3:first-child{margin-top:.5rem}
 h3.group{font-size:var(--s-sm);font-weight:700;color:var(--muted);margin:2rem 0 .6rem}
 ul.plain,ol.plain{padding-left:1.25rem;display:flex;flex-direction:column;gap:.6rem}
 ul.plain li::marker{color:var(--rx)}
+section>ol:not([class]),section>ul:not([class]){padding-left:1.4rem;display:flex;flex-direction:column;gap:.6rem}
+section>ul:not([class]) li::marker{color:var(--rx)}
 ol li::marker{color:var(--muted);font-weight:700}
+
+/* vertical rhythm: every block inside a section gets the same gap from the block
+   above it; components never collide (the class in :not() lifts specificity above
+   component resets such as .flowchart{margin:0}) */
+section>*+*:not(h2,h3,.rhythm-skip){margin-top:1.15rem}
+section>*+:is(figure.fig,.table-wrap,.facts,.cards,.flowchart,.calc,.calc-pair,.callout,.principles,details,.layers,.rx,.proto-link,.doors):not(.rhythm-skip){margin-top:1.5rem}
+section>:is(h2,h3)+*:not(.rhythm-skip){margin-top:0}
+section>.group+*:not(.rhythm-skip){margin-top:0}
 
 /* ---------- article header ---------- */
 .band{border-bottom:1px solid var(--rule)}
@@ -137,7 +147,6 @@ ol li::marker{color:var(--muted);font-weight:700}
 .dek{font-size:1.25rem;line-height:1.55;color:var(--muted);max-width:38rem}
 .meta{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-size:var(--s-sm);color:var(--muted);margin-top:.35rem}
 .meta b{color:var(--ink);font-weight:700}
-.byline{display:none}
 
 /* "In short" summary */
 .tldr{margin-top:2rem;background:var(--rx-soft);border-radius:var(--radius);padding:1.3rem 1.4rem 1.35rem;display:flex;flex-direction:column;gap:.6rem;border:1px solid color-mix(in srgb, var(--rx) 22%, transparent)}
@@ -146,9 +155,10 @@ ol li::marker{color:var(--muted);font-weight:700}
 .tldr li{line-height:1.6}
 .tldr li::marker{color:var(--rx)}
 
+.toc-top+section{margin-top:2.25rem}
 /* contents */
 .layout{display:block}
-.toc{margin-top:1.75rem;border:1px solid var(--rule);border-radius:var(--radius);padding:1rem 1.2rem;background:var(--surface)}
+.toc{margin-top:1.5rem;border:1px solid var(--rule);border-radius:var(--radius);padding:1rem 1.2rem;background:var(--surface)}
 .toc>.label{font-size:var(--s-sm);color:var(--ink)}
 .toc ol{list-style:none;margin:.5rem 0 0;padding:0;display:flex;flex-direction:column;counter-reset:t}
 .toc li{counter-increment:t;display:grid;grid-template-columns:1.7rem minmax(0,1fr);font-size:var(--s-sm)}
@@ -166,6 +176,8 @@ ol li::marker{color:var(--muted);font-weight:700}
   .toc-top{display:none}
 }
 @media (max-width:1179px){.toc-rail{display:none}}
+/* wide tables may use the empty space to the right of the reading column */
+@media (min-width:1400px){main.col section>.table-wrap{margin-right:-8rem}}
 
 /* ---------- figures, charts, diagrams ---------- */
 figure.fig{margin-top:1.75rem;display:flex;flex-direction:column;gap:.8rem;padding:1.25rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface)}
@@ -194,7 +206,6 @@ figure.fig + p, figure.fig + ul, .table-wrap + p{margin-top:1.25rem}
 .flowchart li.key{border-color:var(--rx);box-shadow:inset 0 0 0 1px var(--rx)}
 .flowchart li+li::before{content:"";position:absolute;left:-.7rem;top:50%;width:.7rem;height:2px;background:var(--rule-strong)}
 .flowchart[style*="--n:5"]{grid-template-columns:1fr}
-.flowchart[style*="--n:5"] li+li::before,.flowchart li+li::before{}
 .flowchart[style*="--n:5"] li{display:grid;grid-template-columns:4.4rem minmax(0,1fr);column-gap:.7rem;row-gap:.15rem;align-items:start}
 .flowchart[style*="--n:5"] li .k{grid-row:1 / span 2;padding-top:.15rem}
 .flowchart[style*="--n:5"] li b,.flowchart[style*="--n:5"] li span:not(.k){grid-column:2}
@@ -295,11 +306,6 @@ details.more>div{padding:0 1.1rem 1.1rem}
 /* ---------- worked arithmetic ---------- */
 .formula-line{margin:1rem 0 .75rem;line-height:1.65}
 .formula-line b{color:var(--ink)}
-.formula{font-size:.95rem;line-height:1.7;background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);padding:.9rem 1.1rem;margin:1rem 0}
-.formula b{color:var(--rx)}
-.formula .eq{display:block}
-.formula .eq+.eq{margin-top:.35rem}
-.formula .note{display:block;color:var(--muted);font-size:.82rem;margin-top:.5rem}
 .calc{border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);padding:1rem 1.1rem 1.05rem;margin:1rem 0 1.25rem}
 .calc-title{margin:0 0 .55rem;font-size:.95rem;font-weight:700;color:var(--ink)}
 .calc ol{list-style:none;margin:0;padding:0}
@@ -366,12 +372,6 @@ a.card:hover h3{color:var(--rx-strong)}
 .tag.wip{background:var(--warn-soft);color:var(--warn)}
 .tag.live{background:var(--ok-soft);color:var(--ok)}
 
-.linklist{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
-.linklist li{border-bottom:1px solid var(--rule)}
-.linklist a{display:flex;flex-direction:column;gap:.15rem;padding:.9rem 0;text-decoration:none;color:inherit}
-.linklist .t{font-family:var(--f-display);font-weight:600;font-size:1.15rem;color:var(--ink);line-height:1.35}
-.linklist .d{font-size:var(--s-sm);color:var(--muted);line-height:1.5}
-.linklist a:hover .t{color:var(--rx-strong)}
 
 dl.glossary{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:.6rem 1rem;font-size:var(--s-sm)}
 dl.glossary dt{font-weight:700;color:var(--ink)}
@@ -384,14 +384,6 @@ abbr[title]{text-decoration:underline dotted;text-underline-offset:.2em;cursor:h
 .pitch dt{font-weight:700;color:var(--ink)}
 .pitch dd{margin:0}
 @media (max-width:600px){.pitch>div{grid-template-columns:1fr;gap:.25rem}}
-
-.screen-row{display:flex;gap:1.25rem;justify-content:center;align-items:flex-start;flex-wrap:wrap}
-.screen-row figure{margin:0;display:flex;flex-direction:column;gap:.5rem;align-items:center;flex:0 1 208px;min-width:0}
-.screen-row picture{display:block;width:100%}
-.screen-row img{width:208px;max-width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--rule-strong);box-shadow:0 12px 30px -12px rgba(15,31,41,.25)}
-.screen-row figcaption{font-size:var(--s-sm);font-weight:700;color:var(--ink);text-align:center}
-.screens{margin-bottom:1.5rem}
-@media (max-width:520px){.screen-row figure{flex-basis:calc(50% - .65rem)}.screen-row figure:nth-child(3){display:none}}
 
 /* buttons, pills */
 .btns{display:flex;flex-wrap:wrap;gap:.6rem}
@@ -426,70 +418,70 @@ abbr[title]{text-decoration:underline dotted;text-underline-offset:.2em;cursor:h
 .skills dd{margin:0;font-size:var(--s-sm)}
 @media (max-width:640px){.skills>div{grid-template-columns:1fr;gap:.15rem}}
 
-/* project block (home) */
-.project{display:grid;grid-template-columns:14rem minmax(0,1fr);gap:2rem;align-items:start}
-.project-body{min-width:0;display:flex;flex-direction:column;gap:.7rem}
+/* ---------- home ---------- */
+.home section{margin-top:4.5rem}
+.home section>h2{font-size:2rem}
+.home section>p,.home section>.flow,.home .project,.home .cv,.home .skills,.home .timeline,.home .principles{max-width:46rem}
+
+/* intro: name, mission, portrait */
+.intro{display:grid;grid-template-columns:minmax(0,1fr) 24rem;gap:3.5rem;align-items:center;padding-top:.75rem}
+.intro-text{display:flex;flex-direction:column;gap:1.15rem;min-width:0}
+.intro .nameline{display:flex;flex-direction:column;gap:.15rem}
+.intro .nameline b{font-size:1.25rem;line-height:1.3}
+.intro .nameline span{font-size:var(--s-sm);font-weight:700;line-height:1.4;color:var(--rx-strong)}
+.intro h1{font-size:clamp(2.3rem, 1.4rem + 3.4vw, 3.9rem);line-height:1.05;letter-spacing:-.02em}
+.intro .lede{font-size:1.2rem;line-height:1.6;color:var(--ink);max-width:36rem}
+.intro .creds{display:flex;flex-wrap:wrap;gap:.5rem;font-size:var(--s-sm);color:var(--muted)}
+.intro .creds span{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .8rem;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:700}
+.intro .creds span i{font-style:normal;font-weight:400;color:var(--muted)}
+.intro .btns{margin-top:.25rem}
+.portrait{margin:0;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -32px rgba(15,31,41,.45);border:1px solid var(--rule);background:var(--wash);aspect-ratio:4 / 5}
+.portrait img,.portrait picture{display:block;width:100%;height:100%;object-fit:cover}
+@media (max-width:1040px){.intro{grid-template-columns:minmax(0,1fr) 18rem;gap:2.5rem}}
+@media (max-width:820px){.intro{grid-template-columns:minmax(0,1fr) 13rem;gap:1.75rem;align-items:start}}
+@media (max-width:640px){.intro{grid-template-columns:minmax(0,1fr);gap:1.75rem;padding-top:0}.portrait{max-width:26rem}}
+
+/* project block */
+.project{display:grid;grid-template-columns:minmax(0,1fr);gap:1.25rem}
+.project-body{min-width:0;display:flex;flex-direction:column;gap:.75rem}
 section .project-body h3{margin:0;font-family:var(--f-display);font-size:1.55rem;font-weight:600;line-height:1.2}
 .project-body h3 a{color:var(--ink);text-decoration:none}
 .project-body h3 a:hover{color:var(--rx-strong)}
-.project-visual.shot{display:flex;justify-content:center}
-.project-visual.shot img{width:100%;max-width:14rem;height:auto;display:block;border-radius:18px;border:1px solid var(--rule-strong);box-shadow:0 14px 34px -14px rgba(15,31,41,.3)}
-.project-body .built{margin-top:.1rem}
-@media (max-width:720px){.project{grid-template-columns:1fr;gap:1.25rem}.project-visual.shot img{max-width:12rem}}
+.apk{font-size:var(--s-sm);padding:.7rem .9rem;border:1px dashed var(--rule-strong);border-radius:8px;color:var(--muted)}
+.apk b{color:var(--ink)}
+.proto-link{display:flex;align-items:center;justify-content:space-between;gap:1rem 1.5rem;flex-wrap:wrap;padding:1.2rem 1.3rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);}
+.proto-link>div{flex:1 1 18rem;min-width:0}
+.proto-link p{font-size:var(--s-sm);color:var(--muted);margin-top:.25rem}
+
+/* ---------- 1Heath hub: a wide overview page ---------- */
+.hub-top{padding-block:2.5rem 2.25rem;display:flex;flex-direction:column;gap:.85rem}
+.hub-top h1{font-size:clamp(2.3rem, 1.5rem + 3vw, 3.6rem);max-width:20ch}
+.hub-top .dek{max-width:44rem}
+main.pad:has(>.hub){padding-top:0}
+.hub>section:first-child{margin-top:2.75rem}
+.hub section{margin-top:4.5rem}
+.hub section>h2{font-size:2rem}
+.hub section>*{max-width:48rem}
+.hub section>.cards,.hub section>figure.fig:has(.flowchart){max-width:none}
+.hub .cards{grid-template-columns:repeat(auto-fit,minmax(min(15.5rem,100%),1fr))}
+.hub h3.group{margin-top:2.25rem}
+.hub section>p+.btns{margin-top:1.1rem}
+@media (min-width:900px){.hub .cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){
+  .hub .flowchart[style*="--n:5"]{grid-template-columns:repeat(5,minmax(0,1fr));gap:.9rem}
+  .hub .flowchart[style*="--n:5"] li{display:flex;flex-direction:column;gap:.3rem;padding:1rem .95rem}
+  .hub .flowchart[style*="--n:5"] li+li::before{left:-.9rem;top:50%;width:.9rem;height:2px}
+}
 
 /* email */
 .email{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
-.email .mono{overflow-wrap:anywhere;min-width:0}
+.email .mono{font-family:var(--f-body);font-size:1em;font-weight:700;overflow-wrap:anywhere;min-width:0}
 .copy{font:700 .84rem var(--f-body);background:var(--surface);border:1px solid var(--rule-strong);color:var(--ink);border-radius:8px;padding:.5rem .9rem;min-height:2.6rem;cursor:pointer}
 .copy:hover{border-color:var(--rx)}
 
-/* ---------- home: intro ---------- */
-.intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:3rem;align-items:center;padding-block:3.25rem 1rem}
-.intro-text{display:flex;flex-direction:column;gap:1.1rem;min-width:0}
-.intro .who{display:flex;align-items:center;gap:1rem}
-.intro .photo{flex:none;width:4.5rem;height:4.5rem;border-radius:999px;overflow:hidden;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--rule-strong)}
-.intro .photo img,.intro .photo picture{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
-.intro .who p{min-width:0;font-size:var(--s-sm);line-height:1.45;color:var(--muted)}
-.intro .who b{display:block;font-size:1.05rem}
-.intro h1{font-size:clamp(2.2rem, 1.4rem + 3.2vw, 3.6rem);line-height:1.04}
-.intro .lede{font-size:1.2rem;line-height:1.6;color:var(--ink);max-width:34rem}
-.intro .creds{display:flex;flex-wrap:wrap;gap:.4rem .6rem;font-size:var(--s-sm);color:var(--muted)}
-.intro .creds span{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .7rem;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:700}
-.intro .creds span i{font-style:normal;font-weight:400;color:var(--muted)}
-@media (max-width:900px){.intro{grid-template-columns:minmax(0,1fr);gap:2rem;padding-top:2.25rem}}
-
-/* the consultation card: speech becomes a checked, signed prescription line */
-.consult{background:var(--surface);border:1px solid var(--rule-strong);border-radius:16px;box-shadow:0 24px 48px -28px rgba(15,31,41,.35);overflow:hidden;min-width:0}
-.consult-head{display:flex;justify-content:space-between;align-items:center;gap:.5rem;padding:.75rem 1.1rem;border-bottom:1px solid var(--rule);font-size:var(--s-xs);color:var(--muted)}
-.consult-head b{font-size:var(--s-sm)}
-.consult-step{padding:1rem 1.1rem;border-bottom:1px solid var(--rule)}
-.consult-step:last-child{border-bottom:0}
-.consult-step>.k{display:block;font-size:.78rem;font-weight:700;color:var(--muted);margin-bottom:.35rem}
-.consult .said{font-family:var(--f-display);font-style:italic;font-size:1.22rem;line-height:1.4;color:var(--ink)}
-.consult .said small{display:block;font-family:var(--f-body);font-style:normal;font-size:.8rem;color:var(--muted);margin-top:.3rem}
-.consult .line{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.2rem .75rem}
-.consult .line .sym{grid-row:1 / span 2;font-family:var(--f-display);font-style:italic;font-weight:600;font-size:1.3rem;color:var(--rx);line-height:1.2}
-.consult .line b{font-size:1.02rem}
-.consult .line span{font-size:.92rem;color:var(--body);line-height:1.5}
-.consult .checks{display:flex;flex-wrap:wrap;gap:.4rem}
-.consult .checks .state{white-space:normal}
-.consult .checks .state::before{content:"\2713\00a0"}
-.consult .signed{display:flex;justify-content:space-between;align-items:center;gap:.75rem;background:var(--rx-soft)}
-.consult .signed b{color:var(--rx-strong)}
-.consult .signed span{font-size:.8rem;color:var(--muted)}
-.consult-note{font-size:.8rem;color:var(--muted);margin-top:.6rem;text-align:center}
-@media (prefers-reduced-motion:no-preference){
-  .consult-step{animation:step .55s cubic-bezier(.2,.7,.2,1) both}
-  .consult-step:nth-child(2){animation-delay:.15s}
-  .consult-step:nth-child(3){animation-delay:.75s}
-  .consult-step:nth-child(4){animation-delay:1.35s}
-  .consult-step:nth-child(5){animation-delay:1.95s}
-  @keyframes step{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-}
-
 /* numbers strip */
-.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:2.75rem}
-.strip>div{padding:1.15rem 1.1rem 1.2rem;border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:.3rem}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:3rem}
+.strip>div{padding:1.15rem 1.1rem 1.2rem;border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:.3rem;min-width:0}
 .strip>div:first-child{border-left:0;padding-left:0}
 .strip .n{font-family:var(--f-display);font-weight:600;font-size:2rem;line-height:1;color:var(--rx-strong)}
 .strip .t{font-size:.875rem;line-height:1.45;color:var(--muted)}
@@ -503,12 +495,10 @@ section .project-body h3{margin:0;font-family:var(--f-display);font-size:1.55rem
 .door h3 a:hover{color:var(--rx-strong)}
 .door p{color:var(--muted)}
 .door ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.door li a{display:block;padding:.4rem 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);font-weight:700;font-size:var(--s-sm)}
+.door li a{display:block;padding:.45rem 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);font-weight:700;font-size:var(--s-sm)}
 .door li:last-child a{border-bottom:0}
 .door li a:hover{color:var(--rx-strong)}
 @media (max-width:760px){.door{grid-template-columns:minmax(0,1fr)}}
-
-.wide-main{max-width:68rem}
 
 /* ---------- footer ---------- */
 footer{margin-top:5rem;border-top:1px solid var(--rule);background:var(--wash)}
@@ -532,50 +522,9 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
   section,figure,.rx-line,tr,.card{break-inside:avoid}
 }
 
-/* home: wider frame, prose kept to a reading measure */
-.home section>p,.home section .flow>p,.home .cv p,.home .timeline p{max-width:44rem}
-.home section{margin-top:4.5rem}
-.home section>h2{font-size:2rem}
 @media (max-width:350px){.menu a{padding:.45rem .3rem;font-size:.875rem}.brand .mark{display:none}}
-.consult-head,.consult .signed{flex-wrap:wrap}
 .axis div:last-child{gap:.5rem;flex-wrap:wrap}
-
-/* why this problem: text with the speaking photo */
-.why{display:grid;grid-template-columns:minmax(0,1fr) 15rem;gap:2.5rem;align-items:start}
-.why .flow>p{max-width:none}
-.speaking{margin:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--rule)}
-.speaking img,.speaking picture{display:block;width:100%;height:auto}
-@media (max-width:760px){.why{grid-template-columns:minmax(0,1fr);gap:1.5rem}.speaking{max-width:20rem}}
-.intro .photo img{object-position:50% 40%}
-
-/* hub pages use their own header block */
-.hub-head>.col{padding-block:2.75rem 2.25rem;display:flex;flex-direction:column;gap:.85rem}
 .meta .pill{align-self:center}
-
-/* home v3: name and portrait open the page */
-.intro{grid-template-columns:minmax(0,1fr) 22rem;gap:3.5rem;align-items:center}
-.intro h1{font-size:clamp(2.6rem, 1.6rem + 4vw, 4.4rem);letter-spacing:-.025em}
-.intro .role{font-size:1.15rem;font-weight:700;color:var(--rx-strong);margin-top:-.35rem}
-.portrait{margin:0;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -32px rgba(15,31,41,.45);border:1px solid var(--rule)}
-.portrait img,.portrait picture{display:block;width:100%;height:auto}
-.apk{font-size:var(--s-sm);padding:.7rem .9rem;border:1px dashed var(--rule-strong);border-radius:8px;color:var(--muted)}
-.apk b{color:var(--ink)}
-@media (max-width:900px){.intro{grid-template-columns:minmax(0,1fr) 14rem;gap:2rem}}
-@media (max-width:640px){.intro{grid-template-columns:minmax(0,1fr)}.portrait{order:-1;max-width:15rem}}
-
-.intro .nameline{display:flex;flex-direction:column;gap:.1rem}
-.intro .nameline b{font-size:1.25rem}
-.intro .nameline span{font-size:var(--s-sm);font-weight:700;color:var(--rx-strong)}
-.intro h1{font-size:clamp(2.3rem, 1.4rem + 3.4vw, 3.9rem);line-height:1.05;letter-spacing:-.02em}
-.intro{grid-template-columns:minmax(0,1fr) 24rem}
-@media (max-width:900px){.intro{grid-template-columns:minmax(0,1fr) 15rem}}
-@media (max-width:640px){.intro{grid-template-columns:minmax(0,1fr)}.portrait{order:0;max-width:100%}}
-
-.project.solo{grid-template-columns:minmax(0,1fr)}
-.proto-link{display:flex;align-items:center;justify-content:space-between;gap:1rem 1.5rem;flex-wrap:wrap;padding:1.2rem 1.3rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);margin-bottom:1.5rem}
-.proto-link>div{flex:1 1 18rem;min-width:0}
-.proto-link p{font-size:var(--s-sm);color:var(--muted);margin-top:.25rem}
-.project.solo{max-width:48rem}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "India's Health in Numbers", "description": "What Indians fall ill and die from, how care is organised and paid for, and what this means for medical records. Every figure is sourced.", "author": {"@type": "Person", "name": "Pawan Kalyan", "alternateName": "Pavan Kumar Gurram", "url": "https://pawankalyan.dev/", "image": "https://pawankalyan.dev/pawan-kalyan.jpg"}, "dateModified": "2026-11-17", "inLanguage": "en-IN"}</script>
 </head>
@@ -614,7 +563,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <div class="fact"><span class="n">1.43%</span><span class="t">Government health spending as a share of GDP, 2022–23</span><span class="src">National Health Accounts, old GDP series<a class="cite" href="#ref-5" aria-label="Source 5">[5]</a></span></div>
     <div class="fact"><span class="n">98.9 crore</span><span class="t">ABHA health IDs created, as of 5 November 2026</span><span class="src">ABDM dashboard<a class="cite" href="#ref-7" aria-label="Source 7">[7]</a></span></div>
   </div>
-  <p style="margin-top:1.25rem">The digital rails are large: 127.5 crore health records are linked to ABHA IDs, and 6.09 lakh facilities and 13.98 lakh professionals are verified<a class="cite" href="#ref-7" aria-label="Source 7">[7]</a>. What is still thin is the record written at the point of care, in a two-minute consultation<a class="cite" href="#ref-8" aria-label="Source 8">[8]</a>.</p>
+  <p>The digital rails are large: 127.5 crore health records are linked to ABHA IDs, and 6.09 lakh facilities and 13.98 lakh professionals are verified<a class="cite" href="#ref-7" aria-label="Source 7">[7]</a>. What is still thin is the record written at the point of care, in a two-minute consultation<a class="cite" href="#ref-8" aria-label="Source 8">[8]</a>.</p>
 </section>
 
 <section id="life" aria-labelledby="life-h">
@@ -624,7 +573,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <div class="fact"><span class="n">25</span><span class="t">Infant deaths per 1,000 live births in 2023, down from 40 in 2013</span><span class="src">SRS 2023<a class="cite" href="#ref-10" aria-label="Source 10">[10]</a></span></div>
     <div class="fact"><span class="n">28</span><span class="t">Deaths before age five per 1,000 live births in 2023, down from 48 in 2015</span><span class="src">UN IGME<a class="cite" href="#ref-11" aria-label="Source 11">[11]</a></span></div>
   </div>
-  <p style="margin-top:1.25rem">Progress is real but uneven. Infant mortality is 5 per 1,000 in Kerala and 37 in Madhya Pradesh, Chhattisgarh and Uttar Pradesh; it is 28 in rural India against 18 in cities<a class="cite" href="#ref-10" aria-label="Source 10">[10]</a>. Newborn deaths fell from 28 to 17 per 1,000 between 2015 and 2023<a class="cite" href="#ref-11" aria-label="Source 11">[11]</a>.</p>
+  <p>Progress is real but uneven. Infant mortality is 5 per 1,000 in Kerala and 37 in Madhya Pradesh, Chhattisgarh and Uttar Pradesh; it is 28 in rural India against 18 in cities<a class="cite" href="#ref-10" aria-label="Source 10">[10]</a>. Newborn deaths fell from 28 to 17 per 1,000 between 2015 and 2023<a class="cite" href="#ref-11" aria-label="Source 11">[11]</a>.</p>
 </section>
 
 <section id="deaths" aria-labelledby="deaths-h">
@@ -634,7 +583,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <div class="fact"><span class="n">about 24,000</span><span class="t">Deaths every day, about one every 3 to 4 seconds</span><span class="src">our estimate from the yearly total</span></div>
     <div class="fact"><span class="n">22%</span><span class="t">Share of registered deaths whose cause was certified by a doctor; for the rest, the cause comes from surveys</span><span class="src">MCCD 2023<a class="cite" href="#ref-14" aria-label="Source 14">[14]</a></span></div>
   </div>
-  <p style="margin-top:1.25rem">The total matches the government's own sample survey, which counts 6.3 deaths a year for every 1,000 people<a class="cite" href="#ref-15" aria-label="Source 15">[15]</a>. To see what these deaths are caused by, the Sample Registration System sends trained surveyors to households in a fixed sample of villages and towns to ask about each death, and doctors assign the cause<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a>. Taking all deaths as 100%, this is how they divide:</p>
+  <p>The total matches the government's own sample survey, which counts 6.3 deaths a year for every 1,000 people<a class="cite" href="#ref-15" aria-label="Source 15">[15]</a>. To see what these deaths are caused by, the Sample Registration System sends trained surveyors to households in a fixed sample of villages and towns to ask about each death, and doctors assign the cause<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a>. Taking all deaths as 100%, this is how they divide:</p>
   <div class="calc"><p class="calc-title">Reading the table, step by step</p><ol><li class="start"><span class="what">All deaths in India in a year</span><span class="res">about 89 lakh, counted as 100%</span></li><li><span class="what">Heart disease and stroke cause about 3 in every 10<small>31.0%</small></span><span class="res">about 27.6 lakh</span></li><li class="total"><span class="what">Each row below is worked the same way: its share of the 89 lakh</span><span class="res">ten causes make up 75%</span></li></ol></div>
   <figure class="fig">
     <div class="bars"><div class="bar"><div class="name">Heart disease and stroke<small>31.0% · about 27.6 lakh</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:100.0%"></div></div></div><div class="bar"><div class="name">Respiratory infections<small>9.3% · about 8.3 lakh</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:30.0%"></div></div></div><div class="bar"><div class="name">Cancers<small>6.4% · about 5.7 lakh</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:20.6%"></div></div></div><div class="bar"><div class="name">Long-term lung disease<small>5.7% · about 5.1 lakh</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:18.4%"></div></div></div><div class="bar"><div class="name">Digestive diseases<small>5.3% · about 4.7 lakh</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:17.1%"></div></div></div><div class="bar"><div class="name">Fever of unknown cause<small>4.9% · about 4.4 lakh</small></div><div class="track" aria-hidden="true"><div class="fill muted" style="width:15.8%"></div></div></div><div class="bar"><div class="name">Accidents other than road<small>3.7% · about 3.3 lakh</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:11.9%"></div></div></div><div class="bar"><div class="name">Diabetes<small>3.5% · about 3.1 lakh</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:11.3%"></div></div></div><div class="bar"><div class="name">Kidney and urinary diseases<small>3.0% · about 2.7 lakh</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:9.7%"></div></div></div><div class="bar"><div class="name">Tuberculosis<small>2.5% · about 2.2 lakh</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:8.1%"></div></div></div><div class="bar"><div class="name">All other causes<small>24.7% · about 22.0 lakh</small></div><div class="track" aria-hidden="true"><div class="fill muted" style="width:79.7%"></div></div></div>
@@ -642,11 +591,11 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     </div>
     <figcaption><b>Figure 1.</b> Causes of death in India, share of all deaths, Sample Registration System 2021–2023<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a>. The number of deaths is our estimate: each share of about 89 lakh deaths a year. Bars are drawn to the largest cause.</figcaption>
   </figure>
-  <div class="table-wrap" style="margin-top:1.5rem"><table class="stack">
+  <details class="more"><summary>See these numbers as a table</summary><div><div class="table-wrap"><table class="stack">
     <thead><tr><th scope="col">Cause</th><th class="num" scope="col">Share of all deaths</th><th class="num" scope="col">Deaths a year</th></tr></thead>
     <tbody><tr><td>Heart disease and stroke<small class="block muted">Cardiovascular disease</small></td><td class="num" data-label="Share of all deaths">31.0%</td><td class="num" data-label="Deaths a year">about 27.6 lakh</td></tr><tr><td>Respiratory infections<small class="block muted">Mainly pneumonia</small></td><td class="num" data-label="Share of all deaths">9.3%</td><td class="num" data-label="Deaths a year">about 8.3 lakh</td></tr><tr><td>Cancers</td><td class="num" data-label="Share of all deaths">6.4%</td><td class="num" data-label="Deaths a year">about 5.7 lakh</td></tr><tr><td>Long-term lung disease<small class="block muted">Such as COPD and asthma</small></td><td class="num" data-label="Share of all deaths">5.7%</td><td class="num" data-label="Deaths a year">about 5.1 lakh</td></tr><tr><td>Digestive diseases<small class="block muted">Including liver disease</small></td><td class="num" data-label="Share of all deaths">5.3%</td><td class="num" data-label="Deaths a year">about 4.7 lakh</td></tr><tr><td>Fever of unknown cause<small class="block muted">No cause could be found</small></td><td class="num" data-label="Share of all deaths">4.9%</td><td class="num" data-label="Deaths a year">about 4.4 lakh</td></tr><tr><td>Accidents other than road<small class="block muted">Falls, drowning, burns, bites and others</small></td><td class="num" data-label="Share of all deaths">3.7%</td><td class="num" data-label="Deaths a year">about 3.3 lakh</td></tr><tr><td>Diabetes</td><td class="num" data-label="Share of all deaths">3.5%</td><td class="num" data-label="Deaths a year">about 3.1 lakh</td></tr><tr><td>Kidney and urinary diseases</td><td class="num" data-label="Share of all deaths">3.0%</td><td class="num" data-label="Deaths a year">about 2.7 lakh</td></tr><tr><td>Tuberculosis</td><td class="num" data-label="Share of all deaths">2.5%</td><td class="num" data-label="Deaths a year">about 2.2 lakh</td></tr><tr><td>All other causes<small class="block muted">Including road accidents, suicide, infections, mothers and newborns</small></td><td class="num" data-label="Share of all deaths">24.7%</td><td class="num" data-label="Deaths a year">about 22.0 lakh</td></tr><tr><td><b>All causes</b></td><td class="num" data-label="Share of all deaths"><b>100%</b></td><td class="num" data-label="Deaths a year"><b>about 89 lakh</b></td></tr></tbody>
-  </table></div>
-  <div class="table-wrap" style="margin-top:1.5rem"><table class="stack">
+  </table></div></div></details>
+  <div class="table-wrap"><table class="stack">
     <thead><tr><th scope="col">Broad group</th><th class="num" scope="col">Share, 2021–23</th><th class="num" scope="col">Deaths a year</th></tr></thead>
     <tbody>
       <tr><td>Long-term diseases<small class="block muted">Heart, cancer, lung, diabetes, kidney and others</small></td><td class="num" data-label="Share">56.7%</td><td class="num" data-label="Deaths a year">about 50.5 lakh</td></tr>
@@ -655,11 +604,11 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
       <tr><td>Cause unclear</td><td class="num" data-label="Share">10.5%</td><td class="num" data-label="Deaths a year">about 9.4 lakh</td></tr>
     </tbody>
   </table></div>
-  <p class="muted small" style="margin-top:.75rem">Shares: SRS Causes of Death 2021–2023<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a>. Deaths a year: our estimate, each share of about 89 lakh. One death in ten still has no clear cause, itself a sign of missing records.</p>
+  <p class="muted small">Shares: SRS Causes of Death 2021–2023<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a>. Deaths a year: our estimate, each share of about 89 lakh. One death in ten still has no clear cause, itself a sign of missing records.</p>
 
-  <h3 style="margin-top:2.25rem">Causes Counted One by One</h3>
+  <h3>Causes Counted One by One</h3>
   <p>Some causes have their own national counts or studies. They come from different years and methods and overlap with the table above (a road death is also an injury), so they should not be added together.</p>
-  <div class="table-wrap" style="margin-top:1rem"><table class="stack">
+  <div class="table-wrap"><table class="stack">
     <thead><tr><th scope="col">Cause</th><th class="num" scope="col">Deaths a year</th><th scope="col">Year and source</th></tr></thead>
     <tbody>
       <tr><td>Cancer</td><td class="num" data-label="Deaths a year">about 8.2 lakh</td><td data-label="Year and source">2023, ICMR cancer registry estimate<a class="cite" href="#ref-3" aria-label="Source 3">[3]</a>. Higher than the 5.7 lakh worked out from the household survey; the two use different methods</td></tr>
@@ -675,13 +624,13 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
       <tr><td>Dengue</td><td class="num" data-label="Deaths a year">297 to 2,340</td><td data-label="Year and source">2024: 297 in disease surveillance, 2,340 on doctors' death certificates<a class="cite" href="#ref-25" aria-label="Source 25">[25]</a></td></tr>
     </tbody>
   </table></div>
-  <p style="margin-top:1rem"><b>Air pollution is a risk, not a separate cause.</b> About 21 lakh deaths in India in 2021 were linked to polluted air, including 1.69 lakh children under five<a class="cite" href="#ref-26" aria-label="Source 26">[26]</a>. Most are counted above as heart, lung or infection deaths.</p>
-  <p class="callout" style="margin-top:1.25rem"><b>What the gaps say.</b> Snakebite deaths are counted as about 10,000 by the police and about 58,000 by careful household study. Dengue deaths are 297 in one government count and 2,340 in another. When most deaths happen without a doctor's certificate, and the medical history of the person is not written down anywhere, the country cannot see what is killing its people. A signed record of every visit is part of the fix.</p>
+  <p><b>Air pollution is a risk, not a separate cause.</b> About 21 lakh deaths in India in 2021 were linked to polluted air, including 1.69 lakh children under five<a class="cite" href="#ref-26" aria-label="Source 26">[26]</a>. Most are counted above as heart, lung or infection deaths.</p>
+  <p class="callout"><b>What the gaps say.</b> Snakebite deaths are counted as about 10,000 by the police and about 58,000 by careful household study. Dengue deaths are 297 in one government count and 2,340 in another. When most deaths happen without a doctor's certificate, and the medical history of the person is not written down anywhere, the country cannot see what is killing its people. A signed record of every visit is part of the fix.</p>
 </section>
 
 <section id="chronic" aria-labelledby="chronic-h">
   <h2 id="chronic-h">Long-Term Disease</h2>
-  <figure class="fig" style="margin-top:0">
+  <figure class="fig">
     <div class="bars">
       <div class="bar"><div class="name">Abdominal obesity<small>35.1 crore</small></div><div class="track" aria-hidden="true"><div class="fill muted" style="width:87.75%"></div></div></div>
       <div class="bar"><div class="name">High blood pressure<small>31.5 crore</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:78.75%"></div></div></div>
@@ -703,7 +652,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <div class="fact"><span class="n">27% · 18%</span><span class="t">Breast and cervical cancer as shares of new cases in women, 2022</span><span class="src">GLOBOCAN 2022<a class="cite" href="#ref-27" aria-label="Source 27">[27]</a><a class="cite" href="#ref-28" aria-label="Source 28">[28]</a></span></div>
     <div class="fact"><span class="n">65.7%</span><span class="t">Five-year breast cancer survival in India (diagnosed 2017–2021), against more than 85% in many high-income countries</span><span class="src">WHO estimates, 2026<a class="cite" href="#ref-29" aria-label="Source 29">[29]</a></span></div>
   </div>
-  <p style="margin-top:1.25rem">In men, lip and oral cavity cancer (about 15.6% of new cases) and lung cancer (about 8.5%) lead<a class="cite" href="#ref-28" aria-label="Source 28">[28]</a>. Survival depends heavily on early detection, which depends on someone noticing a pattern across visits. More on how other countries achieve higher survival is on the <a href="health-systems-compared.html#cancer">comparison page</a>.</p>
+  <p>In men, lip and oral cavity cancer (about 15.6% of new cases) and lung cancer (about 8.5%) lead<a class="cite" href="#ref-28" aria-label="Source 28">[28]</a>. Survival depends heavily on early detection, which depends on someone noticing a pattern across visits. More on how other countries achieve higher survival is on the <a href="health-systems-compared.html#cancer">comparison page</a>.</p>
 </section>
 
 <section id="roads" aria-labelledby="roads-h">
@@ -722,7 +671,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     </div>
     <figcaption><b>Figure 3.</b> Road deaths in 2023 by cause and by road user<a class="cite" href="#ref-4" aria-label="Source 4">[4]</a>. Categories overlap: a two-wheeler rider can also have died in an over-speeding crash.</figcaption>
   </figure>
-  <p style="margin-top:1.25rem">Since May 2025, road accident victims anywhere in India can get cashless treatment of up to ₹1.5 lakh for seven days at designated hospitals<a class="cite" href="#ref-31" aria-label="Source 31">[31]</a>. Paying for the first week solves one problem; knowing the victim's blood group, allergies and medicines is another. That is what an emergency card is for.</p>
+  <p>Since May 2025, road accident victims anywhere in India can get cashless treatment of up to ₹1.5 lakh for seven days at designated hospitals<a class="cite" href="#ref-31" aria-label="Source 31">[31]</a>. Paying for the first week solves one problem; knowing the victim's blood group, allergies and medicines is another. That is what an emergency card is for.</p>
 </section>
 
 <section id="cost" aria-labelledby="cost-h">
@@ -732,7 +681,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <div class="fact"><span class="n">80%+</span><span class="t">Indians with no health expenditure coverage in 2017–18</span><span class="src">NSS 75th round<a class="cite" href="#ref-33" aria-label="Source 33">[33]</a></span></div>
     <div class="fact"><span class="n">80%</span><span class="t">Rural families who paid for a hospital stay from savings; 13% borrowed</span><span class="src">NSS 75th round<a class="cite" href="#ref-33" aria-label="Source 33">[33]</a></span></div>
   </div>
-  <p style="margin-top:1.25rem">Medicines are the largest single cause of impoverishment<a class="cite" href="#ref-32" aria-label="Source 32">[32]</a>. A record that prevents a duplicate prescription or a repeated test saves money for the family that pays. Insurance has expanded since 2017–18, so the coverage figure is a baseline, not today's number.</p>
+  <p>Medicines are the largest single cause of impoverishment<a class="cite" href="#ref-32" aria-label="Source 32">[32]</a>. A record that prevents a duplicate prescription or a repeated test saves money for the family that pays. Insurance has expanded since 2017–18, so the coverage figure is a baseline, not today's number.</p>
 </section>
 
 <section id="system" aria-labelledby="system-h">
@@ -743,7 +692,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <div class="fact"><span class="n">1.78 lakh</span><span class="t">Ayushman Arogya Mandirs, the government's local primary health centres, open as of July 2025</span><span class="src">Lok Sabha<a class="cite" href="#ref-35" aria-label="Source 35">[35]</a></span></div>
     <div class="fact"><span class="n">818</span><span class="t">Medical colleges, up from 387 in 2014; MBBS seats rose from 51,348 to 1,28,875</span><span class="src">Rajya Sabha, December 2025<a class="cite" href="#ref-36" aria-label="Source 36">[36]</a></span></div>
   </div>
-  <p style="margin-top:1.25rem">PM-JAY pays for hospital stays, not for outpatient visits or most medicines, which is where Indian families spend most of their own money<a class="cite" href="#ref-32" aria-label="Source 32">[32]</a>. In 2024 the scheme was opened to everyone aged 70 and over; 1.14 crore of these cards had been issued by February 2026<a class="cite" href="#ref-34" aria-label="Source 34">[34]</a>. The first point of contact for most illnesses remains a small private clinic or a local health centre, the setting 1Heath is built for.</p>
+  <p>PM-JAY pays for hospital stays, not for outpatient visits or most medicines, which is where Indian families spend most of their own money<a class="cite" href="#ref-32" aria-label="Source 32">[32]</a>. In 2024 the scheme was opened to everyone aged 70 and over; 1.14 crore of these cards had been issued by February 2026<a class="cite" href="#ref-34" aria-label="Source 34">[34]</a>. The first point of contact for most illnesses remains a small private clinic or a local health centre, the setting 1Heath is built for.</p>
   <p>How each state adds to PM-JAY, and how to use a scheme step by step, is on the <a href="india-health-schemes.html">government health schemes page</a>. Whether India has enough doctors, nurses and beds, state by state and against the world, is on the <a href="india-health-workforce.html">workforce and beds page</a>.</p>
 </section>
 
@@ -753,7 +702,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <div class="fact"><span class="n">29.3%</span><span class="t">Children under five who are stunted, too short for their age from long-term undernutrition; down from 35.5% in 2019–21</span><span class="src">NFHS-6, 2023–24<a class="cite" href="#ref-37" aria-label="Source 37">[37]</a></span></div>
     <div class="fact"><span class="n">31.8%</span><span class="t">Children under five who are underweight; 19% are wasted, too thin for their height</span><span class="src">NFHS-6, 2023–24<a class="cite" href="#ref-37" aria-label="Source 37">[37]</a></span></div>
   </div>
-  <p style="margin-top:1.25rem">In the same survey, adults moved the other way: 30.7% of women and 27.3% of men are now overweight or obese, up from 24% and 22.9%<a class="cite" href="#ref-37" aria-label="Source 37">[37]</a>. India carries both problems at once. Why, and what has to change, is on the page <a href="india-food-and-health.html">why Indians fall ill</a>. A child's weight and growth, recorded at every visit, are what a paediatrician needs to dose medicines safely and to notice faltering growth early.</p>
+  <p>In the same survey, adults moved the other way: 30.7% of women and 27.3% of men are now overweight or obese, up from 24% and 22.9%<a class="cite" href="#ref-37" aria-label="Source 37">[37]</a>. India carries both problems at once. Why, and what has to change, is on the page <a href="india-food-and-health.html">why Indians fall ill</a>. A child's weight and growth, recorded at every visit, are what a paediatrician needs to dose medicines safely and to notice faltering growth early.</p>
 </section>
 
 <section id="mothers" aria-labelledby="mothers-h">
@@ -762,10 +711,10 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <div class="fact"><span class="n">~87</span><span class="t">Maternal deaths per lakh live births</span><span class="src">SRS special bulletin, 2022–24<a class="cite" href="#ref-38" aria-label="Source 38">[38]</a></span></div>
     <div class="fact"><span class="n">10,000–15,000</span><span class="t">Children born with thalassaemia major each year; 1 to 1.5 lakh living with it</span><span class="src">Union Health Minister, 2020<a class="cite" href="#ref-39" aria-label="Source 39">[39]</a></span></div>
   </div>
-  <p style="margin-top:1.25rem">A woman arriving at night in labour may not be able to give her blood group, a previous caesarean or her blood pressure history. Thalassaemia major is preventable when carriers know their status before having children, which requires family records that link, with consent.</p>
+  <p>A woman arriving at night in labour may not be able to give her blood group, a previous caesarean or her blood pressure history. Thalassaemia major is preventable when carriers know their status before having children, which requires family records that link, with consent.</p>
 </section>
 
-<p class="callout" style="margin-top:2rem">Why are these diseases so common in India, and what do countries with lower rates do differently? See <a href="india-diseases.html">India's biggest diseases</a>.</p>
+<p class="callout">Why are these diseases so common in India, and what do countries with lower rates do differently? See <a href="india-diseases.html">India's biggest diseases</a>.</p>
 
 <section id="meaning" aria-labelledby="meaning-h">
   <h2 id="meaning-h">What This Means for Medical Records</h2>
