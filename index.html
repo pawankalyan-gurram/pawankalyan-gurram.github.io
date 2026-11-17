@@ -562,6 +562,14 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 .apk b{color:var(--ink)}
 @media (max-width:900px){.intro{grid-template-columns:minmax(0,1fr) 14rem;gap:2rem}}
 @media (max-width:640px){.intro{grid-template-columns:minmax(0,1fr)}.portrait{order:-1;max-width:15rem}}
+
+.intro .nameline{display:flex;flex-direction:column;gap:.1rem}
+.intro .nameline b{font-size:1.25rem}
+.intro .nameline span{font-size:var(--s-sm);font-weight:700;color:var(--rx-strong)}
+.intro h1{font-size:clamp(2.3rem, 1.4rem + 3.4vw, 3.9rem);line-height:1.05;letter-spacing:-.02em}
+.intro{grid-template-columns:minmax(0,1fr) 24rem}
+@media (max-width:900px){.intro{grid-template-columns:minmax(0,1fr) 15rem}}
+@media (max-width:640px){.intro{grid-template-columns:minmax(0,1fr)}.portrait{order:0;max-width:100%}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Pawan Kalyan", "alternateName": "Pavan Kumar Gurram", "url": "https://pawankalyan.dev/", "image": "https://pawankalyan.dev/pawan-kalyan.jpg", "jobTitle": "ML/AI Engineer, Full-Stack Engineer, Founder of 1Heath", "sameAs": ["https://github.com/pawankalyan-gurram", "https://www.linkedin.com/in/pavankumar-gurram/", "https://www.instagram.com/pawan_kalyan.official/"]}</script>
 </head>
@@ -573,9 +581,9 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 
 <div class="intro">
   <div class="intro-text">
-    <h1>Pawan Kalyan</h1>
-    <p class="role">ML/AI Engineer, Full-Stack Engineer, Founder of 1Heath</p>
-    <p class="lede">I'm building <a href="1heath.html">1Heath</a> so that no doctor in India has to treat a patient blind. It listens to the consultation in any Indian language, writes a checked prescription for the doctor to sign, and keeps the history for the next doctor, the pharmacy and the family.</p>
+    <p class="nameline"><b>Pawan Kalyan</b><span>ML/AI Engineer, Full-Stack Engineer, Founder of 1Heath</span></p>
+    <h1>No Doctor in India Should Have to Treat a Patient Blind</h1>
+    <p class="lede">I'm building <a href="1heath.html">1Heath</a>: it listens to the consultation in any Indian language, writes a checked prescription for the doctor to sign, and keeps the history for the next doctor, the pharmacy and the family.</p>
     <p class="creds"><span>Zoho <i>Member of Technical Staff</i></span><span>DRDO <i>Intern</i></span><span>1Heath <i>Founder</i></span></p>
     <div class="btns">
       <a class="btn primary" href="1heath.html">See how 1Heath works</a>
