@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en-IN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Launch Readiness: Everything Else 1Heath Needs Before Real Clinics · Pawan Kalyan</title>
+<meta name="description" content="What the legal map did not cover: app store rules for health apps, SMS and WhatsApp, where data lives, payments, hiring, raising money, ethics approval, accessibility, who we let on, the documents we must write, and the whole launch in order.">
+<link rel="canonical" href="https://pawankalyan.dev/1heath-launch">
+<meta name="author" content="Pawan Kalyan">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Pawan Kalyan">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="Launch Readiness: Everything Else 1Heath Needs Before Real Clinics · Pawan Kalyan">
+<meta property="og:description" content="What the legal map did not cover: app store rules for health apps, SMS and WhatsApp, where data lives, payments, hiring, raising money, ethics approval, accessibility, who we let on, the documents we must write, and the whole launch in order.">
+<meta property="og:url" content="https://pawankalyan.dev/1heath-launch">
+<meta property="og:image" content="https://pawankalyan.dev/og-v3.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pawan Kalyan holding a microphone, beside the line: No doctor in India should have to treat a patient blind">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>(function(){var d=document.documentElement;try{d.setAttribute('data-theme',localStorage.getItem('theme')==='dark'?'dark':'light')}catch(e){d.setAttribute('data-theme','light')}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,600;1,6..72,500;1,6..72,600&display=swap">
+<style>/* pawankalyan.dev design system, v2 (17 Nov 2026)
+   Paper and ink of a prescription; one accent, the green of an Indian chemist's cross.
+   Body: Atkinson Hyperlegible Next (built for legibility). Headings: Newsreader. */
+:root{
+  --paper:#fbfcfb; --surface:#ffffff; --wash:#f0f5f3; --ink:#0f1f29; --body:#26343d; --muted:#5a6a72;
+  --rule:#dbe4e0; --rule-strong:#c4d1cc;
+  --rx:#0a7656; --rx-strong:#075c43; --rx-soft:#e2f2eb;
+  --ok:#11734d; --ok-soft:#e3f3ea; --warn:#93570a; --warn-soft:#fbf0dc; --stop:#b02a22; --stop-soft:#fbe7e5;
+  --data:#0a7656; --data-other:#a9b8b3;
+  --f-display:"Newsreader", "Iowan Old Style", Georgia, serif;
+  --f-body:"Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+  --f-mono:ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --f-te:"Noto Sans Telugu", "Telugu Sangam MN", "Nirmala UI", sans-serif;
+  --s-xs:.8125rem; --s-sm:.9375rem; --s-0:1.125rem; --s-1:1.3125rem; --s-2:1.75rem; --s-3:clamp(2.15rem, 1.5rem + 2.6vw, 3.15rem);
+  --gutter:20px; --measure:42rem; --radius:10px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0d1416; --surface:#121b1e; --wash:#162225; --ink:#e9efed; --body:#cdd7d4; --muted:#93a39f;
+  --rule:#243236; --rule-strong:#33454a; --rx:#5fd4a8; --rx-strong:#86e2bf; --rx-soft:#123029;
+  --ok:#6ad7a3; --ok-soft:#12291f; --warn:#f0b864; --warn-soft:#2a2112; --stop:#ff9089; --stop-soft:#2e1717;
+  --data:#5fd4a8; --data-other:#3e5257; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0d1416; --surface:#121b1e; --wash:#162225; --ink:#e9efed; --body:#cdd7d4; --muted:#93a39f;
+  --rule:#243236; --rule-strong:#33454a; --rx:#5fd4a8; --rx-strong:#86e2bf; --rx-soft:#123029;
+  --ok:#6ad7a3; --ok-soft:#12291f; --warn:#f0b864; --warn-soft:#2a2112; --stop:#ff9089; --stop-soft:#2e1717;
+  --data:#5fd4a8; --data-other:#3e5257; color-scheme:dark}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:5rem}
+body{margin:0;background:var(--paper);color:var(--body);font:400 var(--s-0)/1.72 var(--f-body);-webkit-font-smoothing:antialiased;overflow-wrap:break-word;font-kerning:normal}
+img,svg{max-width:100%;height:auto}
+a{color:var(--rx);text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:color-mix(in srgb, var(--rx) 40%, transparent)}
+a:hover{color:var(--rx-strong);text-decoration-color:currentColor}
+:focus-visible{outline:2px solid var(--rx);outline-offset:3px;border-radius:3px}
+h1,h2,h3,h4{color:var(--ink);margin:0;text-wrap:balance}
+h1{font-family:var(--f-display);font-size:var(--s-3);font-weight:600;line-height:1.08;letter-spacing:-.018em}
+h2{font-family:var(--f-display);font-size:var(--s-2);font-weight:600;line-height:1.18;letter-spacing:-.01em}
+h3{font-family:var(--f-body);font-size:1.1875rem;font-weight:700;line-height:1.35}
+h4{font-family:var(--f-body);font-size:var(--s-0);font-weight:700}
+p,ul,ol,figure,dl,dd{margin:0}
+b,strong{font-weight:700;color:var(--ink)}
+sup{line-height:0}
+.flow>*+*{margin-top:1.05rem}
+.muted{color:var(--muted)}
+.small{font-size:var(--s-sm);line-height:1.6}
+.mono{font-family:var(--f-mono);font-size:.86em}
+.label{font-size:var(--s-xs);font-weight:700;color:var(--muted)}
+[lang="te"]{font-family:var(--f-te)}
+.nowrap{white-space:nowrap}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:.6rem 1rem;z-index:20}
+.skip:focus{left:var(--gutter);top:.5rem}
+.pad{padding-left:max(var(--gutter), env(safe-area-inset-left, 0px));padding-right:max(var(--gutter), env(safe-area-inset-right, 0px))}
+.col{max-width:var(--measure);margin:0 auto}
+.wide{max-width:72rem;margin:0 auto}
+main{padding-block:2.5rem 1rem}
+
+/* ---------- top bar ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--paper)}
+.topbar{position:sticky;top:0;top:env(safe-area-inset-top, 0px);z-index:9;background:color-mix(in srgb, var(--paper) 92%, transparent);border-bottom:1px solid var(--rule);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.topbar .wide{display:flex;align-items:center;gap:1rem;min-height:3.75rem}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--f-display);font-weight:600;font-size:1.2rem;color:var(--ink);text-decoration:none;white-space:nowrap;margin-right:auto;padding:.5rem 0}
+.brand:hover{color:var(--ink)}
+.brand .mark{display:inline-grid;place-items:center;width:1.9rem;height:1.9rem;border-radius:7px;background:var(--rx);color:#fff;font:700 .8rem/1 var(--f-body);letter-spacing:.02em}
+:root[data-theme="dark"] .brand .mark{color:#08241b}
+.menu{display:flex;flex-wrap:wrap;list-style:none;margin:0;padding:0;gap:.15rem}
+.menu a{display:block;padding:.55rem .7rem;border-radius:8px;font-size:var(--s-sm);font-weight:700;color:var(--muted);text-decoration:none;white-space:nowrap}
+.menu a:hover{color:var(--ink);background:var(--wash)}
+.menu a[aria-current="page"]{color:var(--rx-strong);background:var(--rx-soft)}
+.menu .sm{display:none}
+.theme{display:inline-flex;align-items:center;justify-content:center;width:2.6rem;height:2.6rem;border:1px solid var(--rule);background:var(--surface);color:var(--ink);border-radius:999px;cursor:pointer;flex:none}
+.theme:hover{border-color:var(--rule-strong)}
+.theme svg{width:1.1rem;height:1.1rem}
+.theme .moon{display:none}
+:root[data-theme="dark"] .theme .sun{display:none}
+:root[data-theme="dark"] .theme .moon{display:block}
+@media (max-width:860px){
+  .topbar .wide{flex-wrap:wrap;gap:0 .5rem;padding-top:.3rem}
+  .menu{order:3;width:100%;margin:0 0 .35rem -.55rem}
+  .menu a{padding:.45rem .55rem}
+}
+@media (max-width:560px){
+  .menu .lg{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .menu .sm{display:inline}
+  .menu{gap:0;margin-left:-.4rem}
+  .menu a{padding:.45rem .4rem}
+  .brand{white-space:normal}
+}
+
+/* ---------- sections ---------- */
+section{margin-top:3.75rem}
+section>h2{margin-bottom:1.15rem}
+section>h2+p{margin-top:-.2rem}
+section h3{margin-top:2rem;margin-bottom:.7rem}
+section>h2+h3,section h3:first-child{margin-top:.5rem}
+h3.group{font-size:var(--s-sm);font-weight:700;color:var(--muted);margin:2rem 0 .6rem}
+ul.plain,ol.plain{padding-left:1.25rem;display:flex;flex-direction:column;gap:.6rem}
+ul.plain li::marker{color:var(--rx)}
+section>ol:not([class]),section>ul:not([class]){padding-left:1.4rem;display:flex;flex-direction:column;gap:.6rem}
+section>ul:not([class]) li::marker{color:var(--rx)}
+ol li::marker{color:var(--muted);font-weight:700}
+
+/* vertical rhythm: every block inside a section gets the same gap from the block
+   above it; components never collide (the class in :not() lifts specificity above
+   component resets such as .flowchart{margin:0}) */
+section>*+*:not(h2,h3,.rhythm-skip){margin-top:1.15rem}
+section>*+:is(figure.fig,.table-wrap,.facts,.cards,.flowchart,.calc,.calc-pair,.callout,.principles,details,.layers,.rx,.proto-link,.doors):not(.rhythm-skip){margin-top:1.5rem}
+section>:is(h2,h3)+*:not(.rhythm-skip){margin-top:0}
+section>.group+*:not(.rhythm-skip){margin-top:0}
+
+/* ---------- article header ---------- */
+.band{border-bottom:1px solid var(--rule)}
+.band .band-grid>.col{padding-block:2.75rem 2.25rem;display:flex;flex-direction:column;gap:.85rem}
+.crumbs{display:flex;flex-wrap:wrap;gap:.2rem .5rem;font-size:var(--s-sm);font-weight:700;color:var(--muted);list-style:none;padding:0;margin:0}
+.crumbs li+li::before{content:"/";margin-right:.5rem;color:var(--rule-strong);font-weight:400}
+.crumbs a{color:var(--rx);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.dek{font-size:1.25rem;line-height:1.55;color:var(--muted);max-width:38rem}
+.meta{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-size:var(--s-sm);color:var(--muted);margin-top:.35rem}
+.meta b{color:var(--ink);font-weight:700}
+
+/* "In short" summary */
+.tldr{margin-top:2rem;background:var(--rx-soft);border-radius:var(--radius);padding:1.3rem 1.4rem 1.35rem;display:flex;flex-direction:column;gap:.6rem;border:1px solid color-mix(in srgb, var(--rx) 22%, transparent)}
+.tldr>.label{font-family:var(--f-display);font-size:1.25rem;font-weight:600;color:var(--ink)}
+.tldr ul{margin:0;padding-left:1.15rem;display:flex;flex-direction:column;gap:.55rem}
+.tldr li{line-height:1.6}
+.tldr li::marker{color:var(--rx)}
+
+.toc-top+section{margin-top:2.25rem}
+/* contents */
+.layout{display:block}
+.toc{margin-top:1.5rem;border:1px solid var(--rule);border-radius:var(--radius);padding:1rem 1.2rem;background:var(--surface)}
+.toc>.label{font-size:var(--s-sm);color:var(--ink)}
+.toc ol{list-style:none;margin:.5rem 0 0;padding:0;display:flex;flex-direction:column;counter-reset:t}
+.toc li{counter-increment:t;display:grid;grid-template-columns:1.7rem minmax(0,1fr);font-size:var(--s-sm)}
+.toc li::before{content:counter(t);font-size:.8rem;font-weight:700;color:var(--muted);padding-top:.42rem;font-variant-numeric:tabular-nums}
+.toc a{display:block;padding:.32rem 0;color:var(--body);text-decoration:none;line-height:1.4}
+.toc a:hover{color:var(--rx)}
+.toc a.active{color:var(--rx-strong);font-weight:700}
+@media (min-width:1180px){
+  .layout{display:grid;grid-template-columns:14.5rem minmax(0,var(--measure));gap:4rem;max-width:calc(var(--measure) + 18.5rem);margin:0 auto}
+  .layout>.col{margin:0;max-width:none;min-width:0}
+  .toc-rail{position:relative}
+  .toc{position:sticky;top:5.5rem;margin-top:2.5rem;border:0;padding:0;background:none;max-height:calc(100vh - 7rem);overflow:auto}
+  .toc li{border-left:2px solid var(--rule);padding-left:.75rem;grid-template-columns:1.5rem minmax(0,1fr)}
+  .toc li:has(a.active){border-left-color:var(--rx)}
+  .toc-top{display:none}
+}
+@media (max-width:1179px){.toc-rail{display:none}}
+/* wide tables may use the empty space to the right of the reading column */
+@media (min-width:1400px){main.col section>.table-wrap{margin-right:-8rem}}
+
+/* ---------- figures, charts, diagrams ---------- */
+figure.fig{margin-top:1.75rem;display:flex;flex-direction:column;gap:.8rem;padding:1.25rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface)}
+figcaption{font-size:var(--s-sm);color:var(--muted);line-height:1.55}
+figcaption b{color:var(--ink)}
+figure.fig + p, figure.fig + ul, .table-wrap + p{margin-top:1.25rem}
+
+.bars{display:flex;flex-direction:column;gap:.8rem}
+.bar{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.9rem;align-items:center}
+.bar .name{font-size:var(--s-sm);line-height:1.3;color:var(--ink);font-weight:700}
+.bar .name small{display:block;color:var(--muted);font-size:.82rem;margin-top:.1rem;font-weight:400;font-variant-numeric:tabular-nums}
+.track{position:relative;height:1.35rem;background:var(--wash);border-radius:4px;overflow:hidden}
+.fill{position:absolute;top:0;bottom:0;left:0;background:var(--data);border-radius:0 4px 4px 0}
+.fill.range{opacity:.3}
+.fill.warn{background:var(--warn)}
+.fill.muted{background:var(--data-other)}
+.axis{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.9rem}
+.axis div:last-child{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+@media (max-width:560px){.bar,.axis{grid-template-columns:1fr;gap:.3rem}.axis div:first-child{display:none}figure.fig{padding:1rem}}
+
+.flowchart{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(var(--n,5),minmax(0,1fr));gap:.7rem}
+.flowchart li{position:relative;background:var(--surface);border:1px solid var(--rule-strong);border-radius:var(--radius);padding:.85rem .8rem;display:flex;flex-direction:column;gap:.3rem;min-width:0}
+.flowchart li b{font-size:var(--s-sm);line-height:1.3}
+.flowchart li span{font-size:.86rem;color:var(--muted);line-height:1.45}
+.flowchart li .k{font-size:.78rem;font-weight:700;color:var(--rx)}
+.flowchart li.key{border-color:var(--rx);box-shadow:inset 0 0 0 1px var(--rx)}
+.flowchart li+li::before{content:"";position:absolute;left:-.7rem;top:50%;width:.7rem;height:2px;background:var(--rule-strong)}
+.flowchart[style*="--n:5"]{grid-template-columns:1fr}
+.flowchart[style*="--n:5"] li{display:grid;grid-template-columns:4.4rem minmax(0,1fr);column-gap:.7rem;row-gap:.15rem;align-items:start}
+.flowchart[style*="--n:5"] li .k{grid-row:1 / span 2;padding-top:.15rem}
+.flowchart[style*="--n:5"] li b,.flowchart[style*="--n:5"] li span:not(.k){grid-column:2}
+.flowchart[style*="--n:5"] li+li::before{left:2.6rem;top:-.7rem;width:2px;height:.7rem}
+@media (max-width:760px){
+  .flowchart{grid-template-columns:1fr}
+  .flowchart li{display:grid;grid-template-columns:4.4rem minmax(0,1fr);column-gap:.7rem;row-gap:.15rem;align-items:start}
+  .flowchart li .k{grid-row:1 / span 2;padding-top:.15rem}
+  .flowchart li b,.flowchart li span:not(.k){grid-column:2}
+  .flowchart li+li::before{left:2.6rem;top:-.7rem;width:2px;height:.7rem}
+}
+
+.layers{display:flex;flex-direction:column;gap:.6rem}
+.layer{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:.8rem;align-items:stretch}
+.layer>.lname{font-size:.84rem;font-weight:700;color:var(--muted);padding-top:.7rem}
+.layer>.boxes{display:flex;flex-wrap:wrap;gap:.5rem;min-width:0}
+.box{flex:1 1 9rem;border:1px solid var(--rule-strong);background:var(--surface);border-radius:8px;padding:.65rem .8rem;display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.box b{font-size:var(--s-sm)}
+.box span{font-size:.86rem;color:var(--muted);line-height:1.45}
+.box.plan{border-style:dashed}
+.box.key{border-color:var(--rx);box-shadow:inset 0 0 0 1px var(--rx)}
+.down{text-align:center;color:var(--muted);font-size:.85rem;line-height:1}
+@media (max-width:640px){.layer{grid-template-columns:1fr;gap:.3rem}.layer>.lname{padding-top:0}}
+
+/* ---------- tables ---------- */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:var(--s-sm);line-height:1.55}
+th,td{text-align:left;vertical-align:top;padding:.8rem .95rem;border-bottom:1px solid var(--rule)}
+th{font-size:.86rem;font-weight:700;color:var(--ink);background:var(--wash);line-height:1.35}
+tbody tr:last-child td{border-bottom:0}
+td:first-child{font-weight:700;color:var(--ink)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.num{white-space:nowrap}
+td.num small{display:block;color:var(--muted);font-size:.8em;margin-top:.1rem;font-weight:400}
+td .tag{white-space:nowrap}
+td.range{min-width:9.5rem;font-variant-numeric:tabular-nums}
+td.range b{display:block;white-space:nowrap}
+td.range small{display:block;color:var(--muted);font-size:.82em;margin-top:.1rem}
+table.compact th small{display:block;font-weight:400;color:var(--muted);font-size:.78rem;margin-top:.1rem}
+table.compact th,table.compact td{padding-inline:.6rem}
+small.block{display:block;font-size:.82rem;font-weight:400;margin-top:.1rem}
+@media (min-width:601px){table.stack td:first-child{min-width:8.5rem}}
+@media (min-width:601px) and (max-width:760px){table.compact th,table.compact td{padding-inline:.4rem;font-size:.86rem}table.compact td:first-child{min-width:6.5rem}}
+@media (max-width:600px){
+  table.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.stack tr{display:block;padding:.85rem 1rem;border-bottom:1px solid var(--rule)}
+  table.stack tbody tr:last-child{border-bottom:0}
+  table.stack td{display:block;border:0;padding:.18rem 0;text-align:left}
+  table.stack td:first-child{font-size:1rem;padding-bottom:.35rem}
+  table.stack td[data-label]::before{content:attr(data-label);display:block;font-size:.78rem;font-weight:700;color:var(--muted)}
+  td.num,td.range{white-space:normal}
+}
+
+/* ---------- key figures ---------- */
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden}
+.facts.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.fact{background:var(--surface);padding:1.15rem 1.2rem 1.2rem;display:flex;flex-direction:column;gap:.35rem;min-width:0}
+.fact .n{font-family:var(--f-display);font-size:2.1rem;font-weight:600;line-height:1.05;color:var(--rx-strong);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.fact .t{font-size:var(--s-sm);line-height:1.5;color:var(--ink)}
+.fact .src{font-size:.8rem;color:var(--muted);margin-top:auto}
+@media (max-width:760px){.facts.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.facts,.facts.three{grid-template-columns:1fr}.fact .n{font-size:1.8rem}}
+
+/* ---------- callouts, boxes ---------- */
+.callout{border-left:3px solid var(--rx);background:var(--surface);border-top:1px solid var(--rule);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1rem 1.2rem;border-radius:0 var(--radius) var(--radius) 0}
+.callout.warn{border-left-color:var(--warn);background:var(--warn-soft);border-color:color-mix(in srgb, var(--warn) 25%, transparent);border-left-color:var(--warn)}
+.feature{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);padding:1.4rem;display:flex;flex-direction:column;gap:.8rem}
+details.more{border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);margin-top:1rem}
+details.more>summary{cursor:pointer;padding:.9rem 1.1rem;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::after{content:"+";color:var(--rx);font-weight:700}
+details.more[open]>summary::after{content:"\2212"}
+details.more>div{padding:0 1.1rem 1.1rem}
+
+.principles{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem}
+.principles li{display:grid;grid-template-columns:2rem minmax(0,1fr);gap:.6rem}
+.principles li>span{display:inline-grid;place-items:center;width:1.7rem;height:1.7rem;border-radius:999px;background:var(--rx-soft);color:var(--rx-strong);font-size:.84rem;font-weight:700;margin-top:.15rem}
+
+/* ---------- prescription specimen ---------- */
+.rx{background:var(--surface);border:1px solid var(--rule-strong);border-radius:var(--radius);overflow:hidden}
+.rx-head{display:flex;justify-content:space-between;gap:.5rem 1rem;flex-wrap:wrap;padding:.8rem 1.1rem;border-bottom:1px dashed var(--rule-strong);background:var(--wash)}
+.rx-line{display:grid;grid-template-columns:2.1rem minmax(0,1fr) auto;gap:.85rem;padding:1rem 1.1rem;border-bottom:1px solid var(--rule);align-items:start}
+.rx-line:last-child{border-bottom:0}
+.rx-sym{font-family:var(--f-display);font-style:italic;font-weight:600;font-size:1.15rem;color:var(--rx);line-height:1.4}
+.rx-brand{font-weight:700;color:var(--ink)}
+.rx-generic{font-size:.86rem;color:var(--muted)}
+.rx-dose{font-size:.9rem;margin-top:.25rem;color:var(--ink)}
+.rx-pt{font-size:var(--s-sm);color:var(--muted);margin-top:.2rem}
+.rx-said{font-size:.9rem;color:var(--muted);font-style:italic;margin-top:.35rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.55rem}
+.chip{font-size:.8rem;font-weight:700;padding:.28rem .7rem;border:1px solid var(--warn);color:var(--warn);border-radius:999px}
+.state{font-size:.78rem;font-weight:700;padding:.15rem .55rem;border-radius:999px;display:inline-block}
+.state.ok{background:var(--ok-soft);color:var(--ok)}
+.state.amber{background:var(--warn-soft);color:var(--warn)}
+.state.block{background:var(--stop-soft);color:var(--stop)}
+@media (max-width:520px){.rx-line{grid-template-columns:1.8rem minmax(0,1fr)}.rx-line .state{grid-column:2;justify-self:start}}
+
+/* ---------- worked arithmetic ---------- */
+.formula-line{margin:1rem 0 .75rem;line-height:1.65}
+.formula-line b{color:var(--ink)}
+.calc{border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);padding:1rem 1.1rem 1.05rem;margin:1rem 0 1.25rem}
+.calc-title{margin:0 0 .55rem;font-size:.95rem;font-weight:700;color:var(--ink)}
+.calc ol{list-style:none;margin:0;padding:0}
+.calc li{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:1.25rem;align-items:baseline;padding:.6rem 0;border-top:1px solid var(--rule)}
+.calc li.start{border-top:0}
+.calc li.start .what{font-weight:700}
+.calc .op{color:var(--rx);white-space:nowrap}
+.calc .what{font-size:.98rem;line-height:1.5;color:var(--ink)}
+.calc .what small{display:block;color:var(--muted);font-size:.82rem;margin-top:.15rem}
+.calc .res{font-variant-numeric:tabular-nums;font-weight:700;text-align:right;max-width:16rem;overflow-wrap:anywhere}
+.calc li.total{border-top:2px solid var(--ink)}
+.calc li.total .res{color:var(--rx-strong);font-size:1.08rem}
+.calc-note{margin:.7rem 0 0;font-size:.86rem;color:var(--muted);line-height:1.55}
+.calc-pair{display:grid;gap:1rem}
+.calc-pair .calc{margin:0}
+@media (max-width:520px){.calc li{grid-template-columns:minmax(0,1fr);row-gap:.15rem}.calc .res{text-align:left}}
+
+/* ---------- citations ---------- */
+a.cite{font-size:.7em;font-weight:700;text-decoration:none;padding:0 .12em;vertical-align:super}
+#sources>h2{font-size:1.35rem}
+.refs{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;font-size:.9rem;counter-reset:r;color:var(--muted)}
+.refs li{display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:.25rem;counter-increment:r;line-height:1.5}
+.refs li::before{content:counter(r);font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.refs li:target{background:var(--rx-soft);border-radius:6px}
+.refs .ref-body{min-width:0}
+.refs a{overflow-wrap:anywhere;font-weight:700}
+
+/* ---------- pager ---------- */
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--rule)}
+.pager a{display:flex;flex-direction:column;gap:.2rem;border:1px solid var(--rule);border-radius:var(--radius);padding:1rem 1.15rem;text-decoration:none;color:var(--ink);font-family:var(--f-display);font-size:1.15rem;font-weight:600;line-height:1.3;min-width:0;background:var(--surface)}
+.pager a:hover{border-color:var(--rx);color:var(--rx-strong)}
+.pager a.next{text-align:right;grid-column:2}
+.pager span{font-family:var(--f-body);font-size:var(--s-xs);font-weight:700;color:var(--muted)}
+@media (max-width:520px){.pager{grid-template-columns:1fr}.pager a.next{grid-column:1}}
+
+/* ---------- cards and lists ---------- */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.card{display:flex;flex-direction:column;gap:.5rem;padding:1.2rem 1.25rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);color:inherit;text-decoration:none;min-width:0}
+a.card:hover{border-color:var(--rx)}
+a.card:hover h3{color:var(--rx-strong)}
+.card .num{font-size:var(--s-xs);font-weight:700;color:var(--rx)}
+.card h3{margin:0;font-family:var(--f-display);font-size:1.25rem;font-weight:600;line-height:1.25}
+.card h3 a{color:var(--ink);text-decoration:none}
+.card h3 a:hover{color:var(--rx-strong)}
+.card p{font-size:var(--s-sm);line-height:1.6}
+.card .go{margin-top:auto;font-size:var(--s-sm);color:var(--rx);padding-top:.35rem;font-weight:700}
+@media (max-width:640px){.cards{grid-template-columns:1fr}}
+.cards.paths{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards.paths ol{margin:.4rem 0 0;padding-left:1.15rem;display:flex;flex-direction:column;gap:.35rem}
+@media (max-width:860px){.cards.paths{grid-template-columns:1fr}}
+
+.dated{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1.5rem}
+.dated>li{display:grid;grid-template-columns:6.75rem minmax(0,1fr);gap:1rem}
+.dated .when{font-size:var(--s-xs);font-weight:700;color:var(--muted);padding-top:.32rem;font-variant-numeric:tabular-nums}
+.dated .what{min-width:0;display:flex;flex-direction:column;gap:.4rem}
+.dated p.what{display:block}
+.dated .what h3{margin:0}
+.dated .what h3 a{color:var(--ink);text-decoration:none}
+.dated .what h3 a:hover{color:var(--rx);text-decoration:underline}
+@media (max-width:640px){.dated>li{grid-template-columns:1fr;gap:.15rem}.dated .when{padding-top:0}}
+
+.tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.tag{font-size:.78rem;font-weight:700;line-height:1.5;padding:.08rem .5rem;border-radius:999px;background:var(--wash);color:var(--muted)}
+.tag.wip{background:var(--warn-soft);color:var(--warn)}
+.tag.live{background:var(--ok-soft);color:var(--ok)}
+
+
+dl.glossary{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:.6rem 1rem;font-size:var(--s-sm)}
+dl.glossary dt{font-weight:700;color:var(--ink)}
+dl.glossary dd{margin:0}
+@media (max-width:520px){dl.glossary{grid-template-columns:1fr;gap:.1rem}dl.glossary dd{margin-bottom:.6rem}}
+abbr[title]{text-decoration:underline dotted;text-underline-offset:.2em;cursor:help}
+
+.pitch{display:grid;margin:0;border-top:1px solid var(--rule)}
+.pitch>div{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--rule)}
+.pitch dt{font-weight:700;color:var(--ink)}
+.pitch dd{margin:0}
+@media (max-width:600px){.pitch>div{grid-template-columns:1fr;gap:.25rem}}
+
+/* buttons, pills */
+.btns{display:flex;flex-wrap:wrap;gap:.6rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;padding:.5rem 1.1rem;border:1px solid var(--rule-strong);border-radius:8px;color:var(--ink);background:var(--surface);text-decoration:none;font-weight:700;font-size:var(--s-sm);line-height:1.2}
+.btn:hover{border-color:var(--rx);color:var(--rx-strong)}
+.btn.primary{background:var(--rx);border-color:var(--rx);color:#fff}
+.btn.primary:hover{background:var(--rx-strong);border-color:var(--rx-strong);color:#fff}
+:root[data-theme="dark"] .btn.primary,:root[data-theme="dark"] .btn.primary:hover{color:#06261b}
+.status{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin:0}
+.pill{display:inline-block;font-size:var(--s-xs);font-weight:700;line-height:1.4;padding:.18rem .65rem;border-radius:999px;background:var(--wash);color:var(--muted)}
+.pill.wip{background:var(--warn-soft);color:var(--warn)}
+.pill.live{background:var(--ok-soft);color:var(--ok)}
+
+/* timeline, cv, skills */
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--rule);display:flex;flex-direction:column;gap:1.1rem}
+.timeline li{position:relative;display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:1rem;padding-left:1.25rem}
+.timeline li::before{content:"";position:absolute;left:-.4rem;top:.5rem;width:.7rem;height:.7rem;border-radius:999px;background:var(--paper);border:2px solid var(--rx)}
+.timeline li:first-child::before{background:var(--rx)}
+.timeline .when{font-size:var(--s-xs);font-weight:700;color:var(--muted);padding-top:.3rem;font-variant-numeric:tabular-nums}
+@media (max-width:640px){.timeline li{grid-template-columns:1fr;gap:.1rem}.timeline .when{padding-top:0}}
+.cv{list-style:none;margin:0;padding:0}
+.cv li{padding:1.1rem 0;border-bottom:1px solid var(--rule)}
+.cv li:first-child{padding-top:.2rem}
+.cv-head{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:1rem;row-gap:.1rem;align-items:baseline}
+.cv-head h3{margin:0;font-family:var(--f-display);font-size:1.3rem;font-weight:600}
+.cv-org{grid-column:1;color:var(--rx-strong);font-weight:700;font-size:var(--s-sm)}
+.cv-when{grid-column:2;grid-row:1;font-size:var(--s-xs);font-weight:700;color:var(--muted);white-space:nowrap}
+.cv p{margin:.5rem 0 0;font-size:var(--s-sm);line-height:1.65}
+.skills{margin:0;border-top:1px solid var(--rule)}
+.skills>div{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--rule)}
+.skills dt{font-weight:700;font-size:var(--s-sm);color:var(--ink)}
+.skills dd{margin:0;font-size:var(--s-sm)}
+@media (max-width:640px){.skills>div{grid-template-columns:1fr;gap:.15rem}}
+
+/* ---------- home ---------- */
+.home section{margin-top:4.5rem}
+.home section>h2{font-size:2rem}
+.home section>p,.home section>.flow,.home .project,.home .cv,.home .skills,.home .timeline,.home .principles{max-width:46rem}
+
+/* intro: name, mission, portrait */
+.intro{display:grid;grid-template-columns:minmax(0,1fr) 24rem;gap:3.5rem;align-items:center;padding-top:.75rem}
+.intro-text{display:flex;flex-direction:column;gap:1.15rem;min-width:0}
+.intro .nameline{display:flex;flex-direction:column;gap:.15rem}
+.intro .nameline b{font-size:1.25rem;line-height:1.3}
+.intro .nameline span{font-size:var(--s-sm);font-weight:700;line-height:1.4;color:var(--rx-strong)}
+.intro h1{font-size:clamp(2.3rem, 1.4rem + 3.4vw, 3.9rem);line-height:1.05;letter-spacing:-.02em}
+.intro .lede{font-size:1.2rem;line-height:1.6;color:var(--ink);max-width:36rem}
+.intro .creds{display:flex;flex-wrap:wrap;gap:.5rem;font-size:var(--s-sm);color:var(--muted)}
+.intro .creds span{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .8rem;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);font-weight:700}
+.intro .creds span i{font-style:normal;font-weight:400;color:var(--muted)}
+.intro .btns{margin-top:.25rem}
+.portrait{margin:0;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -32px rgba(15,31,41,.45);border:1px solid var(--rule);background:var(--wash);aspect-ratio:4 / 5}
+.portrait img,.portrait picture{display:block;width:100%;height:100%;object-fit:cover}
+@media (max-width:1040px){.intro{grid-template-columns:minmax(0,1fr) 18rem;gap:2.5rem}}
+@media (max-width:820px){.intro{grid-template-columns:minmax(0,1fr) 13rem;gap:1.75rem;align-items:start}}
+@media (max-width:640px){.intro{grid-template-columns:minmax(0,1fr);gap:1.75rem;padding-top:0}.portrait{max-width:26rem}}
+
+/* project block */
+.project{display:grid;grid-template-columns:minmax(0,1fr);gap:1.25rem}
+.project-body{min-width:0;display:flex;flex-direction:column;gap:.75rem}
+section .project-body h3{margin:0;font-family:var(--f-display);font-size:1.55rem;font-weight:600;line-height:1.2}
+.project-body h3 a{color:var(--ink);text-decoration:none}
+.project-body h3 a:hover{color:var(--rx-strong)}
+.apk{font-size:var(--s-sm);padding:.7rem .9rem;border:1px dashed var(--rule-strong);border-radius:8px;color:var(--muted)}
+.apk b{color:var(--ink)}
+.proto-link{display:flex;align-items:center;justify-content:space-between;gap:1rem 1.5rem;flex-wrap:wrap;padding:1.2rem 1.3rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);}
+.proto-link>div{flex:1 1 18rem;min-width:0}
+.proto-link p{font-size:var(--s-sm);color:var(--muted);margin-top:.25rem}
+
+/* ---------- 1Heath hub: a wide overview page ---------- */
+.hub-top{padding-block:2.5rem 2.25rem;display:flex;flex-direction:column;gap:.85rem}
+.hub-top h1{font-size:clamp(2.3rem, 1.5rem + 3vw, 3.6rem);max-width:20ch}
+.hub-top .dek{max-width:44rem}
+main.pad:has(>.hub){padding-top:0}
+.hub>section:first-child{margin-top:2.75rem}
+.hub section{margin-top:4.5rem}
+.hub section>h2{font-size:2rem}
+.hub section>*{max-width:48rem}
+.hub section>.cards,.hub section>figure.fig:has(.flowchart){max-width:none}
+.hub .cards{grid-template-columns:repeat(auto-fit,minmax(min(15.5rem,100%),1fr))}
+.hub h3.group{margin-top:2.25rem}
+.hub section>p+.btns{margin-top:1.1rem}
+@media (min-width:900px){.hub .cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){
+  .hub .flowchart[style*="--n:5"]{grid-template-columns:repeat(5,minmax(0,1fr));gap:.9rem}
+  .hub .flowchart[style*="--n:5"] li{display:flex;flex-direction:column;gap:.3rem;padding:1rem .95rem}
+  .hub .flowchart[style*="--n:5"] li+li::before{left:-.9rem;top:50%;width:.9rem;height:2px}
+}
+
+/* email */
+.email{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.email .mono{font-family:var(--f-body);font-size:1em;font-weight:700;overflow-wrap:anywhere;min-width:0}
+.copy{font:700 .84rem var(--f-body);background:var(--surface);border:1px solid var(--rule-strong);color:var(--ink);border-radius:8px;padding:.5rem .9rem;min-height:2.6rem;cursor:pointer}
+.copy:hover{border-color:var(--rx)}
+
+/* numbers strip */
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:3rem}
+.strip>div{padding:1.15rem 1.1rem 1.2rem;border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:.3rem;min-width:0}
+.strip>div:first-child{border-left:0;padding-left:0}
+.strip .n{font-family:var(--f-display);font-weight:600;font-size:2rem;line-height:1;color:var(--rx-strong)}
+.strip .t{font-size:.875rem;line-height:1.45;color:var(--muted)}
+@media (max-width:760px){.strip{grid-template-columns:repeat(2,minmax(0,1fr))}.strip>div:nth-child(3){border-left:0;padding-left:0}.strip>div:nth-child(n+3){border-top:1px solid var(--rule)}}
+
+/* the three doors */
+.doors{display:flex;flex-direction:column;border-top:1px solid var(--rule)}
+.door{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:1.5rem 2.5rem;padding:1.6rem 0;border-bottom:1px solid var(--rule)}
+.door h3{margin:0 0 .4rem;font-family:var(--f-display);font-size:1.6rem;font-weight:600;line-height:1.2}
+.door h3 a{color:var(--ink);text-decoration:none}
+.door h3 a:hover{color:var(--rx-strong)}
+.door p{color:var(--muted)}
+.door ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.door li a{display:block;padding:.45rem 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);font-weight:700;font-size:var(--s-sm)}
+.door li:last-child a{border-bottom:0}
+.door li a:hover{color:var(--rx-strong)}
+@media (max-width:760px){.door{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- footer ---------- */
+footer{margin-top:5rem;border-top:1px solid var(--rule);background:var(--wash)}
+footer .wide{padding-block:2.25rem 2.5rem;display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:1.5rem 2.5rem;font-size:var(--s-sm);color:var(--muted)}
+footer .f-name{font-family:var(--f-display);font-size:1.2rem;font-weight:600;color:var(--ink);display:block;margin-bottom:.35rem}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.3rem}
+footer .f-h{font-weight:700;color:var(--ink);margin-bottom:.35rem;display:block}
+footer a{color:var(--body);text-decoration:none}
+footer a:hover{color:var(--rx-strong);text-decoration:underline}
+footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:1rem;font-size:var(--s-xs);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1.5rem}
+@media (max-width:700px){footer .wide{grid-template-columns:repeat(2,minmax(0,1fr))}footer .f-about{grid-column:1 / -1}}
+
+@media (min-width:1600px){:root{--s-0:1.1875rem}}
+@media (prefers-reduced-motion:no-preference){a,.card,.pager a,.btn,.menu a{transition:color .15s,border-color .15s,background-color .15s}}
+@media (forced-colors:active){.fill{background:CanvasText;forced-color-adjust:none}.state,.chip,.tag,.pill{border:1px solid CanvasText}}
+@media print{
+  :root{--paper:#fff;--wash:#fff;--surface:#fff;--ink:#000;--body:#111;--muted:#444}
+  .topbar,.skip,.copy,.theme,.toc-rail,.toc,.pager,body::before,footer{display:none!important}
+  body{font-size:11pt}
+  a{color:#000}
+  section,figure,.rx-line,tr,.card{break-inside:avoid}
+}
+
+@media (max-width:350px){.menu a{padding:.45rem .3rem;font-size:.875rem}.brand .mark{display:none}}
+.axis div:last-child{gap:.5rem;flex-wrap:wrap}
+.meta .pill{align-self:center}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Launch Readiness: Everything Else 1Heath Needs Before Real Clinics", "description": "What the legal map did not cover: app store rules for health apps, SMS and WhatsApp, where data lives, payments, hiring, raising money, ethics approval, accessibility, who we let on, the documents we must write, and the whole launch in order.", "author": {"@type": "Person", "name": "Pawan Kalyan", "alternateName": "Pavan Kumar Gurram", "url": "https://pawankalyan.dev/", "image": "https://pawankalyan.dev/pawan-kalyan.jpg"}, "dateModified": "2026-11-21", "inLanguage": "en-IN"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar pad"><nav class="wide" aria-label="Site"><a class="brand" href="index.html"><span class="mark" aria-hidden="true">PK</span>Pawan Kalyan</a><ul class="menu"><li><a href="index.html"><span class="lg">About Me</span><span class="sm" aria-hidden="true">About</span></a></li><li><a href="1heath.html" aria-current="page">1Heath</a></li><li><a href="india-health.html"><span class="lg">Indian Healthcare</span><span class="sm" aria-hidden="true">India</span></a></li><li><a href="health-systems-compared.html"><span class="lg">World Healthcare</span><span class="sm" aria-hidden="true">World</span></a></li><li><a href="index.html#contact">Contact</a></li></ul><button class="theme" type="button" id="theme" aria-label="Switch to dark theme" title="Switch theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button></nav></header>
+<div class="band"><div class="layout band-grid pad"><div class="toc-rail" aria-hidden="true"></div><div class="col"><ol class="crumbs"><li><a href="index.html">Home</a></li><li><a href="1heath.html">1Heath</a></li><li aria-current="page">Launch Readiness</li></ol><h1>Launch Readiness: Everything Else 1Heath Needs Before Real Clinics</h1><p class="dek">What the legal map did not cover: app store rules for health apps, SMS and WhatsApp, where data lives, payments, hiring, raising money, ethics approval, accessibility, who we let on, the documents we must write, and the whole launch in order.</p><p class="meta"><span>By <a href="index.html">Pawan Kalyan</a></span><span>Updated 21 November 2026</span><span>9-minute read</span><span>23 sources</span></p></div></div></div>
+<div class="layout pad"><aside class="toc-rail"><nav class="toc" aria-label="On this page"><span class="label">On This Page</span><ol><li><a href="#gaps-h">What the Legal Map Did Not Cover</a></li><li><a href="#apps-h">App Stores: Health Apps Have Extra Rules</a></li><li><a href="#messages-h">Messages to Patients: SMS and WhatsApp</a></li><li><a href="#data-location-h">Where Data May Live</a></li><li><a href="#payments-h">Getting Paid</a></li><li><a href="#people-h">Hiring: Labour Codes, PF, ESI and POSH</a></li><li><a href="#money-h">Raising Money and Selling to Government</a></li><li><a href="#evidence-h">Ethics Approval Before Recording Real Patients</a></li><li><a href="#access-h">Accessibility</a></li><li><a href="#verify-h">Who We Let On</a></li><li><a href="#documents-h">The Documents We Must Write</a></li><li><a href="#costs-h">What These Add to the Budget</a></li><li><a href="#checklist-h">The Whole Launch, in Order</a></li><li><a href="#questions-h">Questions to Add for the Lawyer</a></li><li><a href="#sources">Sources</a></li></ol></nav></aside><main id="main" class="col" style="padding-top:0"><div class="tldr"><span class="label">In Short</span><ul>
+<li><b>The legal map was not the whole launch.</b> Ten more areas decide whether 1Heath can actually reach a clinic: app store rules, messages to patients, where data lives, payments, hiring, raising money, ethics approval, accessibility, who we let on, and the documents we must write.</li>
+<li><b>The app store forces an early decision.</b> Google Play requires health apps to come from an organisation account. A regulated medical device must be declared as one, with proof of approval on request; every other health app must say it is not a medical device<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a><a class="cite" href="#ref-2" aria-label="Source 2">[2]</a>. So CDSCO's answer on the safety checks is needed before the Play listing, not after.</li>
+<li><b>Recording real patients for our accuracy test is research.</b> It needs ethics committee approval first. Registration with the national clinical trials registry is free and needs that approval uploaded<a class="cite" href="#ref-3" aria-label="Source 3">[3]</a>.</li>
+<li><b>Running costs are small but real.</b> A WhatsApp prescription link costs about ₹136 a month for a doctor with 1,000 visits<a class="cite" href="#ref-4" aria-label="Source 4">[4]</a>, and card or UPI collection about ₹23.60 on a ₹1,000 subscription<a class="cite" href="#ref-5" aria-label="Source 5">[5]</a>. One-time costs are a ₹5,900 SMS registration<a class="cite" href="#ref-6" aria-label="Source 6">[6]</a> and a US$25 Play account<a class="cite" href="#ref-7" aria-label="Source 7">[7]</a>.</li>
+<li><b>Hiring brings duties at set sizes:</b> ESI and a harassment committee at 10 people, provident fund at 20<a class="cite" href="#ref-8" aria-label="Source 8">[8]</a><a class="cite" href="#ref-9" aria-label="Source 9">[9]</a>, all under the labour codes in force since 21 November 2025<a class="cite" href="#ref-10" aria-label="Source 10">[10]</a>.</li>
+</ul></div><div class="toc-top"><nav class="toc" aria-label="On this page"><span class="label">On This Page</span><ol><li><a href="#gaps-h">What the Legal Map Did Not Cover</a></li><li><a href="#apps-h">App Stores: Health Apps Have Extra Rules</a></li><li><a href="#messages-h">Messages to Patients: SMS and WhatsApp</a></li><li><a href="#data-location-h">Where Data May Live</a></li><li><a href="#payments-h">Getting Paid</a></li><li><a href="#people-h">Hiring: Labour Codes, PF, ESI and POSH</a></li><li><a href="#money-h">Raising Money and Selling to Government</a></li><li><a href="#evidence-h">Ethics Approval Before Recording Real Patients</a></li><li><a href="#access-h">Accessibility</a></li><li><a href="#verify-h">Who We Let On</a></li><li><a href="#documents-h">The Documents We Must Write</a></li><li><a href="#costs-h">What These Add to the Budget</a></li><li><a href="#checklist-h">The Whole Launch, in Order</a></li><li><a href="#questions-h">Questions to Add for the Lawyer</a></li><li><a href="#sources">Sources</a></li></ol></nav></div>
+<section id="gaps" aria-labelledby="gaps-h">
+  <h2 id="gaps-h">What the Legal Map Did Not Cover</h2>
+  <p>The <a href="1heath-legal.html">legal page</a> covers the laws about health, data and medicine. This page covers everything else a real launch runs into. Each row is explained below.</p>
+  <div class="table-wrap"><table class="stack compact">
+    <thead><tr><th scope="col">Area</th><th scope="col">Why it matters</th><th scope="col">What it costs</th><th scope="col">When</th></tr></thead>
+    <tbody>
+      <tr><td>App stores</td><td data-label="Why">Health apps have their own Play rules, and the device question decides the listing</td><td data-label="Cost">US$25 once; D-U-N-S number free</td><td data-label="When">Before the first clinic installs</td></tr>
+      <tr><td>Messages to patients</td><td data-label="Why">SMS needs registration with telecom operators; WhatsApp charges per message</td><td data-label="Cost">₹5,900 once; about ₹136 a doctor a month</td><td data-label="When">Before the first prescription is sent</td></tr>
+      <tr><td>Where data lives</td><td data-label="Why">Patients and clinics will ask; payment data must stay in India</td><td data-label="Cost">None extra; India region chosen</td><td data-label="When">Already decided</td></tr>
+      <tr><td>Payments</td><td data-label="Why">Monthly subscriptions need an e-mandate with the bank's rules</td><td data-label="Cost">About 2.36% of each payment</td><td data-label="When">Before the first paid month</td></tr>
+      <tr><td>Hiring</td><td data-label="Why">The labour codes, provident fund, ESI and the harassment law apply at set team sizes</td><td data-label="Cost">Employer PF 12% of PF wages; ESI 3.25%</td><td data-label="When">From the first employee</td></tr>
+      <tr><td>Raising money</td><td data-label="Why">Tax on investment, and benefits for recognised start-ups</td><td data-label="Cost">None</td><td data-label="When">Before the first cheque</td></tr>
+      <tr><td>Ethics approval</td><td data-label="Why">Recording real consultations to test accuracy is research on people</td><td data-label="Cost">Ethics committee fee, to be quoted; registry free</td><td data-label="When">Before the first recording</td></tr>
+      <tr><td>Accessibility</td><td data-label="Why">Disability access rules for apps are being made mandatory</td><td data-label="Cost">Built into design</td><td data-label="When">Now</td></tr>
+      <tr><td>Who we let on</td><td data-label="Why">Only registered doctors and licensed pharmacies may use 1Heath</td><td data-label="Cost">Staff time per sign-up</td><td data-label="When">From the first clinic</td></tr>
+      <tr><td>Documents</td><td data-label="Why">Privacy notice, clinic contract, consent text and more must exist and be public</td><td data-label="Cost">Part of the legal opinions</td><td data-label="When">Before the pilot</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="apps" aria-labelledby="apps-h">
+  <h2 id="apps-h">App Stores: Health Apps Have Extra Rules</h2>
+  <ul>
+    <li><b>Account:</b> Google Play requires health apps, such as medical apps, to be published from an organisation account. That needs a D-U-N-S number, which Dun & Bradstreet issues free<a class="cite" href="#ref-2" aria-label="Source 2">[2]</a>. The account costs a one-time US$25<a class="cite" href="#ref-7" aria-label="Source 7">[7]</a>. So the company must exist before the Play listing does.</li>
+    <li><b>Declaration:</b> every developer must complete Play's Health apps declaration<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a>.</li>
+    <li><b>The device question:</b> an app regulated as a medical device must be declared as one and labelled "Medical Device", with proof of approval on request. Every other health app must state in its description that it is not a medical device and does not diagnose, treat, cure or prevent any condition<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a>.
+      <ul>
+        <li>If CDSCO classes 1Heath's safety checks as a device (see the <a href="1heath-legal.html#device">legal page</a>), the listing must say so and we must hold the registration.</li>
+        <li>If it does not, the disclaimer applies.</li>
+        <li>Either way, the answer is needed before the listing.</li>
+      </ul></li>
+    <li><b>Privacy policy:</b> a public web page, not a PDF, linked in Play Console and inside the app<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a>.</li>
+    <li><b>The demo:</b> the Android demo will be shared as a download link for testing with fictional patients only. Real clinics get 1Heath through Play.</li>
+  </ul>
+</section>
+
+<section id="messages" aria-labelledby="messages-h">
+  <h2 id="messages-h">Messages to Patients: SMS and WhatsApp</h2>
+  <ul>
+    <li><b>SMS:</b> every business SMS in India, including one-time passwords, goes through the telecom operators' registration system (DLT). The company registers itself, its sender name, its consent templates and the exact text of each message, and only Indian entities can register<a class="cite" href="#ref-11" aria-label="Source 11">[11]</a>. Registration costs ₹5,000 plus ₹900 GST, so ₹5,900<a class="cite" href="#ref-6" aria-label="Source 6">[6]</a>.</li>
+    <li><b>WhatsApp:</b> Meta charges per message. A prescription link is a "utility" message, at ₹0.115 plus 18% GST. Since 1 October 2026, utility messages inside the 24-hour reply window are charged too. Marketing messages cost ₹0.8631<a class="cite" href="#ref-4" aria-label="Source 4">[4]</a>, and 1Heath sends none.</li>
+  </ul>
+  <div class="calc"><p class="calc-title">WhatsApp cost for one doctor, a month</p><ol>
+    <li class="start"><span class="what">Visits a month, each sending one prescription link<small>our evening-clinic assumption</small></span><span class="res">1,000</span></li>
+    <li><span class="what">At ₹0.115 a utility message<a class="cite" href="#ref-4" aria-label="Source 4">[4]</a></span><span class="res">₹115</span></li>
+    <li class="total"><span class="what">With 18% GST</span><span class="res">about ₹136</span></li>
+  </ol></div>
+  <p>That is real money against the price we charge a doctor. The secure link page does the same job when the patient's number is not on WhatsApp, and SMS stays for one-time passwords only.</p>
+</section>
+
+<section id="data-location" aria-labelledby="data-location-h">
+  <h2 id="data-location-h">Where Data May Live</h2>
+  <ul>
+    <li><b>The DPDP Act does not force health data to stay in India.</b> It lets the government block transfers to particular countries. No country had been restricted on the public record by 31 August 2026, and that power starts on 13 May 2027<a class="cite" href="#ref-12" aria-label="Source 12">[12]</a>.</li>
+    <li><b>Stricter sector rules still win.</b> RBI's 2018 rule keeps payment data in India<a class="cite" href="#ref-12" aria-label="Source 12">[12]</a>; our payment provider holds it.</li>
+    <li><b>ABDM keeps no records centrally.</b> The National Health Authority stores no patient records. Records stay with the clinic's provider, here 1Heath on the clinic's behalf, and are shared only with the patient's consent<a class="cite" href="#ref-13" aria-label="Source 13">[13]</a>.</li>
+    <li><b>Our choice:</b> servers, backups and the speech and drafting models all run in India. That costs nothing extra today, and it is the answer clinics and patients expect.</li>
+  </ul>
+</section>
+
+<section id="payments" aria-labelledby="payments-h">
+  <h2 id="payments-h">Getting Paid</h2>
+  <ul>
+    <li><b>Recurring payments:</b> under RBI's e-mandate framework of April 2026, a subscription up to ₹15,000 can renew without an OTP once the customer has approved the mandate. The bank must give 24 hours' notice before each debit, and the customer can pause or cancel at any time<a class="cite" href="#ref-14" aria-label="Source 14">[14]</a>. A clinic subscription is far below the limit.</li>
+    <li><b>Gateway fee:</b> a standard payment-gateway plan charges 2% a transaction plus 18% GST<a class="cite" href="#ref-5" aria-label="Source 5">[5]</a>, so ₹23.60 on a ₹1,000 payment. On a percentage fee, monthly and annual billing cost the same; annual billing only cuts failed renewals.</li>
+    <li><b>Invoices:</b> 18% GST on the subscription; see the <a href="1heath-legal.html#company">legal page</a>.</li>
+  </ul>
+</section>
+
+<section id="people" aria-labelledby="people-h">
+  <h2 id="people-h">Hiring: Labour Codes, PF, ESI and POSH</h2>
+  <p>India's four labour codes took effect on 21 November 2025. Every worker now gets an appointment letter, and fixed-term staff become eligible for gratuity after one year<a class="cite" href="#ref-10" aria-label="Source 10">[10]</a>.</p>
+  <div class="table-wrap"><table class="stack compact">
+    <thead><tr><th scope="col">Duty</th><th scope="col">Starts at</th><th scope="col">What it means</th></tr></thead>
+    <tbody>
+      <tr><td>Shops and Establishments registration (Telangana)</td><td data-label="Starts">Opening an office</td><td data-label="Means">Apply within 30 days; renew yearly<a class="cite" href="#ref-15" aria-label="Source 15">[15]</a></td></tr>
+      <tr><td>Professional tax (Telangana)</td><td data-label="Starts">First salaried employee</td><td data-label="Means">₹200 a month for salaries above ₹20,000, paid by the 10th<a class="cite" href="#ref-16" aria-label="Source 16">[16]</a></td></tr>
+      <tr><td>ESI (health insurance)</td><td data-label="Starts">10 employees</td><td data-label="Means">Employer 3.25%, employee 0.75%, for wages up to ₹21,000 a month<a class="cite" href="#ref-8" aria-label="Source 8">[8]</a></td></tr>
+      <tr><td>Internal Committee against sexual harassment</td><td data-label="Starts">10 employees</td><td data-label="Means">A committee, a displayed policy and an annual report; fine up to ₹50,000, doubled for a repeat<a class="cite" href="#ref-9" aria-label="Source 9">[9]</a></td></tr>
+      <tr><td>Provident fund</td><td data-label="Starts">20 employees</td><td data-label="Means">12% from employer and employee each<a class="cite" href="#ref-8" aria-label="Source 8">[8]</a></td></tr>
+    </tbody>
+  </table></div>
+  <p>We will register for PF and ESI voluntarily from the first hire rather than waiting for the thresholds. It is cheaper to start right than to fix records later, and it helps hiring.</p>
+</section>
+
+<section id="money" aria-labelledby="money-h">
+  <h2 id="money-h">Raising Money and Selling to Government</h2>
+  <ul>
+    <li><b>Angel tax is gone.</b> The tax on start-ups raising money above fair value was abolished for all investors from the 2025-26 financial year<a class="cite" href="#ref-17" aria-label="Source 17">[17]</a>.</li>
+    <li><b>DPIIT recognition</b> exempts a start-up from earnest money and from prior-turnover and experience rules in central government tenders. On GeM, the government marketplace, the Startup Runway programme does the same<a class="cite" href="#ref-18" aria-label="Source 18">[18]</a>. This matters later for government clinics.</li>
+    <li><b>Insurance claims are not a near-term channel.</b> The National Health Claims Exchange had only about 34 insurers and TPAs and 300 hospitals by mid-2024, and adoption is still slow<a class="cite" href="#ref-19" aria-label="Source 19">[19]</a>. Small clinics rarely handle cashless claims, so we leave it out of plans.</li>
+    <li><b>Foreign investment</b> rules for a health software company are a question for our lawyer before taking money from outside India.</li>
+  </ul>
+</section>
+
+<section id="evidence" aria-labelledby="evidence-h">
+  <h2 id="evidence-h">Ethics Approval Before Recording Real Patients</h2>
+  <p>Our plan to record 50 real consultations and measure errors is research on people and their health data. The way we will do it:</p>
+  <ol class="flowchart" style="--n:4">
+    <li><span class="k">Step 1</span><b>Protocol</b><span>Purpose, consent forms in the patient's language, how audio is stored and deleted, who sees it</span></li>
+    <li><span class="k">Step 2</span><b>Ethics committee</b><span>Approval from a registered institutional ethics committee; fee to be quoted</span></li>
+    <li><span class="k">Step 3</span><b>Registry</b><span>Register on the Clinical Trials Registry of India before the first patient; free, approval uploaded<a class="cite" href="#ref-3" aria-label="Source 3">[3]</a></span></li>
+    <li class="key"><span class="k">Step 4</span><b>Record and report</b><span>Written consent from patient and doctor; results published, good or bad</span></li>
+  </ol>
+  <p>The registry lists observational studies as well as trials, and its advice is "when in doubt, register"<a class="cite" href="#ref-3" aria-label="Source 3">[3]</a>. Doing it properly also makes the results credible to doctors, investors and CDSCO.</p>
+</section>
+
+<section id="access" aria-labelledby="access-h">
+  <h2 id="access-h">Accessibility</h2>
+  <ul>
+    <li>In November 2024 the Supreme Court held that accessibility rules under the disability law must be mandatory, not advisory<a class="cite" href="#ref-20" aria-label="Source 20">[20]</a>.</li>
+    <li>Draft rules gazetted on 20 July 2026 would cover websites and apps offered in India. Each firm would publish an Accessibility Conformance Report, and smaller firms would get 18 months to comply<a class="cite" href="#ref-21" aria-label="Source 21">[21]</a>.</li>
+    <li>1Heath's Patient app serves older patients and people with poor eyesight, so we design for access from the start:
+      <ul>
+        <li>large text that still works at double size (this site is tested that way);</li>
+        <li>screen-reader labels;</li>
+        <li>no meaning carried by colour alone;</li>
+        <li>voice in the patient's language.</li>
+      </ul></li>
+  </ul>
+</section>
+
+<section id="verify" aria-labelledby="verify-h">
+  <h2 id="verify-h">Who We Let On</h2>
+  <ul>
+    <li><b>Doctors:</b> each one's registration is checked against the medical council or ABDM's professional registry before the account can sign a prescription. Unqualified practitioners are refused, even though in the rural districts one study surveyed, about 7 in 10 people went to them first<a class="cite" href="#ref-22" aria-label="Source 22">[22]</a>.</li>
+    <li><b>Systems of medicine:</b> an Ayurveda or homeopathy doctor is registered with their own council. 1Heath warns when a prescription falls outside the doctor's system, as the <a href="1heath-medicine-systems.html">systems page</a> explains.</li>
+    <li><b>Pharmacies and suppliers:</b> drug licences are checked before any order flows, as the <a href="1heath-supply.html">supply page</a> sets out.</li>
+    <li><b>Staff:</b> every action leaves a trace of who did what, for what reason and when, as the <a href="1heath-security-privacy.html">security page</a> describes.</li>
+  </ul>
+</section>
+
+<section id="documents" aria-labelledby="documents-h">
+  <h2 id="documents-h">The Documents We Must Write</h2>
+  <div class="table-wrap"><table class="stack compact">
+    <thead><tr><th scope="col">Document</th><th scope="col">For whom</th><th scope="col">Required by</th></tr></thead>
+    <tbody>
+      <tr><td>Privacy notice, in plain language and in Indian languages</td><td data-label="For">Patients and doctors</td><td data-label="By">DPDP Act; Google Play<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a></td></tr>
+      <tr><td>Patient consent text, versioned</td><td data-label="For">Patients at the desk</td><td data-label="By">DPDP Act</td></tr>
+      <tr><td>Clinic subscription terms and data processing agreement</td><td data-label="For">Clinics</td><td data-label="By">DPDP Act; contract law</td></tr>
+      <tr><td>Grievance and complaint policy, with a named officer</td><td data-label="For">Everyone</td><td data-label="By">DPDP Rules; consumer law</td></tr>
+      <tr><td>Breach and incident plan, with the CERT-In contact</td><td data-label="For">The team</td><td data-label="By">DPDP Rules; CERT-In directions</td></tr>
+      <tr><td>Ethics protocol and consent forms</td><td data-label="For">Study patients and doctors</td><td data-label="By">Ethics committee; registry<a class="cite" href="#ref-3" aria-label="Source 3">[3]</a></td></tr>
+      <tr><td>Accessibility statement</td><td data-label="For">Users with disabilities</td><td data-label="By">Draft disability access rules<a class="cite" href="#ref-21" aria-label="Source 21">[21]</a></td></tr>
+      <tr><td>Appointment letters, harassment policy, IP assignment</td><td data-label="For">Staff and founders</td><td data-label="By">Labour codes<a class="cite" href="#ref-10" aria-label="Source 10">[10]</a>; POSH Act<a class="cite" href="#ref-9" aria-label="Source 9">[9]</a>; investors</td></tr>
+      <tr><td>Open-source notices</td><td data-label="For">Everyone</td><td data-label="By">Licences such as Apache 2.0 for the drafting model<a class="cite" href="#ref-23" aria-label="Source 23">[23]</a></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="costs" aria-labelledby="costs-h">
+  <h2 id="costs-h">What These Add to the Budget</h2>
+  <div class="table-wrap"><table class="stack compact">
+    <thead><tr><th scope="col">Item</th><th scope="col">One-time</th><th scope="col">Recurring</th></tr></thead>
+    <tbody>
+      <tr><td>Google Play organisation account</td><td data-label="One-time">US$25<a class="cite" href="#ref-7" aria-label="Source 7">[7]</a></td><td data-label="Recurring">None</td></tr>
+      <tr><td>D-U-N-S number</td><td data-label="One-time">Free<a class="cite" href="#ref-2" aria-label="Source 2">[2]</a></td><td data-label="Recurring">None</td></tr>
+      <tr><td>SMS registration (DLT)</td><td data-label="One-time">₹5,900<a class="cite" href="#ref-6" aria-label="Source 6">[6]</a></td><td data-label="Recurring">Per message, small</td></tr>
+      <tr><td>WhatsApp prescription links</td><td data-label="One-time">None</td><td data-label="Recurring">About ₹136 a doctor a month at 1,000 visits<a class="cite" href="#ref-4" aria-label="Source 4">[4]</a></td></tr>
+      <tr><td>Payment collection</td><td data-label="One-time">None</td><td data-label="Recurring">2% plus GST of each payment<a class="cite" href="#ref-5" aria-label="Source 5">[5]</a></td></tr>
+      <tr><td>Clinical trials registry</td><td data-label="One-time">Free<a class="cite" href="#ref-3" aria-label="Source 3">[3]</a></td><td data-label="Recurring">None</td></tr>
+      <tr><td>Ethics committee review</td><td data-label="One-time">To be quoted</td><td data-label="Recurring">Renewal if the study continues</td></tr>
+      <tr><td>Telangana professional tax</td><td data-label="One-time">None</td><td data-label="Recurring">₹200 an employee a month above ₹20,000 salary<a class="cite" href="#ref-16" aria-label="Source 16">[16]</a></td></tr>
+    </tbody>
+  </table></div>
+  <p>The per-doctor running costs (about ₹136 for WhatsApp plus collection fees) belong in the price. Our own review had already found ₹199 a month below our target cost for speech and drafting alone; these costs widen that gap.</p>
+</section>
+
+<section id="checklist" aria-labelledby="checklist-h">
+  <h2 id="checklist-h">The Whole Launch, in Order</h2>
+  <p>This combines the <a href="1heath-legal.html#order">legal order</a> with everything on this page. Every item is still to do, except where marked.</p>
+  <div class="table-wrap"><table class="stack compact">
+    <thead><tr><th scope="col">When</th><th scope="col">Items</th></tr></thead>
+    <tbody>
+      <tr><td>Before any money</td><td data-label="Items">Incorporate; IP assignment; trademarks; DPIIT recognition; D-U-N-S number; foreign-investment advice if needed</td></tr>
+      <tr><td>Month 1</td><td data-label="Items">GST; Shops and Establishments registration; ABDM sandbox; written request to CDSCO; ethics protocol drafted</td></tr>
+      <tr><td>Before the first recording</td><td data-label="Items">Ethics approval; registry entry; consent forms in the pilot languages</td></tr>
+      <tr><td>Before the first real patient</td><td data-label="Items">Privacy notice; consent flow (designed, to be completed); vendor contracts with zero retention; breach and CERT-In plans; grievance officer; signature opinion; doctor verification; India-only hosting (decided)</td></tr>
+      <tr><td>Before the first clinic installs</td><td data-label="Items">Play organisation account; Health apps declaration; device label or disclaimer, per CDSCO's answer; SMS registration; WhatsApp templates; accessibility statement</td></tr>
+      <tr><td>Before the first paid month</td><td data-label="Items">Payment gateway; e-mandate flow; invoices with GST; clinic terms and data processing agreement</td></tr>
+      <tr><td>Months 1 to 6</td><td data-label="Items">ABDM certification and security audits; ISO 27001; insurance; CDSCO registration or licence</td></tr>
+      <tr><td>At 10 and 20 staff</td><td data-label="Items">Harassment committee and ESI at 10; provident fund at 20 (or earlier, voluntarily)</td></tr>
+      <tr><td>Year two</td><td data-label="Items">NABH clinic software certification; GeM listing for government clinics</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="questions" aria-labelledby="questions-h">
+  <h2 id="questions-h">Questions to Add for the Lawyer</h2>
+  <ol>
+    <li>Can 1Heath ship a Play build before CDSCO answers, with a "not a medical device" statement, or must it wait?</li>
+    <li>Is the 50-consultation accuracy study research needing ethics approval, or service evaluation? We plan to treat it as research either way.</li>
+    <li>What foreign-investment conditions apply to a health software company?</li>
+    <li>Does sending a prescription link by WhatsApp need anything beyond the patient's consent and Meta's templates?</li>
+  </ol>
+  <p>Read next: <a href="1heath-legal.html">the legal map</a>, <a href="1heath-business.html">the business model</a>, or <a href="1heath-roadmap.html">the roadmap</a>.</p>
+</section>
+<section id="sources" aria-labelledby="sources-h"><h2 id="sources-h">Sources</h2><ol class="refs"><li id="ref-1"><span class="ref-body">Google Play Console Help. Health content and services policy: Health apps declaration for all developers; regulated medical device apps declared and proof of approval on request; other health apps must state they are not a medical device; privacy policy link, opened 21 November 2026. <a class="ref-link" href="https://support.google.com/googleplay/android-developer/answer/16679511?hl=en">support.google.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-2"><span class="ref-body">Google Play Console Help. Choose a developer account type: health apps, such as medical apps, need an organization account with a D-U-N-S number (free from Dun & Bradstreet), opened 21 November 2026. <a class="ref-link" href="https://support.google.com/googleplay/android-developer/answer/13634885?hl=en_EN">support.google.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-3"><span class="ref-body">Clinical Trials Registry, India. Frequently asked questions: registration is free; ethics approval must be uploaded; register before the first participant; observational studies may be registered, and "when in doubt, register". <a class="ref-link" href="https://ctri.nic.in/Clinicaltrials/faq.php">ctri.nic.in<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-4"><span class="ref-body">MyOperator. WhatsApp Business API pricing in India, 2026 (Meta rates: marketing Rs 0.8631, utility and authentication Rs 0.115 a message; utility messages inside the 24-hour window charged from 1 October 2026; 18% GST), updated 17 November 2026. <a class="ref-link" href="https://myoperator.com/blog/whatsapp-business-api-pricing-india-2026">myoperator.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-5"><span class="ref-body">Razorpay. Pricing: standard plan 2% a transaction plus 18% GST, opened 21 November 2026. <a class="ref-link" href="https://razorpay.com/pricing/">razorpay.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-6"><span class="ref-body">SMSGatewayHub knowledge base. What are the DLT registration charges? (Rs 5,000 plus Rs 900 GST, Rs 5,900, for enterprises), opened 21 November 2026. <a class="ref-link" href="https://crm.smsgatewayhub.com/knowledge-base/article/what-are-the-dlt-registration-charges">crm.smsgatewayhub.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-7"><span class="ref-body">Google Play Console Help. Get started with Play Console: US$25 one-time registration fee, opened 21 November 2026. <a class="ref-link" href="https://support.google.com/googleplay/android-developer/answer/6112435?hl=en">support.google.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-8"><span class="ref-body">Treelife. PF and ESI registration for employers under the Code on Social Security 2020: PF at 20 or more employees, ESI at 10 or more; ESI wage ceiling Rs 21,000; ESI 3.25% employer and 0.75% employee; PF 12% each, updated 17 November 2026. <a class="ref-link" href="https://treelife.in/?p=17118">treelife.in<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-9"><span class="ref-body">Keka. The POSH Act: Internal Committee at 10 or more employees; fine up to Rs 50,000, doubled for a repeat; annual report to the District Officer. <a class="ref-link" href="https://www.keka.com/compliance/acts/posh-act">keka.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-10"><span class="ref-body">India Briefing. India notifies all four labour codes, effective 21 November 2025 (appointment letters for all workers; gratuity after one year for fixed-term staff). <a class="ref-link" href="https://www.india-briefing.com/news/india-notifies-all-four-labor-codes-ushering-in-landmark-workforce-reforms-40874.html">india-briefing.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-11"><span class="ref-body">Plivo. DLT registration process for sending SMS to India: entity, headers, consent templates and content templates; only Indian entities can register. <a class="ref-link" href="https://www.plivo.com/docs/sms/concepts/dlt-registration-process">plivo.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-12"><span class="ref-body">The Desk (Rushikesh Mahajan). No country is restricted; your data still cannot leave (DPDP section 16 and Rule 15 apply from 13 May 2027; no country restricted on the public record; RBI payment-data localisation of 6 April 2018 still applies), 31 August 2026. <a class="ref-link" href="https://buttondown.com/the_desk/archive/no-country-is-restricted-your-data-still-cannot/">buttondown.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-13"><span class="ref-body">National Health Authority. ABDM guidelines for health information providers and users: NHA stores no patient health record data; records stay with the provider; sharing only after the patient's consent. <a class="ref-link" href="https://abdm.gov.in:8081/uploads/HIP_HIU_Guidelines_f85df336ec.pdf">abdm.gov.in:8081<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-14"><span class="ref-body">Business Today. RBI caps recurring payments at Rs 15,000 without OTP under new e-mandate framework (24-hour pre-debit notice; cancel or pause any time), 21 April 2026. <a class="ref-link" href="https://www.businesstoday.in/personal-finance/news/story/rbi-caps-recurring-payments-at-rs15000-without-otp-under-new-e-mandate-framework-526759-2026-04-21">businesstoday.in<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-15"><span class="ref-body">IndiaFilings. Shop and establishment registration in Telangana: apply within 30 days of starting; offices included; renew yearly. <a class="ref-link" href="https://www.indiafilings.com/learn/shop-and-establishment-registration-in-telangana">indiafilings.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-16"><span class="ref-body">Zoho Payroll. Telangana professional tax: Rs 200 a month above Rs 20,000 salary, Rs 150 from Rs 15,000 to 20,000; due by the 10th. <a class="ref-link" href="https://www.zoho.com/in/payroll/academy/payroll-laws/telangana/professional-tax.html">zoho.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-17"><span class="ref-body">India Briefing. End of the angel tax in India: section 56(2)(viib) abolished for all classes of investors from financial year 2025-26, 2 December 2024. <a class="ref-link" href="https://india-briefing.com/news/abolishing-the-angel-tax-in-india-applicable-for-fy-2025-26-35289.html">india-briefing.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-18"><span class="ref-body">Startup India. Public procurement: DPIIT-recognised start-ups exempt from earnest money (GFR rule 170) and prior turnover and experience (GFR rule 173); GeM Startup Runway. <a class="ref-link" href="https://www.startupindia.gov.in/content/sih/en/public_procurement.html">startupindia.gov.in<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-19"><span class="ref-body">Whalesbook. India's NHCX health insurance overhaul stalls with slow adoption (about 34 insurers and TPAs and 300 hospitals had joined by mid-2024), 5 May 2026. <a class="ref-link" href="https://www.whalesbook.com/news/English/insurance/Indias-NHCX-Health-Insurance-Overhaul-Stalls-With-Slow-Adoption/69f9b511d87e3288bea940bc">whalesbook.com<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-20"><span class="ref-body">Supreme Court of India. Rajive Raturi v Union of India, judgment of 8 November 2024 (accessibility rules must be mandatory, not advisory). <a class="ref-link" href="https://api.sci.gov.in/supremecourt/2005/9321/9321_2005_1_1503_56986_Judgement_08-Nov-2024.pdf">api.sci.gov.in<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-21"><span class="ref-body">ThePrint. Global tech firms to come under India's mandatory disability access rules (draft RPwD Amendment Rules 2026, gazetted 20 July 2026: websites and apps; an Accessibility Conformance Report; 18 months for smaller firms), 27 July 2026. <a class="ref-link" href="https://theprint.in/tech/global-tech-firms-to-come-under-indias-mandatory-disability-access-rules-face-fines-licence-risk/2997906/">theprint.in<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-22"><span class="ref-body">Gautham M and others. First we go to the small doctor: first contact for curative health care sought by rural communities in Andhra Pradesh and Orissa, India (Indian Journal of Medical Research, 2011; about 7 in 10 first went to unqualified providers in the districts studied). <a class="ref-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3249960">pmc.ncbi.nlm.nih.gov<span aria-hidden="true"> ↗</span></a></span></li><li id="ref-23"><span class="ref-body">Artificial Analysis. Sarvam 105B and Sarvam 30B: everything you need to know, 2 April 2026. <a class="ref-link" href="https://artificialanalysis.ai/articles/sarvam-105b-Sarvam-30b-everything-you-need-to-know">artificialanalysis.ai<span aria-hidden="true"> ↗</span></a></span></li></ol></section><nav class="pager" aria-label="Series"><a class="prev" href="1heath-business.html"><span>← Previous</span>Business Model</a><a class="next" href="1heath-roadmap.html"><span>Next →</span>Roadmap</a></nav></main></div>
+<footer class="pad"><div class="wide"><div class="f-about"><span class="f-name">Pawan Kalyan</span><p>ML/AI engineer and founder of 1Heath, a medical scribe and shared health record for Indian clinics.</p></div><div><span class="f-h">Read</span><ul><li><a href="1heath.html">1Heath</a></li><li><a href="india-health.html">Indian Healthcare</a></li><li><a href="health-systems-compared.html">World Healthcare</a></li><li><a href="1heath-prototype.html">Prototype</a></li></ul></div><div><span class="f-h">Contact</span><ul><li><a href="mailto:hello@pawankalyan.dev">Email</a></li><li><a href="https://www.linkedin.com/in/pavankumar-gurram/">LinkedIn</a></li><li><a href="https://github.com/pawankalyan-gurram">GitHub</a></li><li><a href="https://www.instagram.com/pawan_kalyan.official/">Instagram</a></li></ul></div><div class="f-legal"><span>© 2026 Pawan Kalyan. Updated 21 November 2026.</span><span>1Heath is in development and not approved for clinical use. Not affiliated with any public figure of the same name.</span></div></div></footer>
+<script>
+(function(){var d=document.documentElement,b=document.getElementById('theme');
+function sync(){var dark=d.getAttribute('data-theme')==='dark';if(b){b.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');b.setAttribute('aria-pressed',dark?'true':'false')}}
+sync();if(b)b.addEventListener('click',function(){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('theme',t)}catch(e){}sync()});
+var c=document.getElementById('copy-email'),e=document.getElementById('email');
+if(c&&e){c.hidden=false;c.addEventListener('click',function(){var t=e.textContent;function ok(){c.textContent='Copied';setTimeout(function(){c.textContent='Copy'},1500)}
+function sel(){var r=document.createRange();r.selectNodeContents(e);var s=window.getSelection();s.removeAllRanges();s.addRange(r)}
+try{navigator.clipboard&&navigator.clipboard.writeText?navigator.clipboard.writeText(t).then(ok,sel):sel()}catch(x){sel()}})}
+var links=[].slice.call(document.querySelectorAll('.toc-rail .toc a'));
+if(links.length&&'IntersectionObserver' in window){var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){links.forEach(function(a){a.classList.remove('active')});var a=map[x.target.id];if(a)a.classList.add('active')}})},{rootMargin:'-20% 0px -70% 0px'});
+Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s)})}
+})();
+</script>
+</body>
+</html>
