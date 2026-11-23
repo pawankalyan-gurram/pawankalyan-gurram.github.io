@@ -1,42 +1,39 @@
-# 1Heath business model v2 (founder decisions of 23 Nov 2026). All inputs are our assumptions unless noted.
+# 1Heath business model v3 (23 Nov 2026): 1Heath as a licensed B2B distributor of small and mid-size makers'
+# medicines to clinics that use 1Heath. All inputs are our assumptions unless a source is named on the business page.
 CR=1e7
 cases={
- 'conservative':dict(basic=0.30,pro=0.05,clinics=0.3,buy=40000,fee=0.015,lab_share=0.15,lab_booked=0.10,lab_fee=50,ai=3.09,wa_share=1.0,team=2.66),
- 'plan':        dict(basic=0.50,pro=0.20,clinics=0.6,buy=150000,fee=0.02,lab_share=0.20,lab_booked=0.15,lab_fee=70,ai=1.50,wa_share=0.5,team=3.60),
+ 'conservative':dict(basic=0.30,pro=0.05,clinics=0.3,buy=40000,share=0.25,gross=0.07,dist=0.06,lab_share=0.15,lab_booked=0.10,lab_fee=50,ai=3.09,wa_share=1.0,team=2.66,wc_days=60),
+ 'plan':        dict(basic=0.50,pro=0.20,clinics=0.6,buy=150000,share=0.40,gross=0.11,dist=0.055,lab_share=0.20,lab_booked=0.15,lab_fee=70,ai=1.50,wa_share=0.5,team=3.60,wc_days=15),
 }
 D=1000; VISITS=9000; GST=1.18; BASIC=199; PRO=999; WA_MONTH=102; PAYFEE=0.0236
 def year(c,d=D):
     v=d*VISITS
-    basic=d*c['basic']*BASIC/GST*12; pro=d*c['pro']*PRO/GST*12
-    med_gmv=d*c['clinics']*c['buy']*12; med=med_gmv*c['fee']
-    tests=v*c['lab_share']*c['lab_booked']; lab=tests*c['lab_fee']
-    rev=basic+pro+med+lab
+    subs=d*c['basic']*BASIC/GST*12 + d*c['pro']*PRO/GST*12
+    sales=d*c['clinics']*c['buy']*c['share']*12          # 1Heath's medicine sales to clinics
+    margin=sales*c['gross']                               # gross margin kept by 1Heath
+    lab=v*c['lab_share']*c['lab_booked']*c['lab_fee']
+    rev=subs+margin+lab
+    dist=sales*c['dist']                                  # delivery, credit cost, expiry, warehouse, pharmacist
     ai=v*c['ai']; wa=d*WA_MONTH*12*c['wa_share']; pay=(d*c['basic']*BASIC+d*c['pro']*PRO)*12*PAYFEE
-    var=ai+wa+pay
-    return dict(basic=basic,pro=pro,subs=basic+pro,med_gmv=med_gmv,med=med,tests=tests,lab=lab,rev=rev,ai=ai,wa=wa,pay=pay,var=var)
-out={}
+    var=ai+wa+pay+dist
+    wc=sales/365*c['wc_days']
+    return dict(subs=subs,sales=sales,margin=margin,lab=lab,rev=rev,dist=dist,ai=ai,wapay=wa+pay,var=var,wc=wc)
 for n,c in cases.items():
     y=year(c); fixed=c['team']*CR; res=y['rev']-y['var']-fixed
-    out[n]=(y,fixed,res)
-    print(f"\n== {n}")
-    for k in ['basic','pro','subs','med_gmv','med','lab','rev','ai','wa','pay','var']: print(f"{k:8s} ₹{y[k]/CR:6.2f} cr")
-    print(f"tests booked {y['tests']:,.0f}")
-    print(f"team     ₹{fixed/CR:6.2f} cr\nresult   ₹{res/CR:+6.2f} cr")
+    print(f"\n== {n}: " + ', '.join(f"{k} {y[k]/CR:.2f}" for k in y), f"team {fixed/CR:.2f} result {res/CR:+.2f}")
     contrib=(y['rev']-y['var'])/D
-    print(f"rev/doctor ₹{y['rev']/D:,.0f}; var/doctor ₹{y['var']/D:,.0f}; contribution/doctor/month ₹{contrib/12:,.0f}")
-    if contrib>0: print(f"payback months {20000/(contrib/12):.1f}; breakeven doctors {fixed/contrib:,.0f}")
-    print('mix subs/med/lab %:',[round(100*y[k]/y['rev']) for k in ('subs','med','lab')])
-# five-year
-ends=[100,1000,4000,10000,20000]; avgs=[50,550,2500,7000,15000]
-CHURN=0.20; CAC=20000
-for n,c in cases.items():
-    y=year(c); rpd=y['rev']/D; vpd=y['var']/D
-    print(f"\n== five years {n}")
-    prev=0
-    for i,(e,a) in enumerate(zip(ends,avgs),1):
-        live = 0 if i==1 else 1   # year 1 free pilot: no revenue; variable costs still run
-        rev=a*rpd*live; var=a*vpd; fixed=c['team']*CR*(a/1000)**0.6
-        op=rev-var-fixed
-        acq=((e-prev)+CHURN*a)*CAC
-        print(f"Y{i} end {e:>6,} avg {a:>6,} rev ₹{rev/CR:6.2f} cr op ₹{op/CR:+7.2f} acq ₹{acq/CR:5.2f} after ₹{(op-acq)/CR:+7.2f}")
-        prev=e
+    print(f" contribution/doctor/yr ₹{contrib:,.0f}; per month ₹{contrib/12:,.0f}; breakeven doctors {fixed/contrib if contrib>0 else float('nan'):,.0f}")
+    for sh in (0.4,0.6,0.8):
+        c2=dict(c,share=sh); y2=year(c2); print(f"  share {sh}: sales {y2['sales']/CR:.1f} result {(y2['rev']-y2['var']-fixed)/CR:+.2f}")
+    for g in (0.05,0.08,0.11,0.14):
+        c2=dict(c,gross=g); y2=year(c2); print(f"  gross {g}: result {(y2['rev']-y2['var']-fixed)/CR:+.2f}")
+ends=[100,1000,4000,10000,20000]; avgs=[50,550,2500,7000,15000]; CHURN=0.20; CAC=20000
+c=cases['plan']; y=year(c); rpd=y['rev']/D; vpd=y['var']/D; prev=0; tot=0
+print('\n five-year plan')
+for i,(e,a) in enumerate(zip(ends,avgs),1):
+    live=0 if i==1 else 1
+    rev=a*rpd*live; var=a*(vpd if live else (y['ai']+y['wapay'])/D); fixed=c['team']*CR*(a/1000)**0.6
+    op=rev-var-fixed; acq=((e-prev)+CHURN*a)*CAC; tot+=op-acq
+    print(f" Y{i} end {e} rev {rev/CR:.2f} op {op/CR:+.2f} acq {acq/CR:.2f} after {(op-acq)/CR:+.2f} wc {a*y['wc']/D/CR*live:.2f}")
+    prev=e
+print(' cumulative after acquisition', round(tot/CR,2))
