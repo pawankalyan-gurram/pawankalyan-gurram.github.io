@@ -205,11 +205,11 @@ figure.fig + p, figure.fig + ul, .table-wrap + p{margin-top:1.25rem}
 .flowchart li .k{font-size:.78rem;font-weight:700;color:var(--rx)}
 .flowchart li.key{border-color:var(--rx);box-shadow:inset 0 0 0 1px var(--rx)}
 .flowchart li+li::before{content:"";position:absolute;left:-.7rem;top:50%;width:.7rem;height:2px;background:var(--rule-strong)}
-.flowchart[style*="--n:5"]{grid-template-columns:1fr}
-.flowchart[style*="--n:5"] li{display:grid;grid-template-columns:4.4rem minmax(0,1fr);column-gap:.7rem;row-gap:.15rem;align-items:start}
-.flowchart[style*="--n:5"] li .k{grid-row:1 / span 2;padding-top:.15rem}
-.flowchart[style*="--n:5"] li b,.flowchart[style*="--n:5"] li span:not(.k){grid-column:2}
-.flowchart[style*="--n:5"] li+li::before{left:2.6rem;top:-.7rem;width:2px;height:.7rem}
+.flowchart:is([style*="--n:5"],[style*="--n:6"]){grid-template-columns:1fr}
+.flowchart:is([style*="--n:5"],[style*="--n:6"]) li{display:grid;grid-template-columns:4.4rem minmax(0,1fr);column-gap:.7rem;row-gap:.15rem;align-items:start}
+.flowchart:is([style*="--n:5"],[style*="--n:6"]) li .k{grid-row:1 / span 2;padding-top:.15rem}
+.flowchart:is([style*="--n:5"],[style*="--n:6"]) li b,.flowchart:is([style*="--n:5"],[style*="--n:6"]) li span:not(.k){grid-column:2}
+.flowchart:is([style*="--n:5"],[style*="--n:6"]) li+li::before{left:2.6rem;top:-.7rem;width:2px;height:.7rem}
 @media (max-width:760px){
   .flowchart{grid-template-columns:1fr}
   .flowchart li{display:grid;grid-template-columns:4.4rem minmax(0,1fr);column-gap:.7rem;row-gap:.15rem;align-items:start}
@@ -468,9 +468,9 @@ main.pad:has(>.hub){padding-top:0}
 .hub section>p+.btns{margin-top:1.1rem}
 @media (min-width:900px){.hub .cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (min-width:900px){
-  .hub .flowchart[style*="--n:5"]{grid-template-columns:repeat(5,minmax(0,1fr));gap:.9rem}
-  .hub .flowchart[style*="--n:5"] li{display:flex;flex-direction:column;gap:.3rem;padding:1rem .95rem}
-  .hub .flowchart[style*="--n:5"] li+li::before{left:-.9rem;top:50%;width:.9rem;height:2px}
+  .hub .flowchart:is([style*="--n:5"],[style*="--n:6"]){grid-template-columns:repeat(5,minmax(0,1fr));gap:.9rem}
+  .hub .flowchart:is([style*="--n:5"],[style*="--n:6"]) li{display:flex;flex-direction:column;gap:.3rem;padding:1rem .95rem}
+  .hub .flowchart:is([style*="--n:5"],[style*="--n:6"]) li+li::before{left:-.9rem;top:50%;width:.9rem;height:2px}
 }
 
 /* email */
@@ -668,7 +668,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <li><b>Systems of medicine:</b> an Ayurveda or homeopathy doctor is registered with their own council. 1Heath warns when a prescription falls outside the doctor's system, as the <a href="1heath-medicine-systems.html">systems page</a> explains.</li>
     <li><b>Clinics:</b> Telangana applies the Clinical Establishments Act 2010, under which clinics, including on our reading single-doctor clinics, register with the district authority<a class="cite" href="#ref-24" aria-label="Source 24">[24]</a>. We will ask for the clinic's registration at sign-up.</li>
     <li><b>Pharmacies and suppliers:</b> drug licences are checked before any order flows, as the <a href="1heath-supply.html">supply page</a> sets out.</li>
-    <li><b>Staff:</b> every action leaves a trace of who did what, for what reason and when, as the <a href="1heath-security-privacy.html">security page</a> describes.</li>
+    <li><b>Staff:</b> every action leaves a trace of who did what, for what reason and when, as the <a href="1heath-technology.html#safety">technology page</a> describes.</li>
   </ul>
 </section>
 

@@ -205,11 +205,11 @@ figure.fig + p, figure.fig + ul, .table-wrap + p{margin-top:1.25rem}
 .flowchart li .k{font-size:.78rem;font-weight:700;color:var(--rx)}
 .flowchart li.key{border-color:var(--rx);box-shadow:inset 0 0 0 1px var(--rx)}
 .flowchart li+li::before{content:"";position:absolute;left:-.7rem;top:50%;width:.7rem;height:2px;background:var(--rule-strong)}
-.flowchart[style*="--n:5"]{grid-template-columns:1fr}
-.flowchart[style*="--n:5"] li{display:grid;grid-template-columns:4.4rem minmax(0,1fr);column-gap:.7rem;row-gap:.15rem;align-items:start}
-.flowchart[style*="--n:5"] li .k{grid-row:1 / span 2;padding-top:.15rem}
-.flowchart[style*="--n:5"] li b,.flowchart[style*="--n:5"] li span:not(.k){grid-column:2}
-.flowchart[style*="--n:5"] li+li::before{left:2.6rem;top:-.7rem;width:2px;height:.7rem}
+.flowchart:is([style*="--n:5"],[style*="--n:6"]){grid-template-columns:1fr}
+.flowchart:is([style*="--n:5"],[style*="--n:6"]) li{display:grid;grid-template-columns:4.4rem minmax(0,1fr);column-gap:.7rem;row-gap:.15rem;align-items:start}
+.flowchart:is([style*="--n:5"],[style*="--n:6"]) li .k{grid-row:1 / span 2;padding-top:.15rem}
+.flowchart:is([style*="--n:5"],[style*="--n:6"]) li b,.flowchart:is([style*="--n:5"],[style*="--n:6"]) li span:not(.k){grid-column:2}
+.flowchart:is([style*="--n:5"],[style*="--n:6"]) li+li::before{left:2.6rem;top:-.7rem;width:2px;height:.7rem}
 @media (max-width:760px){
   .flowchart{grid-template-columns:1fr}
   .flowchart li{display:grid;grid-template-columns:4.4rem minmax(0,1fr);column-gap:.7rem;row-gap:.15rem;align-items:start}
@@ -468,9 +468,9 @@ main.pad:has(>.hub){padding-top:0}
 .hub section>p+.btns{margin-top:1.1rem}
 @media (min-width:900px){.hub .cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (min-width:900px){
-  .hub .flowchart[style*="--n:5"]{grid-template-columns:repeat(5,minmax(0,1fr));gap:.9rem}
-  .hub .flowchart[style*="--n:5"] li{display:flex;flex-direction:column;gap:.3rem;padding:1rem .95rem}
-  .hub .flowchart[style*="--n:5"] li+li::before{left:-.9rem;top:50%;width:.9rem;height:2px}
+  .hub .flowchart:is([style*="--n:5"],[style*="--n:6"]){grid-template-columns:repeat(5,minmax(0,1fr));gap:.9rem}
+  .hub .flowchart:is([style*="--n:5"],[style*="--n:6"]) li{display:flex;flex-direction:column;gap:.3rem;padding:1rem .95rem}
+  .hub .flowchart:is([style*="--n:5"],[style*="--n:6"]) li+li::before{left:-.9rem;top:50%;width:.9rem;height:2px}
 }
 
 /* email */
@@ -578,17 +578,17 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
       <li><a href="1heath-solution.html">The solution</a></li>
       <li><a href="1heath-go-to-market.html">How doctors adopt it</a></li>
       <li><a href="1heath-supply.html">Medicine supply and inventory</a></li>
-      <li><a href="1heath-business.html">Revenue, worked step by step</a></li>
+      <li><a href="1heath-business.html">Business model, worked step by step</a></li>
+      <li><a href="1heath-revenue.html">Revenue model and benchmarks</a></li>
       <li><a href="1heath-legal.html">Legal, licences and their cost</a></li>
       <li><a href="1heath-finance.html">Funding, tax and grey zones</a></li>
       <li><a href="1heath-launch.html">Launch readiness</a></li>
       <li><a href="1heath-roadmap.html">Roadmap</a></li></ol></div>
-    <div class="card"><span class="num">Engineer · about 30 minutes</span><h3>How Is It Built?</h3><ol class="small">
+    <div class="card"><span class="num">Engineer · about 15 minutes</span><h3>How Is It Built?</h3><ol class="small">
       <li><a href="1heath-design.html">Four apps, one record</a></li>
-      <li><a href="1heath-architecture.html">Architecture</a></li>
-      <li><a href="1heath-models-data.html">Models, data and tests</a></li>
-      <li><a href="1heath-security-privacy.html">Security and privacy</a></li>
-      <li><a href="1heath-supply.html#software">The ordering engine</a></li>
+      <li><a href="1heath-technology.html">The technology, in plain words</a></li>
+      <li><a href="1heath-technology.html#blueprint">The full engineering blueprint, on request</a></li>
+      <li><a href="1heath-supply.html#software">How ordering stays reliable</a></li>
       <li><a href="1heath-prototype.html">Clickable prototype</a></li></ol></div>
     <div class="card"><span class="num">Doctor or clinic · about 10 minutes</span><h3>What Changes for Me?</h3><ol class="small">
       <li><a href="#two-minutes">1Heath in two minutes</a></li>
@@ -635,7 +635,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 
 <section id="read" aria-labelledby="read-h">
   <h2 id="read-h">The Full Story, Section by Section</h2>
-  <p class="muted small">Eighteen short pages in four parts. Each card is a summary; open it for the detail, sources and figures.</p>
+  <p class="muted small">Seventeen short pages in four parts. Each card is a summary; open it for the detail, sources and figures.</p>
   <h3 class="group">Why: The Problem and Its Size</h3>
   <div class="cards">
     <a class="card" href="1heath-india-problems.html"><span class="num">01 · The big picture</span><h3>India's Healthcare Problems, and What 1Heath Does About Each</h3><p>Fifteen problems in clinics, pharmacies, labs and homes; every kind of hospital and system of medicine; and what software cannot fix.</p><span class="go">See all fifteen →</span></a>
@@ -648,24 +648,22 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <a class="card" href="1heath-solution.html"><span class="num">05 · Solution</span><h3>The Visit Writes the History</h3><p>How 1Heath answers each root cause, the alternatives we compared, and why this design.</p><span class="go">Read the solution →</span></a>
     <a class="card" href="1heath-design.html"><span class="num">06 · Product design</span><h3>Four Apps, One Record</h3><p>Design principles, what each app shows, what never crosses between them, and a clickable prototype.</p><span class="go">See the design →</span></a>
     <a class="card" href="1heath-medicine-systems.html"><span class="num">07 · Systems of medicine</span><h3>Allopathy, Ayurveda, Homeopathy, One Record</h3><p>About half of Indians use a traditional system. How 1Heath records it fairly and safely.</p><span class="go">Read more →</span></a>
+    <a class="card" href="1heath-technology.html"><span class="num">08 · Technology</span><h3>The Technology, in Plain Words</h3><p>What it is built with, how the parts fit, the safety rules it never breaks, and how we know it works.</p><span class="go">Read more →</span></a>
   </div>
-  <p class="small">Inside the product: <a href="1heath-architecture.html#matcher">how spoken brand names become the right medicine</a>. About 500 common brands, 4,649 spellings in five Indian scripts, and it asks instead of guessing.</p>
-  <h3 class="group">How: The Technology and the Law</h3>
+  <h3 class="group">The Law</h3>
   <div class="cards">
-    <a class="card" href="1heath-models-data.html"><span class="num">08 · Models and data</span><h3>How the AI Works and How Far to Trust It</h3><p>Which models, what test data, what we measured, and what synthetic tests cannot tell us.</p><span class="go">Read more →</span></a>
-    <a class="card" href="1heath-architecture.html"><span class="num">09 · Architecture</span><h3>High-Level and Low-Level Design</h3><p>Components, the path of one consultation, the data model, the verification rules and the stack.</p><span class="go">Read the design →</span></a>
-    <a class="card" href="1heath-security-privacy.html"><span class="num">10 · Security and privacy</span><h3>How Patient Data Is Protected</h3><p>Who sees what, encryption, consent-based sharing, patient rights, threats and the laws that apply.</p><span class="go">Read more →</span></a>
-    <a class="card" href="1heath-legal.html"><span class="num">11 · Legal and certifications</span><h3>What the Law Requires, and What It Costs</h3><p>Whether 1Heath is a medical device, patient-data duties, joining ABDM, signatures, certifications, complaints and liability, and the first-year cost.</p><span class="go">See the legal map →</span></a>
-    <a class="card" href="1heath-simple-compliance.html"><span class="num">12 · Compliance made simple</span><h3>Every User, Every Feature, Kept Simple</h3><p>The lawful simplifications we use, the shortcuts we refuse, consent in ten seconds, and what each user and feature must meet.</p><span class="go">See how it stays simple →</span></a>
+    <a class="card" href="1heath-legal.html"><span class="num">09 · Legal and certifications</span><h3>What the Law Requires, and What It Costs</h3><p>Whether 1Heath is a medical device, patient-data duties, joining ABDM, signatures, certifications, complaints and liability, and the first-year cost.</p><span class="go">See the legal map →</span></a>
+    <a class="card" href="1heath-simple-compliance.html"><span class="num">10 · Compliance made simple</span><h3>Every User, Every Feature, Kept Simple</h3><p>The lawful simplifications we use, the shortcuts we refuse, consent in ten seconds, and what each user and feature must meet.</p><span class="go">See how it stays simple →</span></a>
   </div>
   <h3 class="group">The Business</h3>
   <div class="cards">
-    <a class="card" href="1heath-go-to-market.html"><span class="num">13 · Go to market</span><h3>Doctors First, Then Patients</h3><p>Who adopts first, where we meet them, the funnel in numbers, and what the pilot must prove.</p><span class="go">Read more →</span></a>
-    <a class="card" href="1heath-supply.html"><span class="num">14 · Medicine supply</span><h3>How Clinics Will Order, with No Warehouse</h3><p>The supply chain, the law, the model stage by stage, what a warehouse would cost, ten use cases and the edge cases.</p><span class="go">See the supply model →</span></a>
-    <a class="card" href="1heath-business.html"><span class="num">15 · Business model</span><h3>Revenue, Worked Step by Step</h3><p>Two cases at 1,000 doctors, unit economics, levers, a five-year path, and the firewall between money and medicine.</p><span class="go">See the numbers →</span></a>
-    <a class="card" href="1heath-finance.html"><span class="num">16 · Finance</span><h3>Funding, Tax and the Money Ground Reality</h3><p>The funding market, which grants are open, the new Income-tax Act, GST and the doctor's view of price, and the grey zones where money meets medicine.</p><span class="go">See the finance page →</span></a>
-    <a class="card" href="1heath-launch.html"><span class="num">17 · Launch readiness</span><h3>Everything Else a Real Launch Needs</h3><p>App store rules for health apps, SMS and WhatsApp, payments, hiring, ethics approval, accessibility, the documents to write, and the whole launch in order.</p><span class="go">See the launch checklist →</span></a>
-    <a class="card" href="1heath-roadmap.html"><span class="num">18 · Roadmap</span><h3>From Scribe to Health Research Company</h3><p>Prevention features to come, and research on consented data that is never sold.</p><span class="go">See the roadmap →</span></a>
+    <a class="card" href="1heath-go-to-market.html"><span class="num">11 · Go to market</span><h3>Doctors First, Then Patients</h3><p>Who adopts first, where we meet them, the funnel in numbers, and what the pilot must prove.</p><span class="go">Read more →</span></a>
+    <a class="card" href="1heath-supply.html"><span class="num">12 · Medicine supply</span><h3>How Clinics Will Order, with No Warehouse</h3><p>The supply chain, the law, the model stage by stage, what a warehouse would cost, ten use cases and the edge cases.</p><span class="go">See the supply model →</span></a>
+    <a class="card" href="1heath-business.html"><span class="num">13 · Business model</span><h3>Business Model, Worked Step by Step</h3><p>Two cases at 1,000 doctors, unit economics, levers, a five-year path, and the firewall between money and medicine.</p><span class="go">See the numbers →</span></a>
+    <a class="card" href="1heath-revenue.html"><span class="num">14 · Revenue model</span><h3>Who Pays, and What Similar Companies Earn</h3><p>Every payer, the stages that unlock revenue, Indian benchmarks, and the fee 1Heath needs to cover its costs.</p><span class="go">See the revenue model →</span></a>
+    <a class="card" href="1heath-finance.html"><span class="num">15 · Finance</span><h3>Funding, Tax and the Money Ground Reality</h3><p>The funding market, which grants are open, the new Income-tax Act, GST and the doctor's view of price, and the grey zones where money meets medicine.</p><span class="go">See the finance page →</span></a>
+    <a class="card" href="1heath-launch.html"><span class="num">16 · Launch readiness</span><h3>Everything Else a Real Launch Needs</h3><p>App store rules for health apps, SMS and WhatsApp, payments, hiring, ethics approval, accessibility, the documents to write, and the whole launch in order.</p><span class="go">See the launch checklist →</span></a>
+    <a class="card" href="1heath-roadmap.html"><span class="num">17 · Roadmap</span><h3>From Scribe to Health Research Company</h3><p>Prevention features to come, and research on consented data that is never sold.</p><span class="go">See the roadmap →</span></a>
   </div>
 </section>
 
