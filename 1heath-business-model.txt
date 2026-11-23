@@ -1,0 +1,42 @@
+# 1Heath business model v2 (founder decisions of 23 Nov 2026). All inputs are our assumptions unless noted.
+CR=1e7
+cases={
+ 'conservative':dict(basic=0.30,pro=0.05,clinics=0.3,buy=40000,fee=0.015,lab_share=0.15,lab_booked=0.10,lab_fee=50,ai=3.09,wa_share=1.0,team=2.66),
+ 'plan':        dict(basic=0.50,pro=0.20,clinics=0.6,buy=150000,fee=0.02,lab_share=0.20,lab_booked=0.15,lab_fee=70,ai=1.50,wa_share=0.5,team=3.60),
+}
+D=1000; VISITS=9000; GST=1.18; BASIC=199; PRO=999; WA_MONTH=102; PAYFEE=0.0236
+def year(c,d=D):
+    v=d*VISITS
+    basic=d*c['basic']*BASIC/GST*12; pro=d*c['pro']*PRO/GST*12
+    med_gmv=d*c['clinics']*c['buy']*12; med=med_gmv*c['fee']
+    tests=v*c['lab_share']*c['lab_booked']; lab=tests*c['lab_fee']
+    rev=basic+pro+med+lab
+    ai=v*c['ai']; wa=d*WA_MONTH*12*c['wa_share']; pay=(d*c['basic']*BASIC+d*c['pro']*PRO)*12*PAYFEE
+    var=ai+wa+pay
+    return dict(basic=basic,pro=pro,subs=basic+pro,med_gmv=med_gmv,med=med,tests=tests,lab=lab,rev=rev,ai=ai,wa=wa,pay=pay,var=var)
+out={}
+for n,c in cases.items():
+    y=year(c); fixed=c['team']*CR; res=y['rev']-y['var']-fixed
+    out[n]=(y,fixed,res)
+    print(f"\n== {n}")
+    for k in ['basic','pro','subs','med_gmv','med','lab','rev','ai','wa','pay','var']: print(f"{k:8s} ₹{y[k]/CR:6.2f} cr")
+    print(f"tests booked {y['tests']:,.0f}")
+    print(f"team     ₹{fixed/CR:6.2f} cr\nresult   ₹{res/CR:+6.2f} cr")
+    contrib=(y['rev']-y['var'])/D
+    print(f"rev/doctor ₹{y['rev']/D:,.0f}; var/doctor ₹{y['var']/D:,.0f}; contribution/doctor/month ₹{contrib/12:,.0f}")
+    if contrib>0: print(f"payback months {20000/(contrib/12):.1f}; breakeven doctors {fixed/contrib:,.0f}")
+    print('mix subs/med/lab %:',[round(100*y[k]/y['rev']) for k in ('subs','med','lab')])
+# five-year
+ends=[100,1000,4000,10000,20000]; avgs=[50,550,2500,7000,15000]
+CHURN=0.20; CAC=20000
+for n,c in cases.items():
+    y=year(c); rpd=y['rev']/D; vpd=y['var']/D
+    print(f"\n== five years {n}")
+    prev=0
+    for i,(e,a) in enumerate(zip(ends,avgs),1):
+        live = 0 if i==1 else 1   # year 1 free pilot: no revenue; variable costs still run
+        rev=a*rpd*live; var=a*vpd; fixed=c['team']*CR*(a/1000)**0.6
+        op=rev-var-fixed
+        acq=((e-prev)+CHURN*a)*CAC
+        print(f"Y{i} end {e:>6,} avg {a:>6,} rev ₹{rev/CR:6.2f} cr op ₹{op/CR:+7.2f} acq ₹{acq/CR:5.2f} after ₹{(op-acq)/CR:+7.2f}")
+        prev=e

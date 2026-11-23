@@ -552,10 +552,21 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <div><dt>What it does</dt><dd>The doctor talks to the patient as usual, in English or any of 22 Indian languages, or a mix. 1Heath writes the note and prescription, checks every line against what was said and against the patient's record (allergies, current medicines from every system), and the doctor slides to sign. Nothing the patient says enters the record until the doctor confirms it. The signed prescription goes to the pharmacy app, the patient app or a WhatsApp link, and is not printed by default; the record follows the patient to the next clinic.</dd></div>
     <div><dt>Why it is different</dt><dd>A language model drafts, but a rules engine decides: nothing reaches the note unless it was said, and anything uncertain is shown as a choice, never a guess. It is built for small Indian clinics first, with hospitals later: it works on the doctor's phone (online), in Indian languages, and records traditional medicines alongside modern ones.</dd></div>
     <div><dt>Where it stands</dt><dd>The Doctor app works end to end on an Android phone. On 14 unseen simulated consultations in Hindi and Telugu, no invented allergy, refused medicine or wrong dose reached a note unflagged; the medicine-name matcher was also tested on 85 spoken prescription lines. The next test, not yet run, is a fixed set of 131 cases in eight languages. It has not yet been used with real patients. The Desk, Pharmacy and Patient apps are designed, not built. Next: the first clinic pilot with real voices, with patient consent.</dd></div>
-    <div><dt>How it earns</dt><dd>Free for patients, front desks and pharmacies; ₹199 a month for doctors. Most revenue comes from medicines ordered by clinic pharmacies and lab tests booked from the prescription, never from influencing what is prescribed (<a href="1heath-business.html">the numbers, both cases</a>).</dd></div>
+    <div><dt>How it earns</dt><dd>Free for patients, front desks and pharmacies; ₹199 a month for doctors, with a paid tier for busy doctors. Most revenue comes from fixed fees paid by medicine sellers and labs on orders and bookings, never from influencing what is prescribed (<a href="1heath-business.html">the numbers, both cases</a>).</dd></div>
     <div><dt>Who is building it</dt><dd>Pawan Kalyan, a senior AI/ML and full-stack engineer, built the working Doctor app himself. Planned clinical advisors, by speciality: a physician with an MD in general medicine, who is to be the first to use it in his clinic; a paediatrician; and two younger doctors, one training in gynaecology. A small engineering team is planned once the company is funded.</dd></div>
     <div><dt>What we need</dt><dd>General physicians, paediatricians and gynaecologists willing to try it in their clinic; pharmacists; and a first investor who sees healthcare as a service. <a href="index.html#contact">Get in touch</a>.</dd></div>
   </dl>
+  <div class="table-wrap"><table class="stack compact">
+    <thead><tr><th scope="col">Part of 1Heath</th><th scope="col">Status today</th></tr></thead>
+    <tbody>
+      <tr><td>Doctor app: listen, draft, check, sign, PDF</td><td data-label="Status">Works end to end as a demo on an Android phone. Tested on simulated consultations only; no real patients yet</td></tr>
+      <tr><td>Desk, Pharmacy and Patient apps</td><td data-label="Status">Designed, with a clickable prototype; not built</td></tr>
+      <tr><td>Shared record server in India</td><td data-label="Status">Designed; not built. The demo keeps its data on the phone</td></tr>
+      <tr><td>ABHA and ABDM record sharing</td><td data-label="Status">Planned; not started</td></tr>
+      <tr><td>Medicine ordering and lab booking</td><td data-label="Status">Designed; starts only after a lawyer's opinion</td></tr>
+      <tr><td>Company, licences and certifications</td><td data-label="Status">Not yet incorporated; see <a href="1heath-launch.html">launch readiness</a></td></tr>
+    </tbody>
+  </table></div>
   <figure class="fig">
     <ol class="flowchart" style="--n:5">
       <li><span class="k">Desk</span><b>Register and consent</b><span>Patient found or registered, ABHA linked, consent to record, vitals</span></li>
