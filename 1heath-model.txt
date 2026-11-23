@@ -21,7 +21,7 @@ P = 1463.9e6                      # population 2025, UNFPA SWOP 2025 [pop]
 child = 0.24                      # share aged 0-14 [pop]
 
 # Channel A: hospital
-h      = tri(0.026, 0.029, 0.034) # share of people treated as in-patients in a year, rural 2.6%, urban 3.4% [nss75]
+h      = tri(0.027, 0.029, 0.032) # in-patient cases a year: rural 27, urban 32 per 1,000 people, NSS 80th round 2025 [prob_nss80_orf]
 p_pmh  = tri(0.015, 0.025, 0.041) # preventable medication-related harm per in-patient:
                                   #  WHO 10% harmed x 50% preventable x 50% medication = 2.5% [who_ps];
                                   #  India: 6.89% ADR admissions x 59.6% avoidable = 4.1% [patel07]; low 1.5% ASSUMPTION
@@ -29,7 +29,7 @@ f_hist = tri(0.05, 0.15, 0.27)    # share of medication errors due to incomplete
 cfr    = tri(0.019, 0.03, 0.064)  # deaths per harm event: WHO LMIC 2.6M/134M = 1.9% [who_10facts]; 17/265 = 6.4% [patel07]
 
 # Channel B: clinics and outpatient care
-r15    = tri(0.07, 0.075, 0.09)   # share reporting an ailment in last 15 days, rural ~7%, urban ~9% [nss75]
+r15    = tri(0.122, 0.131, 0.149) # share reporting an ailment in last 15 days: rural 12.2%, all 13.1%, urban 14.9%, NSS 80th round 2025 [prob_nss80_orf]
 inc    = tri(0.015, 0.025, 0.035) # safety incidents per consultation, median 2-3 per 100 [panesar]
 med    = tri(0.25, 0.35, 0.50)    # share of incidents that are medication/prescribing: ASSUMPTION
 sev    = tri(0.01, 0.04, 0.08)    # share of incidents causing severe harm, median 4% [panesar]
@@ -88,7 +88,7 @@ burden = {
 }
 
 # Deterministic central (mode) values, for the worked example on the page
-c = dict(P=P, h=0.029, p_pmh=0.025, f_hist=0.15, cfr=0.03, r15=0.075, inc=0.025, med=0.35, sev=0.04)
+c = dict(P=P, h=0.029, p_pmh=0.025, f_hist=0.15, cfr=0.03, r15=0.131, inc=0.025, med=0.35, sev=0.04)
 c['H'] = P * c['h']; c['harm_in'] = c['H'] * c['p_pmh'] * c['f_hist']; c['deaths_in'] = c['harm_in'] * c['cfr']
 c['E'] = P * c['r15'] * 365 / 15; c['inc_out'] = c['E'] * c['inc'] * c['med'] * c['f_hist']; c['sev_out'] = c['inc_out'] * c['sev']
 c['den_in'] = 0.24 * 1 + 0.69 + 0.07 * 6.8; c['w_child_in'] = 0.24 / c['den_in']; c['w_old_in'] = 0.07 * 6.8 / c['den_in']
@@ -120,6 +120,8 @@ impact_res = {
 }
 
 # ---------------- Revenue ----------------
+# SUPERSEDED on 23 Nov 2026: the business cases now live in business_v2.py
+# (published as /1heath-business-model.txt). Kept for history only.
 def revenue(case, D=1000):
     a = REV[case]
     plan    = D * 168.64 * 12
