@@ -1,39 +1,66 @@
-# 1Heath business model v3 (23 Nov 2026): 1Heath as a licensed B2B distributor of small and mid-size makers'
-# medicines to clinics that use 1Heath. All inputs are our assumptions unless a source is named on the business page.
+# 1Heath business model v4 (23 Nov 2026), rebuilt after the outside review (Gemini and ChatGPT panels, checked at source).
+# Changes from v3: supply running costs 9-12% of sales (was 5.5-6%); zero credit from makers (was 45 days);
+# 1Heath's share of clinic buying 10-25% for own stock of small makers' products (was 25-40%);
+# labs pay a flat monthly fee, not a fee per test (NMC guidelines of 6 Oct 2026, clause 8.1(vii)).
+# Two supply routes: 'partner' = a licensed stockist owns, stores, invoices and delivers; 1Heath gets a fixed fee per
+# order paid by the stockist, and the clinic can order its whole basket including big brands. 'own' = 1Heath's own
+# licensed wholesale business for small and mid-size makers (the founder's target model).
+# All inputs are our assumptions unless a source is named on the business page. v3 is kept for the record.
 CR=1e7
 cases={
- 'conservative':dict(basic=0.30,pro=0.05,clinics=0.3,buy=40000,share=0.25,gross=0.07,dist=0.06,lab_share=0.15,lab_booked=0.10,lab_fee=50,ai=3.09,wa_share=1.0,team=2.66,wc_days=60),
- 'plan':        dict(basic=0.50,pro=0.20,clinics=0.6,buy=150000,share=0.40,gross=0.11,dist=0.055,lab_share=0.20,lab_booked=0.15,lab_fee=70,ai=1.50,wa_share=0.5,team=3.60,wc_days=15),
+ 'conservative':dict(basic=0.30,pro=0.05,clinics=0.3,buy=40000,ai=3.09,wa_share=1.0,team=2.66,labs=25,lab_month=10000,
+    own_share=0.10,gross=0.08,dist=0.12,wc_days=75, p_share=0.20,orders=6,order_fee=100),
+ 'plan':        dict(basic=0.50,pro=0.20,clinics=0.6,buy=150000,ai=1.50,wa_share=0.5,team=3.60,labs=40,lab_month=25000,
+    own_share=0.25,gross=0.11,dist=0.09,wc_days=45, p_share=0.50,orders=8,order_fee=150),
 }
 D=1000; VISITS=9000; GST=1.18; BASIC=199; PRO=999; WA_MONTH=102; PAYFEE=0.0236
-def year(c,d=D):
+def year(c,route,d=D):
     v=d*VISITS
     subs=d*c['basic']*BASIC/GST*12 + d*c['pro']*PRO/GST*12
-    sales=d*c['clinics']*c['buy']*c['share']*12          # 1Heath's medicine sales to clinics
-    margin=sales*c['gross']                               # gross margin kept by 1Heath
-    lab=v*c['lab_share']*c['lab_booked']*c['lab_fee']
-    rev=subs+margin+lab
-    dist=sales*c['dist']                                  # delivery, credit cost, expiry, warehouse, pharmacist
+    lab=c['labs']*(d/D)*c['lab_month']*12
+    if route=='own':
+        sales=d*c['clinics']*c['buy']*c['own_share']*12; supply=sales*c['gross']; dist=sales*c['dist']; wc=sales/365*c['wc_days']
+    else:
+        sales=d*c['clinics']*c['buy']*c['p_share']*12; supply=d*c['clinics']*c['orders']*12*c['order_fee']; dist=0; wc=0
+    rev=subs+supply+lab
     ai=v*c['ai']; wa=d*WA_MONTH*12*c['wa_share']; pay=(d*c['basic']*BASIC+d*c['pro']*PRO)*12*PAYFEE
     var=ai+wa+pay+dist
-    wc=sales/365*c['wc_days']
-    return dict(subs=subs,sales=sales,margin=margin,lab=lab,rev=rev,dist=dist,ai=ai,wapay=wa+pay,var=var,wc=wc)
+    return dict(subs=subs,sales=sales,supply=supply,lab=lab,rev=rev,dist=dist,ai=ai,wapay=wa+pay,var=var,wc=wc)
+def res(c,route,**k):
+    c2=dict(c,**k); y=year(c2,route); return (y['rev']-y['var']-c2['team']*CR)/CR
 for n,c in cases.items():
-    y=year(c); fixed=c['team']*CR; res=y['rev']-y['var']-fixed
-    print(f"\n== {n}: " + ', '.join(f"{k} {y[k]/CR:.2f}" for k in y), f"team {fixed/CR:.2f} result {res/CR:+.2f}")
-    contrib=(y['rev']-y['var'])/D
-    print(f" contribution/doctor/yr ₹{contrib:,.0f}; per month ₹{contrib/12:,.0f}; breakeven doctors {fixed/contrib if contrib>0 else float('nan'):,.0f}")
-    for sh in (0.4,0.6,0.8):
-        c2=dict(c,share=sh); y2=year(c2); print(f"  share {sh}: sales {y2['sales']/CR:.1f} result {(y2['rev']-y2['var']-fixed)/CR:+.2f}")
-    for g in (0.05,0.08,0.11,0.14):
-        c2=dict(c,gross=g); y2=year(c2); print(f"  gross {g}: result {(y2['rev']-y2['var']-fixed)/CR:+.2f}")
+    for route in ('partner','own'):
+        y=year(c,route); fixed=c['team']*CR; r=y['rev']-y['var']-fixed; contrib=(y['rev']-y['var'])/D
+        print(f"\n== {n} / {route}: " + ', '.join(f"{k} {y[k]/CR:.2f}" for k in y), f"team {fixed/CR:.2f} result {r/CR:+.2f}")
+        print(f"   contribution/doctor/yr ₹{contrib:,.0f}; breakeven doctors {fixed/contrib if contrib>0 else float('nan'):,.0f}")
+c=cases['plan']
+print('\nplan levers (result, ₹ cr)')
+for g in (0.08,0.11,0.14,0.17): print(f" own, gross {g}: {res(c,'own',gross=g):+.2f}")
+for s in (0.10,0.25,0.40): print(f" own, share {s}: {res(c,'own',own_share=s):+.2f}")
+for f in (100,150,250): print(f" partner, fee ₹{f}: {res(c,'partner',order_fee=f):+.2f}")
+for a in (1.50,1.00,0.50): print(f" partner, AI ₹{a}/visit: {res(c,'partner',ai=a):+.2f}   own: {res(c,'own',ai=a):+.2f}")
+for p in (0.20,0.40): print(f" partner, paid tier {p}: {res(c,'partner',pro=p):+.2f}")
+print(f" partner, AI ₹0.50 and paid tier 0.40: {res(c,'partner',ai=0.5,pro=0.4):+.2f}")
+# own premises in one city: fixed cost and break-even sales (our estimate)
+fixed_m=125000+40000+2*20000+20000   # rent, licensed pharmacist, two delivery staff, one picker (₹ a month)
+for g,v in ((0.11,0.05),(0.14,0.05)):
+    print(f" own premises fixed ₹{fixed_m:,} a month; gross {g}, variable {v}: break-even sales ₹{fixed_m/(g-v)/1e5:.1f} lakh a month")
+# five-year plan: partner route in years 2-3; own stock from year 4 only if the gate is met (gross 14%, costs 9%).
+# Variant B adds an AI cost per visit falling from ₹1.50 to ₹0.50 by year 5 (our assumption, not a quote).
 ends=[100,1000,4000,10000,20000]; avgs=[50,550,2500,7000,15000]; CHURN=0.20; CAC=20000
-c=cases['plan']; y=year(c); rpd=y['rev']/D; vpd=y['var']/D; prev=0; tot=0
-print('\n five-year plan')
-for i,(e,a) in enumerate(zip(ends,avgs),1):
-    live=0 if i==1 else 1
-    rev=a*rpd*live; var=a*(vpd if live else (y['ai']+y['wapay'])/D); fixed=c['team']*CR*(a/1000)**0.6
-    op=rev-var-fixed; acq=((e-prev)+CHURN*a)*CAC; tot+=op-acq
-    print(f" Y{i} end {e} rev {rev/CR:.2f} op {op/CR:+.2f} acq {acq/CR:.2f} after {(op-acq)/CR:+.2f} wc {a*y['wc']/D/CR*live:.2f}")
-    prev=e
-print(' cumulative after acquisition', round(tot/CR,2))
+def five(ai_path, own_from=4, gross=0.14, label=''):
+    prev=0; tot=0; rows=[]
+    for i,(e,a) in enumerate(zip(ends,avgs),1):
+        c=dict(cases['plan'],ai=ai_path[i-1],gross=gross)
+        route='own' if i>=own_from else 'partner'
+        y=year(c,route,d=a); fixed=c['team']*CR*(a/1000)**0.6
+        if i==1: rev=0; var=y['ai']+y['wapay']; wc=0
+        else: rev=y['rev']; var=y['var']; wc=y['wc']
+        op=rev-var-fixed; acq=((e-prev)+CHURN*a)*CAC; tot+=op-acq; prev=e
+        rows.append((i,route,rev/CR,op/CR,(op-acq)/CR,wc/CR))
+    print(f"\n five-year {label}")
+    for r in rows: print(" Y%d %-7s rev %.2f op %+.2f after acq %+.2f wc %.2f"%r)
+    print(" cumulative after acquisition %.2f"%(tot/CR))
+five([1.5]*5, label='A: AI ₹1.50 flat')
+five([1.5,1.5,1.0,0.75,0.5], label='B: AI falls to ₹0.50')
+five([1.5,1.5,1.0,0.75,0.5], own_from=9, label='C: AI falls, partner route only')
