@@ -1,63 +1,65 @@
-# 1Heath business model v5 (24 Nov 2026), on the founder's clarified model:
-# small clinics earn mainly from their own pharmacy counter (MRP less buying price); 1Heath lowers the clinic's buying
-# price for medicines, surgical items, injections and IV fluids; the doctor pays a membership under ₹500 a month that
-# includes the scribe, the record, the safety checks and supply membership. Costs are a full sheet by year (people,
-# servers, security, hardware, software, legal, insurance, office, launch), not a single team line.
-# Supply in two stages: 'partner' (licensed stockist holds stock, pays 1Heath a fixed fee per order) then 'own'
-# (1Heath's own wholesale licence, buying and reselling as principal). All inputs are our assumptions unless the
-# business page names a source. Earlier versions are kept for the record.
-CR=1e7; L=1e5; GST=1.18; VISITS=9000; PAYFEE=0.0236
+# 1Heath business model v6 (24 Nov 2026), after the second outside review (Gemini and ChatGPT), checked at source.
+# Changes from v5: medicine sales counted in full as revenue when 1Heath owns the stock (Ind AS 115, principal);
+# money tied up in stock counted on doctors at year end, at 60 to 75 days (Entero ran 68 days in FY26);
+# lower inputs: share of doctors paying, clinics with a counter that order, monthly buying, shares, fee per order,
+# labs; 7,500 scribed visits a doctor a year in the plan case; higher pay for clinical and senior staff; a line for
+# medical-device software compliance (CDSCO guidance of July 2026); a slower ramp to 10,000 doctors in year 5.
+CR=1e7; L=1e5; GST=1.18; PAYFEE=0.0236
+# Two cases. 'founder': what the founder heard from doctors in the field. 'cautious': the outside reviewers' corrections.
 cases={
- 'conservative':dict(price=299,pay=0.4,clinics=0.4,buy=50000,p_share=0.30,orders=6,fee=100,own_share=0.15,gross=0.09,dist=0.12,wc=75,labs=25,lab_m=10000,ai=3.09,wa=102),
- 'plan':        dict(price=299,pay=0.7,clinics=0.7,buy=150000,p_share=0.60,orders=8,fee=150,own_share=0.35,gross=0.13,dist=0.09,wc=45,labs=40,lab_m=25000,ai=1.50,wa=51),
+ 'founder': dict(price=299,pay=0.7,clinics=0.7,buy=150000,p_share=0.60,orders=8,fee=100,own_share=0.35,gross=0.13,dist=0.10,wc=60,labs=40,lab_m=15000,ai=1.50,visits=9000,wa=51),
+ 'cautious':dict(price=299,pay=0.6,clinics=0.5,buy=100000,p_share=0.50,orders=6,fee=75,own_share=0.25,gross=0.13,dist=0.10,wc=60,labs=30,lab_m=15000,ai=1.50,visits=7500,wa=51),
 }
-# full cost sheet by year: (average people, cost per person ₹ lakh a year) and other costs in ₹ lakh a year
-people={'Engineering, AI and data':([6,12,20,30,40],20),'Clinical team (doctors, pharmacist, safety lead)':([2,3,5,7,9],25),
-        'Field sales and clinic onboarding':([1,6,15,30,50],6),'Support for doctors and pharmacies':([1,4,10,20,35],4.5),
-        'Management, finance and admin':([1,2,4,6,8],15)}
-other={'Cloud servers and storage (AI per visit counted separately)':[10,25,60,120,220],'Security audits, privacy and certifications':[10,20,30,40,50],
-       'Hardware: test phones, laptops':[10,10,15,25,35],'Software and tools':[5,10,20,35,55],'Legal and accounts':[15,25,35,45,60],
-       'Insurance: cyber, liability, directors':[3,8,15,25,35],'Office':[6,15,30,50,80],'Launch, events, institution visits, marketing':[15,60,120,200,300]}
-def fixed(y):
-    return sum(n[y-1]*c for n,c in people.values())*L + sum(v[y-1] for v in other.values())*L
+RAMP={'founder':[100,1000,4000,10000,20000],'cautious':[100,1000,3000,6000,10000]}
+people={'Engineering, AI and data':([6,12,18,26,34],20),'Clinical team (doctors, pharmacist, safety lead)':([2,3,5,6,8],35),
+        'Field sales and clinic onboarding':([1,6,12,20,30],6),'Support for doctors and pharmacies':([1,4,8,14,22],4.5),
+        'Management, finance and admin':([1,2,3,5,6],40)}
+other={'Cloud servers and storage':[10,25,50,90,140],'Security, privacy, medical-device software compliance':[20,60,70,80,90],
+       'Hardware':[10,10,15,20,25],'Software and tools':[5,10,18,28,40],'Legal and accounts':[20,30,40,50,60],
+       'Insurance':[3,8,12,18,25],'Office':[6,15,25,40,60],'Launch, events, institution visits, marketing':[15,60,100,150,200]}
+def fixed(y): return sum(n[y-1]*c for n,c in people.values())*L + sum(v[y-1] for v in other.values())*L
 def year(c,route,d=1000,ai=None):
     ai=c['ai'] if ai is None else ai
-    subs=d*c['pay']*c['price']/GST*12
-    lab=c['labs']*d/1000*c['lab_m']*12
+    subs=d*c['pay']*c['price']/GST*12; lab=c['labs']*d/1000*c['lab_m']*12
     if route=='own':
-        sales=d*c['clinics']*c['buy']*c['own_share']*12; supply=sales*c['gross']; dist=sales*c['dist']; wc=sales/365*c['wc']
+        sales=d*c['clinics']*c['buy']*c['own_share']*12; gp=sales*c['gross']; dist=sales*c['dist']; fees=0
     else:
-        sales=d*c['clinics']*c['buy']*c['p_share']*12; supply=d*c['clinics']*c['orders']*12*c['fee']; dist=0; wc=0
-    rev=subs+supply+lab; aic=d*VISITS*ai; wa=d*c['wa']*12; pay=d*c['pay']*c['price']*12*PAYFEE
-    return dict(subs=subs,sales=sales,supply=supply,lab=lab,rev=rev,dist=dist,ai=aic,wapay=wa+pay,var=dist+aic+wa+pay,wc=wc)
+        sales=d*c['clinics']*c['buy']*c['p_share']*12; gp=0; dist=0; fees=d*c['clinics']*c['orders']*12*c['fee']
+    rev_full=subs+lab+fees+(sales if route=='own' else 0)        # revenue as reported (Ind AS 115)
+    contrib_in=subs+lab+fees+gp                                    # what 1Heath keeps before its own costs
+    aic=d*c['visits']*ai; wa=d*c['wa']*12; pay=d*c['pay']*c['price']*12*PAYFEE
+    var=dist+aic+wa+pay
+    return dict(subs=subs,lab=lab,fees=fees,sales=sales,gp=gp,rev=rev_full,keep=contrib_in,dist=dist,ai=aic,wapay=wa+pay,var=var)
+def wc(c,d): return d*c['clinics']*c['buy']*c['own_share']*12/365*c['wc']
 if __name__=='__main__':
-    print('cost sheet, ₹ crore:')
-    for y in range(1,6): print(f' year {y}: {fixed(y)/CR:.2f}')
-    for k,(n,c) in people.items(): print(f'  {k}: year 2 {n[1]} people, {n[1]*c/100:.2f} cr')
-    for k,v in other.items(): print(f'  {k}: year 2 {v[1]/100:.2f} cr')
+    for y in range(1,6): print(f'fixed year {y}: {fixed(y)/CR:.2f} cr; people {sum(n[y-1] for n,_ in people.values())}')
+    for k,(n,c) in people.items(): print(f'  {k}: {n[1]} × ₹{c}L = {n[1]*c/100:.2f}')
+    for k,v in other.items(): print(f'  {k}: {v[1]/100:.2f}')
     F=fixed(2)
     for n,c in cases.items():
         for r in ('partner','own'):
-            y=year(c,r); res=y['rev']-y['var']-F; con=(y['rev']-y['var'])/1000
-            print(f'\n{n}/{r} @1000: '+', '.join(f'{k} {v/CR:.2f}' for k,v in y.items())+f', fixed {F/CR:.2f}, result {res/CR:+.2f}; contribution/doctor/month ₹{con/12:,.0f}; breakeven {F/con if con>0 else float("nan"):,.0f}')
-    # clinic's gain (plan and conservative)
+            y=year(c,r); res=y['keep']-y['var']-F; con=(y['keep']-y['var'])/1000
+            print(f'\n{n}/{r}: '+', '.join(f'{k} {v/CR:.2f}' for k,v in y.items())+f' | fixed {F/CR:.2f} result {res/CR:+.2f} | per doctor/mo ₹{con/12:,.0f} | breakeven {F/con if con>0 else float("nan"):,.0f} | wc {wc(c,1000)/CR:.2f}')
     for n,c in cases.items():
-        moved=c['buy']*c['p_share']; print(f'\n{n}: clinic moves ₹{moved:,.0f} a month; at 5% lower buying price it keeps ₹{moved*0.05:,.0f} more; membership with GST ₹{c["price"]:.0f}')
-    ends=[100,1000,4000,10000,20000]; avgs=[50,550,2500,7000,15000]
-    def five(ai_path,own_from=4,label=''):
-        tot=0; print('\nfive-year',label)
-        for i,(e,a) in enumerate(zip(ends,avgs),1):
-            c=cases['plan']; r='own' if i>=own_from else 'partner'; y=year(c,r,d=a,ai=ai_path[i-1])
-            rev,var=(0,y['ai']+y['wapay']) if i==1 else (y['rev'],y['var']); wc=0 if i==1 else y['wc']
-            res=rev-var-fixed(i); tot+=res
-            print(f' Y{i} {r:7s} doctors {e:>6,} rev {rev/CR:6.2f} var {var/CR:6.2f} fixed {fixed(i)/CR:6.2f} result {res/CR:+6.2f} wc {wc/CR:5.2f}')
-        print(f' cumulative {tot/CR:+.2f}')
-    five([1.5,1.5,1.0,0.75,0.5],label='A plan: AI falls, own stock from year 4')
-    five([1.5]*5,label='B: AI stays ₹1.50')
-    five([1.5,1.5,1.0,0.75,0.5],own_from=9,label='C: partner only')
-    c=cases['plan']; base=year(c,'partner')
-    def r(route,**k): c2=dict(c,**k); y=year(c2,route); return (y['rev']-y['var']-fixed(2))/CR
+        moved=c['buy']*c['p_share']; print(f'{n}: ordered ₹{moved:,.0f}/mo, 5% saving ₹{moved*0.05:,.0f}')
+    def five(case,ai_path,own_from=4,label=''):
+        ends=RAMP[case]; starts=[0]+ends[:-1]
+        tot=0; worst=0; print('\nfive-year',case,label)
+        for i in range(1,6):
+            c=cases[case]; r='own' if i>=own_from else 'partner'; a=(starts[i-1]+ends[i-1])/2
+            y=year(c,r,d=a,ai=ai_path[i-1])
+            keep,var,rev=(0,y['ai']+y['wapay'],0) if i==1 else (y['keep'],y['var'],y['rev'])
+            res=keep-var-fixed(i); tot+=res; worst=min(worst,tot)
+            w=wc(c,ends[i-1]) if r=='own' else 0
+            print(f' Y{i} {r:7s} end {ends[i-1]:>6,} revenue {rev/CR:7.2f} kept {keep/CR:6.2f} var {var/CR:6.2f} fixed {fixed(i)/CR:6.2f} result {res/CR:+6.2f} cum {tot/CR:+7.2f} wc_end {w/CR:6.2f}')
+        print(f' cumulative {tot/CR:+.2f}; deepest {worst/CR:+.2f}')
+    for cs in cases:
+        five(cs,[1.5,1.5,1.0,0.75,0.5],label='own stock from year 4, AI falls')
+        five(cs,[1.5]*5,label='AI flat')
+        five(cs,[1.5,1.5,1.0,0.75,0.5],own_from=9,label='partner only')
+    c=cases['founder']
+    def r(route,**k): y=year(dict(c,**k),route); return (y['keep']-y['var']-fixed(2))/CR
     b={x:r(x) for x in ('partner','own')}
-    print('\nlevers @1000 plan')
-    for route,k,v in [('partner','price',199),('partner','price',499),('partner','pay',0.5),('own','gross',0.10),('own','gross',0.16),('own','own_share',0.20),('own','own_share',0.50),('partner','fee',100),('partner','fee',250),('partner','ai',1.0),('own','dist',0.11)]:
+    print('\nlevers')
+    for route,k,v in [('own','gross',0.16),('own','gross',0.10),('own','own_share',0.40),('partner','fee',150),('partner','ai',1.0),('partner','price',499),('partner','price',199),('own','dist',0.12),('partner','visits',9000),('partner','labs',40)]:
         print(f' {route} {k}={v}: {r(route,**{k:v})-b[route]:+.2f}')
