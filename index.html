@@ -334,6 +334,9 @@ a.cite{font-size:.7em;font-weight:700;text-decoration:none;padding:0 .12em;verti
 .refs a{overflow-wrap:anywhere;font-weight:700}
 
 /* ---------- pager ---------- */
+.partnav{margin-top:3rem;padding:1.1rem 1.25rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--wash)}
+.partnav ol{font-size:var(--s-sm);margin:.6rem 0 .7rem;padding-left:1.3rem;display:grid;gap:.3rem}
+.partnav a[aria-current=page]{font-weight:700;color:var(--ink);text-decoration:none}
 .pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--rule)}
 .pager a{display:flex;flex-direction:column;gap:.2rem;border:1px solid var(--rule);border-radius:var(--radius);padding:1rem 1.15rem;text-decoration:none;color:var(--ink);font-family:var(--f-display);font-size:1.15rem;font-weight:600;line-height:1.3;min-width:0;background:var(--surface)}
 .pager a:hover{border-color:var(--rx);color:var(--rx-strong)}
@@ -525,6 +528,8 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 @media (max-width:350px){.menu a{padding:.45rem .3rem;font-size:.875rem}.brand .mark{display:none}}
 .axis div:last-child{gap:.5rem;flex-wrap:wrap}
 .meta .pill{align-self:center}
+
+[id]{scroll-margin-top:7rem}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Pawan Kalyan", "alternateName": "Pavan Kumar Gurram", "url": "https://pawankalyan.dev/", "image": "https://pawankalyan.dev/pawan-kalyan.jpg", "jobTitle": "ML/AI Engineer \u00b7 Founder, 1Heath", "sameAs": ["https://github.com/pawankalyan-gurram", "https://www.linkedin.com/in/pavankumar-gurram/", "https://www.instagram.com/pawan_kalyan.official/"]}</script>
 </head>
@@ -607,8 +612,8 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 <section id="explore" aria-labelledby="explore-h">
   <h2 id="explore-h">Explore</h2>
   <div class="doors">
-    <div class="door"><div><h3><a href="1heath.html">1Heath</a></h3><p>The product end to end: the problem, the solution, how it is built and kept safe, how it reaches doctors, and how it earns.</p></div>
-      <ul><li><a href="1heath-india-problems.html">India's healthcare problems, and 1Heath's answer to each</a></li><li><a href="1heath-solution.html">The solution, in one visit</a></li><li><a href="1heath-architecture.html">How it is built</a></li><li><a href="1heath-supply.html">Medicine supply and inventory</a></li><li><a href="1heath-business.html">Business model</a></li><li><a href="1heath-revenue.html">Revenue model</a></li></ul></div>
+    <div class="door"><div><h3><a href="1heath.html">1Heath</a></h3><p>Twenty pages in five parts: the problem, the product, safety and law, the business, and what comes next.</p></div>
+      <ul><li><a href="1heath.html#part-problem">The problem: what goes wrong and how much it costs</a></li><li><a href="1heath.html#part-product">The product: what it does and how it is built</a></li><li><a href="1heath.html#part-law">Safety and law: data, licences and launch</a></li><li><a href="1heath.html#part-business">The business: who gains, who pays, how it grows</a></li><li><a href="1heath-roadmap.html">What comes next</a></li></ul></div>
     <div class="door"><div><h3><a href="india-health.html">Indian Healthcare</a></h3><p>The ground reality in numbers: what Indians die of, how many doctors and beds there are, who pays, and why people fall ill.</p></div>
       <ul><li><a href="india-health.html#deaths">How many Indians die, and of what</a></li><li><a href="india-health-workforce.html">Doctors, nurses and beds: does India have enough?</a></li><li><a href="india-health-schemes.html">Government health schemes, step by step</a></li><li><a href="india-food-and-health.html">Why Indians fall ill: food, habits and the system</a></li><li><a href="india-medicines.html">Medicines, antibiotics and prices</a></li></ul></div>
     <div class="door"><div><h3><a href="health-systems-compared.html">World Healthcare</a></h3><p>What other countries do better, why, and what India can take from them, and teach them.</p></div>

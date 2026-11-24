@@ -334,6 +334,9 @@ a.cite{font-size:.7em;font-weight:700;text-decoration:none;padding:0 .12em;verti
 .refs a{overflow-wrap:anywhere;font-weight:700}
 
 /* ---------- pager ---------- */
+.partnav{margin-top:3rem;padding:1.1rem 1.25rem;border:1px solid var(--rule);border-radius:var(--radius);background:var(--wash)}
+.partnav ol{font-size:var(--s-sm);margin:.6rem 0 .7rem;padding-left:1.3rem;display:grid;gap:.3rem}
+.partnav a[aria-current=page]{font-weight:700;color:var(--ink);text-decoration:none}
 .pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--rule)}
 .pager a{display:flex;flex-direction:column;gap:.2rem;border:1px solid var(--rule);border-radius:var(--radius);padding:1rem 1.15rem;text-decoration:none;color:var(--ink);font-family:var(--f-display);font-size:1.15rem;font-weight:600;line-height:1.3;min-width:0;background:var(--surface)}
 .pager a:hover{border-color:var(--rx);color:var(--rx-strong)}
@@ -525,6 +528,8 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 @media (max-width:350px){.menu a{padding:.45rem .3rem;font-size:.875rem}.brand .mark{display:none}}
 .axis div:last-child{gap:.5rem;flex-wrap:wrap}
 .meta .pill{align-self:center}
+
+[id]{scroll-margin-top:7rem}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "1Heath", "applicationCategory": "MedicalApplication", "operatingSystem": "Android", "author": {"@type": "Person", "name": "Pawan Kalyan", "alternateName": "Pavan Kumar Gurram", "url": "https://pawankalyan.dev/", "image": "https://pawankalyan.dev/pawan-kalyan.jpg"}}</script>
 </head>
@@ -535,7 +540,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
   <ol class="crumbs"><li><a href="index.html">Home</a></li><li aria-current="page">1Heath</li></ol>
   <h1>1Heath: The Visit Writes the History</h1>
   <p class="dek">A medical scribe and shared record for India's small clinics. The doctor talks; 1Heath writes a checked note and prescription in the doctor's language; the doctor slides to sign; the record follows the patient.</p>
-  <p class="meta"><span class="pill wip">Working demo, not yet in clinics</span><span>By <a href="index.html">Pawan Kalyan</a>, founder</span><span>Updated 21 November 2026</span></p>
+  <p class="meta"><span class="pill wip">Working demo, not yet in clinics</span><span>By <a href="index.html">Pawan Kalyan</a>, founder</span><span>Updated 25 November 2026</span></p>
 </div></div>
 
 <main id="main" class="pad"><div class="wide hub">
@@ -556,17 +561,6 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <div><dt>Who is building it</dt><dd>Pawan Kalyan, a senior AI/ML and full-stack engineer, built the working Doctor app himself. Planned clinical advisors, by speciality: a physician with an MD in general medicine, who is to be the first to use it in his clinic; a paediatrician; and two younger doctors, one training in gynaecology. A small engineering team is planned once the company is funded.</dd></div>
     <div><dt>What we need</dt><dd>General physicians, paediatricians and gynaecologists willing to try it in their clinic; pharmacists; and a first investor who sees healthcare as a service. <a href="index.html#contact">Get in touch</a>.</dd></div>
   </dl>
-  <div class="table-wrap"><table class="stack compact">
-    <thead><tr><th scope="col">Part of 1Heath</th><th scope="col">Status today</th></tr></thead>
-    <tbody>
-      <tr><td>Doctor app: listen, draft, check, sign, PDF</td><td data-label="Status">Works end to end as a demo on an Android phone. Tested on simulated consultations only; no real patients yet</td></tr>
-      <tr><td>Desk, Pharmacy and Patient apps</td><td data-label="Status">Designed, with a clickable prototype; not built</td></tr>
-      <tr><td>Shared record server in India</td><td data-label="Status">Designed; not built. The demo keeps its data on the phone</td></tr>
-      <tr><td>ABHA and ABDM record sharing</td><td data-label="Status">Planned; not started</td></tr>
-      <tr><td>Medicine ordering and lab booking</td><td data-label="Status">Designed; starts only after a lawyer's opinion</td></tr>
-      <tr><td>Company, licences and certifications</td><td data-label="Status">Not yet incorporated; see <a href="1heath-launch.html">launch readiness</a></td></tr>
-    </tbody>
-  </table></div>
   <figure class="fig">
     <ol class="flowchart" style="--n:5">
       <li><span class="k">Desk</span><b>Register and consent</b><span>Patient found or registered, ABHA linked, consent to record, vitals</span></li>
@@ -581,21 +575,17 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 
 <section id="paths" aria-labelledby="paths-h">
   <h2 id="paths-h">Start Here: Pick Your Path</h2>
-  <p>Every page stands on its own. These orders read best for each kind of visitor.</p>
+  <p>Every page stands on its own and opens with an In Short box. For a quick read, open each page below and read only that box; go further where you want the detail.</p>
   <div class="cards paths">
-    <div class="card"><span class="num">Investor · about 20 minutes</span><h3>Is This a Business?</h3><ol class="small">
+    <div class="card"><span class="num">Investor · about 20 minutes of In Short boxes</span><h3>Is This a Business?</h3><ol class="small">
       <li><a href="1heath-india-problems.html">The big picture: 15 problems, 15 answers</a></li>
-      <li><a href="1heath-problem.html">The problem</a></li>
       <li><a href="1heath-solution.html">The solution</a></li>
+      <li><a href="1heath-viewpoints.html">Doctor, clinic, hospital and patient</a></li>
+      <li><a href="1heath-business.html">The numbers: costs, both cases, five years</a></li>
+      <li><a href="1heath-supply.html">Medicine supply, where most revenue comes from</a></li>
       <li><a href="1heath-go-to-market.html">How doctors adopt it</a></li>
-      <li><a href="1heath-supply.html">Medicine supply and inventory</a></li>
-      <li><a href="1heath-viewpoints.html">Doctor, clinic, hospital and patient points of view</a></li>
-      <li><a href="1heath-business.html">Business model, worked step by step</a></li>
-      <li><a href="1heath-revenue.html">Revenue model and benchmarks</a></li>
       <li><a href="1heath-legal.html">Legal, licences and their cost</a></li>
-      <li><a href="1heath-finance.html">Funding, tax and grey zones</a></li>
-      <li><a href="1heath-launch.html">Launch readiness</a></li>
-      <li><a href="1heath-roadmap.html">Roadmap</a></li></ol></div>
+      <li><a href="1heath-roadmap.html">Roadmap and the company</a></li></ol></div>
     <div class="card"><span class="num">Engineer · about 25 minutes</span><h3>How Is It Built?</h3><ol class="small">
       <li><a href="1heath-design.html">Four apps, one record</a></li>
       <li><a href="1heath-architecture.html">Architecture</a></li>
@@ -640,6 +630,10 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
         <tr><td>Pharmacy app</td><td data-label="What it does">Receives the signed prescription, dispenses exactly what was signed</td><td data-label="Status"><span class="tag">Designed</span></td></tr>
         <tr><td>Patient and family app</td><td data-label="What it does">Visit summary, reminders, family record, emergency card</td><td data-label="Status"><span class="tag">Designed</span></td></tr>
         <tr><td>Booking page</td><td data-label="What it does">A public page per doctor to book a token</td><td data-label="Status"><span class="tag">Designed</span></td></tr>
+        <tr><td>Shared record server in India</td><td data-label="What it does">Holds the record so it follows the patient. The demo keeps its data on the phone</td><td data-label="Status"><span class="tag">Designed</span></td></tr>
+        <tr><td>ABHA and ABDM record sharing</td><td data-label="What it does">Links the patient's government health ID and shares records with consent</td><td data-label="Status"><span class="tag">Planned</span></td></tr>
+        <tr><td>Medicine ordering and lab booking</td><td data-label="What it does">Clinic pharmacies order through partner stockists; patients pick any lab</td><td data-label="Status"><span class="tag">Designed; Starts After a Lawyer's Opinion</span></td></tr>
+        <tr><td>Company, licences and certifications</td><td data-label="What it does">Incorporation, registrations and certifications (see <a href="1heath-launch.html">launch readiness</a>)</td><td data-label="Status"><span class="tag">Not Started</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -647,38 +641,41 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 </section>
 
 <section id="read" aria-labelledby="read-h">
-  <h2 id="read-h">The Full Story, Section by Section</h2>
-  <p class="muted small">Nineteen short pages in four parts. Each card is a summary; open it for the detail, sources and figures.</p>
-  <h3 class="group">Why: The Problem and Its Size</h3>
+  <h2 id="read-h">The Full Story, Part by Part</h2>
+  <p class="muted small">Twenty pages in five parts, in reading order. Each page opens with an In Short box; the Previous and Next links at the bottom of every page follow this order.</p>
+  <h3 class="group" id="part-problem">The Problem: What Goes Wrong and How Much It Costs</h3>
   <div class="cards">
     <a class="card" href="1heath-india-problems.html"><span class="num">01 · The big picture</span><h3>India's Healthcare Problems, and What 1Heath Does About Each</h3><p>Fifteen problems in clinics, pharmacies, labs and homes; every kind of hospital and system of medicine; and what software cannot fix.</p><span class="go">See all fifteen →</span></a>
     <a class="card" href="1heath-problem.html"><span class="num">02 · Problem</span><h3>Doctors Treat Patients Without Their History</h3><p>Two-minute visits, paper slips, care split across clinics and systems of medicine, and no shared record.</p><span class="go">Read the problem →</span></a>
     <a class="card" href="1heath-burden.html"><span class="num">03 · Burden</span><h3>How Much Harm It Causes</h3><p>Deaths and severe harm from medication errors caused by missing history, worked out step by step with ranges and sources.</p><span class="go">See the estimate →</span></a>
     <a class="card" href="1heath-impact.html"><span class="num">04 · Impact</span><h3>What Changes When the History Is There</h3><p>Harm avoided per 1,000 doctors, at scale and nationally, and how the system changes.</p><span class="go">See the impact →</span></a>
   </div>
-  <h3 class="group">What: The Product</h3>
+  <h3 class="group" id="part-product">The Product: What 1Heath Does and How It Is Built</h3>
   <div class="cards">
     <a class="card" href="1heath-solution.html"><span class="num">05 · Solution</span><h3>The Visit Writes the History</h3><p>How 1Heath answers each root cause, the alternatives we compared, and why this design.</p><span class="go">Read the solution →</span></a>
     <a class="card" href="1heath-design.html"><span class="num">06 · Product design</span><h3>Four Apps, One Record</h3><p>Design principles, what each app shows, what never crosses between them, and a clickable prototype.</p><span class="go">See the design →</span></a>
     <a class="card" href="1heath-medicine-systems.html"><span class="num">07 · Systems of medicine</span><h3>Allopathy, Ayurveda, Homeopathy, One Record</h3><p>About half of Indians use a traditional system. How 1Heath records it fairly and safely.</p><span class="go">Read more →</span></a>
-  </div>
-  <h3 class="group">How: The Technology and the Law</h3>
-  <div class="cards">
     <a class="card" href="1heath-models-data.html"><span class="num">08 · Models and data</span><h3>How the AI Works and How Far to Trust It</h3><p>Which models, what test data, what we measured, and what synthetic tests cannot tell us.</p><span class="go">Read more →</span></a>
     <a class="card" href="1heath-architecture.html"><span class="num">09 · Architecture</span><h3>The High-Level Design</h3><p>Components, the path of one consultation, running cost and the technology stack.</p><span class="go">Read the design →</span></a>
+  </div>
+  <h3 class="group" id="part-law">Safety and Law: Data, Licences and Launch</h3>
+  <div class="cards">
     <a class="card" href="1heath-security-privacy.html"><span class="num">10 · Security and privacy</span><h3>How Patient Data Is Protected</h3><p>Who sees what, consent-based sharing, patient rights, threats and the laws that apply.</p><span class="go">Read more →</span></a>
     <a class="card" href="1heath-legal.html"><span class="num">11 · Legal and certifications</span><h3>What the Law Requires, and What It Costs</h3><p>Whether 1Heath is a medical device, patient-data duties, joining ABDM, signatures, certifications, complaints and liability, and the first-year cost.</p><span class="go">See the legal map →</span></a>
     <a class="card" href="1heath-simple-compliance.html"><span class="num">12 · Compliance made simple</span><h3>Every User, Every Feature, Kept Simple</h3><p>The lawful simplifications we use, the shortcuts we refuse, consent in ten seconds, and what each user and feature must meet.</p><span class="go">See how it stays simple →</span></a>
+    <a class="card" href="1heath-launch.html"><span class="num">13 · Launch readiness</span><h3>Everything Else a Real Launch Needs</h3><p>App store rules for health apps, SMS and WhatsApp, payments, hiring, ethics approval, accessibility, the documents to write, and the whole launch in order.</p><span class="go">See the launch checklist →</span></a>
   </div>
-  <h3 class="group">The Business</h3>
+  <h3 class="group" id="part-business">The Business: Who Gains, Who Pays, How It Grows</h3>
   <div class="cards">
-    <a class="card" href="1heath-viewpoints.html"><span class="num">13 · Four points of view</span><h3>Doctor, Clinic, Hospital, Patient</h3><p>What goes wrong for each today, what 1Heath gives them, what each pays and when, and how we decide when their interests clash.</p><span class="go">See all four →</span></a>
-    <a class="card" href="1heath-go-to-market.html"><span class="num">14 · Go to market</span><h3>Doctors First, Then Patients</h3><p>Who adopts first, where we meet them, the funnel in numbers, and what the pilot must prove.</p><span class="go">Read more →</span></a>
-    <a class="card" href="1heath-supply.html"><span class="num">15 · Medicine supply</span><h3>How Clinics Will Order, with No Warehouse</h3><p>The supply chain, the law, the model stage by stage, what a warehouse would cost, ten use cases and the edge cases.</p><span class="go">See the supply model →</span></a>
-    <a class="card" href="1heath-business.html"><span class="num">16 · Business model</span><h3>Business Model, Worked Step by Step</h3><p>How small clinics earn, the doctor membership, every cost, one year at 1,000 doctors, a five-year path, and the firewall between money and medicine.</p><span class="go">See the numbers →</span></a>
-    <a class="card" href="1heath-revenue.html"><span class="num">17 · Revenue model</span><h3>Who Pays, and What Similar Companies Earn</h3><p>Every payer, the stages that unlock revenue, Indian benchmarks, and the fee 1Heath needs to cover its costs.</p><span class="go">See the revenue model →</span></a>
-    <a class="card" href="1heath-finance.html"><span class="num">18 · Finance</span><h3>Funding, Tax and the Money Ground Reality</h3><p>The funding market, which grants are open, the new Income-tax Act, GST and the doctor's view of price, and the grey zones where money meets medicine.</p><span class="go">See the finance page →</span></a>
-    <a class="card" href="1heath-launch.html"><span class="num">19 · Launch readiness</span><h3>Everything Else a Real Launch Needs</h3><p>App store rules for health apps, SMS and WhatsApp, payments, hiring, ethics approval, accessibility, the documents to write, and the whole launch in order.</p><span class="go">See the launch checklist →</span></a>
+    <a class="card" href="1heath-viewpoints.html"><span class="num">14 · Four points of view</span><h3>Doctor, Clinic, Hospital, Patient</h3><p>What goes wrong for each today, what 1Heath gives them, what each pays and when, and how we decide when their interests clash.</p><span class="go">See all four →</span></a>
+    <a class="card" href="1heath-business.html"><span class="num">15 · Business model</span><h3>The Numbers, Worked Step by Step</h3><p>How small clinics earn, the doctor membership, every cost of building and running 1Heath, one year at 1,000 doctors, both cases, a five-year path, and the firewall between money and medicine.</p><span class="go">See the numbers →</span></a>
+    <a class="card" href="1heath-revenue.html"><span class="num">16 · Who pays</span><h3>Who Pays 1Heath, and What Similar Companies Earn</h3><p>Every payer and what each pays for, what 1Heath will never earn from, the stages that unlock revenue, and Indian benchmarks.</p><span class="go">See who pays →</span></a>
+    <a class="card" href="1heath-supply.html"><span class="num">17 · Medicine supply</span><h3>How Clinics Will Order, with No Warehouse</h3><p>The supply chain, the law, the model stage by stage, what a warehouse would cost, ten use cases and the edge cases.</p><span class="go">See the supply model →</span></a>
+    <a class="card" href="1heath-go-to-market.html"><span class="num">18 · Go to market</span><h3>Doctors First, Then Patients</h3><p>Who adopts first, where we meet them, the funnel in numbers, and what the pilot must prove.</p><span class="go">Read more →</span></a>
+    <a class="card" href="1heath-finance.html"><span class="num">19 · Finance</span><h3>Funding, Tax and the Money Ground Reality</h3><p>The funding market, which grants are open, the new Income-tax Act, GST and the doctor's view of price, and the grey zones where money meets medicine.</p><span class="go">See the finance page →</span></a>
+  </div>
+  <h3 class="group" id="part-next">What Comes Next</h3>
+  <div class="cards">
     <a class="card" href="1heath-roadmap.html"><span class="num">20 · Roadmap</span><h3>From Scribe to Health Research Company</h3><p>Prevention features to come, and research on consented data that is never sold.</p><span class="go">See the roadmap →</span></a>
   </div>
 </section>
