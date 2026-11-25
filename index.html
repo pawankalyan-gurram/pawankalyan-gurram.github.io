@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>(function(){var d=document.documentElement;try{d.setAttribute('data-theme',localStorage.getItem('theme')==='dark'?'dark':'light')}catch(e){d.setAttribute('data-theme','light')}})();</script>
-<meta name="build" content="77b0d260419e"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
+<meta name="build" content="1fd042e22acf"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,600;1,6..72,500;1,6..72,600&display=swap">
 <style>/* pawankalyan.dev design system, v2 (17 Nov 2026)
    Paper and ink of a prescription; one accent, the green of an Indian chemist's cross.
@@ -546,7 +546,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
   <div class="intro-text">
     <p class="nameline"><b>Pawan Kalyan</b><span>ML/AI Engineer · Founder, 1Heath</span></p>
     <h1>No Doctor in India Should Have to Treat a Patient Blind</h1>
-    <p class="lede">I'm building <a href="1heath.html">1Heath</a>: it listens to the consultation in English and 22 Indian languages, writes a checked prescription for the doctor to sign, and keeps the history for the next doctor, the pharmacy and the family.</p>
+    <p class="lede">I'm building <a href="1heath.html">1Heath</a>: it listens to the consultation (the speech service handles English and 22 Indian languages; we have tested Hindi and Telugu), writes a checked prescription for the doctor to sign, and keeps the history for the next doctor, the pharmacy and the family.</p>
     <p class="creds"><span>Zoho <i>Member of Technical Staff</i></span><span>DRDO <i>Intern</i></span><span>1Heath <i>Founder</i></span></p>
     <div class="btns">
       <a class="btn primary" href="1heath.html">See how 1Heath works</a>
@@ -582,7 +582,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
       </ul>
       <div class="btns">
         <a class="btn primary" href="1heath.html">Explore 1Heath</a>
-        <a class="btn" href="1heath-india-problems.html">21 problems, 21 answers</a>
+        <a class="btn" href="1heath-india-problems.html">23 problems, 23 answers</a>
         <a class="btn" href="1heath-prototype.html">Try the prototype</a>
       </div>
       <p class="built muted small">Built with Flutter, Kotlin, Python, speech recognition and language models.</p>
