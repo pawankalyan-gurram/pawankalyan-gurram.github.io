@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>(function(){var d=document.documentElement;try{d.setAttribute('data-theme',localStorage.getItem('theme')==='dark'?'dark':'light')}catch(e){d.setAttribute('data-theme','light')}})();</script>
-<meta name="build" content="e773262fe04e"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
+<meta name="build" content="d475bbefe71b"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,600;1,6..72,500;1,6..72,600&display=swap">
 <style>/* pawankalyan.dev design system, v2 (17 Nov 2026)
    Paper and ink of a prescription; one accent, the green of an Indian chemist's cross.
@@ -556,7 +556,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
       <tr><td>App stores</td><td data-label="Why">Health apps have their own Play rules, and the device question decides the listing</td><td data-label="Cost">US$25 once; D-U-N-S number free</td><td data-label="When">Before the first clinic installs</td></tr>
       <tr><td>Messages to patients</td><td data-label="Why">SMS needs registration with telecom operators; WhatsApp charges per message</td><td data-label="Cost">₹5,900 once; about ₹102 a doctor a month</td><td data-label="When">Before the first prescription is sent</td></tr>
       <tr><td>Where data lives</td><td data-label="Why">Patients and clinics will ask; payment data must stay in India</td><td data-label="Cost">None extra; India region chosen</td><td data-label="When">Already decided</td></tr>
-      <tr><td>Payments</td><td data-label="Why">Monthly subscriptions need an e-mandate with the bank's rules</td><td data-label="Cost">About 2.36% of each payment</td><td data-label="When">Before the first paid month</td></tr>
+      <tr><td>Payments</td><td data-label="Why">Monthly memberships need an e-mandate with the bank's rules</td><td data-label="Cost">About 2.36% of each payment</td><td data-label="When">Before the first paid month</td></tr>
       <tr><td>Hiring</td><td data-label="Why">The labour codes, provident fund, ESI and the harassment law apply at set team sizes</td><td data-label="Cost">Employer PF 12% of PF wages; ESI 3.25%</td><td data-label="When">From the first employee</td></tr>
       <tr><td>Raising money</td><td data-label="Why">Tax on investment, and benefits for recognised start-ups</td><td data-label="Cost">None</td><td data-label="When">Before the first cheque</td></tr>
       <tr><td>Ethics approval</td><td data-label="Why">Recording real consultations to test accuracy is research on people</td><td data-label="Cost">Ethics committee fee, to be quoted; registry free</td><td data-label="When">Before the first recording</td></tr>
@@ -579,7 +579,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
         <li>Either way, the answer is needed before the listing.</li>
       </ul></li>
     <li><b>Privacy policy:</b> a public web page, not a PDF, linked in Play Console and inside the app<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a>.</li>
-    <li><b>The demo:</b> the Android demo will be shared as a download link for testing with fictional patients only. Real clinics get 1Heath through Play.</li>
+    <li><b>The demo:</b> the Android demo is shared privately with named doctors and investors, for testing with fictional patients only, not as a public download. Real clinics get 1Heath through Play.</li>
   </ul>
 </section>
 
@@ -610,9 +610,9 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 <section id="payments" aria-labelledby="payments-h">
   <h2 id="payments-h">Getting Paid</h2>
   <ul>
-    <li><b>Recurring payments:</b> under RBI's e-mandate framework of April 2026, a subscription up to ₹15,000 can renew without an OTP once the customer has approved the mandate. The bank must give 24 hours' notice before each debit, and the customer can pause or cancel at any time<a class="cite" href="#ref-15" aria-label="Source 15">[15]</a>. A clinic subscription is far below the limit.</li>
+    <li><b>Recurring payments:</b> under RBI's e-mandate framework of April 2026, a subscription up to ₹15,000 can renew without an OTP once the customer has approved the mandate. The bank must give 24 hours' notice before each debit, and the customer can pause or cancel at any time<a class="cite" href="#ref-15" aria-label="Source 15">[15]</a>. A ₹199 to ₹299 membership is far below the limit.</li>
     <li><b>Gateway fee:</b> a standard payment-gateway plan charges 2% a transaction plus 18% GST<a class="cite" href="#ref-5" aria-label="Source 5">[5]</a>, so ₹23.60 on a ₹1,000 payment. On a percentage fee, monthly and annual billing cost the same; annual billing only cuts failed renewals.</li>
-    <li><b>Invoices:</b> 18% GST on the subscription; see the <a href="1heath-legal.html#company">legal page</a>.</li>
+    <li><b>Invoices:</b> 18% GST on the membership; see the <a href="1heath-legal.html#company">legal page</a>.</li>
   </ul>
 </section>
 
@@ -687,7 +687,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <tbody>
       <tr><td>Privacy notice, in plain language and in Indian languages</td><td data-label="For">Patients and doctors</td><td data-label="By">DPDP Act; the 2011 sensitive data rules, which already require a privacy policy<a class="cite" href="#ref-25" aria-label="Source 25">[25]</a>; Google Play<a class="cite" href="#ref-1" aria-label="Source 1">[1]</a></td></tr>
       <tr><td>Patient consent text, versioned</td><td data-label="For">Patients at the desk</td><td data-label="By">DPDP Act</td></tr>
-      <tr><td>Clinic subscription terms and data processing agreement</td><td data-label="For">Clinics</td><td data-label="By">DPDP Act; contract law</td></tr>
+      <tr><td>Clinic membership terms and data processing agreement</td><td data-label="For">Clinics</td><td data-label="By">DPDP Act; contract law</td></tr>
       <tr><td>Grievance and complaint policy, with a named officer</td><td data-label="For">Everyone</td><td data-label="By">DPDP Rules; the 2011 sensitive data rules until May 2027<a class="cite" href="#ref-25" aria-label="Source 25">[25]</a>; consumer law</td></tr>
       <tr><td>Breach and incident plan, with the CERT-In contact</td><td data-label="For">The team</td><td data-label="By">DPDP Rules; CERT-In directions</td></tr>
       <tr><td>Ethics protocol and consent forms</td><td data-label="For">Study patients and doctors</td><td data-label="By">Ethics committee; registry<a class="cite" href="#ref-3" aria-label="Source 3">[3]</a></td></tr>
