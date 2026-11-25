@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>(function(){var d=document.documentElement;try{d.setAttribute('data-theme',localStorage.getItem('theme')==='dark'?'dark':'light')}catch(e){d.setAttribute('data-theme','light')}})();</script>
-<meta name="build" content="73fab063f083"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
+<meta name="build" content="19a5143271da"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,600;1,6..72,500;1,6..72,600&display=swap">
 <style>/* pawankalyan.dev design system, v2 (17 Nov 2026)
    Paper and ink of a prescription; one accent, the green of an Indian chemist's cross.
@@ -276,6 +276,7 @@ small.block{display:block;font-size:.82rem;font-weight:400;margin-top:.1rem}
 .feature{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);padding:1.4rem;display:flex;flex-direction:column;gap:.8rem}
 details.more{border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);margin-top:1rem}
 details.more>summary{cursor:pointer;padding:.9rem 1.1rem;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+details.more>summary{overflow-wrap:anywhere;hyphens:auto;min-width:0}
 details.more>summary::-webkit-details-marker{display:none}
 details.more>summary::after{content:"+";color:var(--rx);font-weight:700}
 details.more[open]>summary::after{content:"\2212"}
@@ -604,6 +605,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
   <div class="cards paths">
     <div class="card"><span class="num">Investor · about 20 minutes of In Short boxes</span><h3>Is This a Business?</h3><ol class="small">
       <li><a href="#evidence">What is proven and what is assumed</a></li>
+      <li><a href="1heath-investor-faq.html">Investor questions, answered team by team</a></li>
       <li><a href="1heath-india-problems.html">The big picture: 15 problems, 15 answers</a></li>
       <li><a href="1heath-solution.html">The solution</a></li>
       <li><a href="1heath-viewpoints.html">Doctor, clinic, hospital and patient</a></li>
@@ -669,7 +671,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 
 <section id="read" aria-labelledby="read-h">
   <h2 id="read-h">The Full Story, Part by Part</h2>
-  <p class="muted small">Twenty pages in five parts, in reading order. Each page opens with an In Short box; the Previous and Next links at the bottom of every page follow this order.</p>
+  <p class="muted small">Twenty-one pages in six parts, in reading order. Each page opens with an In Short box; the Previous and Next links at the bottom of every page follow this order.</p>
   <h3 class="group" id="part-problem">The Problem: What Goes Wrong and How Much It Costs</h3>
   <div class="cards">
     <a class="card" href="1heath-india-problems.html"><span class="num">01 · The big picture</span><h3>India's Healthcare Problems, and What 1Heath Does About Each</h3><p>Fifteen problems in clinics, pharmacies, labs and homes; every kind of hospital and system of medicine; and what software cannot fix.</p><span class="go">See all fifteen →</span></a>
@@ -704,6 +706,10 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
   <h3 class="group" id="part-next">What Comes Next</h3>
   <div class="cards">
     <a class="card" href="1heath-roadmap.html"><span class="num">20 · Roadmap</span><h3>From Scribe to Health Research Company</h3><p>Prevention features to come, and research on consented data that is never sold.</p><span class="go">See the roadmap →</span></a>
+  </div>
+  <h3 class="group" id="part-faq">Investor Questions</h3>
+  <div class="cards">
+    <a class="card" href="1heath-investor-faq.html"><span class="num">21 · Investor questions</span><h3>Every Diligence Team's Questions, Answered</h3><p>Technical, clinical, commercial, finance, legal, market and team questions, each with a short answer, how proven it is, and a link to the detail.</p><span class="go">See the answers →</span></a>
   </div>
 </section>
 
