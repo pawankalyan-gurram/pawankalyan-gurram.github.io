@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="build" content="b3609994e63f"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
+<meta name="build" content="3fa87340f39c"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
 <title>1Heath prototype (design study) · Pawan Kalyan</title>
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -2992,10 +2992,10 @@ const I={
  tabCompliance:'M12 3l8 3v6c0 4.4-3.4 7.9-8 9-4.6-1.1-8-4.6-8-9V6l8-3zM8.8 12.2l2.2 2.2 4.2-4.4'};
 
 let WS=[
- {id:'rao',name:'Demo Clinic, Vanasthalipuram',short:'Demo Clinic',role:'General Physician',own:1,hours:'Mon–Sat · 10 am–1 pm, 6–9 pm',opens:10,closes:21,days:[1,2,3,4,5,6],session:'Morning OPD · 10:00–13:00 · evening 18:00–21:00',queue:'6 waiting',qTone:'warn',pending:'3 unsigned',
+ {id:'rao',name:'Demo Clinic, Lakeview Colony',short:'Demo Clinic',role:'General Physician',own:1,hours:'Mon–Sat · 10 am–1 pm, 6–9 pm',opens:10,closes:21,days:[1,2,3,4,5,6],session:'Morning OPD · 10:00–13:00 · evening 18:00–21:00',queue:'6 waiting',qTone:'warn',pending:'3 unsigned',
   lab:'Demo Clinic Lab is collecting samples until 18:00',bookable:1},
- {id:'yashoda',name:'Yashoda Hospital, Guntur',short:'Yashoda Hospital',role:'Consultant',hours:'Mon–Fri · 9 am–2 pm',opens:9,closes:14,days:[1,2,3,4,5],session:'Day OPD · 09:00–14:00',queue:'hospital-managed',qTone:'plain',
-  lab:'Yashoda central lab runs 24 hours · radiology until 21:00',bookable:0},
+ {id:'yashoda',name:'City Hospital, Guntur',short:'City Hospital',role:'Consultant',hours:'Mon–Fri · 9 am–2 pm',opens:9,closes:14,days:[1,2,3,4,5],session:'Day OPD · 09:00–14:00',queue:'hospital-managed',qTone:'plain',
+  lab:'City central lab runs 24 hours · radiology until 21:00',bookable:0},
  {id:'srisai',name:'Sri Sai Clinic, Tenali',short:'Sri Sai Clinic',role:'Visiting',hours:'Sun · 10 am–1 pm',opens:10,closes:13,days:[0],session:'Sunday OPD · 10:00–13:00',queue:'8 booked',qTone:'plain',
   lab:'Samples drawn next morning · results by noon',bookable:1}];
 // Demo Clinic is a shared desk - one receptionist, several doctors.
@@ -3055,7 +3055,7 @@ const STEPS=[
 {t:'10:45',who:'You',en:'Temperature is one hundred point nine.',ops:[{id:'temp',sec:'vit',label:'Temperature',detail:'100.9 °F',prov:'Measured · 10:45'}]},
 {t:'10:46',who:'Lakshmi',en:'I take Telma forty every day.',ops:[{id:'telma',sec:'med',label:'Telma 40',detail:'1 tablet · once daily',prov:'Patient-reported · 10:46',status:'Brand matched partially - confirm',tone:'warn'}]},
 {t:'10:46',who:'You',en:'Likely dengue - we will rule it out. CBC and NS1 today.',ops:[{id:'a1',sec:'ass',label:'Dengue fever',detail:'To be ruled out',prov:'Your assessment · 10:46'},{id:'a2',sec:'ass',label:'Acute viral illness',detail:'Working impression',prov:'Your assessment · 10:46'},{id:'p1',sec:'pln',label:'CBC, NS1 antigen',detail:'Today',prov:'Your order · 10:46'},{id:'p2',sec:'pln',label:'Oral hydration',detail:'3 litres per day',prov:'Your order · 10:46'},{id:'p3',sec:'pln',label:'Review',detail:'Tomorrow, or earlier if worse',prov:'Your order · 10:46'}]},
-{t:'10:47',who:'You',en:'Take Dolo six-fifty, three times daily for three days.',ops:[{id:'dolo',ago:90,etaHrs:6,sec:'med',label:'Dolo 650',detail:'1 tab · 1-1-1 · after food · 3 days',prov:'Drafted from speech · 10:47',status:'Matched to formulary',tone:'ok'}]},
+{t:'10:47',who:'You',en:'Take Pyranol six-fifty, three times daily for three days.',ops:[{id:'dolo',ago:90,etaHrs:6,sec:'med',label:'Pyranol 650',detail:'1 tab · 1-1-1 · after food · 3 days',prov:'Drafted from speech · 10:47',status:'Matched to formulary',tone:'ok'}]},
 {t:'10:47',who:'You',en:'And Septran twice daily for five days.',ops:[{id:'septran',sec:'med',label:'Septran DS',detail:'1 tab · 1-0-1 · AF · 5 days',prov:'Drafted from speech · 10:47',conflict:1}]}];
 
 const SECS=[['sym','SYMPTOMS'],['neg','PERTINENT NEGATIVES'],['vit','VITALS'],['med','MEDICATIONS'],['ass','ASSESSMENT'],['pln','PLAN']];
@@ -3099,8 +3099,8 @@ const CSTEPS=[
 {t:'10:47',who:'You',en:'Add a dengue IgM and a urine routine.',op:{sec:'inv',id:'inv2',label:'Dengue IgM',detail:''},op2:{sec:'inv',id:'inv3',label:'Urine routine',detail:''}},
 {t:'10:47',who:'You',en:'Plenty of fluids, and rest at home.',op:{sec:'adv',id:'adv1',label:'Oral hydration',detail:'3 litres/day · ORS if needed'},op2:{sec:'adv',id:'adv2',label:'Rest',detail:'Avoid exertion till fever settles'}},
 {t:'10:47',who:'You',en:'Come back in three days, sooner if it gets worse.',op:{sec:'fu',id:'fu1',label:'Review',detail:'After 3 days, or sooner if worse'}},
-{t:'10:48',who:'You',en:'Dolo six-fifty, one tablet three times a day after food for three days.',
- rx:{id:'dolo',brand:'DOLO 650',generic:'PARACETAMOL 650MG',dose:'1-1-1',food:'AFTER FOOD',duration:'× 3 DAYS',state:'verified',quote:'Dolo six-fifty, one tablet three times a day after food for three days.'}},
+{t:'10:48',who:'You',en:'Pyranol six-fifty, one tablet three times a day after food for three days.',
+ rx:{id:'dolo',brand:'PYRANOL 650',generic:'PARACETAMOL 650MG',dose:'1-1-1',food:'AFTER FOOD',duration:'× 3 DAYS',state:'verified',quote:'Pyranol six-fifty, one tablet three times a day after food for three days.'}},
 {t:'10:48',who:'You',en:'And Septran, one tablet twice daily for five days.',
  rx:{id:'septran',brand:'SEPTRAN DS',generic:'SULFAMETHOXAZOLE + TRIMETHOPRIM',dose:'1-0-1',food:'AFTER FOOD',duration:'× 5 DAYS',state:'conflict',h1:1,
   quote:'And Septran, one tablet twice daily for five days.'}},
@@ -3204,7 +3204,7 @@ const PROFILES={
  ramesh:{id:'ramesh',initials:'RK',name:'Ramesh Kumar',short:'Ramesh',as:'68 M',sub:'68 M · husband · Guntur',
   cycle:0,greet:'Good evening',order:['meds','log','body','next'],
   tag:'Diabetes review due'},
- divya:{id:'divya',initials:'DS',name:'Divya Sri',short:'Divya',as:'25 F',sub:'25 F · daughter · Hyderabad',
+ divya:{id:'divya',initials:'DS',name:'Divya Sri',short:'Divya',as:'25 F',sub:'25 F · daughter · Telangana',
   cycle:1,greet:'Good evening',order:['phase','body','meds','next'],
   tag:'No medicines on file'}};
 // P&D marketplace. Suppliers list here instead of sending a field rep after OPD hours,
@@ -3242,64 +3242,64 @@ const PEOPLE={
  lakshmi:{id:'lakshmi',why:['Fever for 3 days','Day 3 \u00b7 worse at night'],name:'Lakshmi Devi',as:'52 F',age:52,sex:'F',phone:'+91 90000 00025',bg:'B+',
   allergy:{name:'Sulfa',detail:'Rash and facial swelling',by:'Dr. Priya Rao',on:'19 Mar 2024'},
   conds:['Type 2 diabetes since 2018','Fever, 3 days'],
-  meds:['Glycomet 500 · 1-0-1 · AF','Dolo 650 · 1-1-1 · AF · 3 days'],
+  meds:['Glycomet 500 · 1-0-1 · AF','Pyranol 650 · 1-1-1 · AF · 3 days'],
   vitals:{bp:'130/80',pr:'92 bpm',t:'101.2 °F',spo2:'98%',wt:'65 kg'},
   visits:[
-   {d:'1 Sep',y:2026,t:'Fever, 3 days',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
-    cond:'Fever',line:'Dengue to be ruled out · NS1 sent',rx:'Dolo 650 started'},
-   {d:'12 Jun',y:2026,t:'Diabetes review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'1 Sep',y:2026,t:'Fever, 3 days',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
+    cond:'Fever',line:'Dengue to be ruled out · NS1 sent',rx:'Pyranol 650 started'},
+   {d:'12 Jun',y:2026,t:'Diabetes review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'Type 2 diabetes',line:'HbA1c 7.2%, improving',rx:'Glycomet 500 continued'},
-   {d:'8 Mar',y:2026,t:'Diabetes review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'8 Mar',y:2026,t:'Diabetes review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'Type 2 diabetes',line:'HbA1c 8.1%, above target',rx:'Glycomet 250 \u2192 500'},
-   {d:'19 Mar',y:2024,t:'Rash after Septran',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'19 Mar',y:2024,t:'Rash after Septran',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'',line:'Sulfa allergy identified',rx:'Septran stopped'},
    {d:'8 Sep',y:2019,t:'Dengue fever',doc:'Dr. S. Venkatesh',sp:'General Physician',city:'Guntur',cond:'Dengue',
     line:'NS1 positive · DENV-2 · admitted 4 days, Guntur GGH · platelet nadir 62,000',rx:'Paracetamol · IV fluids',
     ep:{disease:'Dengue',onset:'5 Sep 2019',test:'NS1 antigen positive · IgM positive day 6',type:'DENV-2',severity:'Dengue with warning signs',
      where:'Guntur Government General Hospital · inpatient 8–12 Sep 2019',plt:'62,000 /µL on day 5 · 1,48,000 at discharge',
      tx:'IV Ringer lactate · paracetamol 650 SOS · no platelet transfusion',outcome:'Recovered · discharged 12 Sep 2019',src:'Discharge summary shared via ABHA · 14 Mar 2026'}},
-   {d:'22 Oct',y:2024,t:'Fever · dengue suspected',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',cond:'',
+   {d:'22 Oct',y:2024,t:'Fever · dengue suspected',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',cond:'',
     line:'NS1 negative on day 2 · IgM not done · treated as viral · resolved',rx:'Paracetamol',
     ep:{disease:'Dengue',onset:'20 Oct 2024',test:'NS1 antigen negative on day 2 (may be too early) · IgM not done',type:'Not established',severity:'Not confirmed',
      where:'Demo Clinic · outpatient',plt:'1,90,000 /µL · single value',tx:'Paracetamol 650 · oral fluids',outcome:'Resolved in 4 days · dengue not confirmed',src:'Your signed note · 22 Oct 2024'}},
-    {d:'20 Feb',y:2026,t:'Diabetic retinopathy screen',doc:'Dr. Sunita Rao',sp:'Ophthalmology',city:'Hyderabad',
+    {d:'20 Feb',y:2026,t:'Diabetic retinopathy screen',doc:'Dr. Sunita Rao',sp:'Ophthalmology',city:'Telangana',
      cond:'Type 2 diabetes',line:'No retinopathy · repeat in 12 months',rx:''},
-    {d:'11 Nov',y:2025,t:'Dental scaling',doc:'Dr. Arjun Pillai',sp:'Dentistry',city:'Hyderabad',
+    {d:'11 Nov',y:2025,t:'Dental scaling',doc:'Dr. Arjun Pillai',sp:'Dentistry',city:'Telangana',
      cond:'',line:'Gingivitis, mild · scaling done',rx:'Chlorhexidine mouthwash 2 weeks'}]},
  ravi:{id:'ravi',why:['Hair thinning review','4th visit since March · on Minoxidil 5% twice daily since 12 Jul'],name:'Ravi Teja',as:'34 M',age:34,sex:'M',phone:'+91 90000 00019',bg:'O+',
   allergy:null,conds:['Androgenic alopecia since Mar 2026'],
   meds:['Minoxidil 5% · 1-0-1 · Topical · 1 mL to scalp'],
   vitals:{bp:'118/76',pr:'74 bpm',t:'98.4 °F',spo2:'99%',wt:'71 kg'},
   visits:[
-   {d:'1 Sep',y:2026,t:'Hair thinning review',doc:'Dr. Neha Varma',sp:'Dermatology',city:'Hyderabad',
+   {d:'1 Sep',y:2026,t:'Hair thinning review',doc:'Dr. Neha Varma',sp:'Dermatology',city:'Telangana',
     cond:'Androgenic alopecia',line:'Crown denser than July',rx:'5% BD continued',photo:'h3'},
-   {d:'12 Jul',y:2026,t:'Hair thinning review',doc:'Dr. Neha Varma',sp:'Dermatology',city:'Hyderabad',
+   {d:'12 Jul',y:2026,t:'Hair thinning review',doc:'Dr. Neha Varma',sp:'Dermatology',city:'Telangana',
     cond:'Androgenic alopecia',line:'Thinning persists at the crown',rx:'5% OD \u2192 5% BD',photo:'h2'},
-   {d:'10 May',y:2026,t:'Hair thinning review',doc:'Dr. Neha Varma',sp:'Dermatology',city:'Hyderabad',
+   {d:'10 May',y:2026,t:'Hair thinning review',doc:'Dr. Neha Varma',sp:'Dermatology',city:'Telangana',
     cond:'Androgenic alopecia',line:'No change yet, too early',rx:'5% OD continued'},
-   {d:'14 Mar',y:2026,t:'Hair thinning',doc:'Dr. Neha Varma',sp:'Dermatology',city:'Hyderabad',
+   {d:'14 Mar',y:2026,t:'Hair thinning',doc:'Dr. Neha Varma',sp:'Dermatology',city:'Telangana',
     cond:'Androgenic alopecia',line:'Widened parting at the crown',rx:'Minoxidil 5% OD started',photo:'h1'},
-    {d:'8 Feb',y:2026,t:'Hair loss workup',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+    {d:'8 Feb',y:2026,t:'Hair loss workup',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
      cond:'',line:'TSH and ferritin normal · referred to dermatology',rx:''}]},
  imran:{id:'imran',why:['Suture removal','Leg laceration of 18 Aug · wound reviewed 25 Aug, no discharge then'],name:'Syed Imran',as:'28 M',age:28,sex:'M',phone:'+91 90000 00010',bg:'A+',
   allergy:null,conds:['Leg laceration, 18 Aug'],
   meds:['Augmentin 625 · 1-0-1 · AF · 7 days'],
   vitals:{bp:'122/78',pr:'80 bpm',t:'98.8 °F',spo2:'99%',wt:'68 kg'},
   visits:[
-   {d:'1 Sep',y:2026,t:'Suture removal',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'1 Sep',y:2026,t:'Suture removal',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'Leg laceration',line:'Wound closed, sutures out',rx:'Augmentin stopped',photo:'w3'},
-   {d:'25 Aug',y:2026,t:'Wound review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'25 Aug',y:2026,t:'Wound review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'Leg laceration',line:'Redness settling, no discharge',rx:'Augmentin 625 continued',photo:'w2'},
-   {d:'18 Aug',y:2026,t:'Wound review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'18 Aug',y:2026,t:'Wound review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'Leg laceration',line:'Sutures intact, mild redness',rx:'Augmentin 625 continued'},
-    {d:'16 Aug',y:2026,t:'Road traffic accident',doc:'Dr. Farhan Ali',sp:'Emergency medicine',city:'Hyderabad',
+    {d:'16 Aug',y:2026,t:'Road traffic accident',doc:'Dr. Farhan Ali',sp:'Emergency medicine',city:'Telangana',
      cond:'Leg laceration',line:'7 cm laceration sutured · tetanus given · X-ray no fracture',rx:'Augmentin 625 started',photo:'w1'}]},
  venkat:{id:'venkat',why:['Acidity review','Settled since the Bangalore endoscopy · on Pan 40 before food'],name:'Venkat Rao',as:'52 M',age:52,sex:'M',phone:'+91 90000 00024',bg:'B+',
   allergy:null,conds:['GERD since 2025'],
   meds:['Pan 40 · 1-0-0 · BF'],
   vitals:{bp:'134/86',pr:'78 bpm',t:'98.2 °F',spo2:'98%',wt:'79 kg'},
   visits:[
-   {d:'1 Sep',y:2026,t:'Acidity review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'1 Sep',y:2026,t:'Acidity review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'GERD',line:'Settled on Pan 40',rx:'Pan 40 continued'},
    {d:'20 Jul',y:2026,t:'Endoscopy review',doc:'Dr. Priya Menon',sp:'Gastroenterology',city:'Bangalore',
     cond:'GERD',line:'Grade A oesophagitis, no ulcer',rx:'Pan 40 · 8 weeks'},
@@ -3310,50 +3310,50 @@ const PEOPLE={
   meds:['Thyronorm 75mcg · 1-0-0 · BF','Telma 40 · 1-0-0 · AF'],
   vitals:{bp:'138/88',pr:'76 bpm',t:'98.6 °F',spo2:'98%',wt:'66 kg'},
   visits:[
-   {d:'1 Sep',y:2026,t:'Thyroid review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'1 Sep',y:2026,t:'Thyroid review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'Hypothyroidism',line:'TSH 3.1, in range',rx:'Thyronorm 75 continued'},
-   {d:'2 Jun',y:2026,t:'Thyroid review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'2 Jun',y:2026,t:'Thyroid review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'Hypothyroidism',line:'TSH 4.8, improving',rx:'Thyronorm 50 \u2192 75'},
-   {d:'4 Mar',y:2026,t:'Thyroid and BP review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'4 Mar',y:2026,t:'Thyroid and BP review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'Hypothyroidism',line:'TSH 8.2, under-replaced',rx:'Thyronorm 50 continued'},
-    {d:'19 Jan',y:2026,t:'Thyroid consultation',doc:'Dr. Ravi Shankar',sp:'Endocrinology',city:'Hyderabad',
+    {d:'19 Jan',y:2026,t:'Thyroid consultation',doc:'Dr. Ravi Shankar',sp:'Endocrinology',city:'Telangana',
      cond:'Hypothyroidism',line:'TSH 9.4 · dose confirmed, review with GP',rx:'Thyronorm 50 started'},
-    {d:'3 Oct',y:2025,t:'BP evaluation',doc:'Dr. Lakshmi Prasad',sp:'Cardiology',city:'Hyderabad',
+    {d:'3 Oct',y:2025,t:'BP evaluation',doc:'Dr. Lakshmi Prasad',sp:'Cardiology',city:'Telangana',
      cond:'Hypertension',line:'ECG normal · echo normal · essential hypertension',rx:'Telma 40 started'}]},
  ramulu:{id:'ramulu',why:['Knee pain review','X-ray taken today · on Zerodol-SP and Telma 40'],name:'Ramulu G',as:'68 M',age:68,sex:'M',phone:'+91 90000 00016',bg:'O+',
   allergy:null,conds:['Knee osteoarthritis','Hypertension since 2019'],
   meds:['Zerodol-SP · 1-0-1 · AF','Shelcal 500 · 0-0-1 · AF','Telma 40 · 1-0-0 · AF'],
   vitals:{bp:'146/92',pr:'82 bpm',t:'98.4 °F',spo2:'97%',wt:'74 kg'},
   visits:[
-   {d:'1 Sep',y:2026,t:'Knee pain review',doc:'Dr. Meena Iyer',sp:'Orthopaedics',city:'Hyderabad',
+   {d:'1 Sep',y:2026,t:'Knee pain review',doc:'Dr. Meena Iyer',sp:'Orthopaedics',city:'Telangana',
     cond:'Knee osteoarthritis',line:'X-ray: joint space narrowing, medial',rx:'Zerodol-SP continued'},
-   {d:'28 Jul',y:2026,t:'Knee pain',doc:'Dr. Meena Iyer',sp:'Orthopaedics',city:'Hyderabad',
+   {d:'28 Jul',y:2026,t:'Knee pain',doc:'Dr. Meena Iyer',sp:'Orthopaedics',city:'Telangana',
     cond:'Knee osteoarthritis',line:'Pain on stairs, no effusion',rx:'Zerodol-SP started'},
-    {d:'12 Aug',y:2026,t:'BP and kidney check',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+    {d:'12 Aug',y:2026,t:'BP and kidney check',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
      cond:'Hypertension',line:'BP 146/92 · creatinine 1.1 · NSAID flagged',rx:'Telma 40 continued'},
-    {d:'4 Aug',y:2026,t:'Physiotherapy',doc:'Ms. Deepa Nair',sp:'Physiotherapy',city:'Hyderabad',
+    {d:'4 Aug',y:2026,t:'Physiotherapy',doc:'Ms. Deepa Nair',sp:'Physiotherapy',city:'Telangana',
      cond:'Knee osteoarthritis',line:'Quadriceps strengthening · 6 sessions',rx:''}]},
  kiran:{id:'kiran',why:['Fever with rash, 2 days','With his mother · dosing is by weight'],name:'Kiran V',as:'7 M',age:7,sex:'M',phone:'+91 90000 00027',bg:'B+',
   guardian:'Mother · Padma V',allergy:null,conds:['Fever with rash, 2 days'],
   meds:['Calpol syrup · 5ml · 1-1-1 · AF'],
   vitals:{pr:'104 bpm',t:'100.8 °F',spo2:'99%',wt:'22 kg'},
   visits:[
-   {d:'1 Sep',y:2026,t:'Fever with rash',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'1 Sep',y:2026,t:'Fever with rash',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'Viral fever',line:'Maculopapular rash, well hydrated',rx:'Calpol syrup 5 ml TDS'},
-    {d:'14 May',y:2026,t:'Vaccination · MMR booster',doc:'Dr. Swathi Reddy',sp:'Paediatrics',city:'Hyderabad',
+    {d:'14 May',y:2026,t:'Vaccination · MMR booster',doc:'Dr. Swathi Reddy',sp:'Paediatrics',city:'Telangana',
      cond:'',line:'Given · weight 21 kg, on the 50th centile',rx:''},
-    {d:'2 Feb',y:2026,t:'Cough and cold',doc:'Dr. Swathi Reddy',sp:'Paediatrics',city:'Hyderabad',
+    {d:'2 Feb',y:2026,t:'Cough and cold',doc:'Dr. Swathi Reddy',sp:'Paediatrics',city:'Telangana',
      cond:'',line:'URTI · no antibiotic',rx:'Saline drops, paracetamol as needed'}]},
  anitha:{id:'anitha',why:['Antenatal review','22 weeks · unchanged from the last visit'],name:'Anitha Reddy',as:'26 F',age:26,sex:'F',phone:'+91 90000 00012',bg:'A+',
   allergy:null,conds:['Pregnancy · 22 weeks'],
   meds:['Folic acid 5mg · 1-0-0 · AF','Iron + calcium · 0-0-1 · AF'],
   vitals:{bp:'110/72',pr:'88 bpm',t:'98.4 °F',spo2:'99%',wt:'58 kg'},
   visits:[
-   {d:'1 Sep',y:2026,t:'Antenatal review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',
+   {d:'1 Sep',y:2026,t:'Antenatal review',doc:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',
     cond:'Pregnancy',line:'22 weeks, fundal height appropriate',rx:'Supplements continued'},
-    {d:'22 Jul',y:2026,t:'Anomaly scan review',doc:'Dr. Padmaja Reddy',sp:'Obstetrics',city:'Hyderabad',
+    {d:'22 Jul',y:2026,t:'Anomaly scan review',doc:'Dr. Padmaja Reddy',sp:'Obstetrics',city:'Telangana',
      cond:'Pregnancy',line:'20 weeks · scan normal · placenta upper',rx:'Iron + calcium started'},
-    {d:'27 Apr',y:2026,t:'Antenatal booking',doc:'Dr. Padmaja Reddy',sp:'Obstetrics',city:'Hyderabad',
+    {d:'27 Apr',y:2026,t:'Antenatal booking',doc:'Dr. Padmaja Reddy',sp:'Obstetrics',city:'Telangana',
      cond:'Pregnancy',line:'8 weeks · dating scan · bloods sent',rx:'Folic acid started'}]}};
 const VISITS_ALL=[
  {d:'14 Aug',y:2026,t:'Hair thinning review',doc:'Dr. Priya Rao',sp:'Dermatology',city:'Guntur',
@@ -3372,7 +3372,7 @@ const VISITS_ALL=[
   cond:'Hair thinning',line:'Widened parting at the crown',rx:'Minoxidil 5% started',photo:'h1'},
  {d:'19 Mar',y:2024,t:'Rash after Septran',doc:'Dr. Priya Rao',sp:'General Physician',city:'Guntur',
   cond:'',line:'Sulfa allergy identified',rx:'Septran stopped',photo:'ph5'},
- {d:'8 Nov',y:2023,t:'Knee pain',doc:'Dr. Ramesh Iyer',sp:'Orthopaedics',city:'Hyderabad',
+ {d:'8 Nov',y:2023,t:'Knee pain',doc:'Dr. Ramesh Iyer',sp:'Orthopaedics',city:'Telangana',
   cond:'',line:'Early osteoarthritis',rx:'Physiotherapy'},
  {d:'14 Mar',y:2023,t:'General check-up',doc:'\u2014',sp:'',city:'Guntur',
   cond:'',line:'Manual note, no specialty recorded',rx:''}];
@@ -3380,7 +3380,7 @@ const VISITS_ALL=[
 const STAFF=[
  {id:'rao_dr',name:'Dr. Priya Rao',role:'doctor',detail:'General Physician · owner',admin:1,you:1,since:'Clinic created 12 Jan 2024',state:'active'},
  {id:'mehta',name:'Dr. Anil Mehta',role:'doctor',detail:'Endocrinology · partner',admin:1,since:'Admin since 4 Mar 2026',state:'active'},
- {id:'kavya',name:'Dr. Kavya Reddy',role:'doctor',detail:'Dermatology · visiting Tue, Thu',since:'Joined 8 Aug 2026',state:'active',other:'Also works at Yashoda, Secunderabad'},
+ {id:'kavya',name:'Dr. Kavya Reddy',role:'doctor',detail:'Dermatology · visiting Tue, Thu',since:'Joined 8 Aug 2026',state:'active',other:'Also works at City Hospital, Telangana'},
  {id:'arjun',name:'Dr. Arjun Varma',role:'doctor',detail:'Paediatrics · invited 2 days ago',state:'invited'},
  {id:'suma',name:'Suma K',role:'reception',detail:'Front desk · both sessions',since:'Joined 3 Feb 2024',state:'active'},
  {id:'ravi',name:'Ravi Teja',role:'reception',detail:'Evening desk only',since:'Joined 19 Jun 2026',state:'active'},
@@ -3388,10 +3388,10 @@ const STAFF=[
  {id:'shanti',name:'Shanti Devi',role:'nurse',detail:'Dressing room · morning',state:'invited',detail2:'Invite sent to +91 90000 00018'}];
 const ROLES=[['doctor','Doctors','Sees patients, writes and signs notes'],['reception','Reception','Check-in, queue and billing. No clinical records.'],['nurse','Nurses','Vitals and injections. No clinical records.']];
 const DOCS={
- priya:{id:'priya',name:'Dr. Priya Rao',sp:'General Physician',city:'Hyderabad',integrator:1},
- derm:{id:'derm',name:'Dr. Neha Varma',sp:'Dermatology',city:'Hyderabad'},
+ priya:{id:'priya',name:'Dr. Priya Rao',sp:'General Physician',city:'Telangana',integrator:1},
+ derm:{id:'derm',name:'Dr. Neha Varma',sp:'Dermatology',city:'Telangana'},
  blr:{id:'blr',name:'Dr. Priya Menon',sp:'Gastroenterology',city:'Bangalore'},
- ortho:{id:'ortho',name:'Dr. Meena Iyer',sp:'Orthopaedics',city:'Hyderabad'}};
+ ortho:{id:'ortho',name:'Dr. Meena Iyer',sp:'Orthopaedics',city:'Telangana'}};
 const SITES=['Head','Face','Eye','Mouth','Neck','Arm','Hand','Trunk','Back','Leg','Foot','Document','Other'];
 const findings=()=>[...new Set(PHOTOS.filter(x=>!x.doc).map(x=>x.finding))];
 const PD_SUP={
@@ -3399,7 +3399,7 @@ const PD_SUP={
  gma:{name:'Guntur Medical Agencies',credit:30,limit:60000,used:58900},
  vayu:{name:'Vayu Pharma Direct',credit:0,limit:0,used:0}};
 const PD_PHARMA=[
- {id:'dolo',etaHrs:6,brand:'DOLO 650',mol:'Paracetamol 650 mg',co:'Nirmaya Pharma',pack:'15 tablets',
+ {id:'dolo',etaHrs:6,brand:'PYRANOL 650',mol:'Paracetamol 650 mg',co:'Nirmaya Pharma',pack:'15 tablets',
   ptr:22.00,mrp:31.50,gst:12,scheme:{buy:10,free:2,ends:'2 Sep'},eta:'Today by 7 pm',
   moq:10,stock:'in',expiry:'Aug 2028',sup:'balaji',often:1},
  {id:'calpol',ago:90,etaHrs:20,brand:'CALPOL 650',mol:'Paracetamol 650 mg',co:'Vedanta Life Sciences',pack:'15 tablets',
@@ -3433,25 +3433,25 @@ const PD_PHARMA=[
 // Six suppliers of one molecule, including a Delhi manufacturer shipping into Telangana.
 PD_PHARMA.push(
  {id:'pyri',ago:3,etaHrs:6,brand:'PYRIGESIC 650',mol:'Paracetamol 650 mg',co:'Aarogya Remedies',pack:'15 tablets',ptr:11.90,mrp:28.00,gst:12,scheme:{buy:10,free:1,ends:'20 Sep'},eta:'Today by 7 pm \u00b7 Hyd',
-  moq:50,stock:'in',expiry:'Jan 2029',sup:'balaji',loc:'Hyderabad'},
+  moq:50,stock:'in',expiry:'Jan 2029',sup:'balaji',loc:'Telangana'},
  {id:'paracip',ago:28,etaHrs:6,brand:'PARACIP 650',mol:'Paracetamol 650 mg',co:'Krishcare Labs',pack:'10 tablets',ptr:13.80,mrp:20.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd distributor',
-  moq:10,stock:'in',expiry:'Jul 2028',sup:'balaji',loc:'Hyderabad'},
+  moq:10,stock:'in',expiry:'Jul 2028',sup:'balaji',loc:'Telangana'},
  {id:'glyco',ago:40,etaHrs:6,brand:'GLYCOMET 500',mol:'Metformin 500 mg',co:'Deccan Pharmaceuticals',pack:'20 tablets',ptr:24.10,mrp:34.00,gst:12,scheme:{buy:10,free:1,ends:'30 Sep'},eta:'Today by 7 pm \u00b7 Hyd distributor',
-  moq:10,stock:'in',expiry:'Oct 2028',sup:'balaji',loc:'Hyderabad'},
+  moq:10,stock:'in',expiry:'Oct 2028',sup:'balaji',loc:'Telangana'},
  {id:'telma',ago:60,etaHrs:20,brand:'TELMA 40',mol:'Telmisartan 40 mg',co:'Nirmaya Pharma',pack:'15 tablets',ptr:98.40,mrp:139.00,gst:12,scheme:null,eta:'Tomorrow by 11 am \u00b7 Hyd distributor',
-  moq:5,stock:'in',expiry:'May 2028',sup:'gma',loc:'Hyderabad'},
+  moq:5,stock:'in',expiry:'May 2028',sup:'gma',loc:'Telangana'},
  {id:'minox5',ago:18,etaHrs:20,brand:'MINTOP 5%',mol:'Minoxidil 5% solution',co:'Deccan Pharmaceuticals',pack:'60 mL',ptr:512.00,mrp:690.00,gst:12,scheme:{buy:5,free:1,ends:'15 Sep'},eta:'Tomorrow by 11 am \u00b7 Hyd distributor',
-  moq:5,stock:'in',expiry:'Dec 2027',sup:'gma',loc:'Hyderabad'},
- {id:'ors',ago:70,etaHrs:6,brand:'ORS SACHETS',mol:'Oral rehydration salts, WHO formula',co:'Vedanta Life Sciences',pack:'Box of 20',ptr:14.00,mrp:22.00,gst:5,scheme:null,eta:'Today by 7 pm \u00b7 Hyd distributor',moq:10,stock:'in',expiry:'Jan 2028',sup:'balaji',loc:'Hyderabad',basic:1},
+  moq:5,stock:'in',expiry:'Dec 2027',sup:'gma',loc:'Telangana'},
+ {id:'ors',ago:70,etaHrs:6,brand:'ORS SACHETS',mol:'Oral rehydration salts, WHO formula',co:'Vedanta Life Sciences',pack:'Box of 20',ptr:14.00,mrp:22.00,gst:5,scheme:null,eta:'Today by 7 pm \u00b7 Hyd distributor',moq:10,stock:'in',expiry:'Jan 2028',sup:'balaji',loc:'Telangana',basic:1},
  {id:'gloves',ago:30,etaHrs:6,brand:'NITRILE GLOVES M',mol:'Examination gloves, powder-free',co:'Suraksha Medicare',pack:'Box of 100',ptr:310.00,mrp:420.00,gst:12,scheme:{buy:10,free:1,ends:'30 Sep'},eta:'Today by 7 pm \u00b7 Hyd distributor',
-  moq:5,stock:'in',expiry:'Mar 2029',sup:'balaji',loc:'Hyderabad',basic:1});
+  moq:5,stock:'in',expiry:'Mar 2029',sup:'balaji',loc:'Telangana',basic:1});
 const PD_CATS=[['Tablets','tab',I.pill],['Syrups','syr',I.flask],['Injections','inj',I.wave],['IV Fluids','iv',I.box],['Ointments','oint',I.pill],['Consumables','cons',I.box],['Devices','dev',I.box],['All','',I.search]];
 const PD_CO={
- 'Aarogya Remedies':{city:'Hyderabad',state:'Telangana',local:1,since:2009,about:'WHO-GMP plant at Jeedimetla. Generics for primary care.',lic:'TS/DL/2009-114'},
- 'Deccan Pharmaceuticals':{city:'Hyderabad',state:'Telangana',local:1,since:1998,about:'Formulations and APIs. Two plants at Pashamylaram.',lic:'TS/DL/1998-021'},
+ 'Aarogya Remedies':{city:'Telangana',state:'Telangana',local:1,since:2009,about:'WHO-GMP plant at Jeedimetla. Generics for primary care.',lic:'TS/DL/2009-114'},
+ 'Deccan Pharmaceuticals':{city:'Telangana',state:'Telangana',local:1,since:1998,about:'Formulations and APIs. Two plants at Pashamylaram.',lic:'TS/DL/1998-021'},
  'Nirmaya Pharma':{city:'Mumbai',state:'Maharashtra',local:0,since:1987},'Vedanta Life Sciences':{city:'Ahmedabad',state:'Gujarat',local:0,since:1994},
  'Krishcare Labs':{city:'Bengaluru',state:'Karnataka',local:0,since:2004},'Suraksha Biotech':{city:'Pune',state:'Maharashtra',local:0,since:2001},
- 'Suraksha Medicare':{city:'Hyderabad',state:'Telangana',local:1,since:2012,about:'Sterile consumables. Medchal.',lic:'TS/DL/2012-388'}};
+ 'Suraksha Medicare':{city:'Telangana',state:'Telangana',local:1,since:2012,about:'Sterile consumables. Medchal.',lic:'TS/DL/2012-388'}};
 const PD_EXTRA={
  dolo:{cat:'tab',comp:[['Paracetamol','650 mg']],units:15,storage:'Below 25 \u00b0C'},calpol:{cat:'tab',comp:[['Paracetamol','650 mg']],units:15,storage:'Below 25 \u00b0C'},
  pacimol:{cat:'tab',comp:[['Paracetamol','650 mg']],units:15,storage:'Below 25 \u00b0C'},febrinil:{cat:'tab',comp:[['Paracetamol','650 mg']],units:10,storage:'Below 25 \u00b0C'},
@@ -3466,50 +3466,50 @@ const PD_EXTRA={
  dolo500:{cat:'tab',comp:[['Paracetamol','500 mg']],units:15,storage:'Below 25 \u00b0C'},metlo:{cat:'tab',comp:[['Metformin hydrochloride','500 mg']],units:20,storage:'Below 25 \u00b0C'},syr:{cat:'cons',comp:[['Syringe','5 mL, 24G needle']],units:100,storage:'Dry place'},
  ns:{cat:'iv',comp:[['Sodium chloride','0.9% w/v']],units:1,storage:'Below 25 \u00b0C'},aaroaug:{cat:'tab',comp:[['Amoxicillin','500 mg'],['Clavulanic acid','125 mg']],units:10,storage:'Below 25 \u00b0C, dry'}};
 PD_PHARMA.push(
- {id:'dolo500',ago:90,etaHrs:6,brand:'DOLO 500',mol:'Paracetamol 500 mg',co:'Nirmaya Pharma',pack:'15 tablets',ptr:12.40,mrp:18.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Jun 2028',sup:'balaji',loc:'Hyderabad'},
- {id:'metlo',ago:20,etaHrs:6,brand:'METLO 500',mol:'Metformin 500 mg',co:'Aarogya Remedies',pack:'20 tablets',ptr:18.40,mrp:32.00,gst:12,scheme:{buy:5,free:1,ends:'20 Sep'},eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Nov 2028',sup:'balaji',loc:'Hyderabad'},
- {id:'syr',ago:60,etaHrs:6,brand:'DISPOVAN 5 mL',mol:'Disposable syringe with needle',co:'Suraksha Medicare',pack:'Box of 100',ptr:410.00,mrp:600.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:2,stock:'in',expiry:'Aug 2030',sup:'balaji',loc:'Hyderabad',basic:1},
- {id:'ns',ago:60,etaHrs:6,brand:'NS 500 mL',mol:'Sodium chloride 0.9% IV',co:'Aarogya Remedies',pack:'Bottle',ptr:24.00,mrp:38.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:20,stock:'in',expiry:'Mar 2028',sup:'balaji',loc:'Hyderabad',basic:1},
- {id:'aaroaug',ago:7,etaHrs:6,brand:'AMCLAV 625',mol:'Amoxicillin 500 mg + clavulanic acid 125 mg',co:'Aarogya Remedies',pack:'10 tablets',ptr:118.00,mrp:190.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:5,stock:'in',expiry:'May 2028',sup:'balaji',loc:'Hyderabad',h1:1,launch:'New brand'});
+ {id:'dolo500',ago:90,etaHrs:6,brand:'PYRANOL 500',mol:'Paracetamol 500 mg',co:'Nirmaya Pharma',pack:'15 tablets',ptr:12.40,mrp:18.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Jun 2028',sup:'balaji',loc:'Telangana'},
+ {id:'metlo',ago:20,etaHrs:6,brand:'METLO 500',mol:'Metformin 500 mg',co:'Aarogya Remedies',pack:'20 tablets',ptr:18.40,mrp:32.00,gst:12,scheme:{buy:5,free:1,ends:'20 Sep'},eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Nov 2028',sup:'balaji',loc:'Telangana'},
+ {id:'syr',ago:60,etaHrs:6,brand:'DISPOVAN 5 mL',mol:'Disposable syringe with needle',co:'Suraksha Medicare',pack:'Box of 100',ptr:410.00,mrp:600.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:2,stock:'in',expiry:'Aug 2030',sup:'balaji',loc:'Telangana',basic:1},
+ {id:'ns',ago:60,etaHrs:6,brand:'NS 500 mL',mol:'Sodium chloride 0.9% IV',co:'Aarogya Remedies',pack:'Bottle',ptr:24.00,mrp:38.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:20,stock:'in',expiry:'Mar 2028',sup:'balaji',loc:'Telangana',basic:1},
+ {id:'aaroaug',ago:7,etaHrs:6,brand:'AMCLAV 625',mol:'Amoxicillin 500 mg + clavulanic acid 125 mg',co:'Aarogya Remedies',pack:'10 tablets',ptr:118.00,mrp:190.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:5,stock:'in',expiry:'May 2028',sup:'balaji',loc:'Telangana',h1:1,launch:'New brand'});
 const pdX=x=>PD_EXTRA[x.id]||{cat:'tab',comp:[[x.mol,'']],units:1,storage:''};
 const pdCoLocal=x=>!!(PD_CO[x.co]&&PD_CO[x.co].local);
 const pdPerUnit=x=>{const u=pdX(x).units||1,c=pdX(x).cat;return '\u20b9 '+(pdEff(x)/u).toFixed(2)+'/'+(c==='inj'||c==='iv'?'unit':c==='oint'?'mL':c==='cons'?'pc':'tablet');};
 const PD_FREE={balaji:2500,gma:3000,vayu:5000};
 const PD_NLEM={'Paracetamol 500 mg':18.20,'Metformin 500 mg':34.00,'Oral rehydration salts, WHO formula':22.00};
-const PD_LAUNCH={id:'dolosr',brand:'DOLO 650 SR',mol:'Paracetamol 650 mg sustained-release',co:'Nirmaya Pharma',date:'18 Aug 2026',cdsco:'Approved \u00b7 CDSCO \u00b7 12 Jun 2026',
+const PD_LAUNCH={id:'dolosr',brand:'PYRANOL 650 SR',mol:'Paracetamol 650 mg sustained-release',co:'Nirmaya Pharma',date:'18 Aug 2026',cdsco:'Approved \u00b7 CDSCO \u00b7 12 Jun 2026',
  indication:'Mild to moderate pain and fever in adults',diff:[['Form','Sustained-release tablet vs immediate-release'],['Dosing','Twice daily vs three to four times'],['Strength','650 mg, unchanged']],
  comp:[['Paracetamol','650 mg']],pack:'10 tablets',mrp:36.00,ptr:24.80,sup:'balaji',eta:'Tomorrow by 11 am',sponsored:0};
 // Extra listings for the extension: derm antifungals, PCOS line, one H1, one supervision, one MTP gate, one expiring Oct 2026.
 PD_PHARMA.push(
- {id:'terbi',ago:60,etaHrs:20,brand:'TERBICIP 250',mol:'Terbinafine 250 mg',co:'Aarogya Remedies',pack:'7 tablets',ptr:48.00,mrp:69.00,gst:12,scheme:null,eta:'Tomorrow by 11 am \u00b7 Hyd',moq:10,stock:'in',expiry:'Oct 2026',sup:'balaji',loc:'Hyderabad'},
- {id:'luli',ago:45,etaHrs:20,brand:'LULIFIN 1%',mol:'Luliconazole 1% cream',co:'Deccan Pharmaceuticals',pack:'20 g',ptr:118.00,mrp:169.00,gst:12,scheme:{buy:10,free:1,ends:'30 Sep'},eta:'Tomorrow by 11 am \u00b7 Hyd',moq:5,stock:'in',expiry:'Mar 2028',sup:'gma',loc:'Hyderabad'},
- {id:'isot',ago:80,etaHrs:48,brand:'ISOTROIN 20',mol:'Isotretinoin 20 mg',co:'Nirmaya Pharma',pack:'10 capsules',ptr:96.00,mrp:138.00,gst:12,scheme:null,eta:'2 days',moq:5,stock:'in',expiry:'Aug 2028',sup:'gma',loc:'Hyderabad',superv:1},
- {id:'myo',ago:30,etaHrs:20,brand:'OVAFOL PLUS',mol:'Myo-inositol 1000 mg + folic acid 200 mcg',co:'Aarogya Remedies',pack:'10 sachets',ptr:196.00,mrp:280.00,gst:12,scheme:null,eta:'Tomorrow by 11 am \u00b7 Hyd',moq:5,stock:'in',expiry:'Jan 2028',sup:'balaji',loc:'Hyderabad'},
- {id:'nitro',ago:70,etaHrs:6,brand:'NIFTAS 100',mol:'Nitrofurantoin 100 mg',co:'Suraksha Biotech',pack:'10 tablets',ptr:84.00,mrp:120.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Jun 2028',sup:'balaji',loc:'Hyderabad',h1:1},
- {id:'mtp',ago:90,etaHrs:48,brand:'MTP KIT',mol:'Mifepristone 200 mg + misoprostol 200 mcg \u00d7 4',co:'Vedanta Life Sciences',pack:'1 kit',ptr:0,mrp:498.00,gst:12,scheme:null,eta:'2 days',moq:1,stock:'in',expiry:'Dec 2027',sup:'gma',loc:'Hyderabad',mtp:1},
- {id:'faro',ago:90,etaHrs:20,brand:'FAROBACT 200',mol:'Faropenem 200 mg',co:'Suraksha Biotech',pack:'10 tablets',ptr:412.00,mrp:590.00,gst:12,scheme:null,eta:'Tomorrow by 11 am \u00b7 Hyd',moq:5,stock:'in',expiry:'Apr 2028',sup:'gma',loc:'Hyderabad',h1:1},
- {id:'cloz',ago:90,etaHrs:48,brand:'SIZOPIN 25',mol:'Clozapine 25 mg',co:'Nirmaya Pharma',pack:'10 tablets',ptr:38.00,mrp:54.00,gst:12,scheme:null,eta:'2 days',moq:10,stock:'in',expiry:'Nov 2027',sup:'gma',loc:'Hyderabad',superv:1},
- {id:'sert',ago:90,etaHrs:6,brand:'SERTA 50',mol:'Sertraline 50 mg',co:'Deccan Pharmaceuticals',pack:'10 tablets',ptr:42.00,mrp:60.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'May 2028',sup:'balaji',loc:'Hyderabad'},
- {id:'lora',ago:90,etaHrs:6,brand:'LORAZ 1',mol:'Lorazepam 1 mg',co:'Nirmaya Pharma',pack:'10 tablets',ptr:14.00,mrp:20.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Feb 2028',sup:'balaji',loc:'Hyderabad',h1:1},
- {id:'doxy',ago:90,etaHrs:6,brand:'DOXT-SL',mol:'Doxycycline 100 mg + lactobacillus',co:'Deccan Pharmaceuticals',pack:'10 capsules',ptr:62.00,mrp:89.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Jul 2028',sup:'balaji',loc:'Hyderabad'},
- {id:'ns1',ago:90,etaHrs:20,brand:'DENGUE NS1 RAPID',mol:'NS1 antigen card test',co:'Suraksha Medicare',pack:'25 tests',ptr:1450.00,mrp:2100.00,gst:12,scheme:null,eta:'Tomorrow by 11 am \u00b7 Hyd',moq:1,stock:'in',expiry:'Sep 2027',sup:'balaji',loc:'Hyderabad',basic:1});
+ {id:'terbi',ago:60,etaHrs:20,brand:'TERBICIP 250',mol:'Terbinafine 250 mg',co:'Aarogya Remedies',pack:'7 tablets',ptr:48.00,mrp:69.00,gst:12,scheme:null,eta:'Tomorrow by 11 am \u00b7 Hyd',moq:10,stock:'in',expiry:'Oct 2026',sup:'balaji',loc:'Telangana'},
+ {id:'luli',ago:45,etaHrs:20,brand:'LULIFIN 1%',mol:'Luliconazole 1% cream',co:'Deccan Pharmaceuticals',pack:'20 g',ptr:118.00,mrp:169.00,gst:12,scheme:{buy:10,free:1,ends:'30 Sep'},eta:'Tomorrow by 11 am \u00b7 Hyd',moq:5,stock:'in',expiry:'Mar 2028',sup:'gma',loc:'Telangana'},
+ {id:'isot',ago:80,etaHrs:48,brand:'ISOTROIN 20',mol:'Isotretinoin 20 mg',co:'Nirmaya Pharma',pack:'10 capsules',ptr:96.00,mrp:138.00,gst:12,scheme:null,eta:'2 days',moq:5,stock:'in',expiry:'Aug 2028',sup:'gma',loc:'Telangana',superv:1},
+ {id:'myo',ago:30,etaHrs:20,brand:'OVAFOL PLUS',mol:'Myo-inositol 1000 mg + folic acid 200 mcg',co:'Aarogya Remedies',pack:'10 sachets',ptr:196.00,mrp:280.00,gst:12,scheme:null,eta:'Tomorrow by 11 am \u00b7 Hyd',moq:5,stock:'in',expiry:'Jan 2028',sup:'balaji',loc:'Telangana'},
+ {id:'nitro',ago:70,etaHrs:6,brand:'NIFTAS 100',mol:'Nitrofurantoin 100 mg',co:'Suraksha Biotech',pack:'10 tablets',ptr:84.00,mrp:120.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Jun 2028',sup:'balaji',loc:'Telangana',h1:1},
+ {id:'mtp',ago:90,etaHrs:48,brand:'MTP KIT',mol:'Mifepristone 200 mg + misoprostol 200 mcg \u00d7 4',co:'Vedanta Life Sciences',pack:'1 kit',ptr:0,mrp:498.00,gst:12,scheme:null,eta:'2 days',moq:1,stock:'in',expiry:'Dec 2027',sup:'gma',loc:'Telangana',mtp:1},
+ {id:'faro',ago:90,etaHrs:20,brand:'FAROBACT 200',mol:'Faropenem 200 mg',co:'Suraksha Biotech',pack:'10 tablets',ptr:412.00,mrp:590.00,gst:12,scheme:null,eta:'Tomorrow by 11 am \u00b7 Hyd',moq:5,stock:'in',expiry:'Apr 2028',sup:'gma',loc:'Telangana',h1:1},
+ {id:'cloz',ago:90,etaHrs:48,brand:'SIZOPIN 25',mol:'Clozapine 25 mg',co:'Nirmaya Pharma',pack:'10 tablets',ptr:38.00,mrp:54.00,gst:12,scheme:null,eta:'2 days',moq:10,stock:'in',expiry:'Nov 2027',sup:'gma',loc:'Telangana',superv:1},
+ {id:'sert',ago:90,etaHrs:6,brand:'SERTA 50',mol:'Sertraline 50 mg',co:'Deccan Pharmaceuticals',pack:'10 tablets',ptr:42.00,mrp:60.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'May 2028',sup:'balaji',loc:'Telangana'},
+ {id:'lora',ago:90,etaHrs:6,brand:'LORAZ 1',mol:'Lorazepam 1 mg',co:'Nirmaya Pharma',pack:'10 tablets',ptr:14.00,mrp:20.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Feb 2028',sup:'balaji',loc:'Telangana',h1:1},
+ {id:'doxy',ago:90,etaHrs:6,brand:'DOXT-SL',mol:'Doxycycline 100 mg + lactobacillus',co:'Deccan Pharmaceuticals',pack:'10 capsules',ptr:62.00,mrp:89.00,gst:12,scheme:null,eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Jul 2028',sup:'balaji',loc:'Telangana'},
+ {id:'ns1',ago:90,etaHrs:20,brand:'DENGUE NS1 RAPID',mol:'NS1 antigen card test',co:'Suraksha Medicare',pack:'25 tests',ptr:1450.00,mrp:2100.00,gst:12,scheme:null,eta:'Tomorrow by 11 am \u00b7 Hyd',moq:1,stock:'in',expiry:'Sep 2027',sup:'balaji',loc:'Telangana',basic:1});
 const pdSuperv=x=>x.superv?'Typically initiated under specialist care':'';
 PD_PHARMA.push(
- {id:'terbi',ago:30,etaHrs:6,brand:'TERBINAFORCE 250',mol:'Terbinafine 250 mg',co:'Aarogya Remedies',pack:'7 tablets',ptr:58.00,mrp:84.00,gst:12,scheme:{buy:10,free:1,ends:'30 Sep'},eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Mar 2028',sup:'balaji',loc:'Hyderabad'},
+ {id:'terbi',ago:30,etaHrs:6,brand:'TERBINAFORCE 250',mol:'Terbinafine 250 mg',co:'Aarogya Remedies',pack:'7 tablets',ptr:58.00,mrp:84.00,gst:12,scheme:{buy:10,free:1,ends:'30 Sep'},eta:'Today by 7 pm \u00b7 Hyd',moq:10,stock:'in',expiry:'Mar 2028',sup:'balaji',loc:'Telangana'},
  {id:'terbi2',ago:90,etaHrs:20,brand:'TERBICIP 250',mol:'Terbinafine 250 mg',co:'Krishcare Labs',pack:'7 tablets',ptr:64.50,mrp:92.00,gst:12,scheme:null,eta:'Tomorrow by 11 am',moq:10,stock:'in',expiry:'Jan 2028',sup:'gma',loc:'Bengaluru'},
- {id:'myo',ago:60,etaHrs:20,brand:'OVASITOL',mol:'Myo-inositol 2 g + D-chiro-inositol 50 mg',co:'Nirmaya Pharma',pack:'10 sachets',ptr:412.00,mrp:590.00,gst:12,scheme:null,eta:'Tomorrow by 11 am',moq:5,stock:'in',expiry:'Jul 2027',sup:'gma',loc:'Hyderabad'},
- {id:'faro',ago:90,etaHrs:20,brand:'FAROPEN 200',mol:'Faropenem 200 mg',co:'Suraksha Biotech',pack:'10 tablets',ptr:298.00,mrp:425.00,gst:12,scheme:null,eta:'Tomorrow by 11 am',moq:5,stock:'in',expiry:'Dec 2027',sup:'gma',loc:'Hyderabad',h1:1},
- {id:'cloz',ago:90,etaHrs:48,brand:'SIZOPIN 100',mol:'Clozapine 100 mg',co:'Deccan Pharmaceuticals',pack:'10 tablets',ptr:41.20,mrp:58.00,gst:12,scheme:null,eta:'2 days',moq:10,stock:'in',expiry:'Aug 2027',sup:'gma',loc:'Hyderabad',h1:1,superv:'Typically initiated under specialist care'},
- {id:'lithium',ago:90,etaHrs:48,brand:'LITHOSUN 300',mol:'Lithium carbonate 300 mg',co:'Deccan Pharmaceuticals',pack:'10 tablets',ptr:18.40,mrp:26.00,gst:12,scheme:null,eta:'2 days',moq:10,stock:'in',expiry:'Oct 2027',sup:'gma',loc:'Hyderabad',superv:'Typically initiated under specialist care'},
- {id:'sert',ago:90,etaHrs:20,brand:'SERTA 50',mol:'Sertraline 50 mg',co:'Nirmaya Pharma',pack:'10 tablets',ptr:52.00,mrp:74.00,gst:12,scheme:null,eta:'Tomorrow by 11 am',moq:10,stock:'in',expiry:'May 2028',sup:'balaji',loc:'Hyderabad'},
- {id:'clona',ago:90,etaHrs:20,brand:'CLONOTRIL 0.5',mol:'Clonazepam 0.5 mg',co:'Deccan Pharmaceuticals',pack:'15 tablets',ptr:24.60,mrp:36.00,gst:12,scheme:null,eta:'Tomorrow by 11 am',moq:10,stock:'in',expiry:'Feb 2028',sup:'gma',loc:'Hyderabad',h1:1},
- {id:'tramad',ago:90,etaHrs:48,brand:'ULTRACET',mol:'Tramadol 37.5 mg + paracetamol 325 mg',co:'Suraksha Biotech',pack:'10 tablets',ptr:98.00,mrp:142.00,gst:12,scheme:null,eta:'2 days',moq:5,stock:'in',expiry:'Nov 2027',sup:'gma',loc:'Hyderabad',ndps:1},
- {id:'mtp',ago:90,etaHrs:48,brand:'MTP KIT',mol:'Mifepristone 200 mg + misoprostol 200 mcg \u00d7 4',co:'Nirmaya Pharma',pack:'1 kit',ptr:0,mrp:499.00,gst:12,scheme:null,eta:'2 days',moq:1,stock:'in',expiry:'Jun 2027',sup:'gma',loc:'Hyderabad',mtp:1});
+ {id:'myo',ago:60,etaHrs:20,brand:'OVASITOL',mol:'Myo-inositol 2 g + D-chiro-inositol 50 mg',co:'Nirmaya Pharma',pack:'10 sachets',ptr:412.00,mrp:590.00,gst:12,scheme:null,eta:'Tomorrow by 11 am',moq:5,stock:'in',expiry:'Jul 2027',sup:'gma',loc:'Telangana'},
+ {id:'faro',ago:90,etaHrs:20,brand:'FAROPEN 200',mol:'Faropenem 200 mg',co:'Suraksha Biotech',pack:'10 tablets',ptr:298.00,mrp:425.00,gst:12,scheme:null,eta:'Tomorrow by 11 am',moq:5,stock:'in',expiry:'Dec 2027',sup:'gma',loc:'Telangana',h1:1},
+ {id:'cloz',ago:90,etaHrs:48,brand:'SIZOPIN 100',mol:'Clozapine 100 mg',co:'Deccan Pharmaceuticals',pack:'10 tablets',ptr:41.20,mrp:58.00,gst:12,scheme:null,eta:'2 days',moq:10,stock:'in',expiry:'Aug 2027',sup:'gma',loc:'Telangana',h1:1,superv:'Typically initiated under specialist care'},
+ {id:'lithium',ago:90,etaHrs:48,brand:'LITHOSUN 300',mol:'Lithium carbonate 300 mg',co:'Deccan Pharmaceuticals',pack:'10 tablets',ptr:18.40,mrp:26.00,gst:12,scheme:null,eta:'2 days',moq:10,stock:'in',expiry:'Oct 2027',sup:'gma',loc:'Telangana',superv:'Typically initiated under specialist care'},
+ {id:'sert',ago:90,etaHrs:20,brand:'SERTA 50',mol:'Sertraline 50 mg',co:'Nirmaya Pharma',pack:'10 tablets',ptr:52.00,mrp:74.00,gst:12,scheme:null,eta:'Tomorrow by 11 am',moq:10,stock:'in',expiry:'May 2028',sup:'balaji',loc:'Telangana'},
+ {id:'clona',ago:90,etaHrs:20,brand:'CLONOTRIL 0.5',mol:'Clonazepam 0.5 mg',co:'Deccan Pharmaceuticals',pack:'15 tablets',ptr:24.60,mrp:36.00,gst:12,scheme:null,eta:'Tomorrow by 11 am',moq:10,stock:'in',expiry:'Feb 2028',sup:'gma',loc:'Telangana',h1:1},
+ {id:'tramad',ago:90,etaHrs:48,brand:'ULTRACET',mol:'Tramadol 37.5 mg + paracetamol 325 mg',co:'Suraksha Biotech',pack:'10 tablets',ptr:98.00,mrp:142.00,gst:12,scheme:null,eta:'2 days',moq:5,stock:'in',expiry:'Nov 2027',sup:'gma',loc:'Telangana',ndps:1},
+ {id:'mtp',ago:90,etaHrs:48,brand:'MTP KIT',mol:'Mifepristone 200 mg + misoprostol 200 mcg \u00d7 4',co:'Nirmaya Pharma',pack:'1 kit',ptr:0,mrp:499.00,gst:12,scheme:null,eta:'2 days',moq:1,stock:'in',expiry:'Jun 2027',sup:'gma',loc:'Telangana',mtp:1});
 // The signed record of a visit, as a doctor reads it back: what went out on the prescription first.
 const VISIT_NOTES={
  'lakshmi|2026|1 Sep':{signed:'Signed 1 Sep 2026, 10:52',co:'Fever 3 days, worse at night · headache · body ache',
   vit:{bp:'130/80',pr:'92',t:'101.2 °F',spo2:'98%',wt:'65 kg'},dx:[['Acute febrile illness','Working impression'],['Dengue','To be ruled out']],
-  rx:['Dolo 650 · AF · 3 days|1-1-1','ORS · after each loose stool|SOS'],
+  rx:['Pyranol 650 · AF · 3 days|1-1-1','ORS · after each loose stool|SOS'],
   inv:[['CBC','Sent · result pending'],['Dengue NS1 antigen','Sent · result pending']],
   adv:['Oral fluids, about 3 litres a day','Return at once if bleeding, severe abdominal pain or vomiting'],fu:'Review 4 Sep, or earlier if worse'},
  'lakshmi|2026|12 Jun':{signed:'Signed 12 Jun 2026, 11:20',co:'Diabetes review · no new complaints',
@@ -3536,7 +3536,7 @@ const RV_SEED=()=>({
   {id:'e4',k:'oe',label:'Throat mildly congested',ev:['Doctor','Throat is a little congested','10:43']}],
  dx:[{id:'d1',k:'dx',label:'Acute febrile illness',code:'R50.9',st:'Working',ev:['Doctor','Looks like a viral fever for now','10:44']},
   {id:'d2',k:'dx',label:'Dengue fever',code:'A90',st:'Rule out',ev:['Doctor','We will check for dengue also','10:44']}],
- rx:[{id:'r1',k:'rx',brand:'Dolo 650',mol:'Paracetamol 650 mg',form:'tab',dose:'1',f:[1,1,0,1],food:'AF',days:3,sos:false,cond:'',chip:'AF · assumed',ev:['Doctor','Dolo 650, one tablet three times a day for three days','10:45']},
+ rx:[{id:'r1',k:'rx',brand:'Pyranol 650',mol:'Paracetamol 650 mg',form:'tab',dose:'1',f:[1,1,0,1],food:'AF',days:3,sos:false,cond:'',chip:'AF · assumed',ev:['Doctor','Pyranol 650, one tablet three times a day for three days','10:45']},
   {id:'r2',k:'rx',brand:'ORS',mol:'Oral rehydration salts',form:'sachet',dose:'1',f:[0,0,0,0],food:'',days:3,sos:true,cond:'after each loose stool',ev:['Doctor','ORS after every loose motion','10:45']},
   {id:'r3',k:'rx',brand:'Septran DS',mol:'Cotrimoxazole 960 mg',form:'tab',dose:'1',f:[1,0,0,1],food:'AF',days:5,sos:false,cond:'',conflict:'Sulfa allergy on record · cotrimoxazole is a sulfonamide',ev:['Doctor','Septran DS twice daily for five days','10:46']}],
  adv:[{id:'a1',k:'adv',label:'Oral fluids, about 3 litres a day',ev:['Doctor','Drink plenty of water, two three litres','10:46']},
@@ -3554,7 +3554,7 @@ const RV_STRESS=()=>({
   {id:'sd3',k:'dx',label:'Pulmonary tuberculosis',code:'A15.0',st:'Rule out',ev:['Doctor','Rule out TB, cough is long','11:05']}],
  rx:[{id:'sr1',k:'rx',brand:'TAB. AUGMENTIN DUO 625',mol:'Amoxicillin 500 mg + Clavulanic acid 125 mg',form:'tab',dose:'1',f:[1,0,0,1],food:'AF',days:5,sos:false,cond:'',conflict:'Penicillin allergy on record · amoxicillin is a penicillin',ev:['Doctor','Augmentin Duo twice daily for five days','11:06']},
   {id:'sr2',k:'rx',brand:'TAB. AZITHRAL 500',mol:'Azithromycin 500 mg',form:'tab',dose:'1',f:[1,0,0,0],food:'Empty stomach',days:3,sos:false,cond:'',chip:'Food · assumed',ev:['Doctor','Azithral once a day for three days','11:06']},
-  {id:'sr3',k:'rx',brand:'TAB. DOLO 650',mol:'Paracetamol 650 mg',form:'tab',dose:'1',f:[0,0,0,0],food:'',days:3,sos:true,cond:'fever · ≥6 h apart',ev:['Doctor','Dolo only if fever, six hours gap','11:06']},
+  {id:'sr3',k:'rx',brand:'TAB. PYRANOL 650',mol:'Paracetamol 650 mg',form:'tab',dose:'1',f:[0,0,0,0],food:'',days:3,sos:true,cond:'fever · ≥6 h apart',ev:['Doctor','Pyranol only if fever, six hours gap','11:06']},
   {id:'sr4',k:'rx',brand:'SYP. ASCORIL LS',mol:'Ambroxol 30 mg + Levosalbutamol 1 mg + Guaifenesin 50 mg / 10 ml',form:'syrup',dose:'10 ml',f:[1,1,0,1],food:'AF',days:5,sos:false,cond:'',chip:'Dose · assumed',ev:['Doctor','Ascoril LS three times','11:07']},
   {id:'sr5',k:'rx',brand:'TAB. PAN 40',mol:'Pantoprazole 40 mg',form:'tab',dose:'1',f:[1,0,0,0],food:'BF',days:5,sos:false,cond:'',ev:['Doctor','Pan 40 before breakfast','11:07']},
   {id:'sr6',k:'rx',brand:'TAB. TELMA 40',mol:'Telmisartan 40 mg',form:'tab',dose:'1',f:[1,0,0,0],food:'BF',days:30,sos:false,cond:'',cont:1,ev:['Doctor','Continue the Telma he is taking','11:07']},
@@ -3578,11 +3578,11 @@ const RV_LAST={
  normal:{on:'12 Jun',said:'Continue the same tablets',rx:[{brand:'Glycomet 500',mol:'Metformin 500 mg',form:'tab',dose:'1',f:[1,0,0,1],food:'AF',days:90,said:1},{brand:'Telma 40',mol:'Telmisartan 40 mg',form:'tab',dose:'1',f:[1,0,0,0],food:'BF',days:90,said:1}]},
  stress:{on:'2 Aug',rx:[{brand:'TAB. TELMA 40',mol:'Telmisartan 40 mg',form:'tab',dose:'1',f:[1,0,0,0],food:'BF',days:30},{brand:'TAB. GLIMEPIRIDE 2',mol:'Glimepiride 2 mg',form:'tab',dose:'1',f:[1,0,0,0],food:'BF',days:30}]},
  child:{on:'',rx:[]}};
-const RV_FREQ=[{brand:'Dolo 650',mol:'Paracetamol 650 mg',form:'tab',dose:'1',f:[1,1,0,1],food:'AF',days:3},{brand:'Pan 40',mol:'Pantoprazole 40 mg',form:'tab',dose:'1',f:[1,0,0,0],food:'BF',days:5},
+const RV_FREQ=[{brand:'Pyranol 650',mol:'Paracetamol 650 mg',form:'tab',dose:'1',f:[1,1,0,1],food:'AF',days:3},{brand:'Pan 40',mol:'Pantoprazole 40 mg',form:'tab',dose:'1',f:[1,0,0,0],food:'BF',days:5},
  {brand:'Azithral 500',mol:'Azithromycin 500 mg',form:'tab',dose:'1',f:[1,0,0,0],food:'Empty stomach',days:3},{brand:'Cetirizine 10',mol:'Cetirizine 10 mg',form:'tab',dose:'1',f:[0,0,0,1],food:'HS',days:5},
  {brand:'Augmentin 625',mol:'Amoxicillin 500 mg + Clavulanic acid 125 mg',form:'tab',dose:'1',f:[1,0,0,1],food:'AF',days:5}];
 const RV_LONG=['Cough, dry','Sore throat','Loss of appetite','Nausea','Chills','Weakness'].map((l,i)=>({id:'x'+i,k:'co',label:l,dur:2,ev:['Patient',l+', for two days','10:43']}));
-const RV_DRUGS=[['Dolo 650','Paracetamol','tab',['500 mg','650 mg']],['Calpol 650','Paracetamol','tab',['500 mg','650 mg']],['Crocin Advance','Paracetamol','tab',['500 mg']],
+const RV_DRUGS=[['Pyranol 650','Paracetamol','tab',['500 mg','650 mg']],['Calpol 650','Paracetamol','tab',['500 mg','650 mg']],['Crocin Advance','Paracetamol','tab',['500 mg']],
  ['ORS','Oral rehydration salts','sachet',['21.8 g']],['Septran DS','Cotrimoxazole','tab',['480 mg','960 mg']],['Azithral 500','Azithromycin','tab',['250 mg','500 mg']],
  ['Pan 40','Pantoprazole','tab',['20 mg','40 mg']],['Glycomet 500','Metformin','tab',['500 mg','850 mg','1000 mg']],['Candid cream','Clotrimazole','topical',['1%']]];
 const RV_ICD=[['R50.9','Acute febrile illness'],['A90','Dengue fever'],['B34.9','Viral infection, unspecified'],['A01.0','Typhoid fever'],
@@ -3627,7 +3627,7 @@ const pdNorm=q=>{let t=String(q||'').toLowerCase().trim()
 // Consonant skeleton: 'parasetamol' and 'paracetamol' collapse to the same key.
 const pdSkel=t=>pdNorm(t).replace(/[aeiou]/g,'').replace(/[ckqz]/g,'s');
 const PD_LOCAL=new Set(['Aarogya Remedies','Deccan Pharmaceuticals','Suraksha Medicare']);
-const pdLoc=x=>x.loc||(PD_SUP[x.sup]&&/Vayu/.test(PD_SUP[x.sup].name)?'Delhi':'Hyderabad');
+const pdLoc=x=>x.loc||(PD_SUP[x.sup]&&/Vayu/.test(PD_SUP[x.sup].name)?'Delhi':'Telangana');
 const pdSched=x=>x.mtp?'MTP':x.ndps?'NDPS':x.sx?'X':x.h1?'H1':(/Augmentin|Azith|Telma|Glycomet|Insulin|Humasure/i.test(x.brand)?'H':'');
 // What this clinic actually buys every month, and what its shelf is short of.
 const PD_REGULARS=[{id:'dolo',last:22.00,q:20},{id:'glyco',last:24.10,q:30},{id:'telma',last:98.40,q:10},{id:'pan',last:88.20,q:10},{id:'ors',last:14.00,q:50},{id:'gloves',last:310.00,q:5}];
@@ -3661,7 +3661,7 @@ const PURCH_REG=[
  {d:'9 Jul 2026',sup:'Guntur Medical Agencies',inv:'GMA/4390',gst:988.93,amt:9230.00,h1:['Augmentin 625 \u00b7 20','Clonotril 0.5 \u00b7 10']}];
 const PD_BASICS=[['Gloves','gloves'],['Syringes',''],['Cotton & gauze',''],['Antiseptics','']];
 const INV=[
- {id:'dolo',brand:'DOLO 650',mol:'Paracetamol 650 mg',pack:'strip of 15',qty:12,min:30,ptr:22.00,mrp:31.50,sold7:38,exp:'Aug 2028',batches:2},
+ {id:'dolo',brand:'PYRANOL 650',mol:'Paracetamol 650 mg',pack:'strip of 15',qty:12,min:30,ptr:22.00,mrp:31.50,sold7:38,exp:'Aug 2028',batches:2},
  {id:'pan',brand:'PAN 40',mol:'Pantoprazole 40 mg',pack:'strip of 15',qty:51,min:20,ptr:88.20,mrp:127.50,sold7:14,exp:'Oct 2026',batches:3,soon:1},
  {id:'glyco',brand:'GLYCOMET 500',mol:'Metformin 500 mg',pack:'strip of 20',qty:64,min:30,ptr:24.10,mrp:34.00,sold7:22,exp:'Oct 2028',batches:2},
  {id:'telma',brand:'TELMA 40',mol:'Telmisartan 40 mg',pack:'strip of 15',qty:27,min:15,ptr:98.40,mrp:139.00,sold7:9,exp:'May 2028',batches:1},
@@ -3750,7 +3750,7 @@ const RS=[
   block:[['Agent','Dengue virus serotype 2'],['Region','Andhra Pradesh, Telangana \u00b7 rising'],['Presentation','Fever, retro-orbital pain, rash; warning signs from day 3'],['Action','Daily CBC from day 3; admit at first warning sign'],['Reporting','Notifiable \u2014 report to IDSP'],['Authority','ICMR-NIV \u00b7 NCDC']],inApproved:1,inCohort:1,
   mfg:[],doi:'ICMR-NIV weekly report 35/2026',related:['qdenga']},
  {id:'qdenga',take:'80% fewer dengue admissions in an all-Indian trial, interim',tags:['dengue','vaccine','phase 3'],authors:'Biological E with Takeda; 19 Indian sites',limit:'Interim; 18 of 54 months; industry-funded',stats:[['Hospitalisation','\\u2193 80%'],['N','10,400'],['Months','18'],['Serotypes','all 4']],fig:{cap:'Dengue hospitalisation per 1,000',items:[['Vaccine',4],['Placebo',20]]},useful:512,trend:0,type:'Drug',sp:'General Medicine',title:'Dengue vaccine TAK-003 cuts hospitalisation 80% in Indian trial',src:'Medical councils',date:'15 Jul 2026',y:2026,ago:51,ev:'RCT',n:10400,peer:1,
-  what:'Interim phase-3 results of the tetravalent live vaccine on an Indian population.',who:'10,400 Indians aged 4\u201360, 19 sites incl. Guntur GGH and Gandhi Hospital, Hyderabad.',result:'80% fewer hospitalisations at 18 months; no severe-dengue signal in the never-infected.',
+  what:'Interim phase-3 results of the tetravalent live vaccine on an Indian population.',who:'10,400 Indians aged 4\u201360, 19 sites incl. Guntur GGH and Gandhi Hospital, Secunderabad.',result:'80% fewer hospitalisations at 18 months; no severe-dengue signal in the never-infected.',
   block:[['Molecule','TAK-003, tetravalent live attenuated'],['Class','Vaccine'],['Phase','III, interim']],appr:[['FDA','\u2717'],['EMA','\u2713'],['CDSCO / DCGI','pending']],avail:'Not yet',inApproved:0,inCohort:1,
   safety:'Injection-site pain 40%, fever 6%. No safety signal to date.',mfg:[],mol:'Dengue vaccine',doi:'CTRI/2025/01/078812',related:['dengue2']},
  {id:'kneeoa',take:'Glucosamine did not slow knee OA over five years',tags:['knee OA','glucosamine','cohort'],authors:'Hunter DJ et al., University of Sydney; UK Biobank',limit:'Observational; self-reported supplement use',stats:[['Joint space','0.21 vs 0.22'],['N','3,860'],['Years','5'],['Replacement','6.1% vs 6.3%']],useful:57,trend:0,type:'Results',sp:'Orthopedics',title:'Knee OA progresses at the same rate with or without glucosamine',src:'BMJ',date:'22 May 2026',y:2026,ago:105,ev:'Observational',n:3860,peer:1,
@@ -3791,14 +3791,14 @@ const RS=[
   mfg:[],doi:'Indian J Dermatol Venereol Leprol 2026;92:4',related:['roflu']}];
 // Verified doctors. Real names, specialty, city - never anonymous.
 const NET={
- me:{n:'Dr. Priya Rao',sp:'General Medicine',c:'Hyderabad'},
+ me:{n:'Dr. Priya Rao',sp:'General Medicine',c:'Telangana'},
  sharma:{n:'Dr. Priya Sharma',sp:'Dermatology',c:'Bangalore'},
  nair:{n:'Dr. Anoop Nair',sp:'Dermatology',c:'Kochi'},
  iyer:{n:'Dr. Meena Iyer',sp:'Orthopedics',c:'Chennai'},
  khan:{n:'Dr. Farhan Khan',sp:'General Medicine',c:'Lucknow'},
  das:{n:'Dr. Ritwik Das',sp:'Gastroenterology',c:'Kolkata'},
  patel:{n:'Dr. Hetal Patel',sp:'Gastroenterology',c:'Ahmedabad'},
- reddy:{n:'Dr. Sunitha Reddy',sp:'Dermatology',c:'Hyderabad'},
+ reddy:{n:'Dr. Sunitha Reddy',sp:'Dermatology',c:'Telangana'},
  bose:{n:'Dr. Arjun Bose',sp:'General Medicine',c:'Pune'},
  gill:{n:'Dr. Simran Gill',sp:'Endocrinology',c:'Chandigarh'}};
 const CM_COMMENTS={
@@ -3824,7 +3824,7 @@ const CM_BASE={dengue2:20};
 const RS_SRC_INTL=['WHO','Lancet','NEJM','JAMA','BMJ','Nature Medicine','Cochrane','Preprints'];
 // Case posts. One doctor's experience, structured so it cannot masquerade as a study.
 const CASES=[
- {id:'c_homeo',doc:'Dr. Suresh Kumar',sp:'General Medicine',city:'Hyderabad',ago:2,agoTxt:'2d',
+ {id:'c_homeo',doc:'Dr. Suresh Kumar',sp:'General Medicine',city:'Telangana',ago:2,agoTxt:'2d',
   title:'Joint pain not responding \u2014 the answer was in his other medicines',
   lesson:'Ask about ayurvedic or homeopathic medicines before calling it treatment failure.',
   presented:'50s \u00b7 M \u00b7 joint pain, 3 weeks',course:'NSAID started \u2192 no relief \u2192 dose increased \u2192 none',
@@ -3842,7 +3842,7 @@ const CASES=[
   presented:'30s \u00b7 M \u00b7 androgenetic alopecia, minoxidil 5% for 4 months',course:'Density improved to month 3 \u2192 plateau \u2192 patient ready to stop',
   turn:'Compare photos showed scale and erythema at the crown, not just thinning',resolution:'Added ketoconazole 2% twice weekly; regrowth resumed by month 6',
   tags:['hair loss','minoxidil','ketoconazole'],useful:89,comments:6,trend:0,related:['minox'],photo:'h3'},
- {id:'c_ortho',doc:'Dr. Ramesh Iyer',sp:'Orthopedics',city:'Hyderabad',ago:12,agoTxt:'12d',
+ {id:'c_ortho',doc:'Dr. Ramesh Iyer',sp:'Orthopedics',city:'Telangana',ago:12,agoTxt:'12d',
   title:'Knee pain in a 62-year-old \u2014 the X-ray was normal, the hip was not',
   lesson:'Knee pain with a normal knee: examine the hip before ordering the MRI.',
   presented:'60s \u00b7 F \u00b7 anterior knee pain, 6 weeks',course:'Knee X-ray normal \u2192 analgesic gel \u2192 physiotherapy \u2192 worse',
@@ -3853,10 +3853,10 @@ const STATS=[
  {id:'st_denv',ago:3,value:'71%',label:'of sequenced dengue is serotype 2 this season',src:'ICMR-NIV 35/2026',to:{kind:'paper',id:'dengue2'}}];
 const CM_CASE_COMMENTS={
  c_homeo:[{id:'k1',doc:'Dr. Anil Mehta',sp:'Endocrinology',city:'Guntur',ago:'1d',text:'Seen the same with a Unani powder for gastritis \u2014 patient never called it a medicine.',helpful:31,replies:[
-   {id:'k1a',doc:'Dr. Suresh Kumar',sp:'General Medicine',city:'Hyderabad',ago:'1d',text:'Exactly. I now ask \u201cwhat else do you take, from anywhere\u201d as a fixed question.',helpful:12,replies:[]}]},
+   {id:'k1a',doc:'Dr. Suresh Kumar',sp:'General Medicine',city:'Telangana',ago:'1d',text:'Exactly. I now ask \u201cwhat else do you take, from anywhere\u201d as a fixed question.',helpful:12,replies:[]}]},
   {id:'k2',doc:'Dr. Kavya Sharma',sp:'Dermatology',city:'Bangalore',ago:'20h',text:'Relevant beyond joints \u2014 half my steroid-cream failures turn out to be a bazaar cream with clobetasol.',helpful:19,replies:[]}],
- c_dka:[{id:'k3',doc:'Dr. Nirmal Rao',sp:'Cardiology',city:'Hyderabad',ago:'4d',text:'Mine was 1,800 with DKA and a normal-looking ECG. Same lesson: HI is a result.',helpful:44,replies:[]},
-  {id:'k4',doc:'Dr. Suresh Kumar',sp:'General Medicine',city:'Hyderabad',ago:'3d',text:'Do most OPD glucometers cap at 600? Worth a line in the post.',helpful:9,replies:[
+ c_dka:[{id:'k3',doc:'Dr. Nirmal Rao',sp:'Cardiology',city:'Telangana',ago:'4d',text:'Mine was 1,800 with DKA and a normal-looking ECG. Same lesson: HI is a result.',helpful:44,replies:[]},
+  {id:'k4',doc:'Dr. Suresh Kumar',sp:'General Medicine',city:'Telangana',ago:'3d',text:'Do most OPD glucometers cap at 600? Worth a line in the post.',helpful:9,replies:[
    {id:'k4a',doc:'Dr. Meera Nair',sp:'General Medicine',city:'Kochi',ago:'3d',text:'Yes, 600 on most Indian units. Added it to the lesson.',helpful:7,replies:[]}]}]};
 const cmNorm=list=>list.map(c=>({...c,help:c.helpful!=null?c.helpful:(c.help||0),
  who:c.doc?{n:c.doc,sp:c.sp,c:c.city}:c.who,replies:cmNorm(c.replies||[])}));
@@ -3883,7 +3883,7 @@ const PXP={
  // pack is how the medicine physically leaves the shelf.
  pan:{brand:'PAN 40',generic:'PANTOPRAZOLE 40MG',dose:'1-0-1 · before food · 7 days',
   unit:'tab',units:'tablets',mrp:8.50,gst:12,presc:14,pack:15,packName:'strip',stock:240,batch:'B/PN-8802 · expires 11/2026'},
- dolo:{brand:'DOLO 650',generic:'PARACETAMOL 650MG',dose:'1-1-1 · after food · 3 days',
+ dolo:{brand:'PYRANOL 650',generic:'PARACETAMOL 650MG',dose:'1-1-1 · after food · 3 days',
   unit:'tab',units:'tablets',mrp:2.10,gst:12,presc:9,pack:15,packName:'strip',stock:0},
  aug:{brand:'AUGMENTIN 625',generic:'AMOXICILLIN 500MG + CLAVULANIC ACID 125MG',dose:'1-0-1 · after food · 5 days',
   unit:'tab',units:'tablets',mrp:21.30,gst:12,presc:10,pack:10,packName:'strip',stock:60,h1:1,
@@ -3891,7 +3891,7 @@ const PXP={
  ors:{brand:'ORS SACHETS',generic:'ORAL REHYDRATION SALTS · WHO FORMULA',dose:'1 sachet after each loose motion · 5 sachets',
   unit:'sachet',units:'sachets',mrp:22.00,gst:5,presc:5,pack:1,packName:'sachet',stock:120,batch:'B/OR-3320 · expires 01/2028'}};
 const PMEDS=[
- {id:'dolo',n:'Dolo 650',g:'Paracetamol 650mg',dose:'1-1-1',doses:['morning','afternoon','night'],
+ {id:'dolo',n:'Pyranol 650',g:'Paracetamol 650mg',dose:'1-1-1',doses:['morning','afternoon','night'],
   timing:'after food',days:'3 days \u00b7 day 1 today',left:'',today:1,
   look:'White, round, plain \u00b7 strip of 15',for:'Fever and body pain',
   when:'Morning, afternoon and night, after food',
@@ -3965,7 +3965,7 @@ const PDATA={
  ramesh:{phone:'+91 90000 00026',abha:'44-8821-6034-9917',height:'171 cm',heightAt:'Demo Clinic \u00b7 21 May 2026',
   weight:'72.0 kg',weightAt:'Demo Clinic \u00b7 21 May 2026',bg:'O positive',bgFrom:'Recorded at Demo Clinic \u00b7 21 May 2026',
   allergy:null,abhaLinked:'Since 8 Jan 2026 \u00b7 no hospital has asked yet',
-  followUp:{title:'Diabetes review \u00b7 Sep 4',when:'Sep 4',sub:'Dr. Priya Rao \u00b7 Demo Clinic, Vanasthalipuram',
+  followUp:{title:'Diabetes review \u00b7 Sep 4',when:'Sep 4',sub:'Dr. Priya Rao \u00b7 Demo Clinic, Lakeview Colony',
    chip:'Dr Rao \u00b7 signed',token:'',expected:'',fee:'\u20b9300',feeNote:'Payable at the desk'},
   plan:{quote:'\u201cWalk half an hour a day and come back in three months with a fasting sugar.\u201d',from:'From your visit \u00b7 Aug 21 \u00b7 Dr. Priya Rao'},
   watch:{title:'Eat something sweet straight away if',
@@ -4002,7 +4002,7 @@ const PREC={
 // The only keys with a plotted series. A trend row without one is a line of text, not a link.
 const TREND_KEYS=['hba1c','bp','wt','sugar','hb','plt'];
 const PVISIT={
- aug:{title:'Fever - dengue ruled out',date:'14 August 2026',by:'Dr. Priya Rao',clinic:'Demo Clinic, Vanasthalipuram',
+ aug:{title:'Fever - dengue ruled out',date:'14 August 2026',by:'Dr. Priya Rao',clinic:'Demo Clinic, Lakeview Colony',
   signed:'Signed 14 Aug at 10:48 AM'},
  jul:{title:'Diabetes review',date:'12 July 2026',by:'Dr. Anil Mehta',clinic:'City Diabetes Centre',
   signed:'Signed 12 Jul at 8:12 PM'}};
@@ -4627,7 +4627,7 @@ class Component extends DCLogic{
     :[{value:String(HQ.wait),label:'Waiting',onClick:()=>this.setState({opdSeg:'waiting',route:'d1',stack:[]})},
       {value:String(HQ.booked),label:'Booked',onClick:()=>this.setState({opdSeg:'booked',route:'d1',stack:[]})},
       {value:String(HQ.newSeen+HQ.newWait),label:'New'},{value:String(HQ.total),label:'Total'}]},
-   yash?this.banner('plain','Day OPD · 09:00–14:00','Yashoda runs its own queue. Your 1Heath notes still file here, but appointments are managed by the hospital.',null,w.lab)
+   yash?this.banner('plain','Day OPD · 09:00–14:00','City runs its own queue. Your 1Heath notes still file here, but appointments are managed by the hospital.',null,w.lab)
    :sri?this.banner('plain','Evening OPD starts at 19:00',(SESSION.total-LEFT)+' of '+SESSION.total+' tokens booked online. The queue opens 30 minutes before you arrive.',null,w.lab)
    :null,
    ...(()=>{const tod=s.homeTime||'morning';if(yash)return[];
@@ -4926,7 +4926,7 @@ class Component extends DCLogic{
      cont:{advised:126,returned:81,open:14},money:['₹ 1,16,400','₹ 8,400'],sessions:26}}[R];
    const P=A.pts,few=P.length<3,perDay=Math.round(A.seen/A.sessions);
    const fRate=A.cont?Math.round(A.cont.returned/(A.cont.advised-A.cont.open)*100):0;
-   return{bar:{back:1,title:'Your practice',sub:'Dr. Priya Rao · Demo Clinic, Vanasthalipuram'},blocks:[
+   return{bar:{back:1,title:'Your practice',sub:'Dr. Priya Rao · Demo Clinic, Lakeview Colony'},blocks:[
     {t:'chips',items:[['TODAY','Today'],['3D','3 days'],['1W','1 week'],['1M','1 month']]
      .map(([k,label])=>({label,on:R===k,onClick:()=>this.setState({anRange:k})}))},
     {t:'title',title:A.seen+' patients',sub:A.label+' · '+A.since},
@@ -4969,7 +4969,7 @@ class Component extends DCLogic{
    this.rows([
     {icon:I.calendar,iconTone:'ok',title:'New booking · token '+BOOKED_TOKEN,sub:'Anitha Reddy · Sri Sai Clinic',meta:'6 min',chevron:1,onClick:G('d1')},
     {icon:I.flask,iconTone:'warn',title:'New lab result',sub:'For S. Imran · tap to view',meta:'8 min',badge:'Demo Clinic',badgeTone:'plain',chevron:1,onClick:G('pharm')},
-    {icon:I.shield,iconTone:'warn',title:'Consent withdrawn',sub:'A patient revoked access to their record',meta:'1 hr',badge:'Yashoda Hospital',badgeTone:'plain',chevron:1},
+    {icon:I.shield,iconTone:'warn',title:'Consent withdrawn',sub:'A patient revoked access to their record',meta:'1 hr',badge:'City Hospital',badgeTone:'plain',chevron:1},
     {icon:I.sign,iconTone:'warn',title:'Draft expiring',sub:'Kavitha S · unsigned for 6 of 7 days',meta:'2 hr',badge:'Demo Clinic',badgeTone:'plain',chevron:1,onClick:()=>this.go('d9',true)}]),
    this.sec('EARLIER'),
    this.rows([
@@ -5154,8 +5154,8 @@ class Component extends DCLogic{
     {k:'list',label:'List me publicly',sub:'Patients can find your profile and book without the app'}]},
    this.sec('BOOKABLE WORKPLACES'),
    {t:'toggles',items:[
-    {k:'rao',label:'Demo Clinic, Vanasthalipuram',sub:'Token-based · 20 per session'},
-    {k:'yashoda',label:'Yashoda Hospital, Guntur',sub:'Hospital manages its own queue - shown as display-only'},
+    {k:'rao',label:'Demo Clinic, Lakeview Colony',sub:'Token-based · 20 per session'},
+    {k:'yashoda',label:'City Hospital, Guntur',sub:'Hospital manages its own queue - shown as display-only'},
     {k:'srisai',label:'Sri Sai Clinic, Tenali',sub:'Token-based · 20 per session'}]},
    this.sec('HOW PATIENTS BOOK'),
    this.rows([
@@ -5174,7 +5174,7 @@ class Component extends DCLogic{
    const opdBar={title:w.short,big:1,actions:[{icon:'M12 5v14M5 12h14',label:'Add walk-in',onClick:()=>this.setState(p=>({regFound:null,reg:{...p.reg,phone:'',name:'',age:'',sex:'',step:0,newOnNum:false,rel:''},route:'r2',stack:[...p.stack,'d1']}))},{icon:I.search,label:'Search patients',
     onClick:()=>this.setState({dq:'',dScope:'all',route:'dsearch',stack:[...s.stack,'d1']})}]};
    if(yash)return{bar:opdBar,tabs:1,blocks:[
-    this.banner('plain','Yashoda runs this queue','Appointments and tokens here are managed by the hospital, not by 1Heath. Your notes still file to this workplace.')]};
+    this.banner('plain','City runs this queue','Appointments and tokens here are managed by the hospital, not by 1Heath. Your notes still file to this workplace.')]};
    if(sri)return{bar:opdBar,tabs:1,blocks:[
     this.chips([{label:'Booked · '+SRI_BOOKED.length,on:1},{label:'Tokens left · '+LEFT},{label:'Session opens '+hhmm(SESSION.start)}]),
     this.sec('BOOKED FOR THIS EVENING · '+SRI_BOOKED.length),
@@ -5278,7 +5278,7 @@ class Component extends DCLogic{
    const V=P.visits,T=s.askThread[P.id]||[];
    const yrs=v=>{const m=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'].findIndex(x=>v.d.endsWith(x));return v.y+(m<0?0:m/12);};
    const ageAt=v=>P.age-(2026-v.y);
-   const vref=v=>({label:v.d+' '+v.y+' \u00b7 '+v.t,sub:v.doc+' \u00b7 '+v.sp+(v.city!=='Hyderabad'?' \u00b7 '+v.city:''),
+   const vref=v=>({label:v.d+' '+v.y+' \u00b7 '+v.t,sub:v.doc+' \u00b7 '+v.sp+(v.city!=='Telangana'?' \u00b7 '+v.city:''),
     onClick:()=>{this.setState({sheet:null});this.go('d5',true);}});
    const find=(re,field)=>V.filter(v=>re.test(field==='all'?[v.t,v.line,v.cond,v.rx].join(' '):v[field]||''));
    const ans=q=>{const k=q.toLowerCase();
@@ -5442,13 +5442,13 @@ class Component extends DCLogic{
    const P=this.openPt(),first=P.name.split(' ')[0];
    const V=P.visits.find(v=>v.y+'|'+v.d===s.visitOpen)||P.visits[0];
    const N=VISIT_NOTES[P.id+'|'+V.y+'|'+V.d];
-   const other=V.city&&V.city!=='Hyderabad'||!/Priya Rao/.test(V.doc);
+   const other=V.city&&V.city!=='Telangana'||!/Priya Rao/.test(V.doc);
    const idx=P.visits.indexOf(V),older=P.visits[idx+1],newer=P.visits[idx-1];
    const goV=v=>()=>this.setState({visitOpen:v.y+'|'+v.d});
    const rxRows=N?N.rx.map(x=>{const [l,r]=x.split('|');return{l,r,sub:molOf(l)};})
     :(V.rx?[{l:V.rx,sub:'Summary only'}]:[]);
    return{bar:{back:1,title:V.t,sub:V.d+' '+V.y+' · '+V.doc,actions:N?[{icon:I.doc,label:'Print',onClick:()=>this.setState({snack:{text:'Prescription sent to the clinic printer'}})}]:[]},blocks:[
-    other?this.banner('plain','From '+(V.city==='Hyderabad'?'another doctor':V.city),V.ep?V.ep.src:'Shared with '+first+'\u2019s consent · summary only'):null,
+    other?this.banner('plain','From '+(V.city==='Telangana'?'another doctor':V.city),V.ep?V.ep.src:'Shared with '+first+'\u2019s consent · summary only'):null,
     N&&N.allergy?this.banner('red',N.allergy,''):null,
     this.sec('PRESCRIPTION'),
     rxRows.length?this.kv(rxRows):this.note('No medicines prescribed at this visit.'),
@@ -5634,12 +5634,12 @@ class Component extends DCLogic{
     body.push({t:'scope',tone:'blue',label:'SCOPED TO LAKSHMI DEVI · 52 F',
      body:'This tab answers only from her consented record and the formulary. For a general clinical question, use the app-level assistant.',
      action:'Open the general assistant',onAction:()=>this.go('ai',true)},
-     this.chips([{label:'What did we prescribe last visit?'},{label:'Any interaction: Dolo + Telma?'},{label:'Explain dengue warning signs simply'},{label:'Is her chest pain cardiac?'}]),
+     this.chips([{label:'What did we prescribe last visit?'},{label:'Any interaction: Pyranol + Telma?'},{label:'Explain dengue warning signs simply'},{label:'Is her chest pain cardiac?'}]),
      this.sec('ANSWER'),
-     this.kv([{l:'Any interaction between Dolo 650 and Telma 40?',sub:'Asked just now'},
+     this.kv([{l:'Any interaction between Pyranol 650 and Telma 40?',sub:'Asked just now'},
       {l:'No significant interaction. Paracetamol does not affect telmisartan. Avoid NSAIDs instead - they blunt telmisartan and can affect the kidneys.',sub:''}]),
      this.sec('BASED ON'),
-     this.rows([{icon:I.doc,iconTone:'plain',title:'Today’s Rx - Dolo 650',sub:'Added at 10:48 AM',chevron:1},
+     this.rows([{icon:I.doc,iconTone:'plain',title:'Today’s Rx - Pyranol 650',sub:'Added at 10:48 AM',chevron:1},
       {icon:I.book,iconTone:'plain',title:'National Formulary of India',sub:'Telmisartan interactions, 2024',chevron:1}]),
      this.sec('WHEN IT CANNOT ANSWER'),
      this.banner('plain','I cannot answer this from the record',
@@ -5753,7 +5753,7 @@ class Component extends DCLogic{
      why:'A suspicion is not a diagnosis. It stays on today\u2019s visit until the NS1 result comes back, and never enters her permanent conditions.'}:null,
     d.co.length?{l:d.co.slice(0,3).map(x=>x.label).join(' \u00b7 '),
      why:'This episode belongs to today. Her permanent record gains nothing from an illness that will have resolved by next month.'}:null,
-    said('dolo')?{l:'Dolo 650 \u00b7 3 days',
+    said('dolo')?{l:'Pyranol 650 \u00b7 3 days',
      why:'A three-day course ends by itself. It shows in her medicines until 4 Sep, then leaves without anyone deleting it.'}:null].filter(Boolean);
    const kept=PERM.filter(x=>s.cxKeep[x.k]!==false);
    if(s.cxSigned){const nAll=facts.length,nKept=kept.length+hxChanged.length;
@@ -5790,7 +5790,7 @@ class Component extends DCLogic{
     (captured&&!unresolvedRx&&s.cxrState==='offline')?this.banner('warn','No internet','Signing needs a connection. Your note is kept on this phone until you are back online.',
      [{label:'Try again',kind:'primary',onClick:()=>this.setState({cxrState:'live',snack:{text:'Back online'}})}]):null,
     this.sec('PRESCRIPTION'),
-    {t:'rxprint',clinic:'DEMO CLINIC',clinicAddr:'Vanasthalipuram Main Road, Hyderabad, Telangana',
+    {t:'rxprint',clinic:'DEMO CLINIC',clinicAddr:'Main Road, Telangana',
      doctor:'Dr. Priya Rao',doctorQual:'MBBS, MD (General Medicine) · Reg. No. MCI 54219',
      patient:'Lakshmi Devi · 52 F',date:'1 Sep 2026',
      sections:[{title:'C/O',body:line(d.co)},{title:'O/E',body:(d.oe.find(x=>x.vitals)?('BP '+d.oe.find(x=>x.vitals).bp+'  Pulse '+d.oe.find(x=>x.vitals).pulse+'  Temp '+d.oe.find(x=>x.vitals).temp+'  SpO₂ '+d.oe.find(x=>x.vitals).spo2+'\n'):'')+line(d.oe.filter(x=>!x.vitals))},
@@ -5858,13 +5858,13 @@ class Component extends DCLogic{
 
   case 'cxsettings':return{bar:{back:1,title:'Letterhead & Rx settings'},blocks:[
    this.sec('LIVE PREVIEW'),
-   {t:'rxprint',clinic:'DEMO CLINIC',clinicAddr:'Vanasthalipuram Main Road, Hyderabad, Telangana · 10AM–1PM, 6PM–9PM',
+   {t:'rxprint',clinic:'DEMO CLINIC',clinicAddr:'Main Road, Telangana · 10AM–1PM, 6PM–9PM',
     doctor:'Dr. Priya Rao',doctorQual:'MBBS, MD (General Medicine) · Reg. No. MCI 54219',
     patient:'Patient name · age/sex',date:'DD Mon YYYY',
     sections:[{title:'C/O',body:'-'},{title:'Rx',body:'-'}],followup:'Footer: clinic phone, emergency contact',
     sig:'Dr. Priya Rao',regNo:'Signature & Reg. No. MCI 54219'},
    this.sec('LETTERHEAD'),
-   this.kv([{l:'Clinic name',r:'Demo Clinic'},{l:'Logo',r:'Uploaded'},{l:'Address',r:'Vanasthalipuram Main Road, Hyderabad'},{l:'Registration No.',r:'MCI 54219'},{l:'Timings shown on print',r:'10AM–1PM, 6PM–9PM'}]),
+   this.kv([{l:'Clinic name',r:'Demo Clinic'},{l:'Logo',r:'Uploaded'},{l:'Address',r:'Lakeview Colony Main Road, Telangana'},{l:'Registration No.',r:'MCI 54219'},{l:'Timings shown on print',r:'10AM–1PM, 6PM–9PM'}]),
    this.sec('NOTE STYLE'),
    this.chips([{label:'Concise',on:1},{label:'Detailed'}]),
    this.sec('DEFAULT FOLLOW-UP INTERVAL'),
@@ -5883,7 +5883,7 @@ class Component extends DCLogic{
    this.sec('COMPLAINT'),
    this.kv([{l:'Fever × 3 days, worse at night'}]),
    this.sec('MEDICINES'),
-   {t:'rows',items:[{icon:I.pill,iconTone:'blue',title:'DOLO 650',sub:'1 tablet · morning, afternoon and night · after food · 3 days',badge:'1-1-1 · after food',badgeTone:'ok'}]},
+   {t:'rows',items:[{icon:I.pill,iconTone:'blue',title:'PYRANOL 650',sub:'1 tablet · morning, afternoon and night · after food · 3 days',badge:'1-1-1 · after food',badgeTone:'ok'}]},
    this.sec('ADVICE'),
    this.kv([{l:'Drink plenty of fluids, rest at home'}]),
    this.sec('WHEN TO RETURN'),
@@ -6054,10 +6054,10 @@ class Component extends DCLogic{
    this.sec('MESSAGE - SAFETY BLOCK (on the line, red, as built)'),
    this.note('Stays on the line it blocks, as in RX - ALLERGY CONFLICT below. Only the founder changes a safety rule; this sheet only shows how a message looks and reads.'),
    this.sec('RX - VERIFIED'),
-   {t:'rx',items:[{brand:'DOLO 650',generic:'PARACETAMOL 650MG',dose:'1-1-1',food:'AFTER FOOD',duration:'× 3 DAYS',
+   {t:'rx',items:[{brand:'PYRANOL 650',generic:'PARACETAMOL 650MG',dose:'1-1-1',food:'AFTER FOOD',duration:'× 3 DAYS',
     verifyLabel:'Verified',verifyStyle:'flex:none;padding:5px 10px;border-radius:8px;font:700 11px Inter;color:#067647;background:#E8F6EF',
     chipStyle:'padding:5px 10px;border-radius:8px;font:700 11px Inter;color:#5A6372;background:#F6F7F9',cardStyle:'background:#fff;border:1.5px solid #E3E7ED;border-radius:16px;padding:15px',
-    quote:'Dolo six-fifty, one tablet three times a day after food.'}]},
+    quote:'Pyranol six-fifty, one tablet three times a day after food.'}]},
    this.sec('RX - PATIENT-REPORTED (never a prescription)'),
    {t:'rx',items:[{brand:'≈ Telma 40',generic:'TELMISARTAN 40MG · UNCONFIRMED',dose:'',food:'',duration:'',
     verifyLabel:'Patient-reported',verifyStyle:'flex:none;padding:5px 10px;border-radius:8px;font:700 11px Inter;color:#5A6372;background:#F1F2F4',
@@ -6082,7 +6082,7 @@ class Component extends DCLogic{
     chipStyle:'padding:5px 10px;border-radius:8px;font:700 11px Inter;color:#5A6372;background:#F6F7F9',cardStyle:'background:#fff;border:1.5px dashed #E7EAEF;border-radius:16px;padding:15px',
     quote:'Give her Nervijen, one at night.',refillNote:'Not matched to any known brand or generic. Type to correct.'}]},
    this.sec('RX - DOSE LOOKS UNUSUAL'),
-   {t:'rx',items:[{brand:'DOLO 650',generic:'PARACETAMOL 650MG',dose:'2-2-2',food:'AFTER FOOD',duration:'× 3 DAYS',
+   {t:'rx',items:[{brand:'PYRANOL 650',generic:'PARACETAMOL 650MG',dose:'2-2-2',food:'AFTER FOOD',duration:'× 3 DAYS',
     verifyLabel:'Dose unusual',verifyStyle:'flex:none;padding:5px 10px;border-radius:8px;font:700 11px Inter;color:#B54708;background:#FFF6E6',
     chipStyle:'padding:5px 10px;border-radius:8px;font:700 11px Inter;color:#5A6372;background:#F6F7F9',cardStyle:'background:#fff;border:1.5px solid #FFF6E6;border-radius:16px;padding:15px',
     warnTitle:'Above the usual adult ceiling (max 4g/day)',warnBg:'#FFF6E6',warnFg:'#B54708',warnBody:'6 tablets/day = 3.9g - close to the limit. Confirm this was said correctly.'}]},
@@ -6173,7 +6173,7 @@ class Component extends DCLogic{
     blockBody:'Schedule H1. There is no substitution path in the app for this, by law. The doctor is told so she can rewrite or send the patient elsewhere.',
     acts:[{label:'Notify Dr. Priya Rao',kind:'primary'}],
     foot:'Hard block. No stepper, no Full, no override anywhere on this line.'},
-   {t:'dline',brand:'DOLO 650',generic:'PARACETAMOL 650MG',
+   {t:'dline',brand:'PYRANOL 650',generic:'PARACETAMOL 650MG',
     chips:[{label:'Prescribed 9 tabs',tone:'plain'},{label:'Out of stock',tone:'warn'}],
     blockTone:'warn',blockTitle:'Not in stock — a swap needs the doctor',
     blockBody:'Non-scheduled, so the counter may propose the same molecule and the prescriber signs an amendment.',
@@ -6216,13 +6216,13 @@ class Component extends DCLogic{
    this.rows([
     {icon:I.phone,iconTone:'ok',title:'Sent to Lakshmi’s phone',sub:'In plain words'},
     {icon:I.flask,iconTone:'ok',title:'CBC and NS1 ordered',sub:w.short+' lab · collection at counter 2'},
-    {icon:I.pill,iconTone:'warn',title:'Dolo 650 dispensed · Septran removed',sub:'Pharmacy notified of the allergy decision'},
+    {icon:I.pill,iconTone:'warn',title:'Pyranol 650 dispensed · Septran removed',sub:'Pharmacy notified of the allergy decision'},
     {icon:I.clock,iconTone:'plain',title:'Review booked',sub:'4 Sep, in 3 days · reminder scheduled'}]),
    this.rows([{icon:I.patients,iconTone:'plain',title:'Share case',sub:'De-identified \u00b7 verified doctors only',chevron:1,
     onClick:()=>this.setState({cmNew:{from:1,title:'Fever day 4, diabetic, sulfa allergy \u2014 dengue workup?',pt:'40s',sex:'F',
      hist:'Fever 4 days, worse at night, headache, loose motions\nType 2 diabetes 8 years on metformin\nSulfa allergy \u2014 rash and facial swelling',
-     tried:'Dolo 650 \u00b7 1-1-1 \u00b7 AF \u00b7 3 days\nORS after each loose motion',ask:'',photos:PHOTOS.filter(x=>x.today&&x.pt==='lakshmi').map(x=>x.id),deid:false},
-     cmPrefill:1,cmDraftCase:{presented:'50s \u00b7 F \u00b7 fever 4 days, worse at night',course:'Dolo 650 1-1-1 \u2192 ORS \u2192 CBC and NS1 ordered',turn:'',resolution:'',lesson:'',tags:'fever, dengue'},route:'rscompose',stack:[...s.stack,'d4s']})}]),
+     tried:'Pyranol 650 \u00b7 1-1-1 \u00b7 AF \u00b7 3 days\nORS after each loose motion',ask:'',photos:PHOTOS.filter(x=>x.today&&x.pt==='lakshmi').map(x=>x.id),deid:false},
+     cmPrefill:1,cmDraftCase:{presented:'50s \u00b7 F \u00b7 fever 4 days, worse at night',course:'Pyranol 650 1-1-1 \u2192 ORS \u2192 CBC and NS1 ordered',turn:'',resolution:'',lesson:'',tags:'fever, dengue'},route:'rscompose',stack:[...s.stack,'d4s']})}]),
    this.note('Documentation time for this consultation: 41 seconds.')],
    cta:{label:'Next patient',onClick:G('d1')}};
 
@@ -6426,8 +6426,8 @@ class Component extends DCLogic{
     {l:'Facts you corrected in review',r:'9'}]),
    this.sec('ACROSS WORKPLACES THIS WEEK'),
    this.kv([
-    {l:'Demo Clinic, Vanasthalipuram',r:'66 patients',sub:'4h 09m documentation saved'},
-    {l:'Yashoda Hospital, Guntur',r:'31 patients',sub:'1h 52m saved'},
+    {l:'Demo Clinic, Lakeview Colony',r:'66 patients',sub:'4h 09m documentation saved'},
+    {l:'City Hospital, Guntur',r:'31 patients',sub:'1h 52m saved'},
     {l:'Sri Sai Clinic, Tenali',r:'18 patients',sub:'1h 04m saved'}]),
    this.note('Measured against your own typed notes from before 1Heath, not an industry average.')]};
 
@@ -6439,8 +6439,8 @@ class Component extends DCLogic{
     {id:'rbs',cat:'Blood',icon:I.flask,title:'Random blood sugar',sub:'Known diabetic'},
     {id:'xrchest',cat:'Imaging',icon:I.scan,title:'X-ray chest · PA view',sub:'Rule out pneumonia'},
     {id:'usgabd',cat:'Imaging',icon:I.scan,title:'Ultrasound abdomen',sub:'Fasting 6 hours before'},
-    {id:'ctchest',cat:'Imaging',icon:I.scan,title:'CT chest, plain',sub:'Referred out · Yashoda imaging centre'},
-    {id:'mribrain',cat:'Imaging',icon:I.scan,title:'MRI brain, plain',sub:'Referred out · Yashoda imaging centre'},
+    {id:'ctchest',cat:'Imaging',icon:I.scan,title:'CT chest, plain',sub:'Referred out · City imaging centre'},
+    {id:'mribrain',cat:'Imaging',icon:I.scan,title:'MRI brain, plain',sub:'Referred out · City imaging centre'},
     {id:'ecg',cat:'Cardiac',icon:I.pulseIcon,title:'ECG - 12 lead',sub:'At the clinic, 10 minutes'},
     {id:'echo',cat:'Cardiac',icon:I.pulseIcon,title:'2D echo',sub:'Referred out · cardiology'}];
    const active=s.cxOrderFilter||'Common';
@@ -6517,7 +6517,7 @@ class Component extends DCLogic{
   case 'ai':{
    const ANSWERS={
     'max paracetamol dose in adults':{text:'4 g in 24 hours for a healthy adult - 1 g every 4 to 6 hours. Lower to 2 to 3 g a day in chronic alcohol use, low body weight or liver disease.',
-     rows:[['Dolo 650 \u00b7 max','6 tablets / day'],['Interval','4\u20136 hours'],['Liver disease','\u2264 2 g / day']],src:['BNF 87 \u00b7 Paracetamol','ICMR STG 2022']},
+     rows:[['Pyranol 650 \u00b7 max','6 tablets / day'],['Interval','4\u20136 hours'],['Liver disease','\u2264 2 g / day']],src:['BNF 87 \u00b7 Paracetamol','ICMR STG 2022']},
     'amoxiclav dose for cellulitis':{text:'Amoxicillin-clavulanate 625 mg three times a day for 5 to 7 days for uncomplicated cellulitis. Review at 48 hours; escalate if spreading or systemic.',
      rows:[['Adult','625 mg TDS \u00b7 5\u20137 d'],['Child','25\u201345 mg/kg/day \u00f7 2'],['Penicillin allergy','Clindamycin 300 mg TDS']],src:['IDSA SSTI 2014','ICMR AMR guideline 2019']},
     'metformin in ckd':{text:'Safe down to eGFR 45. Halve the dose between 30 and 45, and stop below 30. Hold for 48 hours around contrast or acute illness.',
@@ -7076,7 +7076,7 @@ class Component extends DCLogic{
      onClick:()=>this.setState({sheet:{title:'Search medicines',sub:'Brand, generic or batch number',
       acts:[{label:'PAN 40',sub:'Pantoprazole 40mg · 3 batches · 770 in stock'},
        {label:'AUGMENTIN 625',sub:'Amoxicillin + clavulanic acid · Schedule H1 · 60 in stock'},
-       {label:'DOLO 650',sub:'Paracetamol 650mg · out of stock · last sold 09:41'}].map(x=>({...x,onClick:()=>this.setState({sheet:null})}))}})}]),
+       {label:'PYRANOL 650',sub:'Paracetamol 650mg · out of stock · last sold 09:41'}].map(x=>({...x,onClick:()=>this.setState({sheet:null})}))}})}]),
     this.chips([chip('Low stock · 12'),chip('Expiring soon · 8'),chip('Expired · 3')]),
     f==='Expired · 3'?this.banner('warn','3 batches are locked from sale','They stay visible so they can be counted and returned. Selling one is not possible from any screen in this app.',null,'Quarantined 22 Aug · awaiting stockist pickup'):null,
     this.sec('PAN 40 · PANTOPRAZOLE 40MG'),
@@ -7109,7 +7109,7 @@ class Component extends DCLogic{
     actions:[{icon:I.doc,onClick:()=>this.setState({snack:{text:'Inspector export prepared · 3 registers, 22 Aug'}})}]},tabs:1,blocks:[
     this.sec('PENDING APPROVALS · 3'),
     this.rows([
-     {icon:I.pill,iconTone:'warn',title:'Substitution · Dolo 650 → Calpol 650',sub:'Anitha Reddy · RX-2294 · waiting on Dr. Priya Rao since 11:09',badge:'Doctor decides',badgeTone:'plain',chevron:1,
+     {icon:I.pill,iconTone:'warn',title:'Substitution · Pyranol 650 → Calpol 650',sub:'Anitha Reddy · RX-2294 · waiting on Dr. Priya Rao since 11:09',badge:'Doctor decides',badgeTone:'plain',chevron:1,
       onClick:()=>this.setState({sheet:{title:'Substitution request',sub:'RX-2294 · Anitha Reddy',
        body:'A pharmacist cannot approve a substitution on a prescription. This one is with the prescriber; the counter is blocked from dispensing until she answers.',close:'Close'}})},
      {icon:I.alert,iconTone:'warn',title:'Adjustment · Pan 40 −6 tablets',sub:'Damaged strip · raised by Suma K at 10:18',chevron:1,
@@ -7219,7 +7219,7 @@ class Component extends DCLogic{
     this.rows(PD_PHARMA.filter(x=>x.scheme&&x.stock!=='out').slice(0,4).map(x=>({icon:I.rupee,iconTone:'plain',title:x.brand+' \u00b7 '+pdSchemeTag(x),sub:PD_SUP[x.sup].name+' \u00b7 ends '+x.scheme.ends,badge:'',chevron:1,onClick:openItem(x.id)}))),
     this.sec('NEW LAUNCHES'),
     this.rows([{icon:I.spark,iconTone:'plain',title:PD_LAUNCH.brand+' \u00b7 '+PD_LAUNCH.pack,sub:PD_LAUNCH.co+' \u00b7 '+PD_LAUNCH.mol,badge:'Promotional',badgeTone:'plain',chevron:1,onClick:()=>this.go('pdnew',true)}]),
-    {t:'launchcards',items:PD_PHARMA.filter(x=>x.launch||x.ago<=14).slice(0,4).map(x=>({brand:x.brand,mol:x.mol,co:x.co,tag:x.launch||'New',sponsored:x.id==='vono'||x.id==='bari',local:pdCoLocal(x),onClick:openItem(x.id)}))}])]};}
+    {t:'launchcards',items:PD_PHARMA.filter(x=>x.launch||x.ago<=14).slice(0,4).map(x=>({brand:x.brand,mol:x.mol,co:x.co,tag:x.launch||'New',sponsored:false,local:pdCoLocal(x),onClick:openItem(x.id)}))}])]};}
 
   case 'pd9':{
    const cat=s.pdCat||'',q=(s.pdQuery||'').trim().toLowerCase(),sort=s.pdSort||'popular';
@@ -7236,7 +7236,7 @@ class Component extends DCLogic{
      sort:'\u2195 '+({popular:'Popular',price:'PTR low \u2192 high',eta:'Delivery',new:'Newest'}[sort]),onSort:()=>this.setState({sheet:{title:'Sort by',acts:[['popular','Popular'],['price','Price low\u2013high'],['eta','Delivery time'],['new','Newest']].map(([k,l])=>({label:l,tone:sort===k?'blue':'',onClick:()=>this.setState({pdSort:k,sheet:null})})),close:''}}),
      cat:catLabel+' \u25be',onCat:()=>this.setState({sheet:{title:'Category',acts:PD_CATS.map(([l,k])=>({label:l,tone:cat===k?'blue':'',onClick:()=>this.setState({pdCat:k,sheet:null})})),close:''}})},
     s.pdLocalOnly?this.chips([{label:'Telangana brands  \u2715',on:1,onClick:()=>this.setState({pdLocalOnly:false})}]):null,
-    list.length?{t:'prodcards',items:list.map(x=>({brand:x.brand,mol:x.mol,co:x.co,pack:x.pack,ptr:(s.pdLicState||'none')==='verified'?'\u20b9 '+x.ptr.toFixed(2):'\u2014',mrp:'\u20b9 '+x.mrp.toFixed(2),nlem:PD_NLEM[x.mol]?'NLEM \u00b7 ceiling \u20b9 '+PD_NLEM[x.mol].toFixed(2):'',tg:pdLoc(x)==='Hyderabad'&&/Aarogya|Deccan/.test(x.co)?'Telangana':'',
+    list.length?{t:'prodcards',items:list.map(x=>({brand:x.brand,mol:x.mol,co:x.co,pack:x.pack,ptr:(s.pdLicState||'none')==='verified'?'\u20b9 '+x.ptr.toFixed(2):'\u2014',mrp:'\u20b9 '+x.mrp.toFixed(2),nlem:PD_NLEM[x.mol]?'NLEM \u00b7 ceiling \u20b9 '+PD_NLEM[x.mol].toFixed(2):'',tg:pdLoc(x)==='Telangana'&&/Aarogya|Deccan/.test(x.co)?'Telangana':'',
      scheme:x.scheme?pdSchemeTag(x):'',eta:x.stock==='out'?'Out of stock':x.eta.split(' \u00b7 ')[0],local:pdCoLocal(x),sched:pdSched(x),cold:!!x.cold,out:x.stock==='out',
      qty:s.pdCart[x.id]||0,onDec:()=>add(x)(-1),onInc:()=>add(x)(1),onClick:()=>this.setState({pdItem:x.id,route:'pd3',stack:[...s.stack,'pd9']})}))}
      :{t:'hero',tone:'plain',icon:I.search,title:'No products',body:''}],
@@ -7257,7 +7257,7 @@ class Component extends DCLogic{
    const mrpTotal=ids.reduce((n,id)=>{const x=P(id);const recv=x.scheme?Math.round(cart[id]*(x.scheme.buy+x.scheme.free)/x.scheme.buy):cart[id];return n+recv*pdEx(x);},0);
    const earned=mrpTotal-total,nSup=Object.keys(bySup).length,cold=ids.some(id=>P(id).cold);
    return{bar:{back:1,title:'Checkout',sub:nSup+(nSup>1?' suppliers \u00b7 separate deliveries':' supplier')},blocks:[
-    this.kv([{l:'Deliver to',r:'Demo Clinic',sub:'Vanasthalipuram Main Road, Hyderabad 500070',onClick:()=>this.setState({snack:{text:'Address is set in Profile'}})}]),
+    this.kv([{l:'Deliver to',r:'Demo Clinic',sub:'Lakeview Colony Main Road, Telangana',onClick:()=>this.setState({snack:{text:'Address is set in Profile'}})}]),
     cold?this.banner('plain','\u2744 Cold-chain items in this order','Insulated box, temperature strip on arrival'):null,
     ...Object.keys(bySup).map(k=>this.kv([{l:PD_SUP[k].name,r:PD_SUP[k].credit?PD_SUP[k].credit+'-day credit':'Pay on delivery',sub:bySup[k].length+' items \u00b7 \u20b9 '+bySup[k].reduce((n,x)=>n+x.q*pdEff(x),0).toFixed(2)+' \u00b7 GST invoice from supplier on delivery'}])),
     this.sec('SUMMARY'),
@@ -7385,7 +7385,7 @@ class Component extends DCLogic{
     this.chips([['popular','Popular'],['price','PTR low \u2192 high'],['eta','Delivery'],['new','Newest']].map(([k,l])=>({label:l,on:sort===k,onClick:()=>this.setState({pdSort:k})}))
      .concat([{label:'Telangana',on:s.pdLocalOnly,onClick:()=>this.setState({pdLocalOnly:!s.pdLocalOnly})}])
      .concat(Object.keys(sel).length?[{label:'Clear compare',onClick:()=>this.setState({pdCompare:{}})}]:[])),
-    {t:'suprows',items:sorted.filter(x=>!s.pdLocalOnly||pdCoLocal(x)).map(x=>({brand:x.brand,co:x.co+(pdCoLocal(x)?' \u00b7 Telangana':''),ptr:(s.pdLicState||'none')==='verified'?'\u20b9 '+x.ptr.toFixed(2):'\u2014',mrp:'\u20b9 '+x.mrp.toFixed(2),nlem:PD_NLEM[x.mol]?'NLEM \u00b7 ceiling \u20b9 '+PD_NLEM[x.mol].toFixed(2):'',tg:pdLoc(x)==='Hyderabad'&&/Aarogya|Deccan/.test(x.co)?'Telangana':'',
+    {t:'suprows',items:sorted.filter(x=>!s.pdLocalOnly||pdCoLocal(x)).map(x=>({brand:x.brand,co:x.co+(pdCoLocal(x)?' \u00b7 Telangana':''),ptr:(s.pdLicState||'none')==='verified'?'\u20b9 '+x.ptr.toFixed(2):'\u2014',mrp:'\u20b9 '+x.mrp.toFixed(2),nlem:PD_NLEM[x.mol]?'NLEM \u00b7 ceiling \u20b9 '+PD_NLEM[x.mol].toFixed(2):'',tg:pdLoc(x)==='Telangana'&&/Aarogya|Deccan/.test(x.co)?'Telangana':'',
      moq:'MOQ '+x.moq,scheme:x.scheme?pdSchemeTag(x):'',exp:'Exp \u2265 '+x.expiry,eta:x.stock==='out'?'Out of stock':x.eta.replace(' \u00b7 Hyd distributor',' \u00b7 Hyd')+(pdLoc(x)==='Delhi'&&!/Delhi/.test(x.eta)?' \u00b7 Delhi':''),
      sched:(x.mtp||x.sx||x.h1)?'':pdSched(x),gate:x.mtp?'MTP registered only':x.sx?'Licence required':'',h1:!!x.h1&&!x.mtp,sup:!!x.superv,cold:!!x.cold,out:x.stock==='out',sel:!!sel[x.id],onSel:toggle(x),
      onClick:()=>this.setState({pdItem:x.id,route:'pd3',stack:[...s.stack,'pd2']})}))},
@@ -7439,7 +7439,7 @@ class Component extends DCLogic{
     const list=(near.length?near:far).slice().sort((a2,b2)=>ds==='Price'?T.p[a2.id]-T.p[b2.id]:ds==='TAT'?a2.tatH-b2.tatH:a2.km-b2.km);
     const stars=list.filter(l=>s.pdStar[l.id]),rest=list.filter(l=>!s.pdStar[l.id]);
     return{bar:{back:1,title:T.t,sub:list.length+(list.length===1?' centre':' centres')},blocks:[
-     near.length?null:this.banner('plain','No centre within 25 km \u2014 showing Hyderabad',''),
+     near.length?null:this.banner('plain','No centre within 25 km \u2014 showing Telangana',''),
      this.chips(['Distance','Price','TAT'].map(k=>({label:k,on:ds===k,onClick:()=>this.setState({pdDsort:k})}))),
      {t:'labrows',items:stars.concat(rest).map(l=>({name:l.name,km:l.km+' km',price:'\u20b9 '+T.p[l.id],tat:l.tat,nabl:!!l.nabl,home:!!l.home,star:!!s.pdStar[l.id],
       upd:T.upd&&T.upd[l.id]?T.upd[l.id]:'',closed:!!l.closed,onStar:()=>this.setState(p=>({pdStar:{...p.pdStar,[l.id]:!p.pdStar[l.id]}})),
@@ -7584,8 +7584,8 @@ class Component extends DCLogic{
     {icon:I.patients,iconTone:'blue',title:'Dr. Priya Rao',sub:'General Physician · 3 hospitals · verified',chevron:1,onClick:G('b1',true)},
     {icon:I.patients,iconTone:'plain',title:'Dr. Anil Mehta',sub:'Diabetes · City Diabetes Centre · verified',chevron:1}])
    :this.rows([
-    {icon:I.box,iconTone:'blue',title:'Demo Clinic, Vanasthalipuram',sub:'General Physician · 1.1 km',chevron:1,onClick:G('phosp',true)},
-    {icon:I.box,iconTone:'plain',title:'Yashoda Hospital, Guntur',sub:'Multi-speciality · 3.4 km',chevron:1,onClick:G('phosp',true)},
+    {icon:I.box,iconTone:'blue',title:'Demo Clinic, Lakeview Colony',sub:'General Physician · 1.1 km',chevron:1,onClick:G('phosp',true)},
+    {icon:I.box,iconTone:'plain',title:'City Hospital, Guntur',sub:'Multi-speciality · 3.4 km',chevron:1,onClick:G('phosp',true)},
     {icon:I.box,iconTone:'plain',title:'Sri Sai Clinic, Tenali',sub:'General Physician · 22 km',chevron:1,onClick:G('phosp',true)}]),
    mode==='doctors'?this.sec('NEARBY') :null,
    mode==='doctors'?this.rows([{icon:I.patients,iconTone:'plain',title:'Dr. Kiran Kumar',sub:'Paediatrics · 1.8 km',chevron:1},
@@ -7593,12 +7593,12 @@ class Component extends DCLogic{
    this.note('Only doctors verified with the state medical council are listed.')]};}
 
   case 'psearch':{const q=(s.searchQ||'').toLowerCase();
-   const docs=[{name:'Dr. Priya Rao',sub:'General Physician · MCI 54219',hosps:['Demo Clinic, Vanasthalipuram · 10:00–13:00','Yashoda Hospital, Guntur · 09:00–14:00','Sri Sai Clinic, Tenali · 19:00–21:00'],onClick:G('b1',true)},
+   const docs=[{name:'Dr. Priya Rao',sub:'General Physician · MCI 54219',hosps:['Demo Clinic, Lakeview Colony · 10:00–13:00','City Hospital, Guntur · 09:00–14:00','Sri Sai Clinic, Tenali · 19:00–21:00'],onClick:G('b1',true)},
     {name:'Dr. Anil Mehta',sub:'Diabetes · City Diabetes Centre',hosps:['City Diabetes Centre, Guntur · 16:00–20:00']},
-    {name:'Dr. Kiran Kumar',sub:'Paediatrics',hosps:['Yashoda Hospital, Guntur · 11:00–14:00']},
+    {name:'Dr. Kiran Kumar',sub:'Paediatrics',hosps:['City Hospital, Guntur · 11:00–14:00']},
     {name:'Dr. Sunitha Rao',sub:'Gynaecology',hosps:['Sri Sai Clinic, Tenali · 10:00–13:00']}];
-   const hosps=[{name:'Demo Clinic, Vanasthalipuram',sub:'General Physician · Vanasthalipuram Main Road'},
-    {name:'Yashoda Hospital, Guntur',sub:'Multi-speciality · 4 doctors listed'},
+   const hosps=[{name:'Demo Clinic, Lakeview Colony',sub:'General Physician · Lakeview Colony Main Road'},
+    {name:'City Hospital, Guntur',sub:'Multi-speciality · 4 doctors listed'},
     {name:'Sri Sai Clinic, Tenali',sub:'General Medicine, Gynaecology'}];
    const dMatch=q?docs.filter(d=>d.name.toLowerCase().includes(q)||d.sub.toLowerCase().includes(q)):docs;
    const hMatch=q?hosps.filter(h=>h.name.toLowerCase().includes(q)):hosps;
@@ -7611,7 +7611,7 @@ class Component extends DCLogic{
    hMatch.length?this.rows(hMatch.map(h=>({icon:I.box,iconTone:'plain',title:h.name,sub:h.sub,chevron:1,onClick:G('phosp',true)}))):null,
    (!dMatch.length&&!hMatch.length)?this.note('No match for “'+(s.searchQ||'')+'”. Try a speciality, a doctor’s name, or a hospital.'):null]};}
 
-  case 'phosp':return{bar:{back:1,title:'Yashoda Hospital, Guntur',sub:'Multi-speciality · verified listing'},blocks:[
+  case 'phosp':return{bar:{back:1,title:'City Hospital, Guntur',sub:'Multi-speciality · verified listing'},blocks:[
    this.banner('plain','Hospital-managed queue','This hospital runs its own appointment desk for most departments. Where a doctor accepts 1Heath tokens, you can book directly below.'),
    this.sec('DOCTORS HERE TODAY'),
    this.rows([
@@ -7619,7 +7619,7 @@ class Component extends DCLogic{
     {icon:I.patients,iconTone:'plain',title:'Dr. Kiran Kumar',sub:'Paediatrics · 11:00–14:00',badge:'Display only - call the hospital',badgeTone:'plain',chevron:1},
     {icon:I.patients,iconTone:'plain',title:'Dr. Meena Iyer',sub:'Orthopaedics · 10:00–13:00',badge:'Display only - call the hospital',badgeTone:'plain',chevron:1},
     {icon:I.patients,iconTone:'plain',title:'Dr. Faisal Khan',sub:'Cardiology · alternate days · 15:00–18:00',badge:'Display only - call the hospital',badgeTone:'plain',chevron:1}]),
-   this.rows([{icon:I.phone,iconTone:'plain',title:'Call Yashoda Hospital',sub:'0863-2340880',chevron:1}]),
+   this.rows([{icon:I.phone,iconTone:'plain',title:'Call City Hospital',sub:'0863-2340880',chevron:1}]),
    this.note('Timings shown are as reported by the hospital and can change without notice. 1Heath does not hold tokens here.')]};
 
   // ============ PATIENT · HEALTH ============
@@ -7773,7 +7773,7 @@ class Component extends DCLogic{
      {l:'Total today',r:'₹ 1,252',sub:'Every figure is MRP or the printed fee. 1Heath takes no cut of any of it.'}]),
     this.sec('THE SAME MEDICINE, CHEAPER'),
     this.kv([
-     {l:'Dolo 650',r:'₹ 2.10 each',sub:'What you were prescribed \u00b7 paracetamol 650mg'},
+     {l:'Pyranol 650',r:'₹ 2.10 each',sub:'What you were prescribed \u00b7 paracetamol 650mg'},
      {l:'Paracetamol 650 \u00b7 generic',r:'₹ 0.84 each',sub:'Same molecule, same strength. A strip of 15 costs \u20b9 12.60 instead of \u20b9 31.50.'},
      {l:'Nearest Jan Aushadhi Kendra',r:'2.4 km',sub:'Government generic store \u00b7 Arundelpet, Guntur \u00b7 open 9 AM to 9 PM'}]),
     g?this.banner('ok','Sent to Dr. Priya Rao','She will answer at your next visit, or sooner on her phone. Nothing about your prescription changes until she says so.')
@@ -7787,7 +7787,7 @@ class Component extends DCLogic{
      {icon:I.shield,iconTone:'ok',title:'Ayushman Bharat \u00b7 PM-JAY',sub:'Family of 4 \u00b7 \u20b9 5 lakh a year \u00b7 card valid',
       badge:'Eligible',badgeTone:'ok',chevron:1,
       onClick:()=>this.setState({sheet:{title:'Ayushman Bharat \u00b7 PM-JAY',sub:'\u20b9 5,00,000 per family per year',
-       body:'COVERS\nHospital admission, surgery, and the tests and medicines during that admission. Cashless at an empanelled hospital.\n\nDOES NOT COVER\nOPD visits like today\u2019s, medicines you buy at a counter, or outpatient tests.\n\nNEAREST EMPANELLED HOSPITAL\nGovernment General Hospital, Guntur \u00b7 4.1 km\nYashoda Hospital, Guntur \u00b7 3.4 km',close:'Close'}})},
+       body:'COVERS\nHospital admission, surgery, and the tests and medicines during that admission. Cashless at an empanelled hospital.\n\nDOES NOT COVER\nOPD visits like today\u2019s, medicines you buy at a counter, or outpatient tests.\n\nNEAREST EMPANELLED HOSPITAL\nGovernment General Hospital, Guntur \u00b7 4.1 km\nCity Hospital, Guntur \u00b7 3.4 km',close:'Close'}})},
      {icon:I.shield,iconTone:'ok',title:'Dr. YSR Aarogyasri',sub:'Andhra Pradesh state scheme \u00b7 white ration card',
       badge:'Eligible',badgeTone:'ok',chevron:1,
       onClick:()=>this.setState({sheet:{title:'Dr. YSR Aarogyasri',sub:'Andhra Pradesh state scheme',
@@ -7795,14 +7795,14 @@ class Component extends DCLogic{
      {icon:I.flask,iconTone:'plain',title:'Free tests at the PHC',sub:'Haemoglobin, blood sugar, urine \u00b7 no charge',
       badge:'Free',badgeTone:'plain',chevron:1,
       onClick:()=>this.setState({sheet:{title:'Free at the Primary Health Centre',
-       body:'Haemoglobin, blood sugar, urine routine and blood pressure are free at a government PHC. A CBC and a dengue NS1 usually are not, which is why today\u2019s test has a price.\n\nNearest PHC: Vanasthalipuram PHC, 1.8 km \u00b7 open 9 AM to 4 PM, closed Sunday.',close:'Close'}})}]),
+       body:'Haemoglobin, blood sugar, urine routine and blood pressure are free at a government PHC. A CBC and a dengue NS1 usually are not, which is why today\u2019s test has a price.\n\nNearest PHC: Lakeview Colony PHC, 1.8 km \u00b7 open 9 AM to 4 PM, closed Sunday.',close:'Close'}})}]),
     this.note('1Heath does not sell medicines, does not take a commission on a lab test, and does not earn anything from what you spend. Prices come from the printed MRP and the clinic\u2019s own rate card.')]};}
 
   case 'pmed1':{
    const M=medsFor(PROF.id).map(m=>({n:m.n,g:m.g,look:m.look,for:m.for,when:m.when,days:m.days+(m.left?' · '+m.left:''),
     miss:m.miss,with:m.wth,self:m.prov==='self'}));
    const W=M.length?PDATA[PROF.id].watch:null;
-   const open=s.pmedOpen||'Dolo 650';
+   const open=s.pmedOpen||'Pyranol 650';
    return{bar:{back:1,title:'Know your medicines',sub:'What each one looks like and does'},blocks:[
     this.chips(M.map(m=>({label:m.n,on:open===m.n,onClick:()=>this.setState({pmedOpen:m.n})}))),
     ...M.filter(m=>m.n===open).flatMap(m=>{const own=m.self;return[
@@ -8026,7 +8026,7 @@ class Component extends DCLogic{
     {l:'No cough, no vomiting'}]),
    this.sec('MEDICINES'),
    this.kv([
-    {l:'Dolo 650',r:'1-1-1',sub:'after food · 3 days · for fever and pain'},
+    {l:'Pyranol 650',r:'1-1-1',sub:'after food · 3 days · for fever and pain'},
     {l:'ORS sachets',r:'as needed',sub:'one sachet in 1 litre water'}]),
    this.banner('warn','Come back immediately if','Bleeding from the gums or nose, severe stomach pain, black stools, or you cannot keep water down.'),
    this.rows([
@@ -8094,7 +8094,7 @@ class Component extends DCLogic{
    this.rows([
     {icon:I.box,iconTone:'ok',title:'City Diabetes Centre',sub:'Asked 12 Jul 2026 \u00b7 you allowed \u00b7 ended 12 Aug',
      badge:'Ended on its own',badgeTone:'ok'},
-    {icon:I.box,iconTone:'plain',title:'Yashoda Hospital, Guntur',sub:'Asked 3 Aug 2026 \u00b7 you did not answer',
+    {icon:I.box,iconTone:'plain',title:'City Hospital, Guntur',sub:'Asked 3 Aug 2026 \u00b7 you did not answer',
      badge:'Never allowed',badgeTone:'plain'}]),
    this.sec('FETCH A RECORD'),
    this.rows([
@@ -8241,7 +8241,7 @@ class Component extends DCLogic{
    this.sec('DETAILS'),
    this.kv([
     {l:'Fee',r:F.fee,sub:F.feeNote},
-    {l:'Clinic',r:'1.1 km',sub:'Demo Clinic, Vanasthalipuram, Hyderabad'},
+    {l:'Clinic',r:'1.1 km',sub:'Demo Clinic, Lakeview Colony, Telangana'},
     {l:'Booked for',r:PROF.name,sub:PROF.as+' \u00b7 '+D.phone}]),
    this.rows([
     {icon:I.pin,iconTone:'plain',title:'Get directions',sub:'Opens your maps app',chevron:1},
@@ -8700,13 +8700,13 @@ class Component extends DCLogic{
     stats:[{v:'14 yrs',l:'Experience'},{v:'General',l:'Medicine'},{v:'Telugu, English, Hindi',l:'Speaks'}]},
    this.sec('TODAY · FRIDAY 14 AUGUST'),
    {t:'day',items:[
-    {from:'09:00',to:'14:00',place:'Yashoda Hospital, Guntur',note:'The hospital manages this queue. Call 0863-2340880 or walk in.',tag:'Display only',tagTone:'plain'},
+    {from:'09:00',to:'14:00',place:'City Hospital, Guntur',note:'The hospital manages this queue. Call 0863-2340880 or walk in.',tag:'Display only',tagTone:'plain'},
     {from:'19:00',to:'21:00',place:'Sri Sai Clinic, Tenali',note:'Bus Stand Road · 2.4 km from you',tag:LEFT+' of '+SESSION.total+' tokens left',tagTone:'ok',
      book:'Book a token',onBook:G('b2',true)},
     {from:'21:30',to:'-',place:'Home visits',note:'By prior arrangement only',tag:'Not bookable',tagTone:'plain'}]},
    this.sec('TOMORROW'),
    {t:'day',items:[
-    {from:'10:00',to:'13:00',place:'Demo Clinic, Vanasthalipuram',note:'Vanasthalipuram Main Road · doctor-owned clinic',tag:'20 tokens open',tagTone:'ok',
+    {from:'10:00',to:'13:00',place:'Demo Clinic, Lakeview Colony',note:'Lakeview Colony Main Road · doctor-owned clinic',tag:'20 tokens open',tagTone:'ok',
      book:'Book a token',onBook:G('b2',true)}]},
    this.note('1Heath shows only doctors whose registration has been verified with the state medical council.')]};
 
@@ -8764,7 +8764,7 @@ class Component extends DCLogic{
    this.banner('warn','This session is full','All 20 tokens for this evening have been taken. Nothing is held back for online booking - walk-ins and online tokens come from the same pool.'),
    this.sec('WHAT YOU CAN DO'),
    this.rows([
-    {icon:I.calendar,iconTone:'blue',title:'Tomorrow · Demo Clinic, Vanasthalipuram',sub:'10:00–13:00 · 20 tokens open',badge:'Same doctor',badgeTone:'ok',chevron:1,onClick:G('b2',true)},
+    {icon:I.calendar,iconTone:'blue',title:'Tomorrow · Demo Clinic, Lakeview Colony',sub:'10:00–13:00 · 20 tokens open',badge:'Same doctor',badgeTone:'ok',chevron:1,onClick:G('b2',true)},
     {icon:I.bell,iconTone:'plain',title:'Tell me if a token frees up',sub:'One message. No follow-ups.',chevron:1},
     {icon:I.patients,iconTone:'plain',title:'Other verified doctors nearby',sub:'4 general physicians within 5 km',chevron:1}]),
    this.note('We do not sell priority tokens, and there is no way to pay to jump the queue.')]};
@@ -8786,10 +8786,10 @@ class Component extends DCLogic{
    {t:'hero',tone:'red',icon:I.x,title:'Dr. Rao cancelled this session',body:'Sri Sai Clinic · today, 19:00–21:00\nCancelled at 14:06, about 5 hours before'},
    this.banner('ok','₹300 refunded','Sent back to the UPI account you paid from. It usually lands within 3 working days - you do not need to do anything.'),
    this.sec('REASON GIVEN'),
-   this.kv([{l:'“Called to an emergency at Yashoda Hospital. My apologies - please book tomorrow morning.”',sub:'Dr. Priya Rao · 14 Aug, 14:06'}]),
+   this.kv([{l:'“Called to an emergency at City Hospital. My apologies - please book tomorrow morning.”',sub:'Dr. Priya Rao · 14 Aug, 14:06'}]),
    this.sec('REBOOK'),
    this.rows([
-    {icon:I.calendar,iconTone:'blue',title:'Tomorrow · Demo Clinic, Vanasthalipuram',sub:'10:00–13:00 · 20 tokens open',badge:'Same doctor',badgeTone:'ok',chevron:1,onClick:G('b2',true)},
+    {icon:I.calendar,iconTone:'blue',title:'Tomorrow · Demo Clinic, Lakeview Colony',sub:'10:00–13:00 · 20 tokens open',badge:'Same doctor',badgeTone:'ok',chevron:1,onClick:G('b2',true)},
     {icon:I.calendar,iconTone:'plain',title:'Saturday · Sri Sai Clinic',sub:'19:00–21:00 · 20 tokens open',chevron:1,onClick:G('b2',true)}]),
    this.note('Cancellations by the doctor are shown on their public profile for 90 days. Dr. Rao has cancelled twice in the last year.')]};
   }
@@ -9525,7 +9525,7 @@ class Component extends DCLogic{
        {label:'SCHEDULE',chips:['','OTC','H','H1'].map(l=>({label:l||'Any',on:s.pdSched===l,onClick:()=>this.setState({pdSched:l}),style:cs(s.pdSched===l)}))},
        {label:'MORE',chips:[{label:'\u2744 Cold-chain',on:s.pdCold,onClick:()=>this.setState({pdCold:!s.pdCold}),style:cs(s.pdCold)}]},
        {label:'ORIGIN',chips:[{label:'Telangana brands',on:s.pdLocalOnly,onClick:()=>this.setState({pdLocalOnly:!s.pdLocalOnly}),style:cs(s.pdLocalOnly)+';border-width:1.5px'}]},
-       {label:'DISTRIBUTOR',chips:['','Hyderabad','Delhi'].map(l=>({label:l||'Any',on:s.pdLoc===l,onClick:()=>this.setState({pdLoc:l}),style:cs(s.pdLoc===l)}))}]};})()
+       {label:'DISTRIBUTOR',chips:['','Telangana','Delhi'].map(l=>({label:l||'Any',on:s.pdLoc===l,onClick:()=>this.setState({pdLoc:l}),style:cs(s.pdLoc===l)}))}]};})()
    :s.sheet.isText?{title:s.sheet.title,isText:1,close:'',confirmLabel:s.sheet.confirmLabel,onConfirm:s.sheet.onConfirm,
      textValue:s[s.sheet.key]||'',textPlaceholder:s.sheet.placeholder||'',onText:e=>this.setState({[s.sheet.key]:e&&e.target?e.target.value:''})}
    :s.sheet.isChats?{title:'Chats',close:'',hasOptions:1,
@@ -9602,7 +9602,7 @@ class Component extends DCLogic{
     onReason:e=>{const v=e&&e.target?e.target.value:'';this.setState(p=>({sheet:{...p.sheet,reasonText:v}}));},
     onSave:()=>{if(s.sheet.reasonText&&s.sheet.reasonText.trim().length>4)this.setState({pregResolved:'Overridden - reason on file',sheet:null});}}
    :s.sheet.isAddWs?{title:s.sheet.title,sub:s.sheet.sub,isAddWs:1,close:'Done',query:s.sheet.query,
-    matches:(()=>{const CAT=[{name:'Apollo Hospitals, Guntur',sub:'Multi-speciality · invite code APL-2291'},
+    matches:(()=>{const CAT=[{name:'Riverside Hospital, Guntur',sub:'Multi-speciality · invite code APL-2291'},
       {name:'Government General Hospital, Guntur',sub:'Government · invite code GGH-0110'},
       {name:'Sri Sai Clinic, Tenali',sub:'Already linked'}];
      const q=(s.sheet.query||'').toLowerCase();
@@ -9793,9 +9793,9 @@ class Component extends DCLogic{
     onUndo:()=>{clearTimeout(this._sk);this._skKey=null;if(s.snack.undo)s.snack.undo();else this.setState({snack:null});}}:null,
    segctrl:sc.segctrl||null,allergyBar:sc.allergyBar||null,zoneA:sc.zoneA||null,
    rvBar:(s.route==='cxreview'&&!(s.rvSigned||s.rvMode==='signed'))?(()=>{const n=this.rvPending().length,v=s.rvVoice||'',off=s.rvMode==='offline';
-    return{preview:v==='preview'?{said:'Make the Dolo twice daily',change:'Dolo 650 · '+rvFreq((this.rvLinesNow().rx.find(x=>x.id==='r1')||{f:[1,1,0,1]}))+' → 1-0-1',
+    return{preview:v==='preview'?{said:'Make the Pyranol twice daily',change:'Pyranol 650 · '+rvFreq((this.rvLinesNow().rx.find(x=>x.id==='r1')||{f:[1,1,0,1]}))+' → 1-0-1',
       onUndo:()=>this.setState({rvVoice:''}),
-      onApply:()=>{const L=this.rvLinesNow();this.setState({rvVoice:'',rvLines:{...L,rx:L.rx.map(x=>x.id==='r1'?{...x,f:[1,0,0,1],edited:1}:x)},snack:{text:'Dolo 650 changed to 1-0-1'}});}}:null,
+      onApply:()=>{const L=this.rvLinesNow();this.setState({rvVoice:'',rvLines:{...L,rx:L.rx.map(x=>x.id==='r1'?{...x,f:[1,0,0,1],edited:1}:x)},snack:{text:'Pyranol 650 changed to 1-0-1'}});}}:null,
      onMicDown:()=>this.setState({rvVoice:'listening'}),
      onMicUp:()=>{if(this.state.rvVoice==='listening')this.setState({rvVoice:'preview'});},
      micStyle:`flex:none;width:52px;height:52px;border-radius:26px;border:0;display:flex;align-items:center;justify-content:center;background:${v==='listening'?'#0B63CE':'#EAF1FD'};cursor:pointer;touch-action:none`,
