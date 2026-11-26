@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>(function(){var d=document.documentElement;try{d.setAttribute('data-theme',localStorage.getItem('theme')==='dark'?'dark':'light')}catch(e){d.setAttribute('data-theme','light')}})();</script>
-<meta name="build" content="3fa87340f39c"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
+<meta name="build" content="7c3d7991a455"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,600;1,6..72,500;1,6..72,600&display=swap">
 <style>/* pawankalyan.dev design system, v2 (17 Nov 2026)
    Paper and ink of a prescription; one accent, the green of an Indian chemist's cross.
@@ -546,7 +546,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
   <div class="intro-text">
     <p class="nameline"><b>Pawan Kalyan</b><span>ML/AI Engineer · Founder, 1Heath</span></p>
     <h1>No Doctor in India Should Have to Treat a Patient Blind</h1>
-    <p class="lede">I'm building <a href="1heath.html">1Heath</a>: it listens to the consultation (the speech service handles English and 22 Indian languages; we have tested Hindi and Telugu), writes a checked prescription for the doctor to sign, and keeps the history for the next doctor, the pharmacy and the family.</p>
+    <p class="lede">I'm building <a href="1heath.html">1Heath</a>. It listens to the consultation, writes a prescription the doctor checks and signs, and keeps the history for the next doctor, the pharmacy and the family.</p>
     <p class="creds"><span>Zoho <i>Member of Technical Staff</i></span><span>DRDO <i>Intern</i></span><span>1Heath <i>Founder</i></span></p>
     <div class="btns">
       <a class="btn primary" href="1heath.html">See how 1Heath works</a>
@@ -561,12 +561,12 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
   <div><span class="n">23</span><span class="t">Languages the speech service supports: English and 22 Indian languages. 1Heath itself is tested so far only in simulated Hindi and Telugu</span></div>
   <div><span class="n">4 apps</span><span class="t">Doctor, front desk, pharmacy and patient, on one record. The Doctor app works as a demo; the other three are designed</span></div>
   <div><span class="n">0</span><span class="t">Invented allergies, refused medicines or wrong doses that reached a note unflagged, in 14 unseen simulated consultations. A small test; no real patients yet</span></div>
-  <div><span class="n">3</span><span class="t">Systems of medicine on the same record: allopathy, Ayurveda and homeopathy</span></div>
+  <div><span class="n">3</span><span class="t">Systems of medicine the record is designed for: allopathy, Ayurveda and homeopathy</span></div>
 </div>
 
 <section id="projects" aria-labelledby="projects-h">
   <h2 id="projects-h">What I'm Building</h2>
-  <p>A healthcare research and development company that takes real problems in Indian healthcare, researches them in depth, and builds tools doctors and patients can trust. 1Heath is the first product.</p>
+  <p>A healthcare research and development company (to be incorporated before any investment) that takes real problems in Indian healthcare, researches them in depth, and builds tools doctors and patients can trust. 1Heath is the first product.</p>
 
   <article class="project solo">
     <div class="project-body">
@@ -604,7 +604,9 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
   <h2 id="why-h">Why This Problem</h2>
   <div class="flow">
     <p>Years ago I was given a medicine that harmed me. I still do not know what it was, so no doctor can make sure it never happens again. My grandmother takes Ayurvedic medicines, and none of her doctors know.</p>
-    <p>A primary-care visit in India lasts about two minutes, and about half of Indians use Ayurveda, homeopathy or home remedies. No doctor can take a full history in two minutes, and today no record carries it for them. (<a href="1heath-problem.html">Sources for both numbers</a>.)</p>
+    <p>That is the problem I cannot stop thinking about. A primary-care visit in India lasts about two minutes. In that time the doctor has to listen, decide and write, usually with no history at all. The old reports are in a drawer at home, so the same tests get paid for again. The prescription is hard to read at the counter. And none of it follows the patient to the next doctor. (<a href="1heath-problem.html">Sources</a>.)</p>
+    <p>I want 1Heath in every clinic in India: not only city hospitals, but the single doctor in a small town and the clinic at the edge of a village. That is why the price has to stay as low as we can make it. If we can run it at ₹199, it will be ₹199; it goes higher only if the costs force it, and never past ₹499. This is a business, and it has to stand on its own feet. But I am building it because this problem has to be solved, and small clinics are where it hurts most.</p>
+    <p>When I offered doctors the software on its own, they said no: it mostly helps the patient, not them. When I offered cheaper medicines for their clinic pharmacy, with the software included, they said yes. That one conversation reshaped the business. I would rather learn from doctors like that than guess at a desk.</p>
   </div>
 </section>
 
