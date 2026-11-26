@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>(function(){var d=document.documentElement;try{d.setAttribute('data-theme',localStorage.getItem('theme')==='dark'?'dark':'light')}catch(e){d.setAttribute('data-theme','light')}})();</script>
-<meta name="build" content="7c3d7991a455"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
+<meta name="build" content="cc974a5ec18e"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,600;1,6..72,500;1,6..72,600&display=swap">
 <style>/* pawankalyan.dev design system, v2 (17 Nov 2026)
    Paper and ink of a prescription; one accent, the green of an Indian chemist's cross.
@@ -560,7 +560,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 <div class="strip" aria-label="1Heath in numbers">
   <div><span class="n">23</span><span class="t">Languages the speech service supports: English and 22 Indian languages. 1Heath itself is tested so far only in simulated Hindi and Telugu</span></div>
   <div><span class="n">4 apps</span><span class="t">Doctor, front desk, pharmacy and patient, on one record. The Doctor app works as a demo; the other three are designed</span></div>
-  <div><span class="n">0</span><span class="t">Invented allergies, refused medicines or wrong doses that reached a note unflagged, in 14 unseen simulated consultations. A small test; no real patients yet</span></div>
+  <div><span class="n">0</span><span class="t">Invented allergies, refused medicines or wrong doses that reached a note unflagged, in 14 unseen simulated consultations. The same test captured about 65% of clinical facts, so a lot is still missed. A small test; no real patients yet</span></div>
   <div><span class="n">3</span><span class="t">Systems of medicine the record is designed for: allopathy, Ayurveda and homeopathy</span></div>
 </div>
 
@@ -572,12 +572,12 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <div class="project-body">
       <p class="status"><span class="pill wip">In development</span><span class="muted small">Not yet used with real patients</span></p>
       <h3><a href="1heath.html">1Heath: The Visit Writes the History</a></h3>
-      <p>A medical scribe and shared health record for India's small clinics, built for every system of medicine.</p>
+      <p>A medical scribe and shared health record for India's small clinics, designed for every system of medicine, starting with allopathy.</p>
       <ul class="plain small">
         <li>Uses speech recognition for English and 22 Indian languages, including mixed speech, and writes the note and prescription.</li>
         <li>A language model drafts; a rules engine checks every line against what was actually said.</li>
         <li>In tests on 14 unseen simulated consultations in Hindi and Telugu, no invented allergy, refused medicine or wrong dose reached a note unflagged.</li>
-        <li>Turns spoken brand names into the right medicine (about 500 brands, 4,649 spellings in five Indian scripts) and asks instead of guessing.</li>
+        <li>Turns spoken brand names into the right medicine (a demo catalogue of about 500 brands, 4,649 spellings in five Indian scripts) and asks instead of guessing. On 85 spoken medicine lines so far, 54 matched exactly.</li>
         <li>Planned for every setting: small clinics first, then hospitals, with the pharmacy and lab on the same record.</li>
       </ul>
       <div class="btns">
@@ -663,7 +663,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <li><span class="when">24 Nov 2026</span><p>Rebuilt the business model on how small clinics really earn: from their own pharmacy. A full cost sheet replaces the single team line. <a href="1heath-business.html#clinic">How a clinic earns</a></p></li>
     <li><span class="when">23 Nov 2026</span><p>Rebuilt the supply and business numbers after two outside reviews, checked at source: higher running costs, no credit from makers, partner stockists first, a flat lab fee, and margins for Ayurveda, Siddha, Unani and homeopathy to test. <a href="1heath-business.html">See the numbers</a></p></li>
     <li><span class="when">Nov 2026</span><p>Published the medicine supply model: no warehouse in year one, licensed local stockists, costs worked out. <a href="1heath-supply.html">Read it</a></p></li>
-    <li><span class="when">Next</span><p>Six months to release: three months to build all four apps with a small, strong team, two months of real-world testing with consent, release in month 6, with every approval started in week 1. <a href="1heath-roadmap.html#six-months">The plan</a></p></li>
+    <li><span class="when">Next</span><p>The plan, once funded: three months to build all four apps with a small, strong team, two months of real-world testing with consent, and release in month 6, if every approval starts in week 1 and none runs long. <a href="1heath-roadmap.html#six-months">The plan</a></p></li>
     <li><span class="when">Next</span><p>Run the Doctor app's outpatient flow against a frozen set of 131 clinical cases in eight languages. This has not been run yet.</p></li>
     <li><span class="when">Nov 2026</span><p>Settled the scribe design by measurement: a language model drafts, a rules engine checks. <a href="1heath-models-data.html#results">See the results</a></p></li>
     <li><span class="when">Oct 2026</span><p>The Doctor app runs end to end on an Android phone: listen, note, prescription, slide to sign, PDF.</p></li>
@@ -678,7 +678,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
     <li><span>1</span><p><b>Doctors</b> in general practice, paediatrics or gynaecology who would try 1Heath in their own clinic during the pilot.</p></li>
     <li><span>2</span><p><b>Pharmacists and clinic pharmacies</b> who want cheaper buying and signed, legible prescriptions with allergy flags.</p></li>
     <li><span>3</span><p><b>People working on Indian-language speech or clinical safety</b>, to compare notes.</p></li>
-    <li><span>4</span><p><b>A first investor</b> who sees healthcare as a service first and a business second.</p></li>
+    <li><span>4</span><p><b>A first investor</b> who wants to build a lasting business by solving a real healthcare problem, and who will hold us to safety before speed.</p></li>
   </ul>
   <div class="flow">
     <p>And anyone who has been harmed because a doctor did not have their history. Your story helps.</p>
@@ -689,7 +689,7 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
 
 </div>
 </main>
-<footer class="pad"><div class="wide"><div class="f-about"><span class="f-name">Pawan Kalyan</span><p>ML/AI engineer and founder of 1Heath, a medical scribe and shared health record for Indian clinics.</p></div><div><span class="f-h">Read</span><ul><li><a href="1heath.html">1Heath</a></li><li><a href="india-health.html">Indian Healthcare</a></li><li><a href="health-systems-compared.html">World Healthcare</a></li><li><a href="1heath-prototype.html">Prototype</a></li></ul></div><div><span class="f-h">Contact</span><ul><li><a href="mailto:hello@pawankalyan.dev">Email</a></li><li><a href="https://www.linkedin.com/in/pavankumar-gurram/">LinkedIn</a></li><li><a href="https://github.com/pawankalyan-gurram">GitHub</a></li><li><a href="https://www.instagram.com/pawan_kalyan.official/">Instagram</a></li></ul></div><div class="f-legal"><span>© 2026 Pawan Kalyan. Updated 26 November 2026.</span><span>1Heath is in development and not approved for clinical use. Not affiliated with any public figure of the same name.</span></div></div></footer>
+<footer class="pad"><div class="wide"><div class="f-about"><span class="f-name">Pawan Kalyan</span><p>ML/AI engineer and founder of 1Heath, a medical scribe and shared health record for Indian clinics.</p></div><div><span class="f-h">Read</span><ul><li><a href="1heath.html">1Heath</a></li><li><a href="india-health.html">Indian Healthcare</a></li><li><a href="health-systems-compared.html">World Healthcare</a></li><li><a href="1heath-prototype.html">Prototype</a></li></ul></div><div><span class="f-h">Contact</span><ul><li><a href="mailto:hello@pawankalyan.dev">Email</a></li><li><a href="https://www.linkedin.com/in/pavankumar-gurram/">LinkedIn</a></li><li><a href="https://github.com/pawankalyan-gurram">GitHub</a></li><li><a href="https://www.instagram.com/pawan_kalyan.official/">Instagram</a></li></ul></div><div class="f-legal"><span>© 2026 Pawan Kalyan. Updated 27 November 2026.</span><span>1Heath is in development and not approved for clinical use. Not affiliated with any public figure of the same name.</span></div></div></footer>
 <script>
 (function(){var d=document.documentElement,b=document.getElementById('theme');
 function sync(){var dark=d.getAttribute('data-theme')==='dark';if(b){b.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');b.setAttribute('aria-pressed',dark?'true':'false')}}
