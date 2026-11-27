@@ -13,10 +13,10 @@
 <meta property="og:title" content="Models and Data · 1Heath · Pawan Kalyan">
 <meta property="og:description" content="Which models 1Heath uses, how they are tested, where the data comes from, and what is not yet known about real-world accuracy.">
 <meta property="og:url" content="https://pawankalyan.dev/1heath-models-data">
-<meta property="og:image" content="https://pawankalyan.dev/og-v3.png">
+<meta property="og:image" content="https://pawankalyan.dev/og-v4.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Pawan Kalyan holding a microphone, beside the line: No doctor in India should have to treat a patient blind">
+<meta property="og:image:alt" content="Pawan Kalyan holding a microphone, beside the line: No doctor in India should have to treat a patient without their history">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>(function(){var d=document.documentElement;try{d.setAttribute('data-theme',localStorage.getItem('theme')==='dark'?'dark':'light')}catch(e){d.setAttribute('data-theme','light')}})();</script>
-<meta name="build" content="7f14ee856132"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
+<meta name="build" content="59cba3fd430b"><script>(function(){var m=document.querySelector('meta[name=build]'),cur=m&&m.content;if(!cur||cur.indexOf('__')===0||!window.fetch)return;var was=null;try{var u=new URL(location.href);was=u.searchParams.get('fresh');if(was!==null){u.searchParams.delete('fresh');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}var K='pk-fresh',hid=0,busy=0;function check(){if(busy)return;busy=1;fetch('/version.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){busy=0;if(!j||!j.v||j.v===cur||j.v===was)return;var t=null;try{t=JSON.parse(sessionStorage.getItem(K))}catch(e){}if(t&&t.v===j.v&&Date.now()-t.at<120000)return;try{sessionStorage.setItem(K,JSON.stringify({v:j.v,at:Date.now()}))}catch(e){}var plain=location.href.split('#')[0],next=location.pathname+(location.search?location.search+'&':'?')+'fresh='+j.v+location.hash;fetch(plain,{cache:'reload'}).catch(function(){}).then(function(){location.replace(next)})}).catch(function(){busy=0})}check();addEventListener('pageshow',function(e){if(e.persisted)check()});document.addEventListener('visibilitychange',function(){if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>30000)check()});addEventListener('online',check)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,600;1,6..72,500;1,6..72,600&display=swap">
 <style>/* pawankalyan.dev design system, v2 (17 Nov 2026)
    Paper and ink of a prescription; one accent, the green of an Indian chemist's cross.
@@ -616,8 +616,8 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
   <h3>Model Plus Rules Beats Either Alone</h3>
   <figure class="fig">
     <div class="bars">
-      <div class="bar"><div class="name">Rules only<small>25–35% of facts · twice prescribed a refused drug</small></div><div class="track" aria-hidden="true"><div class="fill range" style="width:35%"></div><div class="fill" style="width:25%"></div></div></div>
-      <div class="bar"><div class="name">Model only<small>73–79% of facts · 15–17 invented facts</small></div><div class="track" aria-hidden="true"><div class="fill range warn" style="width:79%"></div><div class="fill warn" style="width:73%"></div></div></div>
+      <div class="bar"><div class="name">Rules only <small>25–35% of facts · twice prescribed a refused drug</small></div><div class="track" aria-hidden="true"><div class="fill range" style="width:35%"></div><div class="fill" style="width:25%"></div></div></div>
+      <div class="bar"><div class="name">Model only <small>73–79% of facts · 15–17 invented facts</small></div><div class="track" aria-hidden="true"><div class="fill range warn" style="width:79%"></div><div class="fill warn" style="width:73%"></div></div></div>
       <div class="bar"><div class="name"><b>Model drafts, rules verify</b><small>about 65% · 0 unflagged safety errors</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:65%"></div></div></div>
       <div class="axis" aria-hidden="true"><div></div><div><span>0%</span><span>50%</span><span>100%</span></div></div>
     </div>
@@ -627,9 +627,9 @@ footer .f-legal{grid-column:1 / -1;border-top:1px solid var(--rule);padding-top:
   <h3>Brand Names Are Where Speech Fails</h3>
   <figure class="fig">
     <div class="bars">
-      <div class="bar"><div class="name">Translate mode<small>47 of 85</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:55.3%"></div></div></div>
-      <div class="bar"><div class="name">Code-mixed mode<small>42 of 85</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:49.4%"></div></div></div>
-      <div class="bar"><div class="name">With brand hints<small>75 of 85 · invents medicines</small></div><div class="track" aria-hidden="true"><div class="fill warn" style="width:88.2%"></div></div></div>
+      <div class="bar"><div class="name">Translate mode <small>47 of 85</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:55.3%"></div></div></div>
+      <div class="bar"><div class="name">Code-mixed mode <small>42 of 85</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:49.4%"></div></div></div>
+      <div class="bar"><div class="name">With brand hints <small>75 of 85 · invents medicines</small></div><div class="track" aria-hidden="true"><div class="fill warn" style="width:88.2%"></div></div></div>
       <div class="bar"><div class="name"><b>Strict matcher</b><small>54 of 85 · 0 inventions · right name offered for 6 more</small></div><div class="track" aria-hidden="true"><div class="fill" style="width:63.5%"></div></div></div>
       <div class="axis" aria-hidden="true"><div></div><div><span>0</span><span>85 lines</span></div></div>
     </div>
